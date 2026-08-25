@@ -1,0 +1,490 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "_meta": {
+    "project": "CulinaryFeed",
+    "version": "1.0.0",
+    "phase": "Phase 1 — Data Foundations",
+    "created": "2026-08-25",
+    "description": "Standardised telemetry event contracts for the CulinaryFeed client-side event layer. All events share a common envelope schema. Each event_type extends the envelope with a type-specific payload block.",
+    "authors": ["CulinaryFeed Data Engineering Team"],
+    "changelog": [
+      { "version": "1.0.0", "date": "2026-08-25", "notes": "Initial event contract definitions for Phase 1." }
+    ]
+  },
+
+  "commonEnvelope": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CulinaryFeed Common Event Envelope",
+    "description": "All CulinaryFeed telemetry events MUST include this envelope at the top level. Type-specific fields are nested inside the 'payload' property.",
+    "type": "object",
+    "required": [
+      "event_id",
+      "event_type",
+      "schema_version",
+      "session_id",
+      "user_id",
+      "client_ts",
+      "app_version",
+      "platform",
+      "payload"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "event_id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "Client-generated UUID v4 uniquely identifying this event instance. Used for deduplication in the ingestion pipeline."
+      },
+      "event_type": {
+        "type": "string",
+        "enum": [
+          "IMPRESSION_HEARTBEAT",
+          "RECIPE_EXPAND",
+          "INGREDIENT_INTERACTION"
+        ],
+        "description": "Discriminator field identifying the event contract variant. Determines the shape of the 'payload' object."
+      },
+      "schema_version": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$",
+        "description": "Semantic version of this event contract, e.g. '1.0.0'. Must match a known version in the event contracts registry.",
+        "example": "1.0.0"
+      },
+      "session_id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "UUID assigned at feed session initialisation (fact_feed_sessions.session_id). Propagated to all events within the same session."
+      },
+      "user_id": {
+        "type": "string",
+        "format": "uuid",
+        "description": "Stable user natural business key (dim_user.user_id). For anonymous users, this is the device-generated pseudo-anonymous session UUID persisted in localStorage."
+      },
+      "client_ts": {
+        "type": "string",
+        "format": "date-time",
+        "description": "ISO-8601 UTC timestamp recorded on the client device at the moment the event was emitted. Used for clock-skew detection against server-assigned timestamps."
+      },
+      "app_version": {
+        "type": "string",
+        "pattern": "^\\d+\\.\\d+\\.\\d+$",
+        "description": "Semantic version of the CulinaryFeed client application, e.g. '1.4.2'.",
+        "example": "1.4.2"
+      },
+      "platform": {
+        "type": "object",
+        "required": ["device_type", "os", "browser"],
+        "additionalProperties": false,
+        "description": "Client environment context. Populated from navigator.userAgent and Connection API at session start and cached for subsequent events.",
+        "properties": {
+          "device_type": {
+            "type": "string",
+            "enum": ["mobile", "tablet", "desktop"],
+            "description": "Device form-factor inferred from User-Agent string."
+          },
+          "os": {
+            "type": "string",
+            "description": "Operating system name, e.g. 'iOS', 'Android', 'macOS', 'Windows', 'Linux'."
+          },
+          "browser": {
+            "type": "string",
+            "description": "Browser family name, e.g. 'Chrome', 'Safari', 'Firefox', 'Edge'."
+          },
+          "network_type": {
+            "type": "string",
+            "enum": ["wifi", "5g", "4g", "3g", "2g", "offline", "unknown"],
+            "description": "Network connection type from the Network Information API (navigator.connection.effectiveType). 'unknown' if API is not available."
+          },
+          "viewport_width_px": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Browser viewport width in CSS pixels at event time (window.innerWidth)."
+          },
+          "viewport_height_px": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Browser viewport height in CSS pixels at event time (window.innerHeight)."
+          }
+        }
+      },
+      "payload": {
+        "type": "object",
+        "description": "Event-type-specific data. Shape is determined by 'event_type'. See individual event contract definitions below."
+      }
+    }
+  },
+
+  "events": {
+    "IMPRESSION_HEARTBEAT": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "IMPRESSION_HEARTBEAT Payload Schema",
+      "description": "Emitted every 5 seconds while a recipe card remains ≥50% visible in the viewport. Enables sustained-attention measurement beyond the initial binary impression. The heartbeat stream for a given impression is anchored to impression_id.",
+      "frequencyNote": "One heartbeat per 5-second interval. The first heartbeat fires at T+5s after the impression viewability threshold is met. Sequence resets to 1 if the card exits and re-enters the viewport.",
+      "businessPurpose": "Distinguishes brief passive scroll-pasts (0 heartbeats) from genuine viewing engagement (≥3 heartbeats ≈ 15s+ attention). Powers 'true_view_rate' metric in the recipe performance dashboard.",
+      "payload": {
+        "type": "object",
+        "required": [
+          "impression_id",
+          "recipe_id",
+          "recipe_sk",
+          "feed_position",
+          "heartbeat_sequence",
+          "cumulative_visible_ms",
+          "card_format",
+          "is_above_fold"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "impression_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "UUID of the parent impression event (fact_feed_impressions.impression_id). Links all heartbeats for one card-view to a single impression record."
+          },
+          "recipe_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Stable recipe business key (dim_recipe.recipe_id). Denormalised for fast ingestion without surrogate resolution."
+          },
+          "recipe_sk": {
+            "type": "string",
+            "format": "uuid",
+            "description": "SCD2-accurate recipe surrogate key (dim_recipe.recipe_sk) at the moment the impression was created."
+          },
+          "feed_position": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "1-based position of the recipe card in the feed at the time the original impression was created. Constant across all heartbeats for the same impression."
+          },
+          "heartbeat_sequence": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "Monotonically increasing counter for heartbeats within this impression. heartbeat_sequence=1 fires at T+5s, =2 at T+10s, etc."
+          },
+          "cumulative_visible_ms": {
+            "type": "integer",
+            "minimum": 500,
+            "description": "Total accumulated milliseconds the card has been ≥50% visible since the impression start. Monotonically increasing across heartbeats."
+          },
+          "current_visibility_pct": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Percentage of the card area currently in the viewport at the moment this heartbeat fires (0–100). Useful for detecting partial scroll-off states."
+          },
+          "card_format": {
+            "type": "string",
+            "enum": ["standard", "featured", "video_autoplay", "sponsored", "creator_spotlight"],
+            "description": "Format of the recipe card. Constant across heartbeats for the same impression."
+          },
+          "is_above_fold": {
+            "type": "boolean",
+            "description": "Whether the card was initially above the fold on session load. Constant across heartbeats."
+          },
+          "scroll_depth_at_heartbeat_pct": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Percentage of the total feed list scrolled at the moment this heartbeat fires. Captures progressive scroll depth."
+          },
+          "video_play_pct": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "If card_format is 'video_autoplay', the percentage of the video that has been played at heartbeat time. NULL or omitted for non-video cards."
+          },
+          "experiment_arm": {
+            "type": "string",
+            "description": "A/B experiment arm identifier if this impression was part of a controlled experiment. Omitted if not in an experiment."
+          }
+        }
+      },
+      "samplePayload": {
+        "event_id": "f7a1b2c3-d4e5-4f60-a1b2-c3d4e5f60001",
+        "event_type": "IMPRESSION_HEARTBEAT",
+        "schema_version": "1.0.0",
+        "session_id": "9e8d7c6b-5a4f-4e3d-b2c1-a0b9e8d7c602",
+        "user_id": "1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b4c503",
+        "client_ts": "2026-08-25T08:15:30.450Z",
+        "app_version": "1.4.2",
+        "platform": {
+          "device_type": "mobile",
+          "os": "iOS",
+          "browser": "Safari",
+          "network_type": "wifi",
+          "viewport_width_px": 390,
+          "viewport_height_px": 844
+        },
+        "payload": {
+          "impression_id": "ab12cd34-ef56-7890-ab12-cd34ef567804",
+          "recipe_id": "dead1234-beef-cafe-babe-feed00000105",
+          "recipe_sk": "c0ffee11-1234-5678-9abc-def000000206",
+          "feed_position": 3,
+          "heartbeat_sequence": 2,
+          "cumulative_visible_ms": 10230,
+          "current_visibility_pct": 87.5,
+          "card_format": "standard",
+          "is_above_fold": false,
+          "scroll_depth_at_heartbeat_pct": 18.4,
+          "video_play_pct": null,
+          "experiment_arm": "feed_ranking_v2_treatment"
+        }
+      }
+    },
+
+    "RECIPE_EXPAND": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "RECIPE_EXPAND Payload Schema",
+      "description": "Emitted when a user explicitly opens/expands a recipe from the feed card to the full recipe detail view. This is a high-intent action and the primary conversion event in the impression-to-detail funnel. A corresponding RECIPE_COLLAPSE event should be fired on dismiss.",
+      "frequencyNote": "One event per expand action. Should be idempotent — if the same impression_id generates a second expand (unlikely), deduplicate on action_id.",
+      "businessPurpose": "Powers CTR (click-through rate) calculations, time-to-first-expand distribution, and ingredient interaction prerequisites. Acts as the funnel gate between impression and ingredient/rating/save actions.",
+      "payload": {
+        "type": "object",
+        "required": [
+          "impression_id",
+          "recipe_id",
+          "recipe_sk",
+          "expand_trigger",
+          "feed_position",
+          "time_to_expand_ms",
+          "card_format"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "impression_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "UUID of the impression that preceded this expand action. Enables direct impression → action conversion joins."
+          },
+          "recipe_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Stable recipe business key (dim_recipe.recipe_id)."
+          },
+          "recipe_sk": {
+            "type": "string",
+            "format": "uuid",
+            "description": "SCD2-accurate recipe surrogate key at the time of the expand event."
+          },
+          "expand_trigger": {
+            "type": "string",
+            "enum": ["card_tap", "card_swipe_up", "title_tap", "thumbnail_tap", "cta_button"],
+            "description": "The specific UI element or gesture that initiated the expand. Used to optimise card layout and CTA placement."
+          },
+          "feed_position": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "1-based position of the recipe card in the feed at expand time. Used for position-bias analysis in CTR calculations."
+          },
+          "time_to_expand_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Milliseconds elapsed between the impression event (viewability threshold met) and this expand event. Measures consideration time before committing to a detail view."
+          },
+          "heartbeats_before_expand": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Number of IMPRESSION_HEARTBEAT events that fired for this impression before the expand. Proxy for attention depth prior to conversion."
+          },
+          "card_format": {
+            "type": "string",
+            "enum": ["standard", "featured", "video_autoplay", "sponsored", "creator_spotlight"],
+            "description": "Card format at time of expand. Used in format-level CTR analysis."
+          },
+          "is_save_state_visible": {
+            "type": "boolean",
+            "description": "Whether the save/bookmark icon was visible on the card at expand time. Tests whether save affordance visibility affects expand rate."
+          },
+          "scroll_velocity_at_expand_px_s": {
+            "type": "number",
+            "description": "Estimated scroll velocity in pixels/second immediately before the expand gesture. Near-zero values indicate the user had stopped to consider the card."
+          },
+          "previous_recipe_id": {
+            "type": ["string", "null"],
+            "format": "uuid",
+            "description": "recipe_id of the last recipe the user expanded in this session, if any. NULL if this is the first expand. Enables sequential affinity pattern analysis."
+          },
+          "detail_section_shown": {
+            "type": "string",
+            "enum": ["overview", "ingredients", "steps", "reviews", "nutrition"],
+            "description": "The section of the recipe detail view that was displayed first on expand (default scroll position or deep-linked anchor)."
+          },
+          "experiment_arm": {
+            "type": "string",
+            "description": "A/B experiment arm identifier. Omitted if not in an experiment."
+          }
+        }
+      },
+      "samplePayload": {
+        "event_id": "22334455-6677-8899-aabb-ccdd11223307",
+        "event_type": "RECIPE_EXPAND",
+        "schema_version": "1.0.0",
+        "session_id": "9e8d7c6b-5a4f-4e3d-b2c1-a0b9e8d7c602",
+        "user_id": "1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b4c503",
+        "client_ts": "2026-08-25T08:15:42.120Z",
+        "app_version": "1.4.2",
+        "platform": {
+          "device_type": "mobile",
+          "os": "iOS",
+          "browser": "Safari",
+          "network_type": "wifi",
+          "viewport_width_px": 390,
+          "viewport_height_px": 844
+        },
+        "payload": {
+          "impression_id": "ab12cd34-ef56-7890-ab12-cd34ef567804",
+          "recipe_id": "dead1234-beef-cafe-babe-feed00000105",
+          "recipe_sk": "c0ffee11-1234-5678-9abc-def000000206",
+          "expand_trigger": "thumbnail_tap",
+          "feed_position": 3,
+          "time_to_expand_ms": 11670,
+          "heartbeats_before_expand": 2,
+          "card_format": "standard",
+          "is_save_state_visible": true,
+          "scroll_velocity_at_expand_px_s": 12.3,
+          "previous_recipe_id": null,
+          "detail_section_shown": "overview",
+          "experiment_arm": "feed_ranking_v2_treatment"
+        }
+      }
+    },
+
+    "INGREDIENT_INTERACTION": {
+      "$schema": "http://json-schema.org/draft-07/schema#",
+      "title": "INGREDIENT_INTERACTION Payload Schema",
+      "description": "Emitted when a user interacts with a specific ingredient within a recipe's detail view or ingredient panel. Supports multiple interaction sub-types: tap (view details), request substitution, add to pantry list, or mark as owned. This event is a direct FK to both dim_recipe and dim_ingredient.",
+      "frequencyNote": "One event per discrete interaction gesture. Rapid taps within 300ms are deduplicated client-side before emission (debounce).",
+      "businessPurpose": "Builds the per-user ingredient affinity graph. Powers the substitution engine, pantry-tracking feature, and 'cookable recipes' ranking (filter by ingredients the user owns). The richest signal for understanding cooking intent vs. passive browsing.",
+      "payload": {
+        "type": "object",
+        "required": [
+          "recipe_id",
+          "recipe_sk",
+          "ingredient_id",
+          "interaction_type",
+          "ingredient_position_in_list",
+          "ingredient_category",
+          "ui_context"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "recipe_id": {
+            "type": "string",
+            "format": "uuid",
+            "description": "Stable recipe business key. The recipe in whose context this ingredient was interacted with."
+          },
+          "recipe_sk": {
+            "type": "string",
+            "format": "uuid",
+            "description": "SCD2-accurate recipe surrogate key at the time of the interaction."
+          },
+          "ingredient_id": {
+            "type": "string",
+            "description": "Canonical ingredient identifier (dim_ingredient.ingredient_id), e.g. 'miso-paste', 'garlic-clove'."
+          },
+          "interaction_type": {
+            "type": "string",
+            "enum": [
+              "tap_detail",
+              "request_substitution",
+              "add_to_pantry_list",
+              "mark_as_owned",
+              "mark_as_not_owned",
+              "long_press_preview"
+            ],
+            "description": "The specific type of ingredient interaction. 'tap_detail' is the base interaction; all others are derived high-intent actions."
+          },
+          "ingredient_position_in_list": {
+            "type": "integer",
+            "minimum": 1,
+            "description": "1-based position of the ingredient in the recipe's ingredient list (bridge_recipe_ingredient.display_order). Enables position-bias analysis for ingredient interactions."
+          },
+          "ingredient_category": {
+            "type": "string",
+            "enum": [
+              "produce",
+              "protein",
+              "dairy",
+              "pantry",
+              "spice",
+              "condiment",
+              "grain",
+              "beverage",
+              "other"
+            ],
+            "description": "Category of the interacted ingredient (dim_ingredient.category). Denormalised into the event to avoid dimension lookups in real-time pipelines."
+          },
+          "ingredient_section_label": {
+            "type": ["string", "null"],
+            "description": "Section within the ingredient list this ingredient belongs to, e.g. 'For the marinade'. NULL if the recipe has no ingredient sections."
+          },
+          "is_optional_ingredient": {
+            "type": "boolean",
+            "description": "Whether the ingredient is marked optional in the recipe (bridge_recipe_ingredient.is_optional). Optional ingredient interaction may indicate experimentation intent."
+          },
+          "is_common_allergen": {
+            "type": "boolean",
+            "description": "Whether this ingredient is a common allergen (dim_ingredient.common_allergen). Tracked to understand allergen-awareness behaviour patterns."
+          },
+          "substitution_requested_for": {
+            "type": ["string", "null"],
+            "description": "When interaction_type is 'request_substitution', this field contains the ingredient_id of the ingredient the user wants a substitute for. Typically identical to ingredient_id but may differ in edge cases (e.g. group substitution). NULL for non-substitution interactions."
+          },
+          "ui_context": {
+            "type": "string",
+            "enum": ["recipe_detail", "ingredient_panel", "quick_preview_sheet"],
+            "description": "The UI surface from which the ingredient interaction was triggered. Differentiates interactions from the full detail view vs. a bottom sheet panel."
+          },
+          "time_since_recipe_expand_ms": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Milliseconds elapsed since the RECIPE_EXPAND event for the same recipe in this session. Measures engagement depth before ingredient interaction."
+          },
+          "impression_id": {
+            "type": ["string", "null"],
+            "format": "uuid",
+            "description": "impression_id of the feed card that led to the recipe detail view where this interaction occurred. NULL if the user arrived via direct link or search (not from the feed)."
+          },
+          "scroll_position_in_detail_pct": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 100,
+            "description": "Scroll position within the recipe detail view at the time of interaction, as a percentage (0 = top, 100 = bottom). Correlates ingredient interaction rate with content scroll depth."
+          }
+        }
+      },
+      "samplePayload": {
+        "event_id": "aabbccdd-eeff-0011-2233-445566778808",
+        "event_type": "INGREDIENT_INTERACTION",
+        "schema_version": "1.0.0",
+        "session_id": "9e8d7c6b-5a4f-4e3d-b2c1-a0b9e8d7c602",
+        "user_id": "1a2b3c4d-5e6f-7a8b-9c0d-e1f2a3b4c503",
+        "client_ts": "2026-08-25T08:16:05.880Z",
+        "app_version": "1.4.2",
+        "platform": {
+          "device_type": "mobile",
+          "os": "iOS",
+          "browser": "Safari",
+          "network_type": "wifi",
+          "viewport_width_px": 390,
+          "viewport_height_px": 844
+        },
+        "payload": {
+          "recipe_id": "dead1234-beef-cafe-babe-feed00000105",
+          "recipe_sk": "c0ffee11-1234-5678-9abc-def000000206",
+          "ingredient_id": "miso-paste",
+          "interaction_type": "request_substitution",
+          "ingredient_position_in_list": 4,
+          "ingredient_category": "condiment",
+          "ingredient_section_label": "For the broth",
+          "is_optional_ingredient": false,
+          "is_common_allergen": true,
+          "substitution_requested_for": "miso-paste",
+          "ui_context": "recipe_detail",
+          "time_since_recipe_expand_ms": 23760,
+          "impression_id": "ab12cd34-ef56-7890-ab12-cd34ef567804",
+          "scroll_position_in_detail_pct": 42.7
+        }
+      }
+    }
+  }
+}

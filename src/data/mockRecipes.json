@@ -1,0 +1,1987 @@
+[
+  {
+    "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+    "recipe_sk": "sk-a1b2c3d4-0001-4e5f-8a9b-000000000001",
+    "title": "Butter Chicken (Murgh Makhani)",
+    "slug": "butter-chicken-murgh-makhani",
+    "cuisine_id": "north_indian",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "intermediate",
+    "prep_time_minutes": 30,
+    "cook_time_minutes": 45,
+    "total_time_minutes": 75,
+    "calorie_count": 520,
+    "servings": 4,
+    "video_duration_ms": 412000,
+    "media_url": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=1200&q=85&fit=crop",
+    "dietary_tags": ["gluten-free"],
+    "average_rating": 4.8,
+    "rating_count": 3241,
+    "save_count": 18420,
+    "cook_count": 7560,
+    "status": "published",
+    "published_at": "2025-11-10T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0001",
+    "tags": ["curry", "chicken", "popular", "north-indian-classic"],
+    "description": "The definitive restaurant-style Butter Chicken — tender chicken thighs marinated in spiced yoghurt, charred under high heat, then simmered in a velvety tomato-cream-cashew gravy. The secret is the double-cooking method and finishing the sauce with cold butter.",
+    "ingredients": [
+      {
+        "ingredient_id": "chicken-thigh-boneless",
+        "name": "Boneless Chicken Thighs",
+        "category": "protein",
+        "quantity": 800,
+        "unit": "g",
+        "preparation_note": "cut into 5 cm pieces",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Marinade"
+      },
+      {
+        "ingredient_id": "plain-yoghurt",
+        "name": "Full-fat Plain Yoghurt",
+        "category": "dairy",
+        "quantity": 150,
+        "unit": "g",
+        "preparation_note": "whisked smooth",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Marinade"
+      },
+      {
+        "ingredient_id": "kashmiri-chilli-powder",
+        "name": "Kashmiri Chilli Powder",
+        "category": "spice",
+        "quantity": 2,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Marinade"
+      },
+      {
+        "ingredient_id": "garam-masala",
+        "name": "Garam Masala",
+        "category": "spice",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Marinade"
+      },
+      {
+        "ingredient_id": "ground-cumin",
+        "name": "Ground Cumin",
+        "category": "spice",
+        "quantity": 1,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": "Marinade"
+      },
+      {
+        "ingredient_id": "ginger-garlic-paste",
+        "name": "Ginger-Garlic Paste",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "preparation_note": "freshly made or good-quality store-bought",
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": "Marinade"
+      },
+      {
+        "ingredient_id": "lemon-juice",
+        "name": "Fresh Lemon Juice",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 7,
+        "section_label": "Marinade"
+      },
+      {
+        "ingredient_id": "neutral-oil",
+        "name": "Neutral Cooking Oil",
+        "category": "pantry",
+        "quantity": 2,
+        "unit": "tbsp",
+        "preparation_note": "divided",
+        "is_optional": false,
+        "display_order": 8,
+        "section_label": "Marinade"
+      },
+      {
+        "ingredient_id": "unsalted-butter",
+        "name": "Unsalted Butter",
+        "category": "dairy",
+        "quantity": 60,
+        "unit": "g",
+        "preparation_note": "cold, cut into cubes",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Sauce"
+      },
+      {
+        "ingredient_id": "yellow-onion",
+        "name": "Yellow Onion",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "medium",
+        "preparation_note": "roughly chopped",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Sauce"
+      },
+      {
+        "ingredient_id": "roma-tomato",
+        "name": "Roma Tomatoes",
+        "category": "produce",
+        "quantity": 6,
+        "unit": "large",
+        "preparation_note": "roughly chopped",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Sauce"
+      },
+      {
+        "ingredient_id": "raw-cashew",
+        "name": "Raw Cashews",
+        "category": "pantry",
+        "quantity": 40,
+        "unit": "g",
+        "preparation_note": "soaked in warm water 20 minutes, drained",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Sauce"
+      },
+      {
+        "ingredient_id": "heavy-cream",
+        "name": "Heavy Cream",
+        "category": "dairy",
+        "quantity": 120,
+        "unit": "ml",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": "Sauce"
+      },
+      {
+        "ingredient_id": "fenugreek-leaves-dried",
+        "name": "Dried Fenugreek Leaves (Kasuri Methi)",
+        "category": "spice",
+        "quantity": 1,
+        "unit": "tbsp",
+        "preparation_note": "crushed between palms",
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": "Sauce"
+      },
+      {
+        "ingredient_id": "sugar",
+        "name": "Caster Sugar",
+        "category": "pantry",
+        "quantity": 1,
+        "unit": "tsp",
+        "preparation_note": "to balance acidity",
+        "is_optional": true,
+        "display_order": 7,
+        "section_label": "Sauce"
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "Combine all marinade ingredients in a large bowl. Add the chicken pieces and mix thoroughly until every piece is well coated. Cover and refrigerate for a minimum of 4 hours, or overnight for best results.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "Heat a grill pan or heavy skillet over the highest possible heat until smoking. Brush with 1 tablespoon of oil. Working in a single layer (no crowding), cook the chicken pieces for 3 to 4 minutes per side until deeply charred in spots. The chicken will finish cooking in the sauce — slight undercooking at this stage is fine. Set aside.",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "In a deep saucepan, melt 30 g of the butter with the remaining oil over medium heat. Add the chopped onions with a generous pinch of salt and cook, stirring occasionally, for 15 to 18 minutes until they are soft, golden, and jammy.",
+        "duration_estimate_seconds": 1080
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Add the chopped tomatoes and drained cashews to the onions. Stir to combine, then cover and cook for 12 to 15 minutes over medium heat, stirring twice, until the tomatoes have completely broken down and the mixture looks thick and saucy.",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Transfer the onion-tomato-cashew mixture to a blender. Allow to cool for 5 minutes, then blend on high for 90 seconds until completely silky smooth. Pass the sauce through a fine-mesh sieve, pressing hard with a spoon, back into the saucepan. Discard the solids caught in the sieve.",
+        "duration_estimate_seconds": 480
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "Return the sieved sauce to medium heat. Add the Kashmiri chilli powder, garam masala, and ground cumin. Cook, stirring constantly, for 3 minutes until the spices are fragrant and the sauce deepens in colour.",
+        "duration_estimate_seconds": 180
+      },
+      {
+        "step_number": 7,
+        "instruction_text": "Pour in the heavy cream and stir to fully incorporate. Nestle the charred chicken pieces into the sauce. Reduce heat to low, cover, and simmer for 15 minutes until the chicken is cooked through and the sauce has thickened.",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 8,
+        "instruction_text": "Remove the pan from heat. Add the remaining cold butter cubes and stir vigorously in circles — this emulsifies the butter into the sauce, creating the characteristic silky, velvety finish. Stir in the crushed kasuri methi and taste; adjust salt and add the caster sugar if the sauce tastes sharp. Serve immediately with naan or basmati rice.",
+        "duration_estimate_seconds": 120
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+    "recipe_sk": "sk-a1b2c3d4-0002-4e5f-8a9b-000000000002",
+    "title": "Dal Makhani",
+    "slug": "dal-makhani-slow-cooked-black-lentils",
+    "cuisine_id": "north_indian",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "easy",
+    "prep_time_minutes": 15,
+    "cook_time_minutes": 180,
+    "total_time_minutes": 195,
+    "calorie_count": 385,
+    "servings": 6,
+    "video_duration_ms": 378000,
+    "media_url": "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=1200&q=85&fit=crop",
+    "dietary_tags": ["vegetarian", "gluten-free"],
+    "average_rating": 4.9,
+    "rating_count": 4812,
+    "save_count": 22900,
+    "cook_count": 9100,
+    "status": "published",
+    "published_at": "2025-09-01T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0002",
+    "tags": ["lentils", "vegetarian", "slow-cook", "comfort-food"],
+    "description": "Slow-cooked black whole urad lentils and kidney beans in a smoky, buttery tomato gravy. The hallmark of this dish is patience — minimum 3 hours of low-and-slow simmering transforms the lentils from firm to meltingly creamy. A Punjabi dhaba staple reimagined for the home kitchen.",
+    "ingredients": [
+      {
+        "ingredient_id": "whole-black-urad-dal",
+        "name": "Whole Black Urad Dal (whole black lentils)",
+        "category": "pantry",
+        "quantity": 250,
+        "unit": "g",
+        "preparation_note": "soaked overnight in cold water, drained",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Dal"
+      },
+      {
+        "ingredient_id": "red-kidney-beans",
+        "name": "Red Kidney Beans (rajma)",
+        "category": "pantry",
+        "quantity": 80,
+        "unit": "g",
+        "preparation_note": "soaked overnight, drained",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Dal"
+      },
+      {
+        "ingredient_id": "water",
+        "name": "Water",
+        "category": "pantry",
+        "quantity": 1500,
+        "unit": "ml",
+        "preparation_note": "for pressure cooking",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Dal"
+      },
+      {
+        "ingredient_id": "unsalted-butter",
+        "name": "Unsalted Butter",
+        "category": "dairy",
+        "quantity": 80,
+        "unit": "g",
+        "preparation_note": "divided — 60 g for tempering, 20 g to finish",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Makhani Gravy"
+      },
+      {
+        "ingredient_id": "yellow-onion",
+        "name": "Yellow Onion",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "large",
+        "preparation_note": "finely diced",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Makhani Gravy"
+      },
+      {
+        "ingredient_id": "ginger-garlic-paste",
+        "name": "Ginger-Garlic Paste",
+        "category": "produce",
+        "quantity": 1.5,
+        "unit": "tbsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Makhani Gravy"
+      },
+      {
+        "ingredient_id": "canned-crushed-tomatoes",
+        "name": "Canned Crushed Tomatoes",
+        "category": "pantry",
+        "quantity": 400,
+        "unit": "g",
+        "preparation_note": "one standard can",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Makhani Gravy"
+      },
+      {
+        "ingredient_id": "kashmiri-chilli-powder",
+        "name": "Kashmiri Chilli Powder",
+        "category": "spice",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": "Makhani Gravy"
+      },
+      {
+        "ingredient_id": "ground-coriander",
+        "name": "Ground Coriander",
+        "category": "spice",
+        "quantity": 1,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": "Makhani Gravy"
+      },
+      {
+        "ingredient_id": "heavy-cream",
+        "name": "Heavy Cream",
+        "category": "dairy",
+        "quantity": 100,
+        "unit": "ml",
+        "preparation_note": "plus extra to swirl on top for serving",
+        "is_optional": false,
+        "display_order": 7,
+        "section_label": "Makhani Gravy"
+      },
+      {
+        "ingredient_id": "fenugreek-leaves-dried",
+        "name": "Dried Fenugreek Leaves (Kasuri Methi)",
+        "category": "spice",
+        "quantity": 2,
+        "unit": "tsp",
+        "preparation_note": "crushed between palms",
+        "is_optional": false,
+        "display_order": 8,
+        "section_label": "Makhani Gravy"
+      },
+      {
+        "ingredient_id": "fine-sea-salt",
+        "name": "Fine Sea Salt",
+        "category": "pantry",
+        "quantity": null,
+        "unit": "to taste",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 9,
+        "section_label": "Makhani Gravy"
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "Combine the soaked and drained urad dal and kidney beans in a pressure cooker with 1.5 litres of water and 1 teaspoon of salt. Pressure cook on high for 25 minutes (or 6–7 whistles on a stovetop cooker). The lentils should be completely soft — press one between two fingers and it should mash with no resistance. Do not drain; reserve all the cooking liquid.",
+        "duration_estimate_seconds": 1800
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "In a large, heavy-bottomed pot (Dutch oven or similar) melt 60 g of butter over medium heat. Add the finely diced onions with a good pinch of salt and sauté for 18 to 20 minutes, stirring every 2 minutes, until they are deep golden-brown and jammy. Do not rush this step — the caramelised onions are the flavour backbone.",
+        "duration_estimate_seconds": 1200
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "Add the ginger-garlic paste and cook, stirring constantly, for 2 minutes until the raw smell has completely disappeared. Add the Kashmiri chilli powder and ground coriander; cook for 1 minute until the spices sizzle and bloom in the fat.",
+        "duration_estimate_seconds": 180
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Pour in the crushed tomatoes. Stir well, scraping any browned bits from the base of the pot. Cook over medium heat for 12 to 15 minutes, stirring regularly, until the tomato mixture has thickened, turned a deep brick-red, and the butter visibly separates and pools around the edges.",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Add the cooked lentils along with all of their cooking liquid. Stir to combine thoroughly. Bring to a gentle simmer over medium-low heat, then reduce to the lowest possible flame. Cook, uncovered, for at least 2 hours, stirring every 20 minutes and lightly mashing some lentils against the pot wall to create a naturally creamy texture. Add a splash of water if the dal becomes too thick.",
+        "duration_estimate_seconds": 7200
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "After 2 hours the dal should be thick, glossy, and creamy. Stir in the heavy cream and crushed kasuri methi. Taste and adjust salt. Simmer for a final 10 minutes.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 7,
+        "instruction_text": "Remove from heat and stir in the remaining 20 g of cold butter to give the dal a luxurious, restaurant-quality sheen. Serve in warm bowls with a swirl of extra cream on top, accompanied by butter naan or steamed basmati rice.",
+        "duration_estimate_seconds": 60
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0003-4e5f-8a9b-000000000003",
+    "recipe_sk": "sk-a1b2c3d4-0003-4e5f-8a9b-000000000003",
+    "title": "Cacio e Pepe",
+    "slug": "cacio-e-pepe-roman-pasta",
+    "cuisine_id": "italian",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "intermediate",
+    "prep_time_minutes": 5,
+    "cook_time_minutes": 20,
+    "total_time_minutes": 25,
+    "calorie_count": 610,
+    "servings": 2,
+    "video_duration_ms": 285000,
+    "media_url": "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=1200&q=85&fit=crop",
+    "dietary_tags": ["vegetarian"],
+    "average_rating": 4.7,
+    "rating_count": 5904,
+    "save_count": 31200,
+    "cook_count": 14880,
+    "status": "published",
+    "published_at": "2025-08-14T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0003",
+    "tags": ["pasta", "roman", "3-ingredient", "weeknight", "cheese"],
+    "description": "Rome's most minimalist masterpiece — three ingredients (pasta, Pecorino Romano, black pepper) transformed into something transcendent. The entire technique rests on emulsification: using the starchy pasta water and the right temperature to create a sauce that clings to every strand without clumping or turning greasy.",
+    "ingredients": [
+      {
+        "ingredient_id": "spaghetti-or-tonnarelli",
+        "name": "Spaghetti or Tonnarelli",
+        "category": "pantry",
+        "quantity": 200,
+        "unit": "g",
+        "preparation_note": "dry pasta — bronze-die extruded preferred",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "pecorino-romano",
+        "name": "Pecorino Romano",
+        "category": "dairy",
+        "quantity": 100,
+        "unit": "g",
+        "preparation_note": "finely grated on a microplane — must be at room temperature",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "parmigiano-reggiano",
+        "name": "Parmigiano-Reggiano",
+        "category": "dairy",
+        "quantity": 30,
+        "unit": "g",
+        "preparation_note": "finely grated, optional but adds depth",
+        "is_optional": true,
+        "display_order": 3,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "whole-black-peppercorns",
+        "name": "Whole Black Peppercorns",
+        "category": "spice",
+        "quantity": 2,
+        "unit": "tsp",
+        "preparation_note": "freshly coarsely cracked in a mortar — NOT pre-ground",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "fine-sea-salt",
+        "name": "Fine Sea Salt",
+        "category": "pantry",
+        "quantity": null,
+        "unit": "to taste",
+        "preparation_note": "for pasta water — less than usual since Pecorino is salty",
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": null
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "Bring a large pot of water to a rolling boil. Salt it lightly — less than you normally would, because Pecorino Romano is intensely salty. Cook the pasta 1 to 2 minutes less than the package directs (you want al dente). Reserve at least 300 ml of pasta cooking water before draining — this starchy water is the heart of the sauce.",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "While the pasta cooks, toast the cracked black pepper in a large, dry skillet over medium heat for 60 to 90 seconds, swirling constantly, until fragrant. Add 60 ml of the pasta cooking water and let it bubble for 30 seconds — this blooms the pepper flavour into the water.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "In a wide bowl, mix the grated Pecorino (and Parmigiano if using) together. Add 2 to 3 tablespoons of hot pasta water and stir vigorously with a fork until you have a thick, smooth paste with no dry pockets. It should look like thick Greek yoghurt. The room temperature cheese is critical — cold cheese will not emulsify.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Transfer the drained pasta directly into the skillet with the pepper water. Toss vigorously over medium-low heat for 60 seconds to coat every strand. Remove the skillet from heat completely — this is the most important step. Let the pasta cool for 30 seconds so it is no longer boiling hot.",
+        "duration_estimate_seconds": 90
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Pour the cheese paste over the pasta. Using tongs, toss and fold continuously while adding pasta water one tablespoon at a time. Work quickly — the goal is a silky, cream-like sauce that coats each strand. If the sauce looks grainy or dry, the pan is too hot; add more water. If it looks soupy, keep tossing to reduce. You will use roughly 60 to 100 ml of pasta water in total.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "Divide into two warm bowls immediately. Add an extra crack of fresh black pepper over each serving. Eat at once — Cacio e Pepe waits for nobody.",
+        "duration_estimate_seconds": 30
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0004-4e5f-8a9b-000000000004",
+    "recipe_sk": "sk-a1b2c3d4-0004-4e5f-8a9b-000000000004",
+    "title": "Osso Buco alla Milanese",
+    "slug": "osso-buco-alla-milanese",
+    "cuisine_id": "italian",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "advanced",
+    "prep_time_minutes": 25,
+    "cook_time_minutes": 150,
+    "total_time_minutes": 175,
+    "calorie_count": 740,
+    "servings": 4,
+    "video_duration_ms": 542000,
+    "media_url": "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=85&fit=crop",
+    "dietary_tags": ["gluten-free"],
+    "average_rating": 4.9,
+    "rating_count": 1823,
+    "save_count": 9400,
+    "cook_count": 2100,
+    "status": "published",
+    "published_at": "2025-12-20T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0003",
+    "tags": ["italian", "braised", "veal", "sunday-roast", "milanese"],
+    "description": "Milanese-style braised veal shanks in white wine and gremolata — a Lombardy Sunday classic. The marrow-filled bone is the star: spoon it onto the risotto milanese alongside the braising liquid reduced to a rich, glossy jus. Finished with fresh gremolata (lemon, parsley, garlic) for brightness.",
+    "ingredients": [
+      {
+        "ingredient_id": "veal-shank-cross-cut",
+        "name": "Cross-cut Veal Shanks",
+        "category": "protein",
+        "quantity": 4,
+        "unit": "pieces",
+        "preparation_note": "3–4 cm thick, tied with kitchen twine around the circumference",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "all-purpose-flour",
+        "name": "All-Purpose Flour",
+        "category": "pantry",
+        "quantity": 60,
+        "unit": "g",
+        "preparation_note": "for dredging",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "olive-oil",
+        "name": "Extra-Virgin Olive Oil",
+        "category": "pantry",
+        "quantity": 4,
+        "unit": "tbsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "unsalted-butter",
+        "name": "Unsalted Butter",
+        "category": "dairy",
+        "quantity": 40,
+        "unit": "g",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "yellow-onion",
+        "name": "Yellow Onion",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "large",
+        "preparation_note": "finely diced",
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "celery-stalk",
+        "name": "Celery",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "stalks",
+        "preparation_note": "finely diced",
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "carrot",
+        "name": "Carrot",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "large",
+        "preparation_note": "finely diced",
+        "is_optional": false,
+        "display_order": 7,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "dry-white-wine",
+        "name": "Dry White Wine",
+        "category": "pantry",
+        "quantity": 250,
+        "unit": "ml",
+        "preparation_note": "Pinot Grigio or similar",
+        "is_optional": false,
+        "display_order": 8,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "chicken-or-veal-stock",
+        "name": "Chicken or Veal Stock",
+        "category": "pantry",
+        "quantity": 400,
+        "unit": "ml",
+        "preparation_note": "warm, low-sodium",
+        "is_optional": false,
+        "display_order": 9,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "canned-whole-peeled-tomatoes",
+        "name": "Canned Whole Peeled Tomatoes",
+        "category": "pantry",
+        "quantity": 200,
+        "unit": "g",
+        "preparation_note": "crushed by hand",
+        "is_optional": false,
+        "display_order": 10,
+        "section_label": "Osso Buco"
+      },
+      {
+        "ingredient_id": "fresh-lemon-zest",
+        "name": "Lemon Zest",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "lemon",
+        "preparation_note": "finely grated — for gremolata",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Gremolata"
+      },
+      {
+        "ingredient_id": "flat-leaf-parsley",
+        "name": "Flat-Leaf Parsley",
+        "category": "produce",
+        "quantity": 4,
+        "unit": "tbsp",
+        "preparation_note": "finely chopped — for gremolata",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Gremolata"
+      },
+      {
+        "ingredient_id": "garlic-clove",
+        "name": "Garlic",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "cloves",
+        "preparation_note": "minced to a paste — for gremolata",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Gremolata"
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "Preheat your oven to 160°C (325°F). Pat the veal shanks completely dry with paper towels — moisture is the enemy of a good sear. Season all sides generously with salt and pepper. Dredge each shank in flour, shaking off every bit of excess.",
+        "duration_estimate_seconds": 300
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "Heat the olive oil in a large oven-safe Dutch oven over medium-high heat until shimmering. Add the shanks without touching each other. Sear for 4 to 5 minutes per side until a deep mahogany crust has formed. Do not move them while searing. Transfer to a plate; set aside.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "Reduce heat to medium. Add the butter to the same pot. Once it foams, add the diced onion, celery, and carrot (the soffritto). Season with salt and cook, scraping up the seared bits from the base, for 10 to 12 minutes until the vegetables are soft and starting to colour.",
+        "duration_estimate_seconds": 720
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Pour in the white wine. Increase heat to high and let it bubble vigorously for 4 to 5 minutes until reduced by two thirds and the sharp alcohol smell has gone. Add the crushed tomatoes and warm stock. Stir to combine.",
+        "duration_estimate_seconds": 360
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Return the seared shanks to the pot, bone side down, ensuring the braising liquid comes at least halfway up the meat. Bring to a gentle simmer, then cover tightly with a lid and transfer to the preheated oven. Braise for 2 hours, turning the shanks gently at the 1-hour mark.",
+        "duration_estimate_seconds": 7200
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "While the osso buco braises, make the gremolata: combine the finely grated lemon zest, minced garlic, and chopped parsley in a small bowl. Stir together and set aside at room temperature.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 7,
+        "instruction_text": "After 2 hours the meat should be falling-tender and pulling away from the bone. Remove shanks carefully and set on a warm plate. Place the Dutch oven on the stovetop over high heat and reduce the braising liquid for 8 to 10 minutes until it coats the back of a spoon. Taste and adjust seasoning.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 8,
+        "instruction_text": "Remove the kitchen twine from each shank. Plate each shank over risotto Milanese or creamy polenta. Spoon the reduced braising jus generously over the top. Finish each plate with a generous pinch of gremolata. Serve immediately, reminding guests to scoop the marrow from the bone — it is the cook's privilege.",
+        "duration_estimate_seconds": 120
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0005-4e5f-8a9b-000000000005",
+    "recipe_sk": "sk-a1b2c3d4-0005-4e5f-8a9b-000000000005",
+    "title": "Birria Tacos de Res",
+    "slug": "birria-tacos-de-res-beef-consomme",
+    "cuisine_id": "mexican",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "advanced",
+    "prep_time_minutes": 40,
+    "cook_time_minutes": 240,
+    "total_time_minutes": 280,
+    "calorie_count": 680,
+    "servings": 6,
+    "video_duration_ms": 605000,
+    "media_url": "https://images.unsplash.com/photo-1599974579688-8dbdd335c77f?w=1200&q=85&fit=crop",
+    "dietary_tags": ["gluten-free"],
+    "average_rating": 4.9,
+    "rating_count": 7130,
+    "save_count": 44500,
+    "cook_count": 11200,
+    "status": "published",
+    "published_at": "2026-01-15T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0004",
+    "tags": ["tacos", "mexican", "braised-beef", "consomme", "quesabirria"],
+    "description": "Jalisco-style braised beef birria served the quesabirria way — corn tortillas dipped in the chile-infused consommé, griddled until crispy with melted Oaxaca cheese and shredded beef inside. Served with the consommé for dunking. An all-day project with a life-changing payoff.",
+    "ingredients": [
+      {
+        "ingredient_id": "beef-chuck-roast",
+        "name": "Beef Chuck Roast",
+        "category": "protein",
+        "quantity": 1200,
+        "unit": "g",
+        "preparation_note": "cut into 8 cm chunks, excess fat trimmed but not all removed",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Birria Meat"
+      },
+      {
+        "ingredient_id": "beef-short-ribs",
+        "name": "Bone-in Beef Short Ribs",
+        "category": "protein",
+        "quantity": 600,
+        "unit": "g",
+        "preparation_note": "adds collagen and richness to the consommé",
+        "is_optional": true,
+        "display_order": 2,
+        "section_label": "Birria Meat"
+      },
+      {
+        "ingredient_id": "guajillo-chile",
+        "name": "Dried Guajillo Chiles",
+        "category": "spice",
+        "quantity": 6,
+        "unit": "whole",
+        "preparation_note": "stems and seeds removed, briefly toasted in a dry pan",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "ancho-chile",
+        "name": "Dried Ancho Chiles",
+        "category": "spice",
+        "quantity": 3,
+        "unit": "whole",
+        "preparation_note": "stems and seeds removed, briefly toasted",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "chipotle-chile-adobo",
+        "name": "Chipotle Chiles in Adobo",
+        "category": "spice",
+        "quantity": 2,
+        "unit": "chiles",
+        "preparation_note": "from a can, with 1 tbsp of the adobo sauce",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "roma-tomato",
+        "name": "Roma Tomatoes",
+        "category": "produce",
+        "quantity": 4,
+        "unit": "medium",
+        "preparation_note": "roasted under a broiler until blistered and charred",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "yellow-onion",
+        "name": "White Onion",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "large",
+        "preparation_note": "half charred on comal or dry pan, half reserved raw for serving",
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "garlic-clove",
+        "name": "Garlic",
+        "category": "produce",
+        "quantity": 8,
+        "unit": "cloves",
+        "preparation_note": "unpeeled, dry-roasted until softened",
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "beef-stock",
+        "name": "Beef Stock",
+        "category": "pantry",
+        "quantity": 1500,
+        "unit": "ml",
+        "preparation_note": "low-sodium",
+        "is_optional": false,
+        "display_order": 7,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "ground-cumin",
+        "name": "Ground Cumin",
+        "category": "spice",
+        "quantity": 2,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 8,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "dried-mexican-oregano",
+        "name": "Dried Mexican Oregano",
+        "category": "spice",
+        "quantity": 1,
+        "unit": "tsp",
+        "preparation_note": "Mexican oregano is different from Mediterranean — do not substitute",
+        "is_optional": false,
+        "display_order": 9,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "cinnamon-stick",
+        "name": "Cinnamon Stick",
+        "category": "spice",
+        "quantity": 0.5,
+        "unit": "stick",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 10,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "apple-cider-vinegar",
+        "name": "Apple Cider Vinegar",
+        "category": "pantry",
+        "quantity": 2,
+        "unit": "tbsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 11,
+        "section_label": "Chile Sauce"
+      },
+      {
+        "ingredient_id": "corn-tortillas",
+        "name": "Small Corn Tortillas",
+        "category": "pantry",
+        "quantity": 24,
+        "unit": "pieces",
+        "preparation_note": "10–12 cm diameter",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Assembly"
+      },
+      {
+        "ingredient_id": "oaxaca-cheese",
+        "name": "Oaxaca Cheese (quesillo)",
+        "category": "dairy",
+        "quantity": 300,
+        "unit": "g",
+        "preparation_note": "pulled into thin strands",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Assembly"
+      },
+      {
+        "ingredient_id": "fresh-cilantro",
+        "name": "Fresh Cilantro",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "bunch",
+        "preparation_note": "roughly chopped, for serving",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Assembly"
+      },
+      {
+        "ingredient_id": "lime",
+        "name": "Limes",
+        "category": "produce",
+        "quantity": 4,
+        "unit": "whole",
+        "preparation_note": "cut into wedges for serving",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Assembly"
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "Toast the guajillo and ancho chiles in a dry skillet over medium heat for 30 seconds per side, pressing them flat with a spatula, until they puff and become fragrant. Do not let them turn black — that creates bitterness. Transfer immediately to a bowl, cover with boiling water, and soak for 20 minutes until completely soft.",
+        "duration_estimate_seconds": 1200
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "While the chiles soak, char the onion half and dry-roast the garlic cloves in the same dry skillet over high heat, turning occasionally, for 8 to 10 minutes until deeply charred on the outside. Squeeze the softened garlic from their skins. Roast the tomatoes under a broiler for 8 to 10 minutes until blistered and blackened in spots.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "Drain the soaked chiles, discarding the soaking liquid. Combine the rehydrated chiles, charred onion, roasted garlic, blistered tomatoes, chipotle chiles and their adobo, cumin, Mexican oregano, cinnamon stick, apple cider vinegar, and 250 ml of the beef stock in a blender. Blend on high for 2 minutes until completely smooth. Strain through a fine-mesh sieve, pressing firmly.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Season the beef chunks generously with salt and pepper. Heat a large, heavy-bottomed pot or Dutch oven over high heat with 2 tablespoons of neutral oil until smoking. Sear the beef in a single layer, without crowding, for 3 to 4 minutes per side until deeply browned on all sides. Work in two or three batches. Set seared beef aside.",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Pour the chile sauce into the pot over medium heat and cook, stirring constantly, for 5 minutes until darkened and fragrant. Return all the seared beef to the pot. Add the remaining beef stock — the liquid should just cover the meat. Bring to a simmer, then cover tightly, reduce heat to the lowest setting, and braise for 3 to 3.5 hours until the beef is fall-apart tender and shreds effortlessly.",
+        "duration_estimate_seconds": 10800
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "Transfer the braised beef to a cutting board. Shred it finely with two forks, discarding any bones or sinew. Skim the brilliant red fat from the surface of the remaining consommé — reserve this fat separately in a small bowl; it is what you will use to cook the tacos. Taste the consommé and adjust salt. Keep warm.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 7,
+        "instruction_text": "Heat a comal or flat cast-iron griddle over medium-high heat. Using a pastry brush, paint a tortilla on one side with the reserved red chile fat. Place fat-side down on the hot comal. Immediately add a small pile of Oaxaca cheese strands and a generous spoonful of shredded birria to one half of the tortilla. Fold the tortilla in half over the filling. Cook for 2 minutes until the bottom is crispy and deeply golden, then flip for 1 minute more.",
+        "duration_estimate_seconds": 1800
+      },
+      {
+        "step_number": 8,
+        "instruction_text": "Serve the quesabirria tacos immediately alongside small bowls of the hot consommé for dunking. Garnish with finely diced raw white onion, chopped cilantro, and lime wedges. The ritual is to dunk each taco directly into the consommé before each bite.",
+        "duration_estimate_seconds": 120
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0006-4e5f-8a9b-000000000006",
+    "recipe_sk": "sk-a1b2c3d4-0006-4e5f-8a9b-000000000006",
+    "title": "Street-Style Elotes (Mexican Corn on the Cob)",
+    "slug": "street-style-elotes-mexican-corn",
+    "cuisine_id": "mexican",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "easy",
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 15,
+    "total_time_minutes": 25,
+    "calorie_count": 290,
+    "servings": 4,
+    "video_duration_ms": 195000,
+    "media_url": "https://images.unsplash.com/photo-1551754655-cd27e38d2076?w=1200&q=85&fit=crop",
+    "dietary_tags": ["vegetarian", "gluten-free"],
+    "average_rating": 4.8,
+    "rating_count": 6240,
+    "save_count": 29800,
+    "cook_count": 16700,
+    "status": "published",
+    "published_at": "2026-02-28T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0004",
+    "tags": ["street-food", "corn", "vegetarian", "quick", "grilled"],
+    "description": "Mexico City's most beloved street food — sweet charred corn on the cob slathered in mayo, rolled in Cotija cheese, dusted with chilli powder and tajín, and finished with lime juice. Done in 25 minutes, impossible to eat gracefully, absolutely worth it.",
+    "ingredients": [
+      {
+        "ingredient_id": "fresh-corn-cob",
+        "name": "Fresh Corn on the Cob",
+        "category": "produce",
+        "quantity": 4,
+        "unit": "ears",
+        "preparation_note": "husks and silk removed",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "mayonnaise",
+        "name": "Full-Fat Mayonnaise",
+        "category": "condiment",
+        "quantity": 120,
+        "unit": "g",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "cotija-cheese",
+        "name": "Cotija Cheese",
+        "category": "dairy",
+        "quantity": 80,
+        "unit": "g",
+        "preparation_note": "finely crumbled — substitute with Pecorino or Feta if unavailable",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "chilli-powder-ancho",
+        "name": "Ancho or Guajillo Chilli Powder",
+        "category": "spice",
+        "quantity": 1,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "tajin-seasoning",
+        "name": "Tajín Clásico Seasoning",
+        "category": "spice",
+        "quantity": 2,
+        "unit": "tsp",
+        "preparation_note": "the lime-chilli-salt spice mix",
+        "is_optional": true,
+        "display_order": 5,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "lime",
+        "name": "Lime",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "whole",
+        "preparation_note": "halved",
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "fresh-cilantro",
+        "name": "Fresh Cilantro",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "preparation_note": "finely chopped",
+        "is_optional": true,
+        "display_order": 7,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "fine-sea-salt",
+        "name": "Fine Sea Salt",
+        "category": "pantry",
+        "quantity": null,
+        "unit": "to taste",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 8,
+        "section_label": null
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "Preheat a grill, grill pan, or barbecue to the highest possible heat. You want proper char marks. Brush the bare corn cobs lightly with a thin coat of oil. Place them directly on the grill grates.",
+        "duration_estimate_seconds": 180
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "Grill the corn, turning every 2 minutes, for a total of 10 to 12 minutes until the kernels are cooked through, nicely charred in spots, and fragrant. You're looking for colour on at least 3 sides. If a few kernels pop slightly — that's perfect.",
+        "duration_estimate_seconds": 720
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "Insert a wooden skewer or ice-lolly stick through the base of each corn cob to use as a handle. This is how Mexican street vendors serve it.",
+        "duration_estimate_seconds": 60
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "While the corn is still piping hot, use a pastry brush or the back of a spoon to slather each cob all over with a generous, thick coat of mayonnaise. Work quickly and cover every kernel.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Immediately roll each mayo-coated corn cob in the crumbled Cotija cheese on a flat plate, pressing lightly so the cheese adheres to every surface. Dust generously with chilli powder and Tajín seasoning. Squeeze lime juice over the top. Scatter with chopped cilantro if using. Serve at once.",
+        "duration_estimate_seconds": 120
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0007-4e5f-8a9b-000000000007",
+    "recipe_sk": "sk-a1b2c3d4-0007-4e5f-8a9b-000000000007",
+    "title": "Spicy Tonkotsu Ramen",
+    "slug": "spicy-tonkotsu-ramen-from-scratch",
+    "cuisine_id": "japanese",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "advanced",
+    "prep_time_minutes": 60,
+    "cook_time_minutes": 480,
+    "total_time_minutes": 540,
+    "calorie_count": 890,
+    "servings": 4,
+    "video_duration_ms": 780000,
+    "media_url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?w=1200&q=85&fit=crop",
+    "dietary_tags": [],
+    "average_rating": 4.9,
+    "rating_count": 3412,
+    "save_count": 19800,
+    "cook_count": 4300,
+    "status": "published",
+    "published_at": "2025-10-05T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0005",
+    "tags": ["ramen", "japanese", "pork-bones", "tonkotsu", "weekend-project"],
+    "description": "A full from-scratch tonkotsu ramen — milky white pork bone broth simmered 6 to 8 hours, a soy-mirin tare, spicy toasted sesame paste, and all four canonical toppings: chashu pork belly, marinated soft-boiled eggs (ajitsuke tamago), menma bamboo shoots, and nori. This is a weekend project and an act of love.",
+    "ingredients": [
+      {
+        "ingredient_id": "pork-trotters",
+        "name": "Pork Trotters (pig's feet)",
+        "category": "protein",
+        "quantity": 1000,
+        "unit": "g",
+        "preparation_note": "halved by butcher, blanched in boiling water 10 min, rinsed",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Tonkotsu Broth"
+      },
+      {
+        "ingredient_id": "pork-neck-bones",
+        "name": "Pork Neck Bones",
+        "category": "protein",
+        "quantity": 800,
+        "unit": "g",
+        "preparation_note": "blanched and rinsed",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Tonkotsu Broth"
+      },
+      {
+        "ingredient_id": "ginger-root",
+        "name": "Fresh Ginger",
+        "category": "produce",
+        "quantity": 40,
+        "unit": "g",
+        "preparation_note": "sliced into coins, unpeeled",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Tonkotsu Broth"
+      },
+      {
+        "ingredient_id": "yellow-onion",
+        "name": "Yellow Onion",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "large",
+        "preparation_note": "halved, charred cut-side down in a dry pan until blackened",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Tonkotsu Broth"
+      },
+      {
+        "ingredient_id": "garlic-clove",
+        "name": "Garlic",
+        "category": "produce",
+        "quantity": 8,
+        "unit": "cloves",
+        "preparation_note": "smashed, unpeeled",
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": "Tonkotsu Broth"
+      },
+      {
+        "ingredient_id": "pork-belly-slab",
+        "name": "Pork Belly",
+        "category": "protein",
+        "quantity": 600,
+        "unit": "g",
+        "preparation_note": "rolled tightly and tied with kitchen twine to form a log — for chashu",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Chashu Pork"
+      },
+      {
+        "ingredient_id": "soy-sauce",
+        "name": "Soy Sauce",
+        "category": "condiment",
+        "quantity": 100,
+        "unit": "ml",
+        "preparation_note": "split: 80ml for chashu, 20ml for tare",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Chashu Pork"
+      },
+      {
+        "ingredient_id": "mirin",
+        "name": "Mirin",
+        "category": "condiment",
+        "quantity": 60,
+        "unit": "ml",
+        "preparation_note": "split: 40ml for chashu, 20ml for tare",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Chashu Pork"
+      },
+      {
+        "ingredient_id": "sake",
+        "name": "Sake",
+        "category": "condiment",
+        "quantity": 60,
+        "unit": "ml",
+        "preparation_note": "for chashu braising liquid",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Chashu Pork"
+      },
+      {
+        "ingredient_id": "sugar",
+        "name": "Caster Sugar",
+        "category": "pantry",
+        "quantity": 2,
+        "unit": "tbsp",
+        "preparation_note": "for chashu braising liquid",
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": "Chashu Pork"
+      },
+      {
+        "ingredient_id": "large-eggs",
+        "name": "Large Eggs",
+        "category": "protein",
+        "quantity": 6,
+        "unit": "whole",
+        "preparation_note": "for ajitsuke tamago (marinated soft-boiled eggs)",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Marinated Eggs"
+      },
+      {
+        "ingredient_id": "toasted-sesame-paste",
+        "name": "Toasted White Sesame Paste (or tahini)",
+        "category": "condiment",
+        "quantity": 4,
+        "unit": "tbsp",
+        "preparation_note": "for the spicy tare",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Spicy Tare"
+      },
+      {
+        "ingredient_id": "togarashi",
+        "name": "Togarashi (Japanese 7-spice blend)",
+        "category": "spice",
+        "quantity": 2,
+        "unit": "tsp",
+        "preparation_note": "for the spicy tare",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Spicy Tare"
+      },
+      {
+        "ingredient_id": "ramen-noodles-fresh",
+        "name": "Fresh Ramen Noodles",
+        "category": "pantry",
+        "quantity": 600,
+        "unit": "g",
+        "preparation_note": "thin, alkaline wheat noodles — 4 portions",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Serving"
+      },
+      {
+        "ingredient_id": "nori-sheets",
+        "name": "Nori Sheets",
+        "category": "pantry",
+        "quantity": 4,
+        "unit": "sheets",
+        "preparation_note": "halved — 2 half-sheets per bowl",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Serving"
+      },
+      {
+        "ingredient_id": "spring-onion",
+        "name": "Spring Onions (scallions)",
+        "category": "produce",
+        "quantity": 6,
+        "unit": "stalks",
+        "preparation_note": "thinly sliced on the diagonal",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Serving"
+      },
+      {
+        "ingredient_id": "menma-bamboo-shoots",
+        "name": "Menma (seasoned bamboo shoots)",
+        "category": "produce",
+        "quantity": 120,
+        "unit": "g",
+        "preparation_note": "from a jar or vacuum pack, drained",
+        "is_optional": true,
+        "display_order": 4,
+        "section_label": "Serving"
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "Blanch the pork trotters and neck bones: submerge in cold water in a large pot, bring to a rolling boil, and cook for 10 minutes. The water will turn grey and foamy. Drain completely, rinse every bone under cold running water, and scrub away any grey residue. Clean the pot too. This step is non-negotiable — it removes blood and impurities that would make the broth taste gamey rather than sweet.",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "Return the cleaned bones to the pot with 3 litres of cold water, the charred onion, ginger coins, and smashed garlic. Bring to a vigorous, rolling boil over the highest heat. Unlike most broths, tonkotsu is intentionally boiled hard — the turbulent boiling emulsifies the fat and collagen into the water, creating the characteristic opaque, milky-white colour. Cook at a full, aggressive boil for 6 to 8 hours, adding water as needed to keep the bones submerged. The broth should remain white and creamy throughout.",
+        "duration_estimate_seconds": 28800
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "While the broth boils, make the chashu: sear the tied pork belly roll in a heavy pan over high heat for 2 minutes per side until golden. Transfer to a snug pot. Combine the soy sauce, mirin, sake, sugar, and 200 ml of water; pour over the pork. Bring to a simmer, cover, and cook over the lowest heat for 90 minutes, turning every 30 minutes. Remove the pork, cool slightly, then refrigerate. Reserve the braising liquid — this is the base of your tare.",
+        "duration_estimate_seconds": 5400
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Soft-boil the eggs: lower 6 eggs into boiling water for exactly 6 minutes and 30 seconds, then plunge immediately into an ice bath for 5 minutes. Peel carefully. Combine the reserved chashu braising liquid with enough water to make 300 ml and submerge the peeled eggs. Marinate in the refrigerator for at least 4 hours (overnight produces a deeper flavour and amber colour).",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Make the spicy tare: in a small saucepan over low heat, warm the sesame paste with the remaining soy sauce (20ml), mirin (20ml), and togarashi. Stir until combined into a smooth, paste-like sauce. Taste — it should be salty, nutty, and spicy. Set aside.",
+        "duration_estimate_seconds": 300
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "Strain the finished tonkotsu broth through a fine-mesh sieve. Discard the bones. Season with salt. The broth should be creamy-white, thick enough to lightly coat the back of a spoon, and deeply savoury. Keep it at a simmer.",
+        "duration_estimate_seconds": 300
+      },
+      {
+        "step_number": 7,
+        "instruction_text": "Slice the cold chashu pork into 1 cm rounds. Briefly sear each slice in a hot pan with a little oil until the edges caramelise. Halve the marinated eggs lengthwise.",
+        "duration_estimate_seconds": 300
+      },
+      {
+        "step_number": 8,
+        "instruction_text": "Cook the fresh ramen noodles per the package direction (typically 1 to 2 minutes in rapidly boiling, unsalted water). Drain well. To assemble each bowl: place 1.5 tablespoons of spicy tare in the base of a warm bowl. Ladle in 350 ml of the hot tonkotsu broth and stir to incorporate the tare. Add a portion of noodles. Top with 2 slices of chashu, one halved marinated egg, a pile of menma, 2 half-sheets of nori standing against the bowl edge, and a generous scattering of sliced spring onion. Serve immediately.",
+        "duration_estimate_seconds": 600
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0008-4e5f-8a9b-000000000008",
+    "recipe_sk": "sk-a1b2c3d4-0008-4e5f-8a9b-000000000008",
+    "title": "Tamagoyaki (Japanese Sweet Rolled Omelette)",
+    "slug": "tamagoyaki-japanese-sweet-rolled-omelette",
+    "cuisine_id": "japanese",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "intermediate",
+    "prep_time_minutes": 5,
+    "cook_time_minutes": 15,
+    "total_time_minutes": 20,
+    "calorie_count": 175,
+    "servings": 2,
+    "video_duration_ms": 218000,
+    "media_url": "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=1200&q=85&fit=crop",
+    "dietary_tags": ["vegetarian", "gluten-free", "dairy-free"],
+    "average_rating": 4.7,
+    "rating_count": 2890,
+    "save_count": 14500,
+    "cook_count": 7200,
+    "status": "published",
+    "published_at": "2026-03-10T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0005",
+    "tags": ["japanese", "eggs", "bento", "breakfast", "quick"],
+    "description": "Japan's elegant multi-layered omelette — thin sheets of dashi-seasoned egg mixture rolled together in a rectangular tamagoyaki pan to create a tender, slightly sweet log with a beautiful golden cross-section. A bento box staple and a test of fine knife skills and pan control.",
+    "ingredients": [
+      {
+        "ingredient_id": "large-eggs",
+        "name": "Large Eggs",
+        "category": "protein",
+        "quantity": 4,
+        "unit": "whole",
+        "preparation_note": "at room temperature, beaten thoroughly",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "dashi-stock",
+        "name": "Dashi Stock",
+        "category": "pantry",
+        "quantity": 3,
+        "unit": "tbsp",
+        "preparation_note": "prepared from kombu and katsuobushi, or good-quality instant dashi",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "soy-sauce",
+        "name": "Soy Sauce (light)",
+        "category": "condiment",
+        "quantity": 1,
+        "unit": "tsp",
+        "preparation_note": "use a light or white soy for a paler colour",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "mirin",
+        "name": "Mirin",
+        "category": "condiment",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "sugar",
+        "name": "Caster Sugar",
+        "category": "pantry",
+        "quantity": 1,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "fine-sea-salt",
+        "name": "Fine Sea Salt",
+        "category": "pantry",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "neutral-oil",
+        "name": "Neutral Cooking Oil",
+        "category": "pantry",
+        "quantity": 2,
+        "unit": "tsp",
+        "preparation_note": "for greasing the pan between layers",
+        "is_optional": false,
+        "display_order": 7,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "daikon-radish",
+        "name": "Daikon Radish",
+        "category": "produce",
+        "quantity": 60,
+        "unit": "g",
+        "preparation_note": "finely grated, gently squeezed, for serving alongside",
+        "is_optional": true,
+        "display_order": 8,
+        "section_label": null
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "In a bowl, whisk the beaten eggs with the dashi, light soy sauce, mirin, sugar, and salt until the sugar is dissolved and the mixture is completely homogeneous. Strain through a fine-mesh sieve into a pouring jug — this removes the chalazae and produces a smoother, more uniform omelette.",
+        "duration_estimate_seconds": 180
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "Heat a tamagoyaki pan (rectangular omelette pan) over medium heat. Dip a folded piece of paper towel into the oil and rub it evenly over the pan surface. You want a thin, even coat — not a pool of oil. The pan is ready when a drop of egg mixture sets within 3 seconds.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "Pour just enough egg mixture to cover the bottom of the pan in a thin layer (roughly one quarter of the total mixture). Tilt the pan to spread it to the edges. When the egg is about 80% set on top — still slightly wet and glossy — begin rolling: using chopsticks or a spatula, roll the egg layer from the far end toward you to form a loose log. Push the log to the far end of the pan.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Re-oil the exposed pan surface with the paper towel. Pour in another quarter of the egg mixture, lifting the existing log so the fresh egg slides underneath it. This fuses each new layer to the previous one. When this layer is 80% set, roll it around the existing log — rolling away from you. Push the log back to the far end.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Repeat the oiling, pouring, and rolling process with the remaining egg mixture in two more additions — four layers total. The log will grow larger with each addition. Work quickly but confidently; rushing causes tearing. If a layer tears, press it back — it will seal as it cooks.",
+        "duration_estimate_seconds": 240
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "Transfer the finished tamagoyaki to a bamboo sushi mat (or cling film). Roll it firmly into a cylindrical shape and hold for 2 minutes while it cools — this sets the shape. Unwrap and slice into 2 cm thick rounds. Serve at room temperature alongside grated daikon drizzled with a few drops of soy sauce.",
+        "duration_estimate_seconds": 300
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0009-4e5f-8a9b-000000000009",
+    "recipe_sk": "sk-a1b2c3d4-0009-4e5f-8a9b-000000000009",
+    "title": "Greek Spanakopita",
+    "slug": "greek-spanakopita-spinach-feta-pie",
+    "cuisine_id": "mediterranean",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "intermediate",
+    "prep_time_minutes": 35,
+    "cook_time_minutes": 50,
+    "total_time_minutes": 85,
+    "calorie_count": 420,
+    "servings": 8,
+    "video_duration_ms": 465000,
+    "media_url": "https://images.unsplash.com/photo-1587334274328-64186a80aeee?w=1200&q=85&fit=crop",
+    "dietary_tags": ["vegetarian"],
+    "average_rating": 4.8,
+    "rating_count": 4100,
+    "save_count": 21600,
+    "cook_count": 8900,
+    "status": "published",
+    "published_at": "2025-07-22T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0006",
+    "tags": ["greek", "spinach", "feta", "phyllo", "vegetarian", "pie"],
+    "description": "The classic Greek spinach and feta pie — layers of shatteringly crisp, butter-brushed phyllo encasing a rich, herbaceous filling of wilted spinach, crumbled feta, ricotta, dill, and eggs. Best made the day before serving so the flavours meld and the base stays crisp.",
+    "ingredients": [
+      {
+        "ingredient_id": "fresh-spinach",
+        "name": "Fresh Baby Spinach",
+        "category": "produce",
+        "quantity": 800,
+        "unit": "g",
+        "preparation_note": "or 4 x 250g frozen spinach blocks, completely thawed and squeezed bone-dry",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "feta-cheese",
+        "name": "Greek Feta Cheese",
+        "category": "dairy",
+        "quantity": 400,
+        "unit": "g",
+        "preparation_note": "crumbled — use full-fat feta in brine for best flavour",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "ricotta-cheese",
+        "name": "Full-Fat Ricotta",
+        "category": "dairy",
+        "quantity": 250,
+        "unit": "g",
+        "preparation_note": "drained in a sieve for 30 min to remove excess moisture",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "large-eggs",
+        "name": "Large Eggs",
+        "category": "protein",
+        "quantity": 4,
+        "unit": "whole",
+        "preparation_note": "lightly beaten",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "yellow-onion",
+        "name": "Yellow Onion",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "large",
+        "preparation_note": "finely diced",
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "spring-onion",
+        "name": "Spring Onions (scallions)",
+        "category": "produce",
+        "quantity": 6,
+        "unit": "stalks",
+        "preparation_note": "finely sliced, white and green parts",
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "fresh-dill",
+        "name": "Fresh Dill",
+        "category": "produce",
+        "quantity": 30,
+        "unit": "g",
+        "preparation_note": "fronds only, roughly chopped",
+        "is_optional": false,
+        "display_order": 7,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "flat-leaf-parsley",
+        "name": "Flat-Leaf Parsley",
+        "category": "produce",
+        "quantity": 20,
+        "unit": "g",
+        "preparation_note": "finely chopped",
+        "is_optional": false,
+        "display_order": 8,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "ground-nutmeg",
+        "name": "Ground Nutmeg",
+        "category": "spice",
+        "quantity": 0.25,
+        "unit": "tsp",
+        "preparation_note": "freshly grated preferred",
+        "is_optional": false,
+        "display_order": 9,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "ground-black-pepper",
+        "name": "Ground Black Pepper",
+        "category": "spice",
+        "quantity": 0.5,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 10,
+        "section_label": "Filling"
+      },
+      {
+        "ingredient_id": "phyllo-pastry-sheets",
+        "name": "Phyllo Pastry Sheets",
+        "category": "pantry",
+        "quantity": 400,
+        "unit": "g",
+        "preparation_note": "approx 12 sheets — thawed overnight in the fridge if frozen, then 2hrs at room temperature; kept covered with a damp cloth at all times",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": "Pastry"
+      },
+      {
+        "ingredient_id": "unsalted-butter",
+        "name": "Unsalted Butter",
+        "category": "dairy",
+        "quantity": 120,
+        "unit": "g",
+        "preparation_note": "melted",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": "Pastry"
+      },
+      {
+        "ingredient_id": "olive-oil",
+        "name": "Extra-Virgin Olive Oil",
+        "category": "pantry",
+        "quantity": 2,
+        "unit": "tbsp",
+        "preparation_note": "for the onion and spinach",
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": "Pastry"
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "If using fresh spinach: heat a large dry pan over high heat and wilt the spinach in batches, tossing until collapsed (about 90 seconds per batch). Transfer to a colander and allow to cool. Once cool enough to handle, gather the spinach into a ball and squeeze with both hands as firmly as possible over the sink — you must remove as much water as you can. Insufficient squeezing is the single most common cause of soggy spanakopita. Chop the wrung spinach roughly.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "Heat the olive oil in a skillet over medium heat. Sauté the diced onion for 8 minutes until soft and translucent. Add the spring onions and cook for a further 2 minutes. Remove from heat and allow to cool completely before adding to the filling — warm onion will cook the eggs prematurely.",
+        "duration_estimate_seconds": 600
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "In a large mixing bowl, combine the squeezed spinach, cooled onion mixture, crumbled feta, drained ricotta, beaten eggs, chopped dill, parsley, nutmeg, and black pepper. Mix thoroughly until well combined. Taste — the feta is salty, so you likely will not need additional salt. Set the filling aside.",
+        "duration_estimate_seconds": 300
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Preheat the oven to 190°C (375°F). Brush a 33 x 23 cm baking tray generously with melted butter. Working quickly with one phyllo sheet at a time (keeping the rest covered), lay a sheet in the tray, letting any excess drape over the edges. Brush generously with melted butter. Repeat this process with 5 to 6 phyllo sheets total, creating the bottom crust. Each layer must be buttered.",
+        "duration_estimate_seconds": 480
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Spread the spinach and feta filling in an even layer over the buttered phyllo base. Use a spatula to press it into the corners. Fold any overhanging phyllo sheets up and over the filling edges, brushing with butter as you go.",
+        "duration_estimate_seconds": 180
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "Layer the remaining 5 to 6 phyllo sheets over the filling, buttering each one generously. Once all layers are on, tuck the edges down the sides of the pan to seal. Score the top layers of phyllo (do not cut all the way through) into the portion sizes you plan to serve — this makes cutting easier after baking without shattering the pastry.",
+        "duration_estimate_seconds": 360
+      },
+      {
+        "step_number": 7,
+        "instruction_text": "Sprinkle a few drops of water on the top surface to prevent the edges from curling. Bake for 45 to 50 minutes until the top is uniformly deep golden brown and the pastry is shatteringly crisp when you tap it. Allow to cool for at least 15 minutes before cutting — this allows the filling to set so it slices cleanly.",
+        "duration_estimate_seconds": 3600
+      }
+    ]
+  },
+
+  {
+    "recipe_id": "a1b2c3d4-0010-4e5f-8a9b-000000000010",
+    "recipe_sk": "sk-a1b2c3d4-0010-4e5f-8a9b-000000000010",
+    "title": "Shakshuka with Merguez",
+    "slug": "shakshuka-merguez-sausage-harissa",
+    "cuisine_id": "mediterranean",
+    "secondary_cuisine_ids": [],
+    "difficulty_tier": "easy",
+    "prep_time_minutes": 10,
+    "cook_time_minutes": 30,
+    "total_time_minutes": 40,
+    "calorie_count": 395,
+    "servings": 4,
+    "video_duration_ms": 264000,
+    "media_url": "https://images.unsplash.com/photo-1625944525533-473f1a3d54e7?w=1200&q=85&fit=crop",
+    "dietary_tags": ["gluten-free"],
+    "average_rating": 4.7,
+    "rating_count": 5380,
+    "save_count": 26100,
+    "cook_count": 12800,
+    "status": "published",
+    "published_at": "2025-06-05T09:00:00.000Z",
+    "creator_user_id": "creator-uid-0006",
+    "tags": ["eggs", "one-pan", "north-african", "brunch", "merguez", "harissa"],
+    "description": "A bold, spiced North African tomato sauce enriched with crumbled merguez lamb sausage and harissa, with eggs poached directly in the simmering sauce until the whites are just set but the yolks remain molten. Made in one pan from start to finish — deeply satisfying brunch or weeknight dinner with crusty bread.",
+    "ingredients": [
+      {
+        "ingredient_id": "merguez-sausages",
+        "name": "Merguez Lamb Sausages",
+        "category": "protein",
+        "quantity": 300,
+        "unit": "g",
+        "preparation_note": "casings removed, meat crumbled — or substitute spicy Italian sausage",
+        "is_optional": false,
+        "display_order": 1,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "large-eggs",
+        "name": "Large Eggs",
+        "category": "protein",
+        "quantity": 6,
+        "unit": "whole",
+        "preparation_note": "at room temperature",
+        "is_optional": false,
+        "display_order": 2,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "olive-oil",
+        "name": "Extra-Virgin Olive Oil",
+        "category": "pantry",
+        "quantity": 3,
+        "unit": "tbsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 3,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "yellow-onion",
+        "name": "Yellow Onion",
+        "category": "produce",
+        "quantity": 1,
+        "unit": "large",
+        "preparation_note": "halved and thinly sliced",
+        "is_optional": false,
+        "display_order": 4,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "red-bell-pepper",
+        "name": "Red Bell Pepper",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "medium",
+        "preparation_note": "cored, seeded, thinly sliced",
+        "is_optional": false,
+        "display_order": 5,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "garlic-clove",
+        "name": "Garlic",
+        "category": "produce",
+        "quantity": 5,
+        "unit": "cloves",
+        "preparation_note": "thinly sliced",
+        "is_optional": false,
+        "display_order": 6,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "harissa-paste",
+        "name": "Rose Harissa Paste",
+        "category": "condiment",
+        "quantity": 3,
+        "unit": "tbsp",
+        "preparation_note": "adjust to your heat preference — Belazu Rose Harissa is recommended",
+        "is_optional": false,
+        "display_order": 7,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "ground-cumin",
+        "name": "Ground Cumin",
+        "category": "spice",
+        "quantity": 1.5,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 8,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "smoked-paprika",
+        "name": "Smoked Paprika",
+        "category": "spice",
+        "quantity": 1,
+        "unit": "tsp",
+        "preparation_note": null,
+        "is_optional": false,
+        "display_order": 9,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "canned-whole-peeled-tomatoes",
+        "name": "Canned Whole Peeled Tomatoes",
+        "category": "pantry",
+        "quantity": 800,
+        "unit": "g",
+        "preparation_note": "two standard cans — crushed by hand",
+        "is_optional": false,
+        "display_order": 10,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "feta-cheese",
+        "name": "Feta Cheese",
+        "category": "dairy",
+        "quantity": 100,
+        "unit": "g",
+        "preparation_note": "crumbled, for finishing",
+        "is_optional": true,
+        "display_order": 11,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "fresh-cilantro",
+        "name": "Fresh Cilantro",
+        "category": "produce",
+        "quantity": 3,
+        "unit": "tbsp",
+        "preparation_note": "roughly torn, for finishing",
+        "is_optional": false,
+        "display_order": 12,
+        "section_label": null
+      },
+      {
+        "ingredient_id": "flat-leaf-parsley",
+        "name": "Flat-Leaf Parsley",
+        "category": "produce",
+        "quantity": 2,
+        "unit": "tbsp",
+        "preparation_note": "roughly chopped, for finishing",
+        "is_optional": true,
+        "display_order": 13,
+        "section_label": null
+      }
+    ],
+    "steps": [
+      {
+        "step_number": 1,
+        "instruction_text": "Heat the olive oil in a large, deep oven-safe skillet or frying pan over medium-high heat. Add the crumbled merguez and cook, breaking it up with a spoon, for 5 to 6 minutes until browned and caramelised in spots. The fat that renders from the merguez will flavour the whole dish — do not drain it.",
+        "duration_estimate_seconds": 360
+      },
+      {
+        "step_number": 2,
+        "instruction_text": "Reduce heat to medium. Add the sliced onion and bell pepper to the pan with the merguez fat. Season with a pinch of salt and cook, stirring occasionally, for 10 to 12 minutes until the vegetables are completely soft, sweet, and starting to catch at the edges.",
+        "duration_estimate_seconds": 720
+      },
+      {
+        "step_number": 3,
+        "instruction_text": "Add the sliced garlic, harissa paste, ground cumin, and smoked paprika. Cook, stirring constantly, for 2 minutes until the spices are fragrant and the harissa has darkened slightly.",
+        "duration_estimate_seconds": 120
+      },
+      {
+        "step_number": 4,
+        "instruction_text": "Pour in the crushed tomatoes. Stir everything together thoroughly. Bring to a gentle simmer and cook, uncovered, for 12 to 15 minutes, stirring occasionally, until the sauce has thickened, the oil is starting to separate at the edges, and the colour has deepened to a rich brick-red.",
+        "duration_estimate_seconds": 900
+      },
+      {
+        "step_number": 5,
+        "instruction_text": "Make 6 wells in the sauce using the back of a spoon, spacing them evenly. Crack one egg directly into each well. The key for perfect poached eggs: cover the pan with a tight-fitting lid immediately. Cook over medium-low heat for 5 to 7 minutes — 5 minutes for runny yolks, 7 minutes for partially set yolks. Do not let the sauce boil vigorously or the eggs will turn rubbery.",
+        "duration_estimate_seconds": 420
+      },
+      {
+        "step_number": 6,
+        "instruction_text": "Remove the lid. Scatter crumbled feta and torn cilantro and parsley over the surface. Drizzle with a thread of extra-virgin olive oil. Serve immediately, directly from the pan, with warm crusty bread or khobez flatbread for scooping.",
+        "duration_estimate_seconds": 60
+      }
+    ]
+  }
+]
