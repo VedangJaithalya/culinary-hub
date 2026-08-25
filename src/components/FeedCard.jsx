@@ -7,10 +7,11 @@ import { BookmarkIcon, ShareIcon, InformationCircleIcon } from './icons/ActionIc
  * a `snap-y snap-mandatory` scroll container.
  *
  * Props:
- *  - recipe {object}         — A single recipe object from mockRecipes.json
- *  - index  {number}         — Zero-based position in the feed (used for telemetry)
- *  - onExpandRecipe {function} — Called with the full recipe object when the user
- *                               taps "View Recipe & Ingredients"
+ *  - recipe {object}           — A single recipe object from mockRecipes.json
+ *  - index  {number}           — Zero-based position in the feed (used for telemetry)
+ *  - onExpandRecipe {function} — Called with (recipe, triggerSource) when the user
+ *                               opens recipe details. triggerSource is one of:
+ *                               'details_button' | 'card_tap'
  */
 export default function FeedCard({ recipe, index, onExpandRecipe }) {
   const {
@@ -83,7 +84,24 @@ export default function FeedCard({ recipe, index, onExpandRecipe }) {
       </header>
 
       {/* ── Bottom overlay (left content) + right action rail ────────────── */}
-      <div className="relative z-10 flex items-end justify-between px-4 pb-8 gap-4">
+      {/*
+       * The entire bottom metadata zone is a tap target (`card_tap`).
+       * The CTA button inside it is a more specific trigger (`details_button`).
+       * stopPropagation on the button ensures only one event fires.
+       */}
+      <div
+        role="button"
+        tabIndex={0}
+        aria-label={`View details for ${title}`}
+        className="relative z-10 flex items-end justify-between px-4 pb-8 gap-4 cursor-pointer"
+        onClick={() => onExpandRecipe(recipe, 'card_tap')}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault()
+            onExpandRecipe(recipe, 'card_tap')
+          }
+        }}
+      >
 
         {/* Left: recipe meta + CTA */}
         <div className="flex-1 min-w-0 flex flex-col gap-3">
@@ -100,11 +118,14 @@ export default function FeedCard({ recipe, index, onExpandRecipe }) {
             <MetaChip icon="📋" label={`${stepsCount} steps`} />
           </div>
 
-          {/* Expand CTA */}
+          {/* Expand CTA — fires 'details_button', stops propagation */}
           <button
             type="button"
             id={`expand-recipe-btn-${recipe_id}`}
-            onClick={() => onExpandRecipe(recipe)}
+            onClick={(e) => {
+              e.stopPropagation()
+              onExpandRecipe(recipe, 'details_button')
+            }}
             className="mt-1 self-start inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-semibold text-white bg-white/20 hover:bg-white/30 active:scale-95 backdrop-blur-md border border-white/25 transition-all duration-150 ease-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
           >
             <span>View Recipe &amp; Ingredients</span>
@@ -123,10 +144,11 @@ export default function FeedCard({ recipe, index, onExpandRecipe }) {
           </button>
         </div>
 
-        {/* Right: vertical action rail */}
+        {/* Right: vertical action rail — stop propagation so taps don't trigger card_tap */}
         <nav
           aria-label="Recipe actions"
           className="flex flex-col items-center gap-5 pb-1 shrink-0"
+          onClick={(e) => e.stopPropagation()}
         >
           <ActionButton
             id={`bookmark-btn-${recipe_id}`}

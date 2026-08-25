@@ -18,6 +18,10 @@
  * NOTE: The data contract defines HEARTBEAT_INTERVAL_MS = 5000 ms.
  * The hook honours this constant rather than hard-coding 1000 ms.
  *
+ * Phase 2 Pass 3: returns { activeRecipeId, entryTimestamp } refs so callers
+ * (e.g. FeedContainer) can read the active card's entry time without
+ * duplicating tracking state.
+ *
  * @module useViewportTelemetry
  */
 
@@ -33,6 +37,7 @@ const VISIBILITY_THRESHOLD = 0.6
  *
  * @param {React.RefObject<HTMLElement>} containerRef - Ref to the scroll container element.
  * @param {object[]}                    recipes      - Array of recipe objects from the feed.
+ * @returns {{ activeRecipeId: React.MutableRefObject<string|null>, entryTimestamp: React.MutableRefObject<number|null> }}
  */
 export default function useViewportTelemetry(containerRef, recipes) {
   // ── Stable mutable refs (no re-renders needed) ─────────────────────────────
@@ -239,4 +244,7 @@ export default function useViewportTelemetry(containerRef, recipes) {
   // set up once per container mount. `recipesRef` provides live access to the
   // current recipes array inside the stable callback without triggering
   // observer re-creation (which would produce infinite re-renders).
+
+  // Return live refs so callers can read active-card state without extra tracking
+  return { activeRecipeId, entryTimestamp }
 }
