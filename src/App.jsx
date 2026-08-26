@@ -1,6 +1,9 @@
 import FeedContainer from './components/FeedContainer'
 import mockRecipes from './data/mockRecipes.json'
 import './index.css'
+// Analytics: side-effect import — executes sessionTransformer once on load,
+// attaching window.debugAnalytics to the global scope for DevTools access.
+import './analytics/sessionTransformer.js'
 
 /**
  * App — root render tree for CulinaryFeed.
