@@ -1,9 +1,11 @@
 import FeedContainer from './components/FeedContainer'
 import mockRecipes from './data/mockRecipes.json'
 import './index.css'
-// Analytics: side-effect import — executes sessionTransformer once on load,
-// attaching window.debugAnalytics to the global scope for DevTools access.
+// Analytics: side-effect imports — execute once on load, attaching DevTools
+// globals to the window for zero-import console access.
 import './analytics/sessionTransformer.js'
+// Phase 3 Pass 2: affinity model — attaches window.debugAffinity.
+import './analytics/affinityModel.js'
 
 /**
  * App — root render tree for CulinaryFeed.
