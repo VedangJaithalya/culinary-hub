@@ -2,6 +2,7 @@ import { useRef, useState, useEffect } from 'react'
 import FeedCard from './FeedCard'
 import RecipeModal from './RecipeModal'
 import useViewportTelemetry from '../hooks/useViewportTelemetry'
+import { useFeedRanking } from '../hooks/useFeedRanking.js'
 import { EVENT_TYPES } from '../data/dataContracts.js'
 import { dispatchTelemetry } from '../services/telemetryService.js'
 
@@ -17,10 +18,16 @@ import { dispatchTelemetry } from '../services/telemetryService.js'
  *  - Dispatches INGREDIENT_INTERACTION telemetry on checkbox toggle.
  *  - Locks/restores the scroll container when the modal is open.
  *
- * Props:
- *  - recipes {object[]} — Array of recipe objects sourced from mockRecipes.json
+ * Phase 4 Pass 1:
+ *  - Static `recipes` prop replaced by `useFeedRanking` dynamic queue.
+ *  - `currentIndex` is updated whenever `activeRecipeId` changes (driven by
+ *    IntersectionObserver in `useViewportTelemetry`).
+ *  - Accepts no props — the feed is fully self-contained.
  */
-export default function FeedContainer({ recipes = [] }) {
+export default function FeedContainer() {
+  // ── Dynamic feed ranking ─────────────────────────────────────────────────
+
+  const { feedQueue, currentIndex, setCurrentIndex } = useFeedRanking()
   // ── Refs ──────────────────────────────────────────────────────────────────
 
   /**
@@ -33,7 +40,9 @@ export default function FeedContainer({ recipes = [] }) {
   // ── Viewport telemetry hook ───────────────────────────────────────────────
   // Returns live refs that let us read the active card's entry timestamp at
   // the moment the user taps "expand", giving us dwell_before_expand_ms.
-  const { entryTimestamp } = useViewportTelemetry(containerRef, recipes)
+  // `activeRecipeId` is used to keep `currentIndex` in sync with the
+  // IntersectionObserver so the ranking engine always knows the viewed prefix.
+  const { activeRecipeId, entryTimestamp } = useViewportTelemetry(containerRef, feedQueue)
 
   // ── Modal / ingredient state ──────────────────────────────────────────────
 
@@ -49,6 +58,30 @@ export default function FeedContainer({ recipes = [] }) {
    * @type {[Record<string, boolean>, function]}
    */
   const [checkedIngredients, setCheckedIngredients] = useState({})
+
+  // ── Sync currentIndex with the IntersectionObserver active card ──────────
+  // `activeRecipeId.current` is a mutable ref updated by `useViewportTelemetry`
+  // without triggering re-renders. We poll it in an effect that responds
+  // to `feedQueue` changes (which is when new cards enter the DOM), and
+  // also whenever `activeRecipeId` changes identity — but since it is a ref,
+  // we use a periodic check via the scroll event on the container instead.
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    function handleScroll() {
+      const id = activeRecipeId.current
+      if (!id) return
+      const idx = feedQueue.findIndex((r) => r.recipe_id === id)
+      if (idx !== -1 && idx !== currentIndex) {
+        setCurrentIndex(idx)
+      }
+    }
+
+    container.addEventListener('scroll', handleScroll, { passive: true })
+    return () => container.removeEventListener('scroll', handleScroll)
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [feedQueue, activeRecipeId])
 
   // ── Scroll lock side effect ───────────────────────────────────────────────
   // When the modal opens, swap the container's scroll/snap classes for
@@ -144,7 +177,7 @@ export default function FeedContainer({ recipes = [] }) {
         id="culinary-feed"
         className="h-screen w-full max-w-md mx-auto overflow-y-scroll snap-y snap-mandatory scrollbar-none relative bg-black shadow-2xl"
       >
-        {recipes.map((recipe, index) => (
+        {feedQueue.map((recipe, index) => (
           /*
            * The `feed-card` class + `data-recipe-id` are both required by the
            * IntersectionObserver in `useViewportTelemetry`.
@@ -162,8 +195,8 @@ export default function FeedContainer({ recipes = [] }) {
           </div>
         ))}
 
-        {/* Empty-state guard */}
-        {recipes.length === 0 && (
+        {/* Empty-state guard: shown when the ranked queue is temporarily empty */}
+        {feedQueue.length === 0 && (
           <div className="h-screen flex flex-col items-center justify-center gap-3 text-neutral-400 px-8 text-center">
             <span className="text-4xl" aria-hidden="true">🍳</span>
             <p className="text-sm font-medium">No recipes available yet.</p>
