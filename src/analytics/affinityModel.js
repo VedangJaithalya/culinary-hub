@@ -71,7 +71,11 @@ export function calculateImpressionScore(impression, recipe) {
   // ── Skip Penalty ───────────────────────────────────────────────────────────
   const skipPenalty = impression.is_skipped ? -1.5 : 0
 
-  return dwellScore + expandScore + prepScore + skipPenalty
+  // ── Explicit Interaction Modifiers ─────────────────────────────────────────
+  const saveModifier = impression.is_saved ? 4.5 : 0
+  const likeModifier = impression.is_liked ? 3.5 : 0
+
+  return dwellScore + expandScore + prepScore + skipPenalty + saveModifier + likeModifier
 }
 
 // =============================================================================

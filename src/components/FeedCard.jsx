@@ -1,4 +1,7 @@
-import { BookmarkIcon, ShareIcon, InformationCircleIcon } from './icons/ActionIcons'
+import { useState } from 'react'
+import { BookmarkIcon } from './icons/ActionIcons'
+import { dispatchTelemetry } from '../services/telemetryService.js'
+import { EVENT_TYPES } from '../data/dataContracts.js'
 
 /**
  * FeedCard
@@ -12,6 +15,12 @@ import { BookmarkIcon, ShareIcon, InformationCircleIcon } from './icons/ActionIc
  *  - onExpandRecipe {function} — Called with (recipe, triggerSource) when the user
  *                               opens recipe details. triggerSource is one of:
  *                               'details_button' | 'card_tap'
+ *
+ * Phase 4, Pass 2:
+ *  - Like (Heart) and Save (Bookmark) micro-interaction buttons with active states.
+ *  - Dispatches RECIPE_LIKE / RECIPE_SAVE telemetry on each toggle.
+ *  - Saves persist to `culinaryfeed_saved_recipes` in localStorage.
+ *  - Share button removed.
  */
 export default function FeedCard({ recipe, index, onExpandRecipe }) {
   const {
@@ -35,9 +44,9 @@ export default function FeedCard({ recipe, index, onExpandRecipe }) {
     ? difficulty_tier.charAt(0).toUpperCase() + difficulty_tier.slice(1)
     : '—'
 
-  const prepLabel  = prep_time_minutes != null ? `${prep_time_minutes}m` : '—'
-  const cookLabel  = cook_time_minutes  != null ? `${cook_time_minutes}m` : '—'
-  const calorieLabel = calorie_count    != null ? `${calorie_count} kcal` : '—'
+  const prepLabel    = prep_time_minutes != null ? `${prep_time_minutes}m` : '—'
+  const cookLabel    = cook_time_minutes  != null ? `${cook_time_minutes}m` : '—'
+  const calorieLabel = calorie_count      != null ? `${calorie_count} kcal` : '—'
   const stepsCount   = Array.isArray(steps) ? steps.length : 0
 
   // ── Difficulty colour accent ───────────────────────────────────────────────
@@ -48,6 +57,72 @@ export default function FeedCard({ recipe, index, onExpandRecipe }) {
     advanced:     'bg-rose-500/80   text-white',
     expert:       'bg-rose-700/80   text-white',
   }[difficulty_tier] ?? 'bg-white/20 text-white'
+
+  // ── Micro-interaction state ───────────────────────────────────────────────
+
+  const [isLiked, setIsLiked] = useState(false)
+
+  /**
+   * Initialize isSaved by checking localStorage for this recipe_id.
+   * Defensive parsing: falls back to `false` on any failure.
+   */
+  const [isSaved, setIsSaved] = useState(() => {
+    if (!recipe_id) return false
+    try {
+      const raw = localStorage.getItem('culinaryfeed_saved_recipes') || '[]'
+      const saved = JSON.parse(raw)
+      return Array.isArray(saved) && saved.includes(recipe_id)
+    } catch {
+      return false
+    }
+  })
+
+  // ── Handlers ─────────────────────────────────────────────────────────────
+
+  /**
+   * Toggles the liked state and dispatches RECIPE_LIKE telemetry.
+   * e.stopPropagation() prevents the card_tap handler from also firing.
+   *
+   * @param {React.MouseEvent} e
+   */
+  function handleLike(e) {
+    e.stopPropagation()
+    const nextLiked = !isLiked
+    setIsLiked(nextLiked)
+    dispatchTelemetry(EVENT_TYPES.RECIPE_LIKE, {
+      recipe_id,
+      is_liked: nextLiked,
+    })
+  }
+
+  /**
+   * Toggles the saved state, updates localStorage, and dispatches RECIPE_SAVE.
+   * e.stopPropagation() prevents the card_tap handler from also firing.
+   *
+   * @param {React.MouseEvent} e
+   */
+  function handleSave(e) {
+    e.stopPropagation()
+    const nextSaved = !isSaved
+    setIsSaved(nextSaved)
+
+    // Persist to localStorage
+    try {
+      const raw   = localStorage.getItem('culinaryfeed_saved_recipes') || '[]'
+      const saved = Array.isArray(JSON.parse(raw)) ? JSON.parse(raw) : []
+      const next  = nextSaved
+        ? [...new Set([...saved, recipe_id])]
+        : saved.filter((id) => id !== recipe_id)
+      localStorage.setItem('culinaryfeed_saved_recipes', JSON.stringify(next))
+    } catch {
+      // localStorage unavailable — state update still applies in memory
+    }
+
+    dispatchTelemetry(EVENT_TYPES.RECIPE_SAVE, {
+      recipe_id,
+      is_saved: nextSaved,
+    })
+  }
 
   return (
     <article
@@ -144,27 +219,51 @@ export default function FeedCard({ recipe, index, onExpandRecipe }) {
           </button>
         </div>
 
-        {/* Right: vertical action rail — stop propagation so taps don't trigger card_tap */}
+        {/* Right: vertical action rail — Like (Heart) + Save (Bookmark) only */}
         <nav
           aria-label="Recipe actions"
           className="flex flex-col items-center gap-5 pb-1 shrink-0"
           onClick={(e) => e.stopPropagation()}
         >
-          <ActionButton
-            id={`bookmark-btn-${recipe_id}`}
-            icon={<BookmarkIcon />}
-            label="Save recipe"
-          />
-          <ActionButton
-            id={`share-btn-${recipe_id}`}
-            icon={<ShareIcon />}
-            label="Share recipe"
-          />
-          <ActionButton
-            id={`details-btn-${recipe_id}`}
-            icon={<InformationCircleIcon />}
-            label="Recipe details"
-          />
+          {/* Like button */}
+          <button
+            type="button"
+            id={`like-btn-${recipe_id}`}
+            aria-label={isLiked ? 'Unlike recipe' : 'Like recipe'}
+            aria-pressed={isLiked}
+            onClick={handleLike}
+            className="flex flex-col items-center gap-1 group"
+          >
+            <span
+              className={`w-11 h-11 flex items-center justify-center rounded-full backdrop-blur-md border transition-all duration-150 group-active:scale-90
+                ${isLiked
+                  ? 'bg-rose-500/80 border-rose-400/50 text-white'
+                  : 'bg-black/35 border-white/20 text-white group-hover:bg-white/25'
+                }`}
+            >
+              <HeartIcon filled={isLiked} />
+            </span>
+          </button>
+
+          {/* Save button */}
+          <button
+            type="button"
+            id={`save-btn-${recipe_id}`}
+            aria-label={isSaved ? 'Unsave recipe' : 'Save recipe'}
+            aria-pressed={isSaved}
+            onClick={handleSave}
+            className="flex flex-col items-center gap-1 group"
+          >
+            <span
+              className={`w-11 h-11 flex items-center justify-center rounded-full backdrop-blur-md border transition-all duration-150 group-active:scale-90
+                ${isSaved
+                  ? 'bg-amber-500/80 border-amber-400/50 text-white'
+                  : 'bg-black/35 border-white/20 text-white group-hover:bg-white/25'
+                }`}
+            >
+              <BookmarkIcon filled={isSaved} />
+            </span>
+          </button>
         </nav>
       </div>
     </article>
@@ -183,18 +282,26 @@ function MetaChip({ icon, label }) {
   )
 }
 
-/** Circular icon button for the right action rail */
-function ActionButton({ id, icon, label }) {
+/**
+ * Heart icon — outline by default, solid when filled.
+ * @param {{ filled?: boolean }} props
+ */
+function HeartIcon({ filled = false }) {
   return (
-    <button
-      type="button"
-      id={id}
-      aria-label={label}
-      className="flex flex-col items-center gap-1 group"
+    <svg
+      aria-hidden="true"
+      xmlns="http://www.w3.org/2000/svg"
+      className="w-6 h-6"
+      fill={filled ? 'currentColor' : 'none'}
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+      strokeWidth={filled ? 0 : 2}
     >
-      <span className="w-11 h-11 flex items-center justify-center rounded-full bg-black/35 backdrop-blur-md border border-white/20 text-white transition-all duration-150 group-hover:bg-white/25 group-active:scale-90">
-        {icon}
-      </span>
-    </button>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
+      />
+    </svg>
   )
 }

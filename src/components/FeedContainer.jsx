@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from 'react'
 import FeedCard from './FeedCard'
 import RecipeModal from './RecipeModal'
+import SavedDrawer from './SavedDrawer'
 import useViewportTelemetry from '../hooks/useViewportTelemetry'
 import { useFeedRanking } from '../hooks/useFeedRanking.js'
 import { EVENT_TYPES } from '../data/dataContracts.js'
@@ -18,16 +19,18 @@ import { dispatchTelemetry } from '../services/telemetryService.js'
  *  - Dispatches INGREDIENT_INTERACTION telemetry on checkbox toggle.
  *  - Locks/restores the scroll container when the modal is open.
  *
- * Phase 4 Pass 1:
+ * Phase 4, Pass 1:
  *  - Static `recipes` prop replaced by `useFeedRanking` dynamic queue.
- *  - `currentIndex` is updated whenever `activeRecipeId` changes (driven by
- *    IntersectionObserver in `useViewportTelemetry`).
  *  - Accepts no props — the feed is fully self-contained.
+ *
+ * Phase 4, Pass 2:
+ *  - Floating saved-recipes bookmark FAB (fixed, top-right, z-40).
+ *  - SavedDrawer mounted at root; handleSelectFromDrawer bridges drawer → modal.
  */
 export default function FeedContainer() {
   // ── Dynamic feed ranking ─────────────────────────────────────────────────
 
-  const { feedQueue, currentIndex, setCurrentIndex } = useFeedRanking()
+  const { feedQueue } = useFeedRanking()
   // ── Refs ──────────────────────────────────────────────────────────────────
 
   /**
@@ -52,6 +55,9 @@ export default function FeedContainer() {
   /** @type {[boolean, function]} Controls modal visibility and CSS transitions. */
   const [isModalOpen, setIsModalOpen] = useState(false)
 
+  /** @type {[boolean, function]} Controls SavedDrawer visibility. */
+  const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false)
+
   /**
    * Flat map of ingredient check state.
    * Keys are `${recipe_id}_${ingredient_id}`, values are boolean.
@@ -60,11 +66,10 @@ export default function FeedContainer() {
   const [checkedIngredients, setCheckedIngredients] = useState({})
 
   // ── Sync currentIndex with the IntersectionObserver active card ──────────
-  // `activeRecipeId.current` is a mutable ref updated by `useViewportTelemetry`
-  // without triggering re-renders. We poll it in an effect that responds
-  // to `feedQueue` changes (which is when new cards enter the DOM), and
-  // also whenever `activeRecipeId` changes identity — but since it is a ref,
-  // we use a periodic check via the scroll event on the container instead.
+  // Since useFeedRanking no longer manages currentIndex, we maintain it locally
+  // here for the scroll-sync effect.
+  const [currentIndex, setCurrentIndex] = useState(0)
+
   useEffect(() => {
     const container = containerRef.current
     if (!container) return
@@ -168,10 +173,41 @@ export default function FeedContainer() {
     })
   }
 
+  /**
+   * Closes the SavedDrawer and opens the RecipeModal for the selected recipe.
+   * Called when the user taps a mini-card inside the drawer.
+   *
+   * @param {object} recipe - The recipe to open in the modal.
+   */
+  function handleSelectFromDrawer(recipe) {
+    setIsSavedDrawerOpen(false)
+    handleOpenRecipe(recipe, 'saved_drawer')
+  }
+
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
     <>
+      {/* ── Floating Saved Recipes FAB ──────────────────────────────────── */}
+      <button
+        type="button"
+        id="open-saved-drawer-btn"
+        aria-label="Open saved recipes"
+        onClick={() => setIsSavedDrawerOpen(true)}
+        className="fixed top-5 right-4 z-40 w-11 h-11 flex items-center justify-center rounded-full bg-neutral-900/80 backdrop-blur-md border border-white/20 text-amber-400 shadow-lg hover:bg-neutral-800/90 active:scale-90 transition-all duration-150"
+      >
+        {/* Solid bookmark icon */}
+        <svg
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          className="w-5 h-5"
+          fill="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
+        </svg>
+      </button>
+
       <div
         ref={containerRef}
         id="culinary-feed"
@@ -217,6 +253,16 @@ export default function FeedContainer() {
         onClose={handleCloseModal}
         onIngredientToggle={handleIngredientToggle}
         checkedIngredientsMap={checkedIngredients}
+      />
+
+      {/*
+       * SavedDrawer is always mounted. pointer-events-none is applied
+       * internally when closed so it never blocks feed interaction.
+       */}
+      <SavedDrawer
+        isOpen={isSavedDrawerOpen}
+        onClose={() => setIsSavedDrawerOpen(false)}
+        onRecipeSelect={handleSelectFromDrawer}
       />
     </>
   )

@@ -109,6 +109,8 @@ export function transformRawEvents(eventsArray) {
      *   max_dwell_ms: number,
      *   is_expanded: boolean,
      *   dwell_before_expand_ms: number|null,
+     *   is_liked: boolean,
+     *   is_saved: boolean,
      * }>}
      */
     const recipeMetrics = new Map()
@@ -142,6 +144,8 @@ export function transformRawEvents(eventsArray) {
           max_dwell_ms:           0,
           is_expanded:            false,
           dwell_before_expand_ms: null,
+          is_liked:               false,
+          is_saved:               false,
         })
       }
       if (!ingredientState.has(recipeId)) {
@@ -179,6 +183,15 @@ export function transformRawEvents(eventsArray) {
             ingSet.delete(ingredientId)
           }
         }
+
+      } else if (eventType === EVENT_TYPES.RECIPE_LIKE) {
+        // Toggle: each RECIPE_LIKE event represents the current liked state
+        // from the payload; fall back to flipping the flag if payload absent.
+        metrics.is_liked = payload.is_liked ?? !metrics.is_liked
+
+      } else if (eventType === EVENT_TYPES.RECIPE_SAVE) {
+        // Toggle: each RECIPE_SAVE event represents the current saved state.
+        metrics.is_saved = payload.is_saved ?? !metrics.is_saved
       }
     }
 
@@ -209,6 +222,8 @@ export function transformRawEvents(eventsArray) {
         ingredients_checked_count: ingredientsChecked,
         is_skipped:                isSkipped,
         is_completed_prep:         isCompletedPrep,
+        is_liked:                  metrics.is_liked,
+        is_saved:                  metrics.is_saved,
       })
     }
 

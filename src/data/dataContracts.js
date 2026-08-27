@@ -47,6 +47,12 @@ export const EVENT_TYPES = Object.freeze({
    * inside the recipe detail view (tap, substitute request, add to list, etc.).
    */
   INGREDIENT_INTERACTION: 'INGREDIENT_INTERACTION',
+
+  /** Fires when the user likes (hearts) a recipe card from the feed action rail. */
+  RECIPE_LIKE: 'RECIPE_LIKE',
+
+  /** Fires when the user saves (bookmarks) a recipe card from the feed action rail. */
+  RECIPE_SAVE: 'RECIPE_SAVE',
 });
 
 /**

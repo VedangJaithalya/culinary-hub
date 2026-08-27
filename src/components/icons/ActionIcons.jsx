@@ -1,18 +1,22 @@
 /** Inline SVG icon primitives used by FeedCard's action rail.
  *  Kept in a dedicated file so FeedCard stays focused on layout logic.
- *  All icons are 24 × 24 Heroicons (outline stroke style).
+ *  All icons are 24 × 24 Heroicons.
  */
 
-export function BookmarkIcon() {
+/**
+ * Bookmark icon — outline by default, solid when `filled` is true.
+ * @param {{ filled?: boolean }} props
+ */
+export function BookmarkIcon({ filled = false }) {
   return (
     <svg
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       className="w-6 h-6"
-      fill="none"
+      fill={filled ? 'currentColor' : 'none'}
       viewBox="0 0 24 24"
       stroke="currentColor"
-      strokeWidth={2}
+      strokeWidth={filled ? 0 : 2}
     >
       <path
         strokeLinecap="round"
@@ -62,3 +66,4 @@ export function InformationCircleIcon() {
     </svg>
   )
 }
+
