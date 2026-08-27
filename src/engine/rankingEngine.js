@@ -26,26 +26,12 @@
 // CONSTANTS
 // =============================================================================
 
-/** Lower bound of the epsilon-greedy exploration multiplier (inclusive). */
-const EXPLORATION_MIN = 0.9
-
-/** Upper bound of the epsilon-greedy exploration multiplier (exclusive). */
-const EXPLORATION_MAX = 1.1
-
-// =============================================================================
-// PRIVATE HELPERS
-// =============================================================================
-
 /**
- * Generates a random float uniformly distributed in [min, max).
- *
- * @param {number} min - Lower bound (inclusive).
- * @param {number} max - Upper bound (exclusive).
- * @returns {number}
+ * Maximum additive epsilon noise added to every candidate's base score.
+ * Using additive variance ensures unengaged candidates (baseScore === 0)
+ * still receive a small positive score, preventing category starvation.
  */
-function randomInRange(min, max) {
-  return min + Math.random() * (max - min)
-}
+const EXPLORATION_EPSILON = 0.15
 
 // =============================================================================
 // MAIN EXPORT — generateRankedFeed
@@ -99,11 +85,12 @@ export function generateRankedFeed(catalog, affinityVector, seenRecipeIds) {
 
   // ── Step 2: Heuristic Scoring ──────────────────────────────────────────────
   //
-  // Base Score        : affinity weight for the recipe's cuisine, or the cold-
-  //                     start uniform score if the cuisine is not yet ranked.
-  // Exploration Factor: epsilon-greedy uniform noise in [0.9, 1.1) — prevents
-  //                     the feed from collapsing into a deterministic echo
-  //                     chamber by adding controlled randomness each call.
+  // Base Score     : affinity weight for the recipe's cuisine, or the cold-
+  //                  start uniform score if the cuisine is not yet ranked.
+  // Additive Epsilon: uniform noise in [0, EXPLORATION_EPSILON) added to the
+  //                  base score — prevents echo-chamber collapse AND ensures
+  //                  unengaged categories (baseScore === 0) always receive a
+  //                  small positive signal, eliminating category starvation.
 
   const scored = candidates.map((recipe) => {
     const cuisineId = recipe?.cuisine_id
@@ -114,9 +101,8 @@ export function generateRankedFeed(catalog, affinityVector, seenRecipeIds) {
         ? safeAffinity[cuisineId]
         : coldStartBase
 
-    // Epsilon-greedy exploration noise
-    const explorationFactor = randomInRange(EXPLORATION_MIN, EXPLORATION_MAX)
-    const predicted_score   = baseScore * explorationFactor
+    // Additive epsilon variance — safe for baseScore === 0.
+    const predicted_score = baseScore + (Math.random() * EXPLORATION_EPSILON)
 
     // Return a shallow copy of the recipe augmented with predicted_score.
     // Spread avoids mutating the original catalogue objects.
