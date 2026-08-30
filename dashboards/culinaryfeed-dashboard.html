@@ -1,0 +1,1234 @@
+<title>CulinaryFeed Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+
+<style>
+  /* ────────────────────────────────────────────────────────────────────
+   * TOKENS — deliberately single-theme (dark). CulinaryFeed itself has no
+   * light mode (App.jsx is a hard-coded bg-neutral-950 shell), so this
+   * report commits to the same dark, appetite-driven world rather than
+   * inventing a second visual language the product doesn't have. Every
+   * color is declared explicitly so the page holds regardless of host
+   * theme.
+   * ──────────────────────────────────────────────────────────────────── */
+  :root {
+    --bg: #0a0a0e;
+    --bg-hero: #0e0c14;
+    --surface: #15141c;
+    --surface-2: #1c1a25;
+    --surface-3: #242130;
+    --border: #2a2733;
+    --border-soft: #201e28;
+
+    --text: #ece9f4;
+    --text-dim: #a29dbb;
+    --text-faint: #6d6884;
+
+    --accent: #8459f7;       /* violet — ranking / algorithm / primary */
+    --accent-soft: #8459f733;
+    --accent-2: #f0b23f;     /* amber — ratings / quality */
+    --positive: #34d399;     /* emerald — dietary / positive engagement */
+    --negative: #fb7185;     /* rose — churn / negative signal / advanced */
+    --info: #3fb6f0;         /* sky — planning feature */
+
+    --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --font-body: 'Public Sans', -apple-system, 'Segoe UI', sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 8px;
+
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  a { color: inherit; }
+
+  h1, h2, h3, h4 { font-family: var(--font-display); text-wrap: balance; margin: 0; color: var(--text); }
+
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+  .wrap {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  @media (max-width: 720px) {
+    .wrap { padding: 0 18px; }
+  }
+
+  /* ── Top nav ─────────────────────────────────────────────────────── */
+  .topnav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(10, 10, 14, 0.86);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-soft);
+  }
+  .topnav-inner {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 14px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .topnav-brand {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .topnav-brand .dot { color: var(--accent); }
+  .topnav-links {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .topnav-links::-webkit-scrollbar { display: none; }
+  .topnav-links a {
+    text-decoration: none;
+    font-size: 12.5px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-dim);
+    padding: 7px 13px;
+    border-radius: 100px;
+    white-space: nowrap;
+    transition: color 0.15s, background 0.15s;
+  }
+  .topnav-links a:hover { color: var(--text); background: var(--surface-2); }
+
+  /* ── Hero / masthead ─────────────────────────────────────────────── */
+  .hero {
+    background:
+      radial-gradient(ellipse 900px 420px at 12% -10%, #8459f726, transparent 60%),
+      radial-gradient(ellipse 700px 380px at 100% 0%, #f0b23f1c, transparent 55%),
+      var(--bg-hero);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 56px 0 40px;
+  }
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent-2);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 16px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: var(--accent-2);
+    box-shadow: 0 0 0 3px #f0b23f22;
+  }
+  .hero h1 {
+    font-size: 44px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    max-width: 780px;
+  }
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--text-dim);
+  }
+  .hero-sub {
+    margin-top: 16px;
+    max-width: 620px;
+    color: var(--text-dim);
+    font-size: 15.5px;
+    line-height: 1.65;
+  }
+  .hero-meta {
+    margin-top: 22px;
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--text-faint);
+  }
+  .hero-meta b { color: var(--text-dim); font-weight: 500; }
+
+  /* ── KPI strip ───────────────────────────────────────────────────── */
+  .kpi-strip {
+    margin-top: 36px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+  @media (max-width: 980px) { .kpi-strip { grid-template-columns: repeat(3, 1fr); } }
+  @media (max-width: 560px) { .kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+  .kpi {
+    background: var(--surface);
+    padding: 18px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .kpi-value {
+    font-family: var(--font-display);
+    font-size: 26px;
+    font-weight: 600;
+    color: var(--text);
+    font-variant-numeric: tabular-nums;
+  }
+  .kpi-label {
+    font-size: 11.5px;
+    color: var(--text-faint);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+  }
+
+  /* ── Section scaffolding ─────────────────────────────────────────── */
+  section.block { padding: 64px 0; border-bottom: 1px solid var(--border-soft); }
+  section.block:last-of-type { border-bottom: none; }
+
+  .section-head { margin-bottom: 36px; max-width: 700px; }
+  .section-head .eyebrow { margin-bottom: 10px; }
+  .section-head h2 { font-size: 30px; font-weight: 600; letter-spacing: -0.01em; }
+  .section-head p { margin-top: 10px; color: var(--text-dim); font-size: 14.5px; line-height: 1.65; }
+
+  .section-a .eyebrow, .section-a .eyebrow::before { color: var(--accent); background: none; }
+  .section-a .eyebrow::before { background: var(--accent); box-shadow: 0 0 0 3px #8459f722; }
+  .section-b .eyebrow, .section-b .eyebrow::before { color: var(--info); }
+  .section-b .eyebrow::before { background: var(--info); box-shadow: 0 0 0 3px #3fb6f022; }
+  .section-c .eyebrow { color: var(--positive); }
+  .section-c .eyebrow::before { background: var(--positive); box-shadow: 0 0 0 3px #34d39922; }
+
+  /* ── Cards / panels ──────────────────────────────────────────────── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+  }
+  .card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    letter-spacing: -0.005em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 4px;
+  }
+  .card .card-note { font-size: 12.5px; color: var(--text-faint); margin-bottom: 18px; }
+
+  .grid-2 { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 900px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  /* ── Architecture flow ───────────────────────────────────────────── */
+  .flow {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    overflow-x: auto;
+    padding: 4px 2px 14px;
+  }
+  .flow-step {
+    flex: 0 0 168px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 16px 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .flow-step .num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .flow-step .title { font-size: 13.5px; font-weight: 700; color: var(--text); }
+  .flow-step .desc { font-size: 11.5px; color: var(--text-faint); line-height: 1.5; }
+  .flow-arrow {
+    flex: 0 0 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-faint);
+    font-size: 16px;
+  }
+
+  /* ── Feature completion ──────────────────────────────────────────── */
+  .bucket { padding: 18px 0; border-top: 1px solid var(--border-soft); }
+  .bucket:first-child { border-top: none; padding-top: 4px; }
+  .bucket-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; margin-bottom: 10px; }
+  .bucket-name { font-size: 14px; font-weight: 700; }
+  .status-chip {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 4px 10px;
+    border-radius: 100px;
+    white-space: nowrap;
+  }
+  .status-shipped { background: #34d39920; color: var(--positive); }
+  .status-partial { background: #f0b23f20; color: var(--accent-2); }
+  .status-none    { background: #6d688420; color: var(--text-faint); }
+
+  .meter { height: 6px; border-radius: 100px; background: var(--surface-3); overflow: hidden; margin-bottom: 12px; }
+  .meter > span { display: block; height: 100%; border-radius: 100px; }
+
+  .bucket-items { display: flex; flex-wrap: wrap; gap: 7px; }
+  .item-pill {
+    font-size: 11.5px;
+    padding: 5px 11px;
+    border-radius: 100px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .item-pill.done::before { content: '✓'; color: var(--positive); font-weight: 700; }
+  .item-pill.todo { color: var(--text-faint); border-style: dashed; }
+  .item-pill.todo::before { content: '–'; color: var(--text-faint); }
+
+  /* ── Stack chips ─────────────────────────────────────────────────── */
+  .stack-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .stack-chip {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: var(--radius-sm);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+  }
+
+  /* ── Chart wrappers ──────────────────────────────────────────────── */
+  .chart-box { position: relative; }
+  .chart-box canvas { max-width: 100%; }
+
+  /* ── Persona table ───────────────────────────────────────────────── */
+  .table-scroll { overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 860px; }
+  thead th {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    padding: 12px 14px;
+    background: var(--surface-2);
+    border-bottom: 1px solid var(--border);
+    white-space: nowrap;
+  }
+  tbody td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border-soft);
+    color: var(--text-dim);
+    vertical-align: top;
+  }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover { background: var(--surface-2); }
+  td.persona-name { color: var(--text); font-weight: 600; }
+  td.persona-desc { color: var(--text-faint); font-size: 12px; max-width: 260px; }
+  .archetype-tag {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    margin-top: 4px;
+  }
+  .num-cell { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
+
+  /* ── Cuisine chip cloud ──────────────────────────────────────────── */
+  .cuisine-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
+  .cuisine-chip {
+    font-size: 12px;
+    padding: 6px 12px;
+    border-radius: 100px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    display: flex; align-items: center; gap: 7px;
+  }
+  .cuisine-chip .n {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-faint);
+    background: var(--surface-3);
+    padding: 1px 6px;
+    border-radius: 100px;
+  }
+
+  /* ── Callout ─────────────────────────────────────────────────────── */
+  .callout {
+    border-radius: var(--radius-md);
+    border: 1px solid #f0b23f38;
+    background: linear-gradient(180deg, #f0b23f14, transparent 60%);
+    padding: 16px 18px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .callout .glyph { color: var(--accent-2); font-size: 16px; line-height: 1.4; }
+  .callout b { color: var(--text); }
+
+  /* ── Stat row (data section) ─────────────────────────────────────── */
+  .stat-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; }
+  @media (max-width: 900px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat-cell { background: var(--surface); padding: 16px; }
+  .stat-cell .v { font-family: var(--font-display); font-size: 21px; font-weight: 600; }
+  .stat-cell .l { font-size: 11px; color: var(--text-faint); margin-top: 4px; }
+
+  /* ── Footer / next steps ─────────────────────────────────────────── */
+  footer { padding: 56px 0 72px; }
+  .next-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 28px; }
+  @media (max-width: 800px) { .next-steps { grid-template-columns: 1fr; } }
+  .next-card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    padding: 18px;
+    background: var(--surface);
+  }
+  .next-card .tag {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .next-card p { margin: 0; color: var(--text-dim); font-size: 13px; line-height: 1.6; }
+  .foot-line { margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--border-soft); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; color: var(--text-faint); font-size: 12px; font-family: var(--font-mono); }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; animation: none !important; }
+  }
+</style>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="topnav-brand"><span class="dot">●</span> CulinaryFeed <span style="color:var(--text-faint); font-weight:500;">/ Dashboard</span></div>
+    <div class="topnav-links">
+      <a href="#app">Product</a>
+      <a href="#users">Users</a>
+      <a href="#data">Data</a>
+      <a href="#next">Next up</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Leadership dashboard · generated Aug 30, 2026</div>
+    <h1>Where CulinaryFeed stands, <em>in one page.</em></h1>
+    <p class="hero-sub">
+      A snapshot of the product, the 20 synthetic personas standing in for a real
+      user base, and the data feeding the recommendation engine — pulled directly
+      from the live catalog, the telemetry fixtures, and the shipped roadmap.
+    </p>
+    <div class="hero-meta">
+      <span><b>60</b> recipes</span>
+      <span><b>30</b> cuisines</span>
+      <span><b>0</b> backend services</span>
+      <span><b>React 19</b> + <b>Vite 8</b></span>
+    </div>
+
+    <div class="kpi-strip">
+      <div class="kpi"><div class="kpi-value">14 / 19</div><div class="kpi-label">ROADMAP ITEMS SHIPPED</div></div>
+      <div class="kpi"><div class="kpi-value">60</div><div class="kpi-label">RECIPES IN CATALOG</div></div>
+      <div class="kpi"><div class="kpi-value">30</div><div class="kpi-label">CUISINES COVERED</div></div>
+      <div class="kpi"><div class="kpi-value">20</div><div class="kpi-label">SYNTHETIC TEST PERSONAS</div></div>
+      <div class="kpi"><div class="kpi-value">2,215</div><div class="kpi-label">SIMULATED EVENTS</div></div>
+      <div class="kpi"><div class="kpi-value">4.55<span style="font-size:14px; color:var(--text-faint);">/5</span></div><div class="kpi-label">AVG. CATALOG RATING</div></div>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION A — PRODUCT / APP OVERVIEW
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="block section-a" id="app">
+    <div class="section-head">
+      <div class="eyebrow">01 — Product</div>
+      <h2>What CulinaryFeed is, and how it's built</h2>
+      <p>
+        A vertical, swipe-through recipe discovery feed — the TikTok-for-recipes
+        format — with a fully client-side recommendation engine. There is no
+        server: every preference, rating, save, and event lives in the browser's
+        own storage, and a ranking pass reruns from that history alone.
+      </p>
+    </div>
+
+    <div class="card" style="margin-bottom: 20px;">
+      <h3>How a recommendation actually gets made</h3>
+      <p class="card-note">Five stages, entirely client-side — no request ever leaves the browser.</p>
+      <div class="flow">
+        <div class="flow-step">
+          <span class="num">01</span>
+          <span class="title">Feed &amp; actions</span>
+          <span class="desc">Swipes, likes, saves, dismisses, ratings, cook sessions.</span>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <span class="num">02</span>
+          <span class="title">Telemetry buffer</span>
+          <span class="desc">Every action becomes an event, buffered to localStorage.</span>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <span class="num">03</span>
+          <span class="title">Session transform</span>
+          <span class="desc">Raw events reduce to per-recipe impression facts.</span>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <span class="num">04</span>
+          <span class="title">Affinity model</span>
+          <span class="desc">Recency-decayed weights across cuisine, difficulty, diet, tags.</span>
+        </div>
+        <div class="flow-arrow">→</div>
+        <div class="flow-step">
+          <span class="num">05</span>
+          <span class="title">Ranking engine</span>
+          <span class="desc">Scores, explores via UCB1, and diversifies the feed.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Feature completion by roadmap area</h3>
+        <p class="card-note">4 buckets tracked since the original feature audit; 14 of 19 individual items are shipped.</p>
+
+        <div class="bucket">
+          <div class="bucket-head">
+            <span class="bucket-name">Smarter ranking — the algorithm layer</span>
+            <span class="status-chip status-shipped">SHIPPED · 6/6</span>
+          </div>
+          <div class="meter"><span style="width:100%; background:var(--positive);"></span></div>
+          <div class="bucket-items">
+            <span class="item-pill done">Multi-dimensional affinity</span>
+            <span class="item-pill done">Recency-weighted scoring</span>
+            <span class="item-pill done">Diversity constraint</span>
+            <span class="item-pill done">Content-based similarity</span>
+            <span class="item-pill done">UCB1 exploration</span>
+            <span class="item-pill done">Explicit negative feedback</span>
+          </div>
+        </div>
+
+        <div class="bucket">
+          <div class="bucket-head">
+            <span class="bucket-name">Data already in schema, now wired up</span>
+            <span class="status-chip status-shipped">SHIPPED · 5/5</span>
+          </div>
+          <div class="meter"><span style="width:100%; background:var(--positive);"></span></div>
+          <div class="bucket-items">
+            <span class="item-pill done">Cold-start onboarding</span>
+            <span class="item-pill done">Real rating submission</span>
+            <span class="item-pill done">Creator profiles + follow</span>
+            <span class="item-pill done">Guided cook mode</span>
+            <span class="item-pill done">Shopping list export</span>
+          </div>
+        </div>
+
+        <div class="bucket">
+          <div class="bucket-head">
+            <span class="bucket-name">Product / UX</span>
+            <span class="status-chip status-partial">IN PROGRESS · 3/4</span>
+          </div>
+          <div class="meter"><span style="width:75%; background:var(--accent-2);"></span></div>
+          <div class="bucket-items">
+            <span class="item-pill done">Search &amp; filters</span>
+            <span class="item-pill done">Meal planner</span>
+            <span class="item-pill done">Share / export (link + PDF)</span>
+            <span class="item-pill todo">"Why this was recommended" chip</span>
+          </div>
+        </div>
+
+        <div class="bucket">
+          <div class="bucket-head">
+            <span class="bucket-name">Engineering / infra</span>
+            <span class="status-chip status-none">NOT STARTED · 0/4</span>
+          </div>
+          <div class="meter"><span style="width:4%; background:var(--text-faint);"></span></div>
+          <div class="bucket-items">
+            <span class="item-pill todo">Live mid-session re-ranking</span>
+            <span class="item-pill todo">In-app analytics dashboard</span>
+            <span class="item-pill todo">A/B testing harness</span>
+            <span class="item-pill todo">Automated test coverage</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Stack &amp; footprint</h3>
+        <p class="card-note">Deliberately backend-free — every service below is a localStorage read/write module.</p>
+        <div class="stack-row">
+          <span class="stack-chip">React 19</span>
+          <span class="stack-chip">Vite 8</span>
+          <span class="stack-chip">Tailwind v4</span>
+          <span class="stack-chip">ESLint 10</span>
+          <span class="stack-chip">0 backend</span>
+        </div>
+        <p class="card-note" style="margin-top:20px; margin-bottom: 8px;">Client-side services (localStorage-backed)</p>
+        <div class="stack-row">
+          <span class="stack-chip">telemetry</span>
+          <span class="stack-chip">saved</span>
+          <span class="stack-chip">liked</span>
+          <span class="stack-chip">dismissed</span>
+          <span class="stack-chip">ratings</span>
+          <span class="stack-chip">follows</span>
+          <span class="stack-chip">cook</span>
+          <span class="stack-chip">shopping list</span>
+          <span class="stack-chip">meal plan</span>
+          <span class="stack-chip">share</span>
+        </div>
+        <p class="card-note" style="margin-top:20px; margin-bottom: 8px;">Schema surface</p>
+        <div class="stat-row" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="stat-cell"><div class="v mono">14</div><div class="l">EVENT TYPES DEFINED</div></div>
+          <div class="stat-cell"><div class="v mono">14</div><div class="l">ACTION TYPES DEFINED</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION B — USER OVERVIEW (20 SYNTHETIC PERSONAS)
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="block section-b" id="users">
+    <div class="section-head">
+      <div class="eyebrow">02 — Users</div>
+      <h2>The user base is 20 synthetic personas</h2>
+      <p>
+        There's no production traffic yet. What stands in for a user base is a
+        deliberately hand-built cast of 20 personas — one dataset per behavioral
+        edge case the ranking engine needs to survive, from a single-cuisine
+        loyalist to pure adversarial noise. Every affinity and diversity claim on
+        this dashboard is tested against them.
+      </p>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:20px;">
+      <div class="card">
+        <h3 style="font-size:13px;">Skill level</h3>
+        <div class="chart-box" style="height:190px;"><canvas id="chartSkill"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:13px;">Account type</h3>
+        <div class="chart-box" style="height:190px;"><canvas id="chartAccount"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:13px;">Persona archetype</h3>
+        <div class="chart-box" style="height:190px;"><canvas id="chartArchetype"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h3>Simulated events per persona</h3>
+      <p class="card-note">Session and event volume varies by design — this is what stress-tests the ranker with both dense and sparse signal.</p>
+      <div class="chart-box" style="height:420px;"><canvas id="chartEvents"></canvas></div>
+    </div>
+
+    <div class="card">
+      <h3>All 20 personas</h3>
+      <p class="card-note">Sorted by simulated event volume, richest signal first.</p>
+      <div class="table-scroll">
+        <table id="personaTable">
+          <thead>
+            <tr>
+              <th>Persona</th>
+              <th>Behavior</th>
+              <th>Skill</th>
+              <th>Region</th>
+              <th class="num-cell">Sessions</th>
+              <th class="num-cell">Events</th>
+              <th>Top cuisines</th>
+            </tr>
+          </thead>
+          <tbody><!-- rendered by script --></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-top:20px;">
+      <div class="card">
+        <h3>Engagement by persona</h3>
+        <p class="card-note">Like / save / expand rate as a share of that persona's impressions — the save-hoarder and the passive-scroller are the two extremes.</p>
+        <div class="chart-box" style="height:460px;"><canvas id="chartEngagement"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Where the personas are modeled from</h3>
+        <p class="card-note">15 countries across 6 regions, chosen to stress-test locale/timezone handling — not real usage geography.</p>
+        <div class="chart-box" style="height:230px;"><canvas id="chartRegion"></canvas></div>
+        <div class="stat-row" style="grid-template-columns: repeat(2, 1fr); margin-top:16px;">
+          <div class="stat-cell"><div class="v mono">15</div><div class="l">COUNTRIES REPRESENTED</div></div>
+          <div class="stat-cell"><div class="v mono">3</div><div class="l">REGION-LESS (ANONYMOUS)</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       SECTION C — DATA OVERVIEW
+  ══════════════════════════════════════════════════════════════ -->
+  <section class="block section-c" id="data">
+    <div class="section-head">
+      <div class="eyebrow">03 — Data</div>
+      <h2>What's in the catalog, and what the telemetry actually says</h2>
+      <p>
+        60 recipes, evenly spread so no cuisine dominates by sample size alone —
+        useful for isolating whether a ranking change is really about affinity,
+        not catalog skew.
+      </p>
+    </div>
+
+    <div class="stat-row" style="margin-bottom:20px;">
+      <div class="stat-cell"><div class="v mono">85.2m</div><div class="l">AVG. TOTAL TIME</div></div>
+      <div class="stat-cell"><div class="v mono">469</div><div class="l">AVG. CALORIES</div></div>
+      <div class="stat-cell"><div class="v mono">561</div><div class="l">TOTAL INGREDIENTS</div></div>
+      <div class="stat-cell"><div class="v mono">134</div><div class="l">DISTINCT CONTENT TAGS</div></div>
+      <div class="stat-cell"><div class="v mono">31</div><div class="l">RECIPE CREATORS</div></div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div class="card">
+        <h3>Difficulty mix</h3>
+        <p class="card-note">26 intermediate · 19 easy · 15 advanced</p>
+        <div class="chart-box" style="height:230px;"><canvas id="chartDifficulty"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Dietary tag coverage</h3>
+        <p class="card-note">Not mutually exclusive — a recipe can carry more than one tag.</p>
+        <div class="chart-box" style="height:230px;"><canvas id="chartDietary"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h3>All 30 cuisines</h3>
+      <p class="card-note">2 recipes each, by design — the catalog was built even, not organically grown.</p>
+      <div class="cuisine-cloud" id="cuisineCloud"><!-- rendered by script --></div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div class="card">
+        <h3>What's in the pantry</h3>
+        <p class="card-note">561 ingredient line items across 60 recipes, by category.</p>
+        <div class="chart-box" style="height:230px;"><canvas id="chartPantry"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Most-used ingredients</h3>
+        <p class="card-note">By raw appearance count across every recipe's ingredient list.</p>
+        <div class="chart-box" style="height:230px;"><canvas id="chartIngredients"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h3>Most-common recipe tags</h3>
+      <p class="card-note">Top 15 of 134 distinct content tags, sized by how often they appear.</p>
+      <div class="cuisine-cloud" id="tagCloud"><!-- rendered by script --></div>
+    </div>
+
+    <div class="grid-3" style="margin-bottom:20px;">
+      <div class="card">
+        <h3 style="font-size:13px;">Top rated</h3>
+        <p class="card-note">By average_rating</p>
+        <div id="leaderboardRated"><!-- rendered by script --></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:13px;">Most saved</h3>
+        <p class="card-note">By save_count</p>
+        <div id="leaderboardSaved"><!-- rendered by script --></div>
+      </div>
+      <div class="card">
+        <h3 style="font-size:13px;">Most cooked</h3>
+        <p class="card-note">By cook_count</p>
+        <div id="leaderboardCooked"><!-- rendered by script --></div>
+      </div>
+    </div>
+
+    <div class="grid-2" style="margin-bottom:20px;">
+      <div class="card">
+        <h3>Time to table</h3>
+        <p class="card-note">Total prep + cook time, bucketed. Avg. 85.2 minutes.</p>
+        <div class="chart-box" style="height:210px;"><canvas id="chartTime"></canvas></div>
+      </div>
+      <div class="card">
+        <h3>Calories per serving</h3>
+        <p class="card-note">Bucketed calorie_count. Avg. 469 kcal.</p>
+        <div class="chart-box" style="height:210px;"><canvas id="chartCalories"></canvas></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:20px;">
+      <h3>Creator leaderboard</h3>
+      <p class="card-note">Top 8 of 31 creators by total saves across their (~2-recipe) catalog footprint.</p>
+      <div class="table-scroll">
+        <table id="creatorTable">
+          <thead>
+            <tr><th>Creator</th><th class="num-cell">Recipes</th><th class="num-cell">Avg. rating</th><th class="num-cell">Total saves</th></tr>
+          </thead>
+          <tbody><!-- rendered by script --></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <h3>Telemetry event mix</h3>
+        <p class="card-note">2,215 events across all 20 fixtures — but only 5 of the 14 defined event types actually appear.</p>
+        <div class="chart-box" style="height:260px;"><canvas id="chartEvents2"></canvas></div>
+      </div>
+      <div class="card">
+        <h3 style="color: var(--accent-2);">Coverage gap</h3>
+        <div class="callout" style="margin-top:6px;">
+          <span class="glyph">◆</span>
+          <div>
+            <b>9 of the 14 defined event types have zero synthetic coverage</b> —
+            ratings, follows, dismissals, cook-mode starts/completions, onboarding
+            completion, ingredient-list adds, and shares. All were added to the
+            schema and shipped in the app after these 20 fixtures were generated.
+            The ranking engine's negative-feedback and rating logic is verified
+            by direct execution against hand-written test cases, not by any
+            persona's simulated history.
+          </div>
+        </div>
+        <p class="card-note" style="margin-top:16px;">Defined vs. exercised</p>
+        <div class="stat-row" style="grid-template-columns: repeat(2, 1fr);">
+          <div class="stat-cell"><div class="v mono" style="color:var(--text)">14</div><div class="l">EVENT TYPES DEFINED</div></div>
+          <div class="stat-cell"><div class="v mono" style="color:var(--accent-2)">5</div><div class="l">EXERCISED BY FIXTURES</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════════════════════
+       FOOTER — NEXT STEPS
+  ══════════════════════════════════════════════════════════════ -->
+  <footer id="next">
+    <div class="section-head">
+      <div class="eyebrow" style="color:var(--info);">04 — Next up</div>
+      <h2>What's still open</h2>
+    </div>
+    <div class="next-steps">
+      <div class="next-card">
+        <span class="tag" style="background:#f0b23f20; color:var(--accent-2);">Product/UX</span>
+        <p>The last item in the Product/UX bucket — a "why this was recommended" chip on each card (e.g. "Because you liked Thai food") — is the one remaining piece for that area to reach 100%.</p>
+      </div>
+      <div class="next-card">
+        <span class="tag" style="background:#6d688420; color:var(--text-faint);">Engineering</span>
+        <p>The entire Engineering/Infra bucket is untouched: live mid-session re-ranking, an in-app analytics dashboard, an A/B testing harness, and automated test coverage for the ranking engine.</p>
+      </div>
+      <div class="next-card">
+        <span class="tag" style="background:#fb718520; color:var(--negative);">Data gap</span>
+        <p>The anti-fan-German persona's fixture predates the dismiss feature and only exercises the weaker implicit-skip penalty — worth regenerating if that specific case needs re-validation.</p>
+      </div>
+      <div class="next-card">
+        <span class="tag" style="background:#3fb6f020; color:var(--info);">Verification</span>
+        <p>No automated test runner is installed yet, and a real <span class="mono">npm run build</span> has never completed end-to-end on a matching-platform, registry-connected machine.</p>
+      </div>
+    </div>
+
+    <div class="foot-line">
+      <span>CulinaryFeed · internal build, no production users</span>
+      <span>Generated from live catalog + fixture data, Aug 30, 2026</span>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  var personas = [
+    { id: 'usr_fake_08_power_superfan', name: 'Renata V.', archetype: 'edge-case', behavior: 'High-intensity, broad coverage — likes/saves almost everything.', skill: 'advanced', region: 'BR', sessions: 4, events: 525, cuisines: ['moroccan','vietnamese','thai'] },
+    { id: 'usr_fake_14_random_noise', name: 'Test Bot 01', archetype: 'edge-case', behavior: 'Pure random engagement — adversarial baseline.', skill: '—', region: '—', sessions: 3, events: 184, cuisines: ['korean','japanese','nigerian'] },
+    { id: 'usr_fake_06_gourmet_expert', name: 'Chef Andre B.', archetype: 'attribute', behavior: 'Advanced, technique-heavy recipes only, deep engagement.', skill: 'professional', region: 'FR', sessions: 3, events: 178, cuisines: ['persian','brazilian','ethiopian'] },
+    { id: 'usr_fake_02_asian_explorer', name: 'Priya N.', archetype: 'regional', behavior: 'Browses widely across an 8-cuisine East/SE-Asian cluster.', skill: 'advanced', region: 'SG', sessions: 3, events: 114, cuisines: ['japanese','korean','thai'] },
+    { id: 'usr_fake_13_latin_fiesta', name: 'Camila S.', archetype: 'regional', behavior: 'Sticks to a 5-cuisine Latin American / Caribbean cluster.', skill: 'intermediate', region: 'AR', sessions: 3, events: 113, cuisines: ['peruvian','mexican','brazilian'] },
+    { id: 'usr_fake_19_completionist_prepper', name: 'Vikram S.', archetype: 'attribute', behavior: 'Checks off every ingredient on every Indian-subcontinent recipe.', skill: 'advanced', region: 'IN', sessions: 2, events: 116, cuisines: ['north_indian','south_indian'] },
+    { id: 'usr_fake_03_vegan_health', name: 'Dana K.', archetype: 'attribute', behavior: 'Selects almost exclusively by dietary tag, not cuisine.', skill: 'intermediate', region: 'US', sessions: 3, events: 126, cuisines: ['ethiopian','caribbean','spanish'] },
+    { id: 'usr_fake_04_spice_chaser', name: 'Tomás R.', archetype: 'attribute', behavior: 'Chases the "spicy" tag across every cuisine.', skill: 'advanced', region: 'MX', sessions: 2, events: 101, cuisines: ['chinese_sichuan','thai','spanish'] },
+    { id: 'usr_fake_05_easy_weeknight', name: 'Jamie L.', archetype: 'attribute', behavior: 'Only engages with "easy" recipes — busy weeknight cook.', skill: 'beginner', region: 'GB', sessions: 3, events: 95, cuisines: ['peruvian','filipino','ethiopian'] },
+    { id: 'usr_fake_12_mediterranean_comfort', name: 'Layla H.', archetype: 'regional', behavior: 'Meal-prep saver in the Mediterranean / Levant / Maghreb cluster.', skill: 'intermediate', region: 'AE', sessions: 3, events: 91, cuisines: ['lebanese','moroccan','mediterranean'] },
+    { id: 'usr_fake_15_breakfast_lover', name: 'Nora P.', archetype: 'attribute', behavior: 'Morning sessions, breakfast/brunch tags only.', skill: 'beginner', region: 'US', sessions: 2, events: 83, cuisines: ['mediterranean','japanese','south_indian'] },
+    { id: 'usr_fake_17_drifting_taste', name: 'Ines M.', archetype: 'evolving', behavior: 'Taste drifts session to session — North Indian → Korean → French.', skill: 'intermediate', region: 'ES', sessions: 3, events: 88, cuisines: ['north_indian','korean','french'] },
+    { id: 'usr_fake_01_italian_loyalist', name: 'Marco T.', archetype: 'loyalist', behavior: 'Repeatedly revisits 2 Italian recipes; skips almost everything else.', skill: 'intermediate', region: 'IT', sessions: 3, events: 81, cuisines: ['italian','mediterranean','peruvian'] },
+    { id: 'usr_fake_20_anti_fan_german', name: 'Greta W.', archetype: 'edge-case', behavior: 'Likes broad home cooking but always skips German instantly.', skill: 'intermediate', region: 'CA', sessions: 2, events: 74, cuisines: ['german','russian','british'] },
+    { id: 'usr_fake_07_novelty_seeker', name: 'Sam O.', archetype: 'evolving', behavior: 'Max-entropy — one fresh cuisine every time, never repeats.', skill: 'intermediate', region: 'CA', sessions: 3, events: 77, cuisines: ['nigerian','british','mexican'] },
+    { id: 'usr_fake_16_binge_then_dropout', name: 'Owen D.', archetype: 'edge-case', behavior: 'One huge North Indian binge session, then never returned.', skill: 'intermediate', region: 'IN', sessions: 1, events: 68, cuisines: ['north_indian','south_indian','mediterranean'] },
+    { id: 'usr_fake_18_save_hoarder', name: 'Ben C.', archetype: 'edge-case', behavior: 'Saves compulsively, almost never expands or likes.', skill: 'beginner', region: 'US', sessions: 3, events: 62, cuisines: ['south_indian','japanese','filipino'] },
+    { id: 'usr_fake_09_passive_scroller', name: 'Alex Q.', archetype: 'edge-case', behavior: 'Scrolls fast — nearly every card skipped in under 2 seconds.', skill: '—', region: '—', sessions: 2, events: 25, cuisines: ['american_southern','lebanese','south_indian'] },
+    { id: 'usr_fake_11_churn_negative', name: 'Kayla F.', archetype: 'edge-case', behavior: 'Disliked nearly everything shown, then churned.', skill: 'beginner', region: 'AU', sessions: 2, events: 14, cuisines: ['british','lebanese','peruvian'] },
+    { id: 'usr_fake_10_cold_start_new', name: 'New User', archetype: 'edge-case', behavior: 'Zero telemetry — exercises the true cold-start path.', skill: '—', region: '—', sessions: 0, events: 0, cuisines: [] },
+  ];
+
+  var archetypeMeta = {
+    loyalist: { label: 'Single-cuisine loyalist', color: '#8459f7' },
+    regional: { label: 'Regional cluster fan', color: '#3fb6f0' },
+    attribute: { label: 'Attribute-driven', color: '#34d399' },
+    evolving: { label: 'Taste evolution', color: '#f0b23f' },
+    'edge-case': { label: 'Engagement edge case', color: '#fb7185' },
+  };
+
+  // Engagement rates computed directly from each persona's raw event fixture:
+  // likeRate/saveRate/expandRate as % of that persona's impression_count,
+  // avgDwellSec from IMPRESSION_HEARTBEAT.cumulative_dwell_ms.
+  var engagement = {
+    usr_fake_01_italian_loyalist:        { like: 45.5, save: 63.6, expand: 54.5, dwell: 11.0 },
+    usr_fake_02_asian_explorer:          { like: 64.3, save: 35.7, expand: 71.4, dwell: 12.8 },
+    usr_fake_03_vegan_health:            { like: 42.9, save: 28.6, expand: 85.7, dwell: 21.8 },
+    usr_fake_04_spice_chaser:            { like: 58.3, save: 58.3, expand: 75.0, dwell: 14.3 },
+    usr_fake_05_easy_weeknight:          { like: 58.3, save: 58.3, expand: 75.0, dwell: 13.9 },
+    usr_fake_06_gourmet_expert:          { like: 84.6, save: 61.5, expand: 100,  dwell: 28.4 },
+    usr_fake_07_novelty_seeker:          { like: 10.7, save: 28.6, expand: 46.4, dwell: 7.4 },
+    usr_fake_08_power_superfan:          { like: 82.6, save: 60.9, expand: 100,  dwell: 19.1 },
+    usr_fake_09_passive_scroller:        { like: 0,    save: 0,    expand: 0,    dwell: 0.9 },
+    usr_fake_10_cold_start_new:          { like: 0,    save: 0,    expand: 0,    dwell: 0 },
+    usr_fake_11_churn_negative:          { like: 0,    save: 0,    expand: 0,    dwell: 0.6 },
+    usr_fake_12_mediterranean_comfort:   { like: 45.5, save: 90.9, expand: 63.6, dwell: 12.4 },
+    usr_fake_13_latin_fiesta:            { like: 66.7, save: 66.7, expand: 83.3, dwell: 16.2 },
+    usr_fake_14_random_noise:            { like: 58.3, save: 52.8, expand: 52.8, dwell: 14.1 },
+    usr_fake_15_breakfast_lover:         { like: 77.8, save: 33.3, expand: 77.8, dwell: 15.5 },
+    usr_fake_16_binge_then_dropout:      { like: 100,  save: 40.0, expand: 100,  dwell: 14.2 },
+    usr_fake_17_drifting_taste:          { like: 100,  save: 83.3, expand: 100,  dwell: 24.5 },
+    usr_fake_18_save_hoarder:            { like: 0,    save: 100,  expand: 21.4, dwell: 5.4 },
+    usr_fake_19_completionist_prepper:   { like: 62.5, save: 37.5, expand: 100,  dwell: 29.5 },
+    usr_fake_20_anti_fan_german:         { like: 63.6, save: 27.3, expand: 63.6, dwell: 10.3 },
+  };
+
+  var REGION_TO_CONTINENT = {
+    US: 'North America', MX: 'North America', CA: 'North America',
+    BR: 'South America', AR: 'South America',
+    IT: 'Europe', GB: 'Europe', FR: 'Europe', ES: 'Europe',
+    SG: 'Asia', IN: 'Asia', AE: 'Middle East',
+    AU: 'Oceania',
+    '—': 'Anonymous',
+  };
+
+  var cuisineCounts = {
+    north_indian:2, italian:2, mexican:2, japanese:2, mediterranean:2, south_indian:2,
+    thai:2, vietnamese:2, korean:2, chinese_sichuan:2, french:2, spanish:2, moroccan:2,
+    ethiopian:2, lebanese:2, turkish:2, peruvian:2, brazilian:2, caribbean:2,
+    american_southern:2, german:2, filipino:2, indonesian:2, malaysian:2, nigerian:2,
+    persian:2, russian:2, british:2, cajun:2, argentinian:2,
+  };
+
+  function label(slug) {
+    return slug.replace(/[_-]/g, ' ').replace(/\b\w/g, function (c) { return c.toUpperCase(); });
+  }
+
+  // ── Chart.js dark-theme defaults ──────────────────────────────────
+  Chart.defaults.font.family = "'Public Sans', sans-serif";
+  Chart.defaults.color = '#a29dbb';
+  Chart.defaults.borderColor = '#2a2733';
+
+  function gridOpts(showGrid) {
+    return { grid: { color: '#201e28', display: !!showGrid }, ticks: { color: '#6d6884', font: { size: 11 } } };
+  }
+
+  // Skill level donut
+  (function () {
+    var counts = {};
+    personas.forEach(function (p) { var k = p.skill === '—' ? 'none set' : p.skill; counts[k] = (counts[k]||0)+1; });
+    var labels = Object.keys(counts);
+    new Chart(document.getElementById('chartSkill'), {
+      type: 'doughnut',
+      data: { labels: labels.map(label), datasets: [{ data: labels.map(function(k){return counts[k];}), backgroundColor: ['#8459f7','#3fb6f0','#34d399','#f0b23f','#6d6884'], borderColor: '#15141c', borderWidth: 2 }] },
+      options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 9, boxHeight: 9, padding: 10, font: { size: 10.5 } } } }, cutout: '62%', maintainAspectRatio: false }
+    });
+  })();
+
+  // Account type donut
+  (function () {
+    var accountTypes = { registered: 13, anonymous: 3, premium: 3, creator: 1 };
+    new Chart(document.getElementById('chartAccount'), {
+      type: 'doughnut',
+      data: { labels: Object.keys(accountTypes).map(label), datasets: [{ data: Object.values(accountTypes), backgroundColor: ['#8459f7','#6d6884','#f0b23f','#34d399'], borderColor: '#15141c', borderWidth: 2 }] },
+      options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 9, boxHeight: 9, padding: 10, font: { size: 10.5 } } } }, cutout: '62%', maintainAspectRatio: false }
+    });
+  })();
+
+  // Archetype donut
+  (function () {
+    var counts = {};
+    personas.forEach(function (p) { counts[p.archetype] = (counts[p.archetype]||0)+1; });
+    var keys = Object.keys(counts);
+    new Chart(document.getElementById('chartArchetype'), {
+      type: 'doughnut',
+      data: { labels: keys.map(function(k){return archetypeMeta[k].label;}), datasets: [{ data: keys.map(function(k){return counts[k];}), backgroundColor: keys.map(function(k){return archetypeMeta[k].color;}), borderColor: '#15141c', borderWidth: 2 }] },
+      options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 9, boxHeight: 9, padding: 10, font: { size: 9.5 } } } }, cutout: '62%', maintainAspectRatio: false }
+    });
+  })();
+
+  // Events per persona (horizontal bar, sorted)
+  (function () {
+    var sorted = personas.slice().sort(function (a, b) { return a.events - b.events; });
+    new Chart(document.getElementById('chartEvents'), {
+      type: 'bar',
+      data: {
+        labels: sorted.map(function (p) { return p.name; }),
+        datasets: [{
+          label: 'Simulated events',
+          data: sorted.map(function (p) { return p.events; }),
+          backgroundColor: sorted.map(function (p) { return archetypeMeta[p.archetype].color + 'cc'; }),
+          borderRadius: 4,
+          barThickness: 14,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { x: gridOpts(true), y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } } }
+      }
+    });
+  })();
+
+  // Difficulty bar
+  (function () {
+    var diff = { easy: 19, intermediate: 26, advanced: 15 };
+    new Chart(document.getElementById('chartDifficulty'), {
+      type: 'bar',
+      data: { labels: Object.keys(diff).map(label), datasets: [{ data: Object.values(diff), backgroundColor: ['#34d399cc','#f0b23fcc','#fb7185cc'], borderRadius: 6, barThickness: 46 }] },
+      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#a29dbb' } }, y: gridOpts(true) } }
+    });
+  })();
+
+  // Dietary bar
+  (function () {
+    var dietary = { 'gluten-free': 40, 'dairy-free': 20, vegetarian: 14, vegan: 8 };
+    new Chart(document.getElementById('chartDietary'), {
+      type: 'bar',
+      data: { labels: Object.keys(dietary).map(label), datasets: [{ data: Object.values(dietary), backgroundColor: '#34d399cc', borderRadius: 6, barThickness: 34 }] },
+      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } }, y: gridOpts(true) } }
+    });
+  })();
+
+  // Event type mix
+  (function () {
+    var events = { 'Ingredient interaction': 1402, 'Impression heartbeat': 315, 'Recipe expand': 193, 'Recipe save': 155, 'Recipe like': 150 };
+    new Chart(document.getElementById('chartEvents2'), {
+      type: 'bar',
+      data: { labels: Object.keys(events), datasets: [{ data: Object.values(events), backgroundColor: '#8459f7cc', borderRadius: 6, barThickness: 22 }] },
+      options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: gridOpts(true), y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 11 } } } } }
+    });
+  })();
+
+  // Persona table
+  (function () {
+    var tbody = document.querySelector('#personaTable tbody');
+    var sorted = personas.slice().sort(function (a, b) { return b.events - a.events; });
+    tbody.innerHTML = sorted.map(function (p) {
+      var meta = archetypeMeta[p.archetype];
+      return '<tr>' +
+        '<td class="persona-name">' + p.name + '</td>' +
+        '<td class="persona-desc">' + p.behavior + '<br><span class="archetype-tag" style="background:' + meta.color + '22; color:' + meta.color + ';">' + meta.label + '</span></td>' +
+        '<td>' + (p.skill === '—' ? '<span style="color:var(--text-faint)">—</span>' : label(p.skill)) + '</td>' +
+        '<td>' + (p.region === '—' ? '<span style="color:var(--text-faint)">—</span>' : p.region) + '</td>' +
+        '<td class="num-cell">' + p.sessions + '</td>' +
+        '<td class="num-cell">' + p.events.toLocaleString() + '</td>' +
+        '<td>' + (p.cuisines.length ? p.cuisines.map(label).join(', ') : '<span style="color:var(--text-faint)">none</span>') + '</td>' +
+        '</tr>';
+    }).join('');
+  })();
+
+  // Cuisine cloud
+  (function () {
+    var el = document.getElementById('cuisineCloud');
+    el.innerHTML = Object.keys(cuisineCounts).sort(function(a,b){return label(a).localeCompare(label(b));}).map(function (c) {
+      return '<span class="cuisine-chip">' + label(c) + ' <span class="n">' + cuisineCounts[c] + '</span></span>';
+    }).join('');
+  })();
+
+  // ── Engagement-by-persona grouped bar chart ────────────────────────
+  (function () {
+    var sorted = personas.slice().sort(function (a, b) {
+      var ea = engagement[a.id], eb = engagement[b.id];
+      return (ea.like + ea.save + ea.expand) - (eb.like + eb.save + eb.expand);
+    });
+    new Chart(document.getElementById('chartEngagement'), {
+      type: 'bar',
+      data: {
+        labels: sorted.map(function (p) { return p.name; }),
+        datasets: [
+          { label: 'Like rate %', data: sorted.map(function (p) { return engagement[p.id].like; }), backgroundColor: '#fb7185cc', borderRadius: 3, barPercentage: 0.85, categoryPercentage: 0.8 },
+          { label: 'Save rate %', data: sorted.map(function (p) { return engagement[p.id].save; }), backgroundColor: '#f0b23fcc', borderRadius: 3, barPercentage: 0.85, categoryPercentage: 0.8 },
+          { label: 'Expand rate %', data: sorted.map(function (p) { return engagement[p.id].expand; }), backgroundColor: '#8459f7cc', borderRadius: 3, barPercentage: 0.85, categoryPercentage: 0.8 },
+        ]
+      },
+      options: {
+        indexAxis: 'y',
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'top', align: 'end', labels: { boxWidth: 9, boxHeight: 9, font: { size: 10.5 } } } },
+        scales: {
+          x: Object.assign({ max: 100, title: { display: true, text: '% of impressions', color: '#6d6884', font: { size: 10.5 } } }, gridOpts(true)),
+          y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10 } } }
+        }
+      }
+    });
+  })();
+
+  // ── Region / continent donut ────────────────────────────────────────
+  (function () {
+    var counts = {};
+    personas.forEach(function (p) {
+      var continent = REGION_TO_CONTINENT[p.region] || 'Other';
+      counts[continent] = (counts[continent] || 0) + 1;
+    });
+    var keys = Object.keys(counts);
+    var palette = { 'North America': '#8459f7', 'Europe': '#3fb6f0', 'Asia': '#34d399', 'South America': '#f0b23f', 'Middle East': '#fb7185', 'Oceania': '#c084fc', 'Anonymous': '#6d6884' };
+    new Chart(document.getElementById('chartRegion'), {
+      type: 'doughnut',
+      data: { labels: keys, datasets: [{ data: keys.map(function (k) { return counts[k]; }), backgroundColor: keys.map(function (k) { return palette[k] || '#6d6884'; }), borderColor: '#15141c', borderWidth: 2 }] },
+      options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 9, boxHeight: 9, padding: 8, font: { size: 10 } } } }, cutout: '58%', maintainAspectRatio: false }
+    });
+  })();
+
+  // ── Pantry (ingredient category) bar ───────────────────────────────
+  (function () {
+    var catCounts = { produce: 205, pantry: 82, spice: 79, protein: 77, condiment: 46, dairy: 40, grain: 29, beverage: 3 };
+    new Chart(document.getElementById('chartPantry'), {
+      type: 'bar',
+      data: { labels: Object.keys(catCounts).map(label), datasets: [{ data: Object.values(catCounts), backgroundColor: '#f0b23fcc', borderRadius: 6, barThickness: 22 }] },
+      options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: gridOpts(true), y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 11 } } } } }
+    });
+  })();
+
+  // ── Most-used ingredients bar ───────────────────────────────────────
+  (function () {
+    var top = [['Garlic',26],['Yellow Onion',25],['Ground Cumin',8],['All-Purpose Flour',8],['Soy Sauce',8],['Extra-Virgin Olive Oil',7],['Fresh Cilantro',7],['Fresh Ginger',7],['Scallions',7],['Fresh Lemon Juice',6]];
+    new Chart(document.getElementById('chartIngredients'), {
+      type: 'bar',
+      data: { labels: top.map(function(x){return x[0];}), datasets: [{ data: top.map(function(x){return x[1];}), backgroundColor: '#34d399cc', borderRadius: 6, barThickness: 14 }] },
+      options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: gridOpts(true), y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } } } }
+    });
+  })();
+
+  // ── Tag cloud ────────────────────────────────────────────────────────
+  (function () {
+    var tags = [['chicken',16],['spicy',10],['comfort-food',8],['stew',8],['beef',7],['weeknight',5],['street-food',5],['grilled',5],['soup',5],['quick',4],['breakfast',4],['pork',4],['vegetables',4],['fried',4],['braise',4]];
+    var max = tags[0][1];
+    var el = document.getElementById('tagCloud');
+    el.innerHTML = tags.map(function (t) {
+      var scale = 0.85 + (t[1] / max) * 0.55;
+      return '<span class="cuisine-chip" style="font-size:' + (12 * scale).toFixed(1) + 'px;">' + label(t[0]) + ' <span class="n">' + t[1] + '</span></span>';
+    }).join('');
+  })();
+
+  // ── Recipe leaderboards ──────────────────────────────────────────────
+  (function () {
+    var rated = [
+      { title: 'Dal Makhani', cuisine: 'north_indian', v: '4.9★ (4,812)' },
+      { title: 'Osso Buco alla Milanese', cuisine: 'italian', v: '4.9★ (1,823)' },
+      { title: 'Birria Tacos de Res', cuisine: 'mexican', v: '4.9★ (7,130)' },
+      { title: 'Spicy Tonkotsu Ramen', cuisine: 'japanese', v: '4.9★ (3,412)' },
+      { title: 'Bibimbap', cuisine: 'korean', v: '4.9★ (3,037)' },
+    ];
+    var saved = [
+      { title: 'Birria Tacos de Res', cuisine: 'mexican', v: '44,500 saves' },
+      { title: 'Shrimp and Grits', cuisine: 'american_southern', v: '41,727 saves' },
+      { title: 'Jamaican Jerk Chicken', cuisine: 'caribbean', v: '37,960 saves' },
+      { title: 'Gumbo', cuisine: 'cajun', v: '36,530 saves' },
+      { title: 'Chettinad Chicken Curry', cuisine: 'south_indian', v: '33,319 saves' },
+    ];
+    var cooked = [
+      { title: 'Street-Style Elotes', cuisine: 'mexican', v: '16,700 cooks' },
+      { title: 'Shrimp and Grits', cuisine: 'american_southern', v: '16,333 cooks' },
+      { title: 'Cacio e Pepe', cuisine: 'italian', v: '14,880 cooks' },
+      { title: "Shepherd's Pie", cuisine: 'british', v: '14,682 cooks' },
+      { title: 'Gumbo', cuisine: 'cajun', v: '12,957 cooks' },
+    ];
+    function renderList(id, items) {
+      document.getElementById(id).innerHTML = items.map(function (r, i) {
+        return '<div style="display:flex; align-items:baseline; gap:10px; padding:8px 0; border-top:' + (i === 0 ? 'none' : '1px solid var(--border-soft)') + ';">' +
+          '<span class="mono" style="color:var(--text-faint); font-size:11px; flex-shrink:0;">' + (i + 1) + '</span>' +
+          '<span style="flex:1; min-width:0;"><span style="color:var(--text); font-weight:600; font-size:12.5px; display:block; line-height:1.4;">' + r.title + '</span>' +
+          '<span style="color:var(--text-faint); font-size:11px;">' + label(r.cuisine) + '</span></span>' +
+          '<span class="mono" style="color:var(--text-dim); font-size:11px; text-align:right; flex-shrink:0;">' + r.v + '</span></div>';
+      }).join('');
+    }
+    renderList('leaderboardRated', rated);
+    renderList('leaderboardSaved', saved);
+    renderList('leaderboardCooked', cooked);
+  })();
+
+  // ── Time-to-table + calorie distribution ────────────────────────────
+  (function () {
+    var timeBuckets = { '<30m': 4, '30-60m': 23, '60-90m': 18, '90-120m': 5, '120m+': 10 };
+    new Chart(document.getElementById('chartTime'), {
+      type: 'bar',
+      data: { labels: Object.keys(timeBuckets), datasets: [{ data: Object.values(timeBuckets), backgroundColor: '#3fb6f0cc', borderRadius: 6, barThickness: 30 }] },
+      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } }, y: gridOpts(true) } }
+    });
+
+    var calBuckets = { '<300 kcal': 8, '300-500': 29, '500-700': 19, '700+': 4 };
+    new Chart(document.getElementById('chartCalories'), {
+      type: 'bar',
+      data: { labels: Object.keys(calBuckets), datasets: [{ data: Object.values(calBuckets), backgroundColor: '#fb7185cc', borderRadius: 6, barThickness: 30 }] },
+      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } }, y: gridOpts(true) } }
+    });
+  })();
+
+  // ── Creator leaderboard table ─────────────────────────────────────────
+  (function () {
+    var creators = [
+      { name: 'Diego Hernandez', recipes: 2, rating: '4.85', saves: 74300 },
+      { name: 'Marlon Campbell', recipes: 2, rating: '4.40', saves: 65643 },
+      { name: 'Dwayne Carter', recipes: 2, rating: '4.50', saves: 65367 },
+      { name: 'Oliver Bennett', recipes: 2, rating: '4.20', saves: 50858 },
+      { name: 'Linh Nguyen', recipes: 2, rating: '4.50', saves: 50738 },
+      { name: 'Putu Wijaya', recipes: 2, rating: '4.50', saves: 49371 },
+      { name: 'Eleni Papadakis', recipes: 2, rating: '4.75', saves: 47700 },
+      { name: 'Rania Haddad', recipes: 2, rating: '4.60', saves: 47178 },
+    ];
+    document.querySelector('#creatorTable tbody').innerHTML = creators.map(function (c) {
+      return '<tr><td class="persona-name">' + c.name + '</td><td class="num-cell">' + c.recipes + '</td><td class="num-cell">' + c.rating + '★</td><td class="num-cell">' + c.saves.toLocaleString() + '</td></tr>';
+    }).join('');
+  })();
+})();
+</script>

@@ -1,0 +1,671 @@
+<title>CulinaryFeed Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #14100c;
+    --bg-alt: #19140f;
+    --surface: #201a15;
+    --surface-2: #2a2219;
+    --border: #3d3226;
+    --border-soft: #2a2219;
+
+    --text: #f2ead9;
+    --text-dim: #b7a88f;
+    --text-faint: #7a6c56;
+
+    --saffron: #e8a33d;
+    --saffron-soft: #e8a33d22;
+    --chili: #d64933;
+    --chili-soft: #d6493322;
+    --teal: #3ecf8e;
+    --teal-soft: #3ecf8e22;
+
+    --font-display: 'Bricolage Grotesque', 'Arial Black', sans-serif;
+    --font-body: 'Newsreader', Georgia, 'Times New Roman', serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, 'SF Mono', Consolas, monospace;
+
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection { background: var(--saffron); color: #14100c; }
+  a { color: inherit; }
+
+  h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; color: var(--text); }
+  .mono { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 28px; }
+  .wrap-wide { max-width: 980px; margin: 0 auto; padding: 0 28px; }
+
+  em { font-style: italic; color: var(--saffron); }
+
+  /* ── Reveal-on-scroll ────────────────────────────────────────────── */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    * { animation: none !important; }
+  }
+
+  /* ── Hero ────────────────────────────────────────────────────────── */
+  .hero {
+    position: relative;
+    padding: 100px 0 0;
+    overflow: hidden;
+    background:
+      radial-gradient(ellipse 800px 500px at 85% -15%, #e8a33d22, transparent 60%),
+      radial-gradient(ellipse 600px 400px at 5% 10%, #d6493318, transparent 55%),
+      var(--bg);
+  }
+  .kicker {
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .kicker::before { content: ''; width: 22px; height: 1.5px; background: var(--saffron); }
+  .hero h1 {
+    font-size: clamp(42px, 7.5vw, 84px);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 0.98;
+    margin-top: 22px;
+  }
+  .hero-dek {
+    font-family: var(--font-body);
+    font-size: 21px;
+    font-style: italic;
+    color: var(--text-dim);
+    max-width: 560px;
+    margin-top: 24px;
+    line-height: 1.5;
+  }
+  .byline {
+    margin-top: 34px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .byline .avatar {
+    width: 38px; height: 38px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--saffron), var(--chili));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display); font-weight: 700; color: #14100c; font-size: 15px;
+  }
+  .byline-name { font-weight: 600; color: var(--text); font-size: 15px; font-family: var(--font-mono); }
+  .byline-role { font-size: 12.5px; color: var(--text-faint); }
+
+  .cta-row { margin-top: 32px; display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 13px 22px;
+    border-radius: 6px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    transition: transform 0.15s ease, background 0.15s ease;
+  }
+  .btn-primary { background: var(--saffron); color: #14100c; }
+  .btn-primary:hover { transform: translateY(-2px); background: #f0ad4d; }
+  .btn-ghost { background: transparent; border: 1px solid var(--border); color: var(--text-dim); }
+  .btn-ghost:hover { border-color: var(--saffron); color: var(--saffron); transform: translateY(-2px); }
+
+  /* ── Cuisine ticker ──────────────────────────────────────────────── */
+  .ticker-wrap {
+    margin-top: 68px;
+    border-top: 1px solid var(--border-soft);
+    border-bottom: 1px solid var(--border-soft);
+    padding: 16px 0;
+    overflow: hidden;
+    background: var(--bg-alt);
+  }
+  .ticker-track {
+    display: flex;
+    gap: 0;
+    width: max-content;
+    animation: ticker-scroll 42s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+  @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .ticker-item {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-faint);
+    padding: 0 22px;
+    white-space: nowrap;
+    border-right: 1px solid var(--border-soft);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .ticker-item .dot { color: var(--saffron); }
+
+  /* ── Section scaffolding ─────────────────────────────────────────── */
+  section.chapter { padding: 96px 0; }
+  section.chapter.alt { background: var(--bg-alt); }
+  .chapter-num {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--text-faint);
+    letter-spacing: 0.08em;
+  }
+  .chapter h2 {
+    font-size: clamp(30px, 4vw, 42px);
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    margin-top: 10px;
+    max-width: 620px;
+  }
+  .chapter-lede {
+    font-size: 19px;
+    color: var(--text-dim);
+    margin-top: 20px;
+    max-width: 620px;
+  }
+  .prose { font-size: 18px; color: var(--text-dim); margin-top: 18px; max-width: 620px; }
+  .prose + .prose { margin-top: 14px; }
+  .prose b { color: var(--text); font-weight: 600; }
+
+  blockquote {
+    margin: 32px 0 0;
+    padding-left: 22px;
+    border-left: 3px solid var(--saffron);
+    font-family: var(--font-body);
+    font-style: italic;
+    font-size: 21px;
+    color: var(--text);
+    max-width: 600px;
+  }
+
+  /* ── Ticket cards (perforated-edge motif) ───────────────────────── */
+  .ticket {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    position: relative;
+    padding: 22px 22px 20px;
+  }
+  .ticket::before, .ticket::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 10px;
+    background-image: radial-gradient(circle, var(--bg) 4.5px, transparent 4.6px);
+    background-size: 16px 16px;
+    background-position: -2px center;
+  }
+  .ticket::before { top: -5px; }
+  .ticket::after { bottom: -5px; }
+  section.alt .ticket::before, section.alt .ticket::after {
+    background-image: radial-gradient(circle, var(--bg-alt) 4.5px, transparent 4.6px);
+  }
+
+  /* ── Architecture rail ───────────────────────────────────────────── */
+  .rail { display: flex; flex-direction: column; gap: 0; margin-top: 40px; max-width: 620px; }
+  .rail-step { display: flex; gap: 20px; padding: 20px 0; border-top: 1px solid var(--border-soft); }
+  .rail-step:first-child { border-top: none; padding-top: 0; }
+  .rail-num { font-family: var(--font-mono); font-size: 13px; color: var(--saffron); flex-shrink: 0; width: 26px; padding-top: 2px; }
+  .rail-body h3 { font-size: 17px; font-weight: 600; font-family: var(--font-body); }
+  .rail-body p { margin: 6px 0 0; font-size: 15.5px; color: var(--text-faint); line-height: 1.55; }
+
+  /* ── Algorithm spec cards ────────────────────────────────────────── */
+  .spec-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin-top: 40px; }
+  @media (max-width: 760px) { .spec-grid { grid-template-columns: 1fr; } }
+  .spec-card { padding: 20px; }
+  .spec-tag { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.05em; text-transform: uppercase; color: var(--saffron); }
+  .spec-card h3 { font-size: 17px; font-weight: 600; margin-top: 8px; font-family: var(--font-body); }
+  .spec-card p { font-size: 14.5px; color: var(--text-faint); margin-top: 8px; line-height: 1.55; }
+
+  /* ── Persona showcase ────────────────────────────────────────────── */
+  .persona-strip { display: flex; gap: 16px; overflow-x: auto; margin-top: 40px; padding-bottom: 10px; }
+  .persona-card { flex: 0 0 240px; padding: 20px; }
+  .persona-card .p-name { font-family: var(--font-mono); font-size: 11px; color: var(--text-faint); }
+  .persona-card h3 { font-size: 18px; margin-top: 6px; font-family: var(--font-body); font-weight: 600; }
+  .persona-card p { font-size: 14px; color: var(--text-faint); margin-top: 8px; line-height: 1.55; }
+  .persona-bars { margin-top: 16px; display: flex; flex-direction: column; gap: 6px; }
+  .p-bar-row { display: flex; align-items: center; gap: 8px; }
+  .p-bar-label { font-family: var(--font-mono); font-size: 9.5px; color: var(--text-faint); width: 44px; flex-shrink: 0; }
+  .p-bar-track { flex: 1; height: 5px; background: var(--surface-2); border-radius: 100px; overflow: hidden; }
+  .p-bar-fill { height: 100%; border-radius: 100px; }
+
+  /* ── Stat grid ───────────────────────────────────────────────────── */
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin-top: 40px; }
+  @media (max-width: 700px) { .stat-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--surface); padding: 22px 18px; }
+  .stat .v { font-family: var(--font-display); font-size: 30px; font-weight: 700; color: var(--saffron); }
+  .stat .l { font-size: 12px; color: var(--text-faint); margin-top: 6px; line-height: 1.4; }
+
+  /* ── Proof points (verified claims) ─────────────────────────────── */
+  .proof-list { margin-top: 36px; display: flex; flex-direction: column; gap: 18px; max-width: 640px; }
+  .proof {
+    display: flex; gap: 14px; align-items: flex-start;
+    padding: 16px 0; border-top: 1px solid var(--border-soft);
+  }
+  .proof:first-child { border-top: none; padding-top: 0; }
+  .proof .check { color: var(--teal); font-family: var(--font-mono); font-size: 15px; flex-shrink: 0; margin-top: 3px; }
+  .proof p { margin: 0; font-size: 16px; color: var(--text-dim); line-height: 1.55; }
+  .proof p b { color: var(--text); font-weight: 600; font-family: var(--font-mono); background: var(--teal-soft); padding: 1px 5px; border-radius: 3px; }
+
+  /* ── Constraint callout (before/after) ──────────────────────────── */
+  .constraint { margin-top: 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 620px; }
+  @media (max-width: 600px) { .constraint { grid-template-columns: 1fr; } }
+  .constraint-card { padding: 18px; }
+  .constraint-card .k { font-family: var(--font-mono); font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .constraint-card.before .k { color: var(--chili); }
+  .constraint-card.after .k { color: var(--teal); }
+  .constraint-card .val { font-family: var(--font-display); font-size: 26px; font-weight: 700; margin-top: 8px; }
+  .constraint-card p { font-size: 13px; color: var(--text-faint); margin-top: 6px; }
+
+  /* ── Stack chips ─────────────────────────────────────────────────── */
+  .chip-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 28px; }
+  .chip { font-family: var(--font-mono); font-size: 12.5px; padding: 7px 13px; border-radius: 5px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-dim); }
+
+  /* ── Next-up list ────────────────────────────────────────────────── */
+  .next-list { margin-top: 36px; display: flex; flex-direction: column; max-width: 640px; }
+  .next-row { display: flex; gap: 16px; padding: 18px 0; border-top: 1px solid var(--border-soft); align-items: baseline; }
+  .next-row:first-child { border-top: none; }
+  .next-row .n { font-family: var(--font-mono); font-size: 12px; color: var(--chili); flex-shrink: 0; width: 24px; }
+  .next-row p { margin: 0; font-size: 15.5px; color: var(--text-dim); line-height: 1.5; }
+  .next-row p b { color: var(--text); }
+
+  /* ── Footer / final CTA ──────────────────────────────────────────── */
+  .final-cta { text-align: left; padding: 110px 0 90px; }
+  .final-cta h2 { font-size: clamp(34px, 5.5vw, 56px); font-weight: 700; letter-spacing: -0.02em; max-width: 640px; }
+  .final-cta .prose { font-size: 19px; }
+  footer.colophon {
+    border-top: 1px solid var(--border-soft);
+    padding: 28px 0 60px;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px;
+    font-family: var(--font-mono); font-size: 12px; color: var(--text-faint);
+  }
+</style>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Engineering + product case study</div>
+    <h1 class="reveal">A feed that learns your<br>taste from <em>twenty</em> people<br>who don't exist.</h1>
+    <p class="hero-dek reveal">
+      CulinaryFeed is a TikTok-style recipe discovery app with a full
+      recommendation engine — multi-dimensional affinity, a bandit for
+      exploration, diversity-constrained ranking — running entirely in the
+      browser, with no backend and no real users yet. Here's how it's built,
+      and how I proved it works anyway.
+    </p>
+    <div class="byline reveal">
+      <div class="avatar">VJ</div>
+      <div>
+        <div class="byline-name">Vedang Jaithalya</div>
+        <div class="byline-role">Designed &amp; built end-to-end</div>
+      </div>
+    </div>
+    <div class="cta-row reveal">
+      <a class="btn btn-primary" href="https://github.com/VedangJaithalya/culinary-hub" target="_blank" rel="noopener">→ View the code on GitHub</a>
+      <a class="btn btn-ghost" href="#method">Read the methodology</a>
+    </div>
+  </div>
+
+  <div class="ticker-wrap">
+    <div class="ticker-track" id="tickerTrack"></div>
+  </div>
+</header>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       01 — THE PROBLEM
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="chapter">
+    <div class="wrap">
+      <div class="chapter-num reveal">01 / The setup</div>
+      <h2 class="reveal">No backend. No users. Just a claim to prove.</h2>
+      <p class="chapter-lede reveal">
+        The brief I gave myself: build the recommendation layer a real
+        food-discovery product would need — the part that decides what you
+        see next — and prove it actually personalizes, before a single real
+        person opens the app.
+      </p>
+      <p class="prose reveal">
+        Everything lives in the browser. Every swipe, save, rating, and
+        dismissal becomes a telemetry event, buffered to <b>localStorage</b>
+        and reduced into session facts on the client. There's no server to
+        hide behind — if the ranking looks wrong, it's because the logic is
+        wrong, not because a query timed out somewhere.
+      </p>
+      <blockquote class="reveal">"If it can't prove itself against synthetic data, it has no business ranking real people's dinner."</blockquote>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       02 — ARCHITECTURE
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="chapter alt">
+    <div class="wrap">
+      <div class="chapter-num reveal">02 / How a recommendation happens</div>
+      <h2 class="reveal">Five stages, zero round-trips.</h2>
+      <div class="rail">
+        <div class="rail-step reveal">
+          <div class="rail-num">01</div>
+          <div class="rail-body">
+            <h3>Feed &amp; actions</h3>
+            <p>Swipes, likes, saves, dismissals, ratings, follows, and full cook sessions with a step timer.</p>
+          </div>
+        </div>
+        <div class="rail-step reveal">
+          <div class="rail-num">02</div>
+          <div class="rail-body">
+            <h3>Telemetry buffer</h3>
+            <p>Every action becomes a typed event envelope, persisted to localStorage the moment it fires.</p>
+          </div>
+        </div>
+        <div class="rail-step reveal">
+          <div class="rail-num">03</div>
+          <div class="rail-body">
+            <h3>Session transform</h3>
+            <p>Raw events reduce into per-recipe impression facts — dwell time, expand rate, ingredient completion.</p>
+          </div>
+        </div>
+        <div class="rail-step reveal">
+          <div class="rail-num">04</div>
+          <div class="rail-body">
+            <h3>Affinity model</h3>
+            <p>Recency-decayed weights across four dimensions at once: cuisine, difficulty, diet, and content tags.</p>
+          </div>
+        </div>
+        <div class="rail-step reveal">
+          <div class="rail-num">05</div>
+          <div class="rail-body">
+            <h3>Ranking engine</h3>
+            <p>Scores every unseen recipe, explores under-shown cuisines via UCB1, then diversifies the final order.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       03 — THE ALGORITHM
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="chapter">
+    <div class="wrap-wide">
+      <div class="chapter-num reveal">03 / The ranking algorithm</div>
+      <h2 class="reveal">Six ideas doing the actual work.</h2>
+      <p class="chapter-lede reveal">
+        Each one exists to fix a specific, observable failure mode of a naive
+        "rank by cuisine affinity" feed.
+      </p>
+      <div class="spec-grid">
+        <div class="ticket spec-card reveal">
+          <span class="spec-tag">Signal shape</span>
+          <h3>Multi-dimensional affinity</h3>
+          <p>Weighs cuisine, difficulty, diet, and content tags as four parallel vectors instead of one — a vegan user gets credit for being vegan, not just for whichever cuisine they happened to click.</p>
+        </div>
+        <div class="ticket spec-card reveal">
+          <span class="spec-tag">Time</span>
+          <h3>Recency-weighted scoring</h3>
+          <p>A 14-day exponential half-life on every signal, so taste is allowed to drift instead of averaging a person's entire history into mush.</p>
+        </div>
+        <div class="ticket spec-card reveal">
+          <span class="spec-tag">Variety</span>
+          <h3>Diversity constraint</h3>
+          <p>Caps any one cuisine at 2 appearances per 5-card window — even for a user whose affinity vector is 91% one cuisine.</p>
+        </div>
+        <div class="ticket spec-card reveal">
+          <span class="spec-tag">Discovery</span>
+          <h3>Content-based similarity</h3>
+          <p>Weighted Jaccard similarity over ingredients and tags powers "More Like This" — connections cuisine-only affinity can't make.</p>
+        </div>
+        <div class="ticket spec-card reveal">
+          <span class="spec-tag">Exploration</span>
+          <h3>UCB1 bandit</h3>
+          <p>Replaces a flat epsilon-greedy random chance with an exploration bonus that shrinks as confidence in a user's taste grows.</p>
+        </div>
+        <div class="ticket spec-card reveal">
+          <span class="spec-tag">Feedback</span>
+          <h3>Explicit negative signal</h3>
+          <p>A real "not interested" action carries a −6.0 penalty — the single largest-magnitude term in the whole scoring function.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       04 — THE 20-PERSONA METHOD
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="chapter alt" id="method">
+    <div class="wrap-wide">
+      <div class="chapter-num reveal">04 / The methodology</div>
+      <h2 class="reveal">Since there was no user base, I built one.</h2>
+      <p class="chapter-lede reveal">
+        Twenty synthetic personas, each a deliberately different behavioral
+        edge case — a full telemetry history of sessions, dwell times, likes,
+        and saves, generated to match the exact shape real usage would
+        produce. If the ranking engine survives all twenty, it's not by luck.
+      </p>
+
+      <div class="persona-strip">
+        <div class="ticket persona-card reveal">
+          <span class="p-name">usr_fake_01</span>
+          <h3>The loyalist</h3>
+          <p>Revisits two Italian recipes obsessively, skips almost everything else.</p>
+          <div class="persona-bars">
+            <div class="p-bar-row"><span class="p-bar-label">LIKE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:45.5%; background:var(--chili);"></div></div></div>
+            <div class="p-bar-row"><span class="p-bar-label">SAVE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:63.6%; background:var(--saffron);"></div></div></div>
+          </div>
+        </div>
+        <div class="ticket persona-card reveal">
+          <span class="p-name">usr_fake_18</span>
+          <h3>The save hoarder</h3>
+          <p>Saves everything "for later," almost never likes or expands anything.</p>
+          <div class="persona-bars">
+            <div class="p-bar-row"><span class="p-bar-label">LIKE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:0%; background:var(--chili);"></div></div></div>
+            <div class="p-bar-row"><span class="p-bar-label">SAVE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:100%; background:var(--saffron);"></div></div></div>
+          </div>
+        </div>
+        <div class="ticket persona-card reveal">
+          <span class="p-name">usr_fake_09</span>
+          <h3>The passive scroller</h3>
+          <p>Sub-2-second dwell on nearly every card — almost zero usable signal.</p>
+          <div class="persona-bars">
+            <div class="p-bar-row"><span class="p-bar-label">LIKE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:0%; background:var(--chili);"></div></div></div>
+            <div class="p-bar-row"><span class="p-bar-label">SAVE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:0%; background:var(--saffron);"></div></div></div>
+          </div>
+        </div>
+        <div class="ticket persona-card reveal">
+          <span class="p-name">usr_fake_14</span>
+          <h3>The adversary</h3>
+          <p>Every field — dwell, likes, saves — is pure random noise. A stress test, not a person.</p>
+          <div class="persona-bars">
+            <div class="p-bar-row"><span class="p-bar-label">LIKE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:58.3%; background:var(--chili);"></div></div></div>
+            <div class="p-bar-row"><span class="p-bar-label">SAVE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:52.8%; background:var(--saffron);"></div></div></div>
+          </div>
+        </div>
+        <div class="ticket persona-card reveal">
+          <span class="p-name">usr_fake_20</span>
+          <h3>The anti-fan</h3>
+          <p>Loves broad home cooking, but instantly skips German recipes every single time.</p>
+          <div class="persona-bars">
+            <div class="p-bar-row"><span class="p-bar-label">LIKE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:63.6%; background:var(--chili);"></div></div></div>
+            <div class="p-bar-row"><span class="p-bar-label">SAVE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:27.3%; background:var(--saffron);"></div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat reveal"><div class="v">20</div><div class="l">SYNTHETIC PERSONAS, EACH A DIFFERENT FAILURE MODE</div></div>
+        <div class="stat reveal"><div class="v">2,215</div><div class="l">SIMULATED EVENTS ACROSS ALL TWENTY HISTORIES</div></div>
+        <div class="stat reveal"><div class="v">0–100%</div><div class="l">SAVE-RATE SPREAD, PROVING THE SIGNAL ISN'T FLAT</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       05 — RESULTS / PROOF POINTS
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="chapter">
+    <div class="wrap">
+      <div class="chapter-num reveal">05 / What actually got verified</div>
+      <h2 class="reveal">Claims are cheap. Here's what I checked.</h2>
+      <p class="chapter-lede reveal">
+        No test runner was available in the build environment, so every
+        claim below was checked by actually executing the real ranking code
+        against real persona data — not by trusting the design doc.
+      </p>
+
+      <div class="proof-list">
+        <div class="proof reveal">
+          <span class="check">✓</span>
+          <p>A user whose taste visibly drifted — North Indian, then Korean, then French, across three sessions — ended up with a <b>french: 0.844</b> affinity weight. Recency decay works: the most recent session dominates instead of averaging out.</p>
+        </div>
+        <div class="proof reveal">
+          <span class="check">✓</span>
+          <p>A user with a <b>italian: 0.91</b> affinity skew — about as extreme as it gets — still never saw more than <b>2 of 5</b> consecutive cards from the same cuisine. The diversity constraint holds even at the edge.</p>
+        </div>
+        <div class="proof reveal">
+          <span class="check">✓</span>
+          <p>A brand-new onboarding profile (Thai + Mexican preference, beginner, vegan) produced an exact <b>70/30</b> preference-weighted split across cuisine, difficulty, <em style="color:inherit; font-style:normal;">and</em> dietary dimensions simultaneously — cold start isn't a coin flip.</p>
+        </div>
+        <div class="proof reveal">
+          <span class="check">✓</span>
+          <p>Dismissing a recipe removes it from the ranked output <b>permanently</b> — verified by re-running the ranking engine with the dismissal applied and confirming the recipe never resurfaces.</p>
+        </div>
+      </div>
+
+      <div class="constraint reveal">
+        <div class="ticket constraint-card before">
+          <span class="k">Naive ranking</span>
+          <div class="val">5 / 5</div>
+          <p>Same-cuisine cards possible in a row, at extreme affinity skew</p>
+        </div>
+        <div class="ticket constraint-card after">
+          <span class="k">With diversity constraint</span>
+          <div class="val">2 / 5</div>
+          <p>Measured cap, holding even at 91% single-cuisine affinity</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       06 — STACK
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="chapter alt">
+    <div class="wrap">
+      <div class="chapter-num reveal">06 / How it's built</div>
+      <h2 class="reveal">Deliberately no backend.</h2>
+      <p class="prose reveal">
+        Every piece of state — saved recipes, ratings, dismissals, follows,
+        the meal planner, the shopping list — is a small, dependency-free
+        localStorage-backed service. When the build environment had no
+        network access to install a bundler, I verified the ranking and
+        affinity modules by <b>directly executing them under Node</b> with a
+        minimal browser-global polyfill, rather than skipping verification
+        entirely.
+      </p>
+      <div class="chip-row reveal">
+        <span class="chip">React 19</span>
+        <span class="chip">Vite 8</span>
+        <span class="chip">Tailwind CSS v4</span>
+        <span class="chip">ESLint 10</span>
+        <span class="chip">Zero backend</span>
+        <span class="chip">localStorage persistence</span>
+        <span class="chip">Zero runtime deps in the ranking layer</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════
+       07 — WHAT'S NEXT
+  ═══════════════════════════════════════════════════════════════ -->
+  <section class="chapter">
+    <div class="wrap">
+      <div class="chapter-num reveal">07 / What's still open</div>
+      <h2 class="reveal">This isn't finished — on purpose.</h2>
+      <div class="next-list">
+        <div class="next-row reveal">
+          <span class="n">01</span>
+          <p><b>Explainability</b> — a "because you liked Thai food" chip on each card. Last piece of the product-polish pass.</p>
+        </div>
+        <div class="next-row reveal">
+          <span class="n">02</span>
+          <p><b>Live re-ranking</b> — right now a session's feed is ranked once on mount; it should react mid-session.</p>
+        </div>
+        <div class="next-row reveal">
+          <span class="n">03</span>
+          <p><b>An A/B harness</b> — to run two ranking strategies side by side against the same synthetic personas.</p>
+        </div>
+        <div class="next-row reveal">
+          <span class="n">04</span>
+          <p><b>Real automated tests</b> — the verification above was direct execution + hand-written assertions; it deserves a real suite.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <div class="wrap">
+      <div class="chapter-num reveal">Get into it</div>
+      <h2 class="reveal">The full source is on GitHub.</h2>
+      <p class="prose reveal">Ranking engine, affinity model, the 20 persona fixtures, and every service behind them — all of it is there to read.</p>
+      <div class="cta-row reveal">
+        <a class="btn btn-primary" href="https://github.com/VedangJaithalya/culinary-hub" target="_blank" rel="noopener">→ github.com/VedangJaithalya/culinary-hub</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="colophon">
+    <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
+      <span>CulinaryFeed — case study by Vedang Jaithalya</span>
+      <span>Recommendation engine, verified against 20 synthetic personas</span>
+    </div>
+  </footer>
+
+</main>
+
+<script>
+(function () {
+  var cuisines = ['North Indian','Italian','Mexican','Japanese','Mediterranean','South Indian','Thai','Vietnamese','Korean','Sichuan','French','Spanish','Moroccan','Ethiopian','Lebanese','Turkish','Peruvian','Brazilian','Caribbean','Southern','German','Filipino','Indonesian','Malaysian','Nigerian','Persian','Russian','British','Cajun','Argentinian'];
+  var track = document.getElementById('tickerTrack');
+  var doubled = cuisines.concat(cuisines);
+  track.innerHTML = doubled.map(function (c) {
+    return '<span class="ticker-item"><span class="dot">◆</span>' + c + '</span>';
+  }).join('');
+
+  // Scroll reveal
+  var els = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    els.forEach(function (el, i) {
+      el.style.transitionDelay = (Math.min(i % 6, 5) * 0.06) + 's';
+      io.observe(el);
+    });
+  } else {
+    els.forEach(function (el) { el.classList.add('in'); });
+  }
+})();
+</script>
