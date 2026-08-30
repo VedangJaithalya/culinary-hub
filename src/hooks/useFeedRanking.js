@@ -24,6 +24,7 @@ import mockRecipes from '../data/mockRecipes.json'
 import { generateUserAffinityVector } from '../analytics/affinityModel.js'
 import { getLatestAnalyticsData } from '../analytics/sessionTransformer.js'
 import { generateRankedFeed } from '../engine/rankingEngine.js'
+import { getUserProfile } from '../services/userProfileService.js'
 
 // =============================================================================
 // PRIVATE HELPERS
@@ -80,10 +81,18 @@ export function useFeedRanking() {
     // Build a cuisine affinity vector from engagement signals
     const affinityVector = generateUserAffinityVector()
 
-    // Generate a ranked list of unseen (and seen) candidates
-    const rankedCandidates = generateRankedFeed(mockRecipes, affinityVector, seenRecipeIds)
+    // Onboarding-declared dietary preferences (if any) nudge ranking toward
+    // matching recipes — see rankingEngine.js's DIETARY_MATCH_BONUS.
+    const dietaryFlags = getUserProfile()?.dietaryFlags ?? []
 
-    // Update the queue; fall back to the full catalogue if everything was seen
+    // Generate a ranked list of unseen (and seen) candidates
+    const rankedCandidates = generateRankedFeed(mockRecipes, affinityVector, seenRecipeIds, dietaryFlags)
+
+    // Update the queue; fall back to the full catalogue if everything was seen.
+    // Intentional one-time sync on mount (empty dep array, see below) rather
+    // than a reaction to a prop change — the documented valid case for
+    // setState-in-effect.
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setFeedQueue(rankedCandidates.length > 0 ? rankedCandidates : mockRecipes)
   }, []) // intentionally empty — runs exactly once on mount
 

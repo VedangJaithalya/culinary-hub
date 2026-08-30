@@ -1,0 +1,1574 @@
+[
+  {
+    "eventId": "776e2a56-63bb-4569-b27d-0ec307f1a2da",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:05.923Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "is_saved": true,
+      "timestamp_ms": 1785874265923
+    }
+  },
+  {
+    "eventId": "b475ca70-9b3b-416f-8377-eae41e8c5fc4",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:06.073Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "feed_index": 0,
+      "dwell_time_ms": 6073,
+      "cumulative_dwell_ms": 6073,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874266073
+    }
+  },
+  {
+    "eventId": "15f5e31c-a295-4d5f-8b7b-36f3252881e0",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:13.798Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0008-4e5f-8a9b-000000000008",
+      "is_saved": true,
+      "timestamp_ms": 1785874273798
+    }
+  },
+  {
+    "eventId": "1535858f-c15a-44d3-8d11-424ddde04230",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:13.948Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0008-4e5f-8a9b-000000000008",
+      "feed_index": 1,
+      "dwell_time_ms": 4710,
+      "cumulative_dwell_ms": 4710,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874273948
+    }
+  },
+  {
+    "eventId": "63e4b736-ab1c-4b52-979f-be791e34dd27",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:20.384Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0043-4e5f-8a9b-000000000043",
+      "is_saved": true,
+      "timestamp_ms": 1785874280384
+    }
+  },
+  {
+    "eventId": "2101eee2-5ed4-40eb-bf63-b8074ed399df",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:20.534Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0043-4e5f-8a9b-000000000043",
+      "feed_index": 2,
+      "dwell_time_ms": 4303,
+      "cumulative_dwell_ms": 4303,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874280534
+    }
+  },
+  {
+    "eventId": "1b7cd4b7-581a-47df-a18f-c6cc1e32d6dc",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:28.400Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0029-4e5f-8a9b-000000000029",
+      "is_saved": true,
+      "timestamp_ms": 1785874288400
+    }
+  },
+  {
+    "eventId": "99648ff8-7390-4d68-a577-a4bf1b2d80eb",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:28.550Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0029-4e5f-8a9b-000000000029",
+      "feed_index": 3,
+      "dwell_time_ms": 3983,
+      "cumulative_dwell_ms": 3983,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874288550
+    }
+  },
+  {
+    "eventId": "ce946bd8-0be2-44b7-8ae5-e9a9cb2d484b",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:38.986Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "is_saved": true,
+      "timestamp_ms": 1785874298986
+    }
+  },
+  {
+    "eventId": "dc1b689d-ea8b-4326-b65c-c02004da0fff",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:39.136Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "feed_index": 4,
+      "dwell_time_ms": 6622,
+      "cumulative_dwell_ms": 6622,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874299136
+    }
+  },
+  {
+    "eventId": "1a826004-82f5-4420-8c0b-d2ace6ce6ed2",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:51.193Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0016-4e5f-8a9b-000000000016",
+      "is_saved": true,
+      "timestamp_ms": 1785874311193
+    }
+  },
+  {
+    "eventId": "66adee0f-7b72-46f5-9480-2b2c734a528e",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:51.343Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0016-4e5f-8a9b-000000000016",
+      "feed_index": 5,
+      "dwell_time_ms": 7461,
+      "cumulative_dwell_ms": 7461,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874311343
+    }
+  },
+  {
+    "eventId": "7ee1e1e4-0467-42b5-b82a-ec78bb969183",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:55.055Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "dwell_before_expand_ms": 1552,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1785874315055
+    }
+  },
+  {
+    "eventId": "8b9db13a-0657-465c-87fc-09228736d771",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:57.545Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "is_saved": true,
+      "timestamp_ms": 1785874317545
+    }
+  },
+  {
+    "eventId": "1ff7d1fd-5b87-4281-a8a3-7577dca68997",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:11:57.695Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "feed_index": 6,
+      "dwell_time_ms": 4192,
+      "cumulative_dwell_ms": 4192,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874317695
+    }
+  },
+  {
+    "eventId": "f5a16dce-3017-495c-b938-4d906342aa58",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:12:08.339Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0032-4e5f-8a9b-000000000032",
+      "is_saved": true,
+      "timestamp_ms": 1785874328339
+    }
+  },
+  {
+    "eventId": "41b2d5a9-ec7a-4d61-91ec-0335abe5b0fe",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:12:08.489Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0032-4e5f-8a9b-000000000032",
+      "feed_index": 7,
+      "dwell_time_ms": 6275,
+      "cumulative_dwell_ms": 6275,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874328489
+    }
+  },
+  {
+    "eventId": "15e152ad-6914-4e45-9e30-66a56c1b0d8f",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:12:19.558Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "is_saved": true,
+      "timestamp_ms": 1785874339558
+    }
+  },
+  {
+    "eventId": "542bd469-9730-4526-b638-be5a916e104e",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:12:19.708Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "feed_index": 8,
+      "dwell_time_ms": 6923,
+      "cumulative_dwell_ms": 6923,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874339708
+    }
+  },
+  {
+    "eventId": "53942101-e02d-4b0d-8ef9-b02cd17eb10a",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:12:28.415Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0053-4e5f-8a9b-000000000053",
+      "is_saved": true,
+      "timestamp_ms": 1785874348415
+    }
+  },
+  {
+    "eventId": "9f566c0b-26fc-48c3-8696-f27bd7677bb9",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0ea414ba-a590-4f21-9730-8f7484d0d807",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-04T20:12:28.565Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0053-4e5f-8a9b-000000000053",
+      "feed_index": 9,
+      "dwell_time_ms": 4724,
+      "cumulative_dwell_ms": 4724,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1785874348565
+    }
+  },
+  {
+    "eventId": "0cce1450-0d55-43fa-bc76-545f12be9f01",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:01.688Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "dwell_before_expand_ms": 1688,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787088301688
+    }
+  },
+  {
+    "eventId": "7d523c82-04c4-422e-a6e4-1aa7420f4383",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:05.610Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "is_saved": true,
+      "timestamp_ms": 1787088305610
+    }
+  },
+  {
+    "eventId": "a56df078-77fe-418e-b981-86c84d040a7e",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:05.760Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "feed_index": 0,
+      "dwell_time_ms": 5760,
+      "cumulative_dwell_ms": 5760,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088305760
+    }
+  },
+  {
+    "eventId": "eec121a8-0c55-48eb-9a84-a423c48bd654",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:15.142Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0031-4e5f-8a9b-000000000031",
+      "is_saved": true,
+      "timestamp_ms": 1787088315142
+    }
+  },
+  {
+    "eventId": "c39111e9-5c8a-4ad1-9585-82fc383ec640",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:15.292Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0031-4e5f-8a9b-000000000031",
+      "feed_index": 1,
+      "dwell_time_ms": 6301,
+      "cumulative_dwell_ms": 6301,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088315292
+    }
+  },
+  {
+    "eventId": "c6dcf163-ac8f-4a9f-b587-32384ffa895c",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:21.171Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0019-4e5f-8a9b-000000000019",
+      "dwell_before_expand_ms": 1430,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787088321171
+    }
+  },
+  {
+    "eventId": "6212fbae-2440-44be-a2b8-cd715d14a457",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:23.747Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0019-4e5f-8a9b-000000000019",
+      "is_saved": true,
+      "timestamp_ms": 1787088323747
+    }
+  },
+  {
+    "eventId": "66eab757-39f8-4e63-b707-2ef17a8d533a",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:23.897Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0019-4e5f-8a9b-000000000019",
+      "feed_index": 2,
+      "dwell_time_ms": 4156,
+      "cumulative_dwell_ms": 4156,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088323897
+    }
+  },
+  {
+    "eventId": "a7a39ddf-bfda-4868-bf0a-138c88a68cb7",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:30.652Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "is_saved": true,
+      "timestamp_ms": 1787088330652
+    }
+  },
+  {
+    "eventId": "a3c02549-62a1-4a53-9004-2ad19c767e09",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:30.802Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "feed_index": 3,
+      "dwell_time_ms": 5167,
+      "cumulative_dwell_ms": 5167,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088330802
+    }
+  },
+  {
+    "eventId": "bcc4a457-3ac8-4c5e-97eb-b544c4f57b74",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:38.116Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "is_saved": true,
+      "timestamp_ms": 1787088338116
+    }
+  },
+  {
+    "eventId": "055438ea-d350-41bd-a883-036b29fa8324",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:38.266Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "feed_index": 4,
+      "dwell_time_ms": 3914,
+      "cumulative_dwell_ms": 3914,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088338266
+    }
+  },
+  {
+    "eventId": "1e9af19c-5507-4bd1-8932-100ed0c7c52c",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:46.050Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "is_saved": true,
+      "timestamp_ms": 1787088346050
+    }
+  },
+  {
+    "eventId": "95fe42b9-5868-497e-8f38-f263bf8aeb68",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:46.200Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "feed_index": 5,
+      "dwell_time_ms": 5910,
+      "cumulative_dwell_ms": 5910,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088346200
+    }
+  },
+  {
+    "eventId": "02f24ef8-a2e0-4331-9c89-2fb12fd8069e",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:55.598Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0056-4e5f-8a9b-000000000056",
+      "is_saved": true,
+      "timestamp_ms": 1787088355598
+    }
+  },
+  {
+    "eventId": "c69e6aa1-ba09-4cfb-807f-04559e2a705a",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:25:55.748Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0056-4e5f-8a9b-000000000056",
+      "feed_index": 6,
+      "dwell_time_ms": 4891,
+      "cumulative_dwell_ms": 4891,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088355748
+    }
+  },
+  {
+    "eventId": "717f19eb-ab0f-4adc-b51a-0c32cbc1161f",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:26:07.083Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0045-4e5f-8a9b-000000000045",
+      "is_saved": true,
+      "timestamp_ms": 1787088367083
+    }
+  },
+  {
+    "eventId": "f9deaa65-c9cc-4254-b763-70fad1288048",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:26:07.233Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0045-4e5f-8a9b-000000000045",
+      "feed_index": 7,
+      "dwell_time_ms": 6874,
+      "cumulative_dwell_ms": 6874,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088367233
+    }
+  },
+  {
+    "eventId": "953c6c2b-ef13-4d56-a2fc-96b48bf20d86",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:26:14.068Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0008-4e5f-8a9b-000000000008",
+      "is_saved": true,
+      "timestamp_ms": 1787088374068
+    }
+  },
+  {
+    "eventId": "8e21f857-962d-4a09-9cec-07ae5dae82a2",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:26:14.218Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0008-4e5f-8a9b-000000000008",
+      "feed_index": 8,
+      "dwell_time_ms": 3863,
+      "cumulative_dwell_ms": 3863,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088374218
+    }
+  },
+  {
+    "eventId": "5bbfed3c-b211-44c4-8251-ccc36903251d",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:26:21.347Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "is_saved": true,
+      "timestamp_ms": 1787088381347
+    }
+  },
+  {
+    "eventId": "8a48f28b-7157-46e1-826e-5786d7131f20",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "bf8d8e07-8e10-44aa-ba84-450d66d65faa",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-18T21:26:21.497Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Safari",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "feed_index": 9,
+      "dwell_time_ms": 4123,
+      "cumulative_dwell_ms": 4123,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787088381497
+    }
+  },
+  {
+    "eventId": "46df196e-ed96-423c-9d00-52faf09aaf61",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:03.894Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0034-4e5f-8a9b-000000000034",
+      "is_saved": true,
+      "timestamp_ms": 1787870463894
+    }
+  },
+  {
+    "eventId": "b4a1d799-5831-4b0d-ac4c-224fda5a06d9",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:04.044Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0034-4e5f-8a9b-000000000034",
+      "feed_index": 0,
+      "dwell_time_ms": 4044,
+      "cumulative_dwell_ms": 4044,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787870464044
+    }
+  },
+  {
+    "eventId": "1b0a2af9-5798-4594-936f-22ab2699402c",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:10.638Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0044-4e5f-8a9b-000000000044",
+      "dwell_before_expand_ms": 1923,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787870470638
+    }
+  },
+  {
+    "eventId": "6cefc88a-01f6-43fc-905e-262761a0047f",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:15.686Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0044-4e5f-8a9b-000000000044",
+      "is_saved": true,
+      "timestamp_ms": 1787870475686
+    }
+  },
+  {
+    "eventId": "57490baa-e00f-46fa-8e44-fc8b6df2b7c3",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:15.836Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0044-4e5f-8a9b-000000000044",
+      "feed_index": 1,
+      "dwell_time_ms": 7121,
+      "cumulative_dwell_ms": 7121,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787870475836
+    }
+  },
+  {
+    "eventId": "79b959fa-ea61-410d-b254-2cbb093819a6",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:22.706Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0049-4e5f-8a9b-000000000049",
+      "is_saved": true,
+      "timestamp_ms": 1787870482706
+    }
+  },
+  {
+    "eventId": "471c5574-76d3-4938-aabd-42b9d328e4cd",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:22.856Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0049-4e5f-8a9b-000000000049",
+      "feed_index": 2,
+      "dwell_time_ms": 5078,
+      "cumulative_dwell_ms": 5078,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787870482856
+    }
+  },
+  {
+    "eventId": "db5c4acb-266e-4c66-b16a-1c3730d80d3b",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:31.412Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0051-4e5f-8a9b-000000000051",
+      "is_saved": true,
+      "timestamp_ms": 1787870491412
+    }
+  },
+  {
+    "eventId": "e3e42f16-05ca-46b3-be4f-0d0adb257ce3",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:31.562Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0051-4e5f-8a9b-000000000051",
+      "feed_index": 3,
+      "dwell_time_ms": 6397,
+      "cumulative_dwell_ms": 6397,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787870491562
+    }
+  },
+  {
+    "eventId": "a54f2f50-77bd-4dda-9b63-f40972b33469",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:36.887Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "dwell_before_expand_ms": 1251,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787870496887
+    }
+  },
+  {
+    "eventId": "7b01117b-c7ca-41b4-8730-f9421d058a1e",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:40.463Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "is_saved": true,
+      "timestamp_ms": 1787870500463
+    }
+  },
+  {
+    "eventId": "ad20301c-3fe7-4501-8db2-9c3ffa50f93f",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:40.613Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "feed_index": 4,
+      "dwell_time_ms": 4977,
+      "cumulative_dwell_ms": 4977,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787870500613
+    }
+  },
+  {
+    "eventId": "96d8930d-dbd0-48a5-8f4b-9902762072b3",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:47.456Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0052-4e5f-8a9b-000000000052",
+      "is_saved": true,
+      "timestamp_ms": 1787870507456
+    }
+  },
+  {
+    "eventId": "cb2fc723-87aa-48a0-bdd4-c2bc3d7bb09c",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:47.606Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0052-4e5f-8a9b-000000000052",
+      "feed_index": 5,
+      "dwell_time_ms": 5277,
+      "cumulative_dwell_ms": 5277,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787870507606
+    }
+  },
+  {
+    "eventId": "ad612679-4912-4ccb-bdb1-c7010f45f284",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:53.283Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0016-4e5f-8a9b-000000000016",
+      "dwell_before_expand_ms": 2261,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787870513283
+    }
+  },
+  {
+    "eventId": "75f42667-45ac-44c8-b4ea-bbf6b8374fe3",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:57.909Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0016-4e5f-8a9b-000000000016",
+      "is_saved": true,
+      "timestamp_ms": 1787870517909
+    }
+  },
+  {
+    "eventId": "845cde52-c594-4265-896e-c2989cc8c097",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:41:58.059Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0016-4e5f-8a9b-000000000016",
+      "feed_index": 6,
+      "dwell_time_ms": 7037,
+      "cumulative_dwell_ms": 7037,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787870518059
+    }
+  },
+  {
+    "eventId": "9553d048-9261-4208-99b2-499e8438235f",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:42:06.422Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "is_saved": true,
+      "timestamp_ms": 1787870526422
+    }
+  },
+  {
+    "eventId": "cd9d6095-d474-40c6-aee9-0c4ce0e20a00",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "0e3fbf3a-c7f3-41a2-9a44-9570add57b30",
+    "userId": "usr_fake_18_save_hoarder",
+    "clientTs": "2026-08-27T22:42:06.572Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "feed_index": 7,
+      "dwell_time_ms": 4166,
+      "cumulative_dwell_ms": 4166,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787870526572
+    }
+  }
+]

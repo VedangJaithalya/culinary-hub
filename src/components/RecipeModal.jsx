@@ -14,9 +14,16 @@
  *  - onClose             {function}     Called when the user dismisses the modal.
  *  - onIngredientToggle  {function}     Called with (recipeId, ingredientId) on checkbox toggle.
  *  - checkedIngredientsMap {object}     Flat map of `${recipeId}_${ingredientId}` → boolean.
+ *  - onOpenCreator        {function}    Called with (creatorId) when the byline is tapped.
  */
 
 import { useState, useEffect, useRef } from 'react'
+import mockCreators from '../data/mockCreators.json'
+import StarRating from './StarRating'
+import CookModeView from './CookModeView'
+import { getRatingStats, submitRating } from '../services/ratingService.js'
+import { getDisplayCookCount, startCookMode, completeCookMode } from '../services/cookService.js'
+import { addRecipeToShoppingList } from '../services/shoppingListService.js'
 
 // ── Ingredient category display config ─────────────────────────────────────────
 const CATEGORY_META = {
@@ -57,10 +64,39 @@ export default function RecipeModal({
   onClose,
   onIngredientToggle,
   checkedIngredientsMap,
+  onOpenCreator,
 }) {
   const [activeTab, setActiveTab] = useState('ingredients')
   const closeButtonRef = useRef(null)
   const drawerRef      = useRef(null)
+
+  // ── Rating overlay + Cook Mode + shopping-list-confirmation state ────────
+  // Re-derived whenever a new recipe is opened; updated locally (without a
+  // re-read) the instant the user submits a rating / cooks / adds to list so
+  // the UI feels instant.
+  const [ratingStats, setRatingStats] = useState(() =>
+    recipe ? getRatingStats(recipe) : { averageRating: 0, ratingCount: 0, userRating: null }
+  )
+  const [isCookModeOpen, setIsCookModeOpen] = useState(false)
+  const [displayCookCount, setDisplayCookCount] = useState(() =>
+    recipe ? getDisplayCookCount(recipe) : 0
+  )
+  const [addedToShoppingList, setAddedToShoppingList] = useState(false)
+
+  // ── Reset per-recipe UI state when a new recipe is opened ────────────────
+  // Deliberately done during render (React's documented "adjusting state
+  // when a prop changes" pattern — see react.dev/learn/you-might-not-need-an-effect)
+  // rather than in a useEffect: it's a pure reaction to `recipe.recipe_id`
+  // changing, not a synchronisation with anything external, so it doesn't
+  // need the extra render-then-effect round trip an effect would add.
+  const [prevRecipeId, setPrevRecipeId] = useState(recipe?.recipe_id ?? null)
+  if (recipe && recipe.recipe_id !== prevRecipeId) {
+    setPrevRecipeId(recipe.recipe_id)
+    setActiveTab('ingredients')
+    setRatingStats(getRatingStats(recipe))
+    setDisplayCookCount(getDisplayCookCount(recipe))
+    setAddedToShoppingList(false)
+  }
 
   // ── Focus management: focus the close button when modal opens ──────────────
   useEffect(() => {
@@ -81,11 +117,6 @@ export default function RecipeModal({
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [isOpen, onClose])
 
-  // Reset to ingredients tab whenever a new recipe is opened
-  useEffect(() => {
-    if (isOpen) setActiveTab('ingredients')
-  }, [recipe?.recipe_id, isOpen])
-
   // Guard: nothing to render until a recipe is selected
   if (!recipe) return null
 
@@ -97,6 +128,7 @@ export default function RecipeModal({
     prep_time_minutes,
     cook_time_minutes,
     calorie_count,
+    creator_user_id,
     ingredients = [],
     steps = [],
   } = recipe
@@ -118,6 +150,11 @@ export default function RecipeModal({
     expert:       'bg-rose-700/20   text-rose-300   border-rose-700/30',
   }[difficulty_tier] ?? 'bg-white/10 text-white/70 border-white/20'
 
+  // ── Creator lookup ─────────────────────────────────────────────────────────
+  const creator = creator_user_id
+    ? mockCreators.find((c) => c.creator_id === creator_user_id)
+    : null
+
   // ── Ingredient checked-count summary ──────────────────────────────────────
   const checkedCount = ingredients.filter(
     (ing) => checkedIngredientsMap[`${recipe_id}_${ing.ingredient_id}`]
@@ -129,11 +166,39 @@ export default function RecipeModal({
   // ── Sorted steps ──────────────────────────────────────────────────────────
   const sortedSteps = [...steps].sort((a, b) => a.step_number - b.step_number)
 
+  // ── Handlers: rating, cook mode, shopping list ─────────────────────────────
+
+  /** Submits (or updates) the user's own star rating for this recipe. */
+  function handleRate(value) {
+    const updated = submitRating(recipe, value)
+    setRatingStats(updated)
+  }
+
+  /** Opens Cook Mode and dispatches RECIPE_COOK_START. */
+  function handleStartCooking() {
+    startCookMode(recipe_id)
+    setIsCookModeOpen(true)
+  }
+
+  /** Called by CookModeView when the user finishes the final step. */
+  function handleFinishCooking() {
+    completeCookMode(recipe_id, sortedSteps.length)
+    setDisplayCookCount(getDisplayCookCount(recipe))
+    setIsCookModeOpen(false)
+  }
+
+  /** Adds every ingredient in this recipe to the persisted shopping list. */
+  function handleAddToShoppingList() {
+    addRecipeToShoppingList(recipe)
+    setAddedToShoppingList(true)
+  }
+
   return (
-    /*
+    <>
+    {/*
      * Backdrop overlay — fades in/out via opacity transition.
      * `pointer-events-none` when closed prevents click-through issues.
-     */
+     */}
     <div
       role="dialog"
       aria-modal="true"
@@ -216,6 +281,40 @@ export default function RecipeModal({
                 <span aria-hidden="true">⚡</span> {calorie_count} kcal
               </span>
             )}
+            <span className="text-[11px] font-medium text-white/60 flex items-center gap-1">
+              <span aria-hidden="true">🍳</span> Cooked {displayCookCount.toLocaleString()}x
+            </span>
+          </div>
+
+          {/* Creator byline + rating row */}
+          <div className="flex items-center justify-between gap-3 mt-3">
+            {creator ? (
+              <button
+                type="button"
+                id="recipe-creator-byline-btn"
+                onClick={() => onOpenCreator?.(creator.creator_id)}
+                className="flex items-center gap-1.5 min-w-0 group"
+              >
+                <span className="text-sm shrink-0" aria-hidden="true">{creator.avatar_emoji}</span>
+                <span className="text-xs font-medium text-white/50 group-hover:text-white/80 transition-colors duration-150 truncate">
+                  by {creator.display_name}
+                </span>
+              </button>
+            ) : (
+              <span />
+            )}
+
+            <div className="flex items-center gap-1.5 shrink-0">
+              <StarRating
+                rating={ratingStats.userRating ?? ratingStats.averageRating}
+                interactive
+                onRate={handleRate}
+                size="w-4 h-4"
+              />
+              <span className="text-[11px] font-medium text-white/40">
+                {ratingStats.averageRating.toFixed(1)} ({ratingStats.ratingCount.toLocaleString()})
+              </span>
+            </div>
           </div>
         </header>
 
@@ -280,6 +379,22 @@ export default function RecipeModal({
                   </div>
                 )}
               </div>
+
+              {/* Add all ingredients to the cross-recipe shopping list */}
+              <button
+                type="button"
+                id="add-to-shopping-list-btn"
+                onClick={handleAddToShoppingList}
+                disabled={addedToShoppingList}
+                className={[
+                  'w-full mb-5 py-2.5 rounded-xl text-xs font-semibold transition-all duration-150 active:scale-[0.98]',
+                  addedToShoppingList
+                    ? 'bg-emerald-500/15 text-emerald-300 cursor-default'
+                    : 'bg-white/8 text-white/80 hover:bg-white/12',
+                ].join(' ')}
+              >
+                {addedToShoppingList ? 'Added to Shopping List ✓' : '🛒 Add All to Shopping List'}
+              </button>
 
               {/* Category groups */}
               {Object.entries(grouped).map(([cat, items]) => {
@@ -389,6 +504,17 @@ export default function RecipeModal({
               {sortedSteps.length === 0 ? (
                 <p className="text-white/40 text-sm text-center py-8">No steps available.</p>
               ) : (
+                <>
+                  {/* Launches the full-screen, step-by-step Cook Mode overlay */}
+                  <button
+                    type="button"
+                    id="start-cook-mode-btn"
+                    onClick={handleStartCooking}
+                    className="w-full mb-5 py-3 rounded-xl text-sm font-bold bg-violet-500 hover:bg-violet-400 active:scale-[0.98] text-white transition-all duration-150 flex items-center justify-center gap-2"
+                  >
+                    <span aria-hidden="true">▶</span>
+                    Start Cooking ({sortedSteps.length} steps)
+                  </button>
                 <ol className="flex flex-col gap-4">
                   {sortedSteps.map((step) => {
                     const duration = formatDuration(step.duration_estimate_seconds)
@@ -420,11 +546,20 @@ export default function RecipeModal({
                     )
                   })}
                 </ol>
+                </>
               )}
             </div>
           )}
         </div>
       </div>
     </div>
+
+    <CookModeView
+      isOpen={isCookModeOpen}
+      recipe={recipe}
+      onClose={() => setIsCookModeOpen(false)}
+      onFinish={handleFinishCooking}
+    />
+    </>
   )
 }

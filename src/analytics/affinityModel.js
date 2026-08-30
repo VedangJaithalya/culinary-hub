@@ -24,6 +24,7 @@
 
 import { getLatestAnalyticsData } from './sessionTransformer.js'
 import mockRecipes from '../data/mockRecipes.json'
+import { getUserProfile } from '../services/userProfileService.js'
 
 // =============================================================================
 // MODULE-LEVEL LOOKUP TABLE
@@ -96,6 +97,46 @@ export function calculateImpressionScore(impression, recipe) {
  *
  * @returns {Record<string, number>}
  */
+/**
+ * Builds the cold-start affinity vector used when a user has no positive
+ * engagement signal yet (brand new, or every impression scored <= 0).
+ *
+ * If the user completed onboarding and picked at least one preferred
+ * cuisine (that still exists in the current catalogue), 70% of the
+ * probability mass is split evenly across those preferred cuisines and the
+ * remaining 30% is split evenly across every other cuisine — a soft prior,
+ * not an exclusion, so the ranking engine's existing epsilon-greedy
+ * exploration can still surface anything. With no profile or no usable
+ * preferences, this degrades exactly to the original flat uniform
+ * distribution.
+ *
+ * @param {string[]} cuisineIds  Every distinct cuisine_id in the catalogue.
+ * @returns {Record<string, number>}
+ */
+function buildColdStartVector(cuisineIds) {
+  if (cuisineIds.length === 0) return {}
+
+  const profile = getUserProfile()
+  const preferred = (profile?.preferredCuisines ?? []).filter((id) => cuisineIds.includes(id))
+
+  if (preferred.length === 0) {
+    const equalWeight = parseFloat((1 / cuisineIds.length).toFixed(4))
+    return Object.fromEntries(cuisineIds.map((id) => [id, equalWeight]))
+  }
+
+  const PREFERRED_MASS = 0.7
+  const preferredWeight = PREFERRED_MASS / preferred.length
+  const others = cuisineIds.filter((id) => !preferred.includes(id))
+  const otherWeight = others.length > 0 ? (1 - PREFERRED_MASS) / others.length : 0
+
+  return Object.fromEntries(
+    cuisineIds.map((id) => [
+      id,
+      parseFloat((preferred.includes(id) ? preferredWeight : otherWeight).toFixed(4)),
+    ])
+  )
+}
+
 export function generateUserAffinityVector() {
   const { impressions } = getLatestAnalyticsData()
 
@@ -131,13 +172,17 @@ export function generateUserAffinityVector() {
   // ── Step 5: Sum all floored scores ─────────────────────────────────────────
   const totalPositiveScore = Object.values(floored).reduce((sum, s) => sum + s, 0)
 
-  // ── Step 6: Cold-start guard — return uniform distribution ─────────────────
+  // ── Step 6: Cold-start guard ─────────────────────────────────────────────
+  // With zero engagement history we used to fall back to a flat uniform
+  // distribution for every brand-new user. Now, if the user completed the
+  // onboarding survey (see userProfileService.js / OnboardingModal.jsx), we
+  // lean the cold-start vector toward their stated `preferredCuisines`
+  // instead — so a new user's very first feed already reflects what they
+  // told us, rather than waiting for engagement to accumulate. Falls back
+  // to the original uniform distribution when no profile/preferences exist,
+  // so existing (pre-onboarding) behaviour is unchanged.
   if (totalPositiveScore === 0) {
-    const equalWeight =
-      cuisineIds.length > 0
-        ? parseFloat((1 / cuisineIds.length).toFixed(4))
-        : 0
-    return Object.fromEntries(cuisineIds.map((id) => [id, equalWeight]))
+    return buildColdStartVector(cuisineIds)
   }
 
   // ── Step 7: Normalize to probability distribution (4 decimal places) ────────

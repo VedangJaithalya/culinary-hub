@@ -1,0 +1,3346 @@
+[
+  {
+    "eventId": "577a9e13-db21-42e0-953c-7a74620e489c",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:09.076Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "dwell_before_expand_ms": 9076,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786349709076
+    }
+  },
+  {
+    "eventId": "13d069b8-e8bc-4c85-a8a3-038032432d3f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:09.922Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "couscous",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786349709922
+    }
+  },
+  {
+    "eventId": "a3638208-2bc9-4e0a-972c-db72d9292ccb",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:11.006Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "carrot",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786349711006
+    }
+  },
+  {
+    "eventId": "25d9ae98-d637-453b-b60c-cc306c39292d",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:11.837Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "turnip",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1786349711837
+    }
+  },
+  {
+    "eventId": "16bbc845-0bf9-4bfa-bf51-c96923a59710",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:12.740Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "zucchini",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1786349712740
+    }
+  },
+  {
+    "eventId": "7796a8cc-d701-4e9b-b409-271bc312279b",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:13.652Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "pumpkin",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1786349713652
+    }
+  },
+  {
+    "eventId": "dc4c4083-62ca-43df-94ab-9fa5b9050c25",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:14.489Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "cabbage",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1786349714489
+    }
+  },
+  {
+    "eventId": "a54753c8-1193-42c2-b367-6c8990a9abce",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:15.245Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "chickpea",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1786349715245
+    }
+  },
+  {
+    "eventId": "77af4670-b49e-48e3-8138-05fe3ade75da",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:16.249Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "tomato",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1786349716249
+    }
+  },
+  {
+    "eventId": "7ea3a246-e8ff-454f-85aa-b9d0f2223bc5",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:16.753Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "ras-el-hanout",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1786349716753
+    }
+  },
+  {
+    "eventId": "f9faa122-1492-4325-a49f-76aec31af98d",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:17.340Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "ingredient_id": "turmeric-powder",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 10
+      },
+      "timestamp_ms": 1786349717340
+    }
+  },
+  {
+    "eventId": "743afc77-5bcf-4dbc-8fa6-be21fcacfe4d",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:39.544Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "is_liked": true,
+      "timestamp_ms": 1786349739544
+    }
+  },
+  {
+    "eventId": "d10196dc-620a-4c0f-bd60-7b65dc348586",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:39.844Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0026-4e5f-8a9b-000000000026",
+      "feed_index": 0,
+      "dwell_time_ms": 39844,
+      "cumulative_dwell_ms": 39844,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 7,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786349739844
+    }
+  },
+  {
+    "eventId": "cc93257e-9cbd-468d-afd2-88427f4be918",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:52.941Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "dwell_before_expand_ms": 9297,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786349752941
+    }
+  },
+  {
+    "eventId": "2b056c8f-35db-49fb-b5e1-8921e78a4891",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:53.754Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "red-lentil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786349753754
+    }
+  },
+  {
+    "eventId": "3b9d99c8-e885-4da2-b06c-8e53f1ea5db3",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:54.709Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786349754709
+    }
+  },
+  {
+    "eventId": "88538a57-7978-4801-86ab-e3f0baadfdda",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:55.102Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "berbere",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1786349755102
+    }
+  },
+  {
+    "eventId": "2fbdc5fe-d1e5-4ac1-8e49-77b446f40bf4",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:55.760Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "garlic",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1786349755760
+    }
+  },
+  {
+    "eventId": "dc2d9ee7-4552-4b63-9326-e3e9d65d17bb",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:56.141Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "ginger",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1786349756141
+    }
+  },
+  {
+    "eventId": "c45e3550-9489-426c-bb6a-ac5505c72cb2",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:56.766Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "tomato-paste",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1786349756766
+    }
+  },
+  {
+    "eventId": "25d5c927-6e0e-4a12-b46b-3515931ea58a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:15:57.600Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "neutral-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1786349757600
+    }
+  },
+  {
+    "eventId": "265dc407-efd3-4911-bf6c-75d0ece1b929",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:08.612Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "feed_index": 1,
+      "dwell_time_ms": 24968,
+      "cumulative_dwell_ms": 24968,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 4,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786349768612
+    }
+  },
+  {
+    "eventId": "1e6a1c89-9715-4a83-aeae-889a1d248317",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:21.027Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "dwell_before_expand_ms": 8779,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786349781027
+    }
+  },
+  {
+    "eventId": "eb593e77-9eee-4188-96a8-b72c07fbd8da",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:21.814Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "all-purpose-flour",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786349781814
+    }
+  },
+  {
+    "eventId": "bd3a9e15-32fc-47f1-9ff6-92ff3c3cf829",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:22.538Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "turmeric-powder",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786349782538
+    }
+  },
+  {
+    "eventId": "8f4efd81-8b69-4af4-b654-95579877293a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:22.987Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "yeast",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1786349782987
+    }
+  },
+  {
+    "eventId": "1f03e507-dadb-488b-b15d-bea6d5bca4ac",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:23.373Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "chickpea",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1786349783373
+    }
+  },
+  {
+    "eventId": "aec8c2d0-c59f-4672-9d1b-42f2c3eb5a34",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:23.862Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "curry-powder",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1786349783862
+    }
+  },
+  {
+    "eventId": "027a3520-2fd1-4616-b2ea-eae0515b723e",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:24.718Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "garlic",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1786349784718
+    }
+  },
+  {
+    "eventId": "9c28ffa3-d4ce-4ef3-9362-883339c59315",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:25.290Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "scotch-bonnet",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1786349785290
+    }
+  },
+  {
+    "eventId": "c61c0eb0-f93b-4355-9994-4d1328c0f239",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:25.904Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "cumin-ground",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1786349785904
+    }
+  },
+  {
+    "eventId": "39c37d7b-7209-41f8-ba4b-35e6093c6759",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:44.949Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "feed_index": 2,
+      "dwell_time_ms": 32701,
+      "cumulative_dwell_ms": 32701,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 6,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786349804949
+    }
+  },
+  {
+    "eventId": "cdaa99bf-13ac-4a57-9f7f-87aa69806c49",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:58.377Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "dwell_before_expand_ms": 9476,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786349818377
+    }
+  },
+  {
+    "eventId": "b852dd85-64e2-4f91-baf9-149b1212aa88",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:16:59.614Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "eggplant",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786349819614
+    }
+  },
+  {
+    "eventId": "77395644-8699-4a24-be2e-46aacd2547b9",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:00.323Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "zucchini",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786349820323
+    }
+  },
+  {
+    "eventId": "46ae602c-384a-4601-87d4-f9f170d1b941",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:01.219Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "bell-pepper",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1786349821219
+    }
+  },
+  {
+    "eventId": "6180a836-af9d-4ec5-ab74-852a386d9389",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:02.168Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "tomato",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1786349822168
+    }
+  },
+  {
+    "eventId": "ca239bec-d493-4eeb-aaa3-599f205cc2d3",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:02.935Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1786349822935
+    }
+  },
+  {
+    "eventId": "d4ee4927-7b79-44c4-88ca-9fe84c254455",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:03.883Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "garlic",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1786349823883
+    }
+  },
+  {
+    "eventId": "317c7f0a-8b7c-4998-abd2-6978abecbee4",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:04.470Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "olive-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1786349824470
+    }
+  },
+  {
+    "eventId": "06d4caa3-3791-4937-99ec-420e7b352497",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:05.164Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "herbes-de-provence",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1786349825164
+    }
+  },
+  {
+    "eventId": "2a147e40-0252-4e62-b238-f3465a51a3c4",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:06.212Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "basil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1786349826212
+    }
+  },
+  {
+    "eventId": "93c6070f-1dd6-408a-aa59-2d45e84c2532",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "22965f74-6c17-4227-b33f-bae0c07dd018",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-10T08:17:23.193Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "feed_index": 3,
+      "dwell_time_ms": 34292,
+      "cumulative_dwell_ms": 34292,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 6,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786349843193
+    }
+  },
+  {
+    "eventId": "2be74e62-cb04-44cd-9c68-12d6fe4613a9",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:07.472Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "dwell_before_expand_ms": 7472,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787338447472
+    }
+  },
+  {
+    "eventId": "f2efbca8-4507-4073-9df3-74ff2996b1d6",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:08.212Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "ingredient_id": "dosa-batter",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787338448212
+    }
+  },
+  {
+    "eventId": "1cbefa6b-43e5-45b0-a3e4-aeb819ebacde",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:08.914Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "ingredient_id": "neutral-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787338448914
+    }
+  },
+  {
+    "eventId": "0bd1bace-475d-48a3-be2d-74dea81d193a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:09.332Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "ingredient_id": "potato",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787338449332
+    }
+  },
+  {
+    "eventId": "24a1629d-6534-4c2a-a813-72a5c6ea604f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:10.102Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787338450102
+    }
+  },
+  {
+    "eventId": "256e1188-1958-4363-ab02-1a38b0d7cfb6",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:10.606Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "ingredient_id": "mustard-seed",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787338450606
+    }
+  },
+  {
+    "eventId": "83587e27-2e46-448d-bf87-2bef80cd7963",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:18.096Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "is_liked": true,
+      "timestamp_ms": 1787338458096
+    }
+  },
+  {
+    "eventId": "bddbae32-c569-4b9f-9616-264453a77845",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:18.246Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "is_saved": true,
+      "timestamp_ms": 1787338458246
+    }
+  },
+  {
+    "eventId": "cc0cb4a0-b48d-4304-aea0-0717cae46377",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:18.396Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "feed_index": 0,
+      "dwell_time_ms": 18396,
+      "cumulative_dwell_ms": 18396,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 3,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787338458396
+    }
+  },
+  {
+    "eventId": "5a9a2e24-380f-41c4-aab0-b8efa0b755dd",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:21.933Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "dwell_before_expand_ms": 2255,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787338461933
+    }
+  },
+  {
+    "eventId": "0455236d-e5ab-43e8-bdc6-dfdc3d43f242",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:22.969Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "red-lentil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787338462969
+    }
+  },
+  {
+    "eventId": "b82e7b7a-c400-4eee-a5ff-7053fcd9484f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:24.054Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787338464054
+    }
+  },
+  {
+    "eventId": "819d7cf7-c474-4e9d-8891-85e89bbeb8a7",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:25.004Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "berbere",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787338465004
+    }
+  },
+  {
+    "eventId": "aca261d7-aeec-46fd-a994-7662f29b1e5c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:25.692Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "garlic",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787338465692
+    }
+  },
+  {
+    "eventId": "5d6f044c-c05c-4a97-bd88-a96fc5a640c9",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:26.606Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "ingredient_id": "ginger",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 7,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787338466606
+    }
+  },
+  {
+    "eventId": "a7f3bc08-b2ab-4f30-8e62-ac79272efdd5",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:33.493Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0028-4e5f-8a9b-000000000028",
+      "feed_index": 1,
+      "dwell_time_ms": 13815,
+      "cumulative_dwell_ms": 13815,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 2,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787338473493
+    }
+  },
+  {
+    "eventId": "217f6c92-72ec-42f2-b99e-8fa07e3ffcf5",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:38.827Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "dwell_before_expand_ms": 2991,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787338478827
+    }
+  },
+  {
+    "eventId": "34239f3a-82fa-45eb-9349-6a25efb1648c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:39.679Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "potato",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787338479679
+    }
+  },
+  {
+    "eventId": "6157c8db-de50-4fbd-abe7-4bb6d8c78b77",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:40.446Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "neutral-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787338480446
+    }
+  },
+  {
+    "eventId": "5aad66ad-4c61-400f-b9e4-f9701cee36d1",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:41.094Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "tomato-passata",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787338481094
+    }
+  },
+  {
+    "eventId": "e870c3da-8cc6-440e-97dc-f1ecf80c38f3",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:42.069Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "smoked-paprika",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787338482069
+    }
+  },
+  {
+    "eventId": "1018a197-48b5-4e7b-9af4-b38a7166a6a9",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:52.966Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "is_saved": true,
+      "timestamp_ms": 1787338492966
+    }
+  },
+  {
+    "eventId": "c010de1d-a131-4efa-a5c1-32981e40efc3",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:53.116Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "feed_index": 2,
+      "dwell_time_ms": 17280,
+      "cumulative_dwell_ms": 17280,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 3,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787338493116
+    }
+  },
+  {
+    "eventId": "9d622db6-584c-4cd4-ba91-91c3839ac1e9",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:58.216Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "dwell_before_expand_ms": 2822,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787338498216
+    }
+  },
+  {
+    "eventId": "8366737b-0be1-45a3-b3b9-3a880845f8ad",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:59.252Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "pita-bread",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787338499252
+    }
+  },
+  {
+    "eventId": "0a3e1688-5ceb-4d84-a605-77fa031074cf",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:54:59.987Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "romaine-lettuce",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787338499987
+    }
+  },
+  {
+    "eventId": "9e671a16-afe1-4ab0-99ec-37fa16b7f840",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:00.808Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "cucumber",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787338500808
+    }
+  },
+  {
+    "eventId": "6904ec11-cd48-4272-867c-90324770eeee",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:01.690Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "tomato",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787338501690
+    }
+  },
+  {
+    "eventId": "afb1cf41-3879-42d7-9972-778d5d001a94",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:02.435Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "radish",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787338502435
+    }
+  },
+  {
+    "eventId": "48e7f4ce-fc4b-445f-a680-a0c4a438a5d6",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:03.444Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "scallion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1787338503444
+    }
+  },
+  {
+    "eventId": "d828c35f-f4dc-4c65-ab60-ab85ea028c3a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:04.403Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "sumac",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1787338504403
+    }
+  },
+  {
+    "eventId": "d7884289-5a63-474f-bb6f-70d9172c02a5",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:05.450Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "pomegranate-molasses",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1787338505450
+    }
+  },
+  {
+    "eventId": "f86ed2b2-bfd5-4059-b0cf-5f4546e74337",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:06.372Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "ingredient_id": "olive-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1787338506372
+    }
+  },
+  {
+    "eventId": "55c7a772-71fb-4e86-b4dc-289a7635b7ea",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:06.653Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "is_liked": true,
+      "timestamp_ms": 1787338506653
+    }
+  },
+  {
+    "eventId": "7aadfda1-059f-414c-aeda-0bbf13821e95",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:06.953Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "feed_index": 3,
+      "dwell_time_ms": 11559,
+      "cumulative_dwell_ms": 11559,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 2,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787338506953
+    }
+  },
+  {
+    "eventId": "02c3db6d-222b-4b20-bcd3-42a24ae76ac5",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:12.402Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "dwell_before_expand_ms": 3829,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787338512402
+    }
+  },
+  {
+    "eventId": "634e5fea-4a5b-43f2-9cdb-c45eace96c97",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:13.499Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "all-purpose-flour",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787338513499
+    }
+  },
+  {
+    "eventId": "b396a130-6df0-4962-9e4a-cb083b2dd6bc",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:14.113Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "turmeric-powder",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787338514113
+    }
+  },
+  {
+    "eventId": "f7d22b3d-c224-4605-a46c-154ab5be5969",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:14.996Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "yeast",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787338514996
+    }
+  },
+  {
+    "eventId": "a337f947-7a02-425e-9919-a979f87d88cc",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:15.656Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "chickpea",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787338515656
+    }
+  },
+  {
+    "eventId": "353a36a3-62c0-4266-97cb-b12ffd839f84",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:16.567Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "ingredient_id": "curry-powder",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787338516567
+    }
+  },
+  {
+    "eventId": "58f490c7-9272-45fa-86c1-300723199273",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:25.580Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "is_liked": true,
+      "timestamp_ms": 1787338525580
+    }
+  },
+  {
+    "eventId": "4d40b29b-349d-4a9a-b476-6af91c22d726",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:25.880Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "feed_index": 4,
+      "dwell_time_ms": 17307,
+      "cumulative_dwell_ms": 17307,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 3,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787338525880
+    }
+  },
+  {
+    "eventId": "75945ba5-929d-42bf-9295-8d7a9ebf7cb0",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:28.741Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0010-4e5f-8a9b-000000000010",
+      "feed_index": 5,
+      "dwell_time_ms": 273,
+      "cumulative_dwell_ms": 273,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787338528741
+    }
+  },
+  {
+    "eventId": "ea2b60dd-35d0-4886-8775-535de9c358c8",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "676a4eac-1dfa-4a51-9a72-db1c1da11860",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-21T18:55:34.270Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0054-4e5f-8a9b-000000000054",
+      "feed_index": 6,
+      "dwell_time_ms": 1100,
+      "cumulative_dwell_ms": 1100,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787338534270
+    }
+  },
+  {
+    "eventId": "137a0955-85a7-47b5-b45c-f65fddcda79c",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:11.735Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "dwell_before_expand_ms": 11735,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787991611735
+    }
+  },
+  {
+    "eventId": "8f9c6492-c36c-45d9-b40e-98fba96cafb4",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:12.886Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "whole-black-urad-dal",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787991612886
+    }
+  },
+  {
+    "eventId": "1e0f1d9a-243c-4619-aa21-e7f046f4804c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:13.258Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "red-kidney-beans",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787991613258
+    }
+  },
+  {
+    "eventId": "effa4227-22d8-4017-a775-3ba2fa012c82",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:14.211Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "water",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787991614211
+    }
+  },
+  {
+    "eventId": "8510baee-e240-413c-a747-5db682a387c0",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:14.623Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "unsalted-butter",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787991614623
+    }
+  },
+  {
+    "eventId": "84cb7763-4541-4956-b8d7-888c323fe975",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:15.665Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787991615665
+    }
+  },
+  {
+    "eventId": "3c279de3-bbf0-4b73-9253-70bd4f9a1c1f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:16.036Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "ginger-garlic-paste",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1787991616036
+    }
+  },
+  {
+    "eventId": "4cc06cdd-4471-426d-93a7-0425bd2781fc",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:16.764Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "canned-crushed-tomatoes",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1787991616764
+    }
+  },
+  {
+    "eventId": "c089c3e2-ed67-4475-9e38-0e8b3a21d771",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:17.371Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "kashmiri-chilli-powder",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1787991617371
+    }
+  },
+  {
+    "eventId": "8ab0cf30-7fc5-48b7-8335-3bb84e55e091",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:18.364Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "ground-coriander",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1787991618364
+    }
+  },
+  {
+    "eventId": "400c6dc8-caad-4a9e-9ce9-bc2b0244d5b1",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:19.181Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "heavy-cream",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 10
+      },
+      "timestamp_ms": 1787991619181
+    }
+  },
+  {
+    "eventId": "5a555202-a000-4571-8fab-8dfb5ea479c8",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:19.836Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "fenugreek-leaves-dried",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 11
+      },
+      "timestamp_ms": 1787991619836
+    }
+  },
+  {
+    "eventId": "31caa896-cdd2-4edb-87fd-ce3338d5e39c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:20.792Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "fine-sea-salt",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 12
+      },
+      "timestamp_ms": 1787991620792
+    }
+  },
+  {
+    "eventId": "086fcecf-fd2e-4741-a78e-d03a7ba18992",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:34.978Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "is_liked": true,
+      "timestamp_ms": 1787991634978
+    }
+  },
+  {
+    "eventId": "f019e1cf-a992-4fc8-9f5e-e6e33361f54c",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:35.278Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "feed_index": 0,
+      "dwell_time_ms": 35278,
+      "cumulative_dwell_ms": 35278,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 7,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787991635278
+    }
+  },
+  {
+    "eventId": "d027460f-95e2-4c94-aca5-edefe8964388",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:50.447Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "dwell_before_expand_ms": 11506,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787991650447
+    }
+  },
+  {
+    "eventId": "f6ba028f-3a15-4b9a-a565-d570743445f9",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:51.404Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "ingredient_id": "all-purpose-flour",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787991651404
+    }
+  },
+  {
+    "eventId": "ef66886e-3994-4265-a3ba-3ba75afbc34f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:52.140Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "ingredient_id": "egg",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787991652140
+    }
+  },
+  {
+    "eventId": "d80c1a20-0205-4afc-a1d1-6fa2353506fb",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:52.597Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "ingredient_id": "milk",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787991652597
+    }
+  },
+  {
+    "eventId": "0c80833f-5b70-4eb1-930c-09c4104d52fe",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:52.974Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "ingredient_id": "gruyere-cheese",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787991652974
+    }
+  },
+  {
+    "eventId": "5f969ecc-c42c-44a8-b59e-88395886d5be",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:53.906Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "ingredient_id": "emmental-cheese",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787991653906
+    }
+  },
+  {
+    "eventId": "04dff755-ea5f-4bb0-b194-a8fb309024a9",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:54.956Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1787991654956
+    }
+  },
+  {
+    "eventId": "3011da9a-dd22-4e18-b5c2-ed0c55b41a21",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:55.440Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "ingredient_id": "butter",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1787991655440
+    }
+  },
+  {
+    "eventId": "0faddf1b-c857-4bb0-9c62-173b8444c386",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:20:56.107Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "ingredient_id": "chive",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1787991656107
+    }
+  },
+  {
+    "eventId": "5659fbc0-379e-44c5-9b40-533af5400c3c",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:09.127Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "is_liked": true,
+      "timestamp_ms": 1787991669127
+    }
+  },
+  {
+    "eventId": "6673d8f9-074d-4e4e-8068-3990c06a0184",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:09.277Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "is_saved": true,
+      "timestamp_ms": 1787991669277
+    }
+  },
+  {
+    "eventId": "5d98e551-274d-4069-91cd-240c4b592dfc",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:09.427Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "feed_index": 1,
+      "dwell_time_ms": 30486,
+      "cumulative_dwell_ms": 30486,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 6,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787991669427
+    }
+  },
+  {
+    "eventId": "3c13eb8a-747a-41d1-adbd-8d941b2e4a57",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:19.452Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "dwell_before_expand_ms": 6777,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787991679452
+    }
+  },
+  {
+    "eventId": "3b7815be-c617-447e-8df6-5ed67d4955b3",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:20.767Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "potato",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787991680767
+    }
+  },
+  {
+    "eventId": "8ca914f3-7fd0-4e92-b261-4f539acff2d2",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:21.831Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "neutral-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787991681831
+    }
+  },
+  {
+    "eventId": "80e90eef-7a41-488d-9d0d-38b238f165af",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:22.280Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "tomato-passata",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787991682280
+    }
+  },
+  {
+    "eventId": "7dfa085c-c186-476b-b2fa-338fc90f180a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:22.734Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "smoked-paprika",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787991682734
+    }
+  },
+  {
+    "eventId": "91b1ae87-4c4b-42d0-befa-15fcf48ae26b",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:23.699Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "cayenne-pepper",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787991683699
+    }
+  },
+  {
+    "eventId": "b37328f2-6856-4708-9894-79064d88607e",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:24.378Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "garlic",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1787991684378
+    }
+  },
+  {
+    "eventId": "4235e67b-ed70-4ff8-bfb5-d1e0389d8b76",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:25.069Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "mayonnaise",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1787991685069
+    }
+  },
+  {
+    "eventId": "27e21cd4-41f9-4545-894a-4126e134cc3f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:26.110Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "ingredient_id": "lemon-juice",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1787991686110
+    }
+  },
+  {
+    "eventId": "320f0ed4-7f8a-4e96-a9c0-c15b9ce99231",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:39.817Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "is_saved": true,
+      "timestamp_ms": 1787991699817
+    }
+  },
+  {
+    "eventId": "46ae94c9-2e97-499c-a215-30ab266d8d3d",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e4e90245-0924-4205-9695-f9dd56e9205f",
+    "userId": "usr_fake_03_vegan_health",
+    "clientTs": "2026-08-29T08:21:39.967Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "feed_index": 2,
+      "dwell_time_ms": 27292,
+      "cumulative_dwell_ms": 27292,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 5,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787991699967
+    }
+  }
+]

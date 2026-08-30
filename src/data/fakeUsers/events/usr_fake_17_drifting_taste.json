@@ -1,0 +1,2317 @@
+[
+  {
+    "eventId": "28241c71-25ca-47b2-815f-b79eb29a04e6",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:04.180Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "dwell_before_expand_ms": 4180,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1779910384180
+    }
+  },
+  {
+    "eventId": "2fd0cdfc-119b-4e1e-be79-173cab0c2189",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:05.088Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "whole-black-urad-dal",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1779910385088
+    }
+  },
+  {
+    "eventId": "959dc3de-8a2b-42b4-b59e-29bfd19e6998",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:05.951Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "red-kidney-beans",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1779910385951
+    }
+  },
+  {
+    "eventId": "3d974a2b-d652-4099-9180-b4ead6d6809c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:06.626Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "water",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1779910386626
+    }
+  },
+  {
+    "eventId": "f057ccf6-062a-41e0-9ab4-fd6307bc1c2a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:07.631Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "unsalted-butter",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1779910387631
+    }
+  },
+  {
+    "eventId": "8f387868-e89a-4cb9-8b1d-6678a66ed35a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:08.681Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1779910388681
+    }
+  },
+  {
+    "eventId": "84c42cf1-8cb7-4c51-8b04-42757e1a123d",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:09.772Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "ginger-garlic-paste",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1779910389772
+    }
+  },
+  {
+    "eventId": "1f3992c9-fa46-454d-a8da-648a494eedd6",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:10.533Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "canned-crushed-tomatoes",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1779910390533
+    }
+  },
+  {
+    "eventId": "5933715f-7b59-4f8a-ae2f-7a0522d228c9",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:11.023Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "kashmiri-chilli-powder",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1779910391023
+    }
+  },
+  {
+    "eventId": "1d015ca4-1b53-4499-a2e8-11a8fb5e49b1",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:11.937Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "ground-coriander",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1779910391937
+    }
+  },
+  {
+    "eventId": "74ccaeb9-5aee-40dd-b0c1-dc0dfb2c2e2b",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:12.350Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "heavy-cream",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 10
+      },
+      "timestamp_ms": 1779910392350
+    }
+  },
+  {
+    "eventId": "433faf0f-d62f-48ff-a3f6-00e868975967",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:12.843Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "fenugreek-leaves-dried",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 11
+      },
+      "timestamp_ms": 1779910392843
+    }
+  },
+  {
+    "eventId": "96da510f-716a-4e82-9fbe-398c15f081ca",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:13.394Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "ingredient_id": "fine-sea-salt",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 12
+      },
+      "timestamp_ms": 1779910393394
+    }
+  },
+  {
+    "eventId": "004fbfcb-82d1-41da-80a3-bc3b5464911e",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:18.309Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "is_liked": true,
+      "timestamp_ms": 1779910398309
+    }
+  },
+  {
+    "eventId": "354a2f08-ddb0-481f-91dd-89201d2da996",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:18.609Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0002-4e5f-8a9b-000000000002",
+      "feed_index": 0,
+      "dwell_time_ms": 18609,
+      "cumulative_dwell_ms": 18609,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 3,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1779910398609
+    }
+  },
+  {
+    "eventId": "3c1f8475-09a5-44a9-a9e1-2d01434ddedd",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:34.597Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "dwell_before_expand_ms": 14170,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1779910414597
+    }
+  },
+  {
+    "eventId": "e3d0c3ac-75a1-4d9e-a463-2f18ff6f411e",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:35.585Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "chicken-thigh-boneless",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1779910415585
+    }
+  },
+  {
+    "eventId": "0c9fa531-3085-48c4-8c58-1fb63142b83b",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:36.487Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "plain-yoghurt",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1779910416487
+    }
+  },
+  {
+    "eventId": "3d8f9769-49fd-423a-91aa-e9dfaa2ae522",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:36.963Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "kashmiri-chilli-powder",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1779910416963
+    }
+  },
+  {
+    "eventId": "d8e615bb-e84c-4e1f-903f-314f2967a4b4",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:38.045Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "garam-masala",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1779910418045
+    }
+  },
+  {
+    "eventId": "d9a51d87-cf7b-4671-a377-830320b783aa",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:39.049Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "ground-cumin",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1779910419049
+    }
+  },
+  {
+    "eventId": "b01b2cde-7131-4eda-9422-99741fb87544",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:39.469Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "ginger-garlic-paste",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1779910419469
+    }
+  },
+  {
+    "eventId": "3a3c3e1e-65ba-4c16-9a8e-2041543e6af6",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:40.135Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "lemon-juice",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1779910420135
+    }
+  },
+  {
+    "eventId": "993840d5-fb24-42db-8b69-d252cc3997f3",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:40.904Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "neutral-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1779910420904
+    }
+  },
+  {
+    "eventId": "8cf9c7d7-d9cc-49aa-9b90-af479ebee77d",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:41.337Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "unsalted-butter",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1779910421337
+    }
+  },
+  {
+    "eventId": "ac003512-9923-4da2-b96a-b9deff19e517",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:42.206Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 10
+      },
+      "timestamp_ms": 1779910422206
+    }
+  },
+  {
+    "eventId": "6fea1345-986e-4bd1-8362-bd21c6d21935",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:43.041Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "roma-tomato",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 11
+      },
+      "timestamp_ms": 1779910423041
+    }
+  },
+  {
+    "eventId": "74f455ac-3c22-4e4e-927e-4ab19703ed9c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:44.046Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "raw-cashew",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 12
+      },
+      "timestamp_ms": 1779910424046
+    }
+  },
+  {
+    "eventId": "fef9d2e9-54cd-48cd-a6ca-77d7fe8adfd4",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:45.010Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "heavy-cream",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 13
+      },
+      "timestamp_ms": 1779910425010
+    }
+  },
+  {
+    "eventId": "204d3764-482f-400f-8699-87f4781e8c54",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:45.505Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "fenugreek-leaves-dried",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 14
+      },
+      "timestamp_ms": 1779910425505
+    }
+  },
+  {
+    "eventId": "3df88759-0b38-4dd7-874d-773d1c26e04f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:46.553Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "ingredient_id": "sugar",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 15,
+        "total_checked_count": 15
+      },
+      "timestamp_ms": 1779910426553
+    }
+  },
+  {
+    "eventId": "0d6f63b0-37fb-4ec4-b3bc-a9f54de38ae3",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:52.587Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "is_liked": true,
+      "timestamp_ms": 1779910432587
+    }
+  },
+  {
+    "eventId": "96e5f10c-a531-4329-a028-5b62aebe5361",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:52.737Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "is_saved": true,
+      "timestamp_ms": 1779910432737
+    }
+  },
+  {
+    "eventId": "19e1e618-33c4-492b-b3f1-df27fdde05ab",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "80ae542e-b994-4a07-8a7e-696e902192a3",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-05-27T19:33:52.887Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "feed_index": 1,
+      "dwell_time_ms": 32460,
+      "cumulative_dwell_ms": 32460,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 6,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1779910432887
+    }
+  },
+  {
+    "eventId": "89f3b5ba-dbda-4250-8b6b-21a69935ba77",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:07.804Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "dwell_before_expand_ms": 7804,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1784665567804
+    }
+  },
+  {
+    "eventId": "56565df6-cff2-4974-ae50-9a3db5ef44b0",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:08.869Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "chicken-wing",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1784665568869
+    }
+  },
+  {
+    "eventId": "c50bf581-04fa-4885-95e3-f713f213c5e1",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:09.463Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "potato-starch",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1784665569463
+    }
+  },
+  {
+    "eventId": "1d8b8c92-6241-481b-a536-f9ecbe46c932",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:09.932Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "gochujang",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1784665569932
+    }
+  },
+  {
+    "eventId": "66af7ce0-ec3c-4ff9-a856-ebbb9dfdfa4d",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:10.852Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "soy-sauce",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1784665570852
+    }
+  },
+  {
+    "eventId": "b7bb1c92-1734-41d0-9650-51423fdc6457",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:11.420Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "honey",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1784665571420
+    }
+  },
+  {
+    "eventId": "34511183-d5c6-4376-b242-cb9097471a77",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:12.024Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "garlic",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1784665572024
+    }
+  },
+  {
+    "eventId": "f6a09a1d-ff13-4d97-8bc8-73b42c129997",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:12.913Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "rice-vinegar",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1784665572913
+    }
+  },
+  {
+    "eventId": "9465c918-1ac3-405d-82ba-94ceaecd383c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:13.631Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "sesame-seed",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1784665573631
+    }
+  },
+  {
+    "eventId": "2065041c-3be9-4c75-820f-8995d2d2b80f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:14.040Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "ingredient_id": "scallion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1784665574040
+    }
+  },
+  {
+    "eventId": "e7da2a7b-94ce-470f-9481-138197b07d6e",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:26.320Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "is_liked": true,
+      "timestamp_ms": 1784665586320
+    }
+  },
+  {
+    "eventId": "2690638e-7d13-4e95-b2e5-68e714acc69a",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:26.470Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "is_saved": true,
+      "timestamp_ms": 1784665586470
+    }
+  },
+  {
+    "eventId": "97c5102e-0c33-4a7f-9f90-d4273a3be3bd",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:26.620Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0018-4e5f-8a9b-000000000018",
+      "feed_index": 0,
+      "dwell_time_ms": 26620,
+      "cumulative_dwell_ms": 26620,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 5,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1784665586620
+    }
+  },
+  {
+    "eventId": "c09b2bb4-0398-48df-8fdb-fbc2ba82674f",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:32.468Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "dwell_before_expand_ms": 3554,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1784665592468
+    }
+  },
+  {
+    "eventId": "87c71603-ad6e-4c9f-984f-ad84d1523fa1",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:33.374Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "cooked-rice",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1784665593374
+    }
+  },
+  {
+    "eventId": "1a3b4391-bae4-4499-be45-33185a374afc",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:34.398Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "beef-sirloin",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1784665594398
+    }
+  },
+  {
+    "eventId": "7303e2cf-7c0b-4a96-85bb-77cc2a3b48e7",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:35.062Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "soy-sauce",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1784665595062
+    }
+  },
+  {
+    "eventId": "2c777d5a-1781-4843-a11c-d1a761ceea9a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:35.768Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "sesame-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1784665595768
+    }
+  },
+  {
+    "eventId": "e027f759-3f5c-42eb-9c80-ae62a12197af",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:36.444Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "spinach",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1784665596444
+    }
+  },
+  {
+    "eventId": "b1ccf4fd-33e5-4748-b358-e7c36a43e11d",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:36.968Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "carrot",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1784665596968
+    }
+  },
+  {
+    "eventId": "1c4bf08d-d261-491c-93c6-b0cdccf4e3a5",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:37.658Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "shiitake-mushroom",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1784665597658
+    }
+  },
+  {
+    "eventId": "5b35c221-f3a6-4d55-b849-2a1a9a7052bc",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:38.104Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "bean-sprout",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1784665598104
+    }
+  },
+  {
+    "eventId": "ccaebe86-5f4a-4247-97bf-5bf4f82b3a63",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:39.042Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "egg",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1784665599042
+    }
+  },
+  {
+    "eventId": "9faee1a0-e301-4a97-910f-59eb0c335237",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:39.984Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "ingredient_id": "gochujang",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 10
+      },
+      "timestamp_ms": 1784665599984
+    }
+  },
+  {
+    "eventId": "103e2a9d-de0d-4b7f-8e19-9b36f1487422",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:45.718Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "is_liked": true,
+      "timestamp_ms": 1784665605718
+    }
+  },
+  {
+    "eventId": "5808dce8-e5ff-41ff-a4e0-f32fd91f6e21",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:45.868Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "is_saved": true,
+      "timestamp_ms": 1784665605868
+    }
+  },
+  {
+    "eventId": "774111ba-44ae-45fa-b848-c1a8f27c2e39",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "a16d1eb6-b4f8-4779-9c64-f108eed49e3a",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-07-21T20:26:46.018Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "Windows",
+      "browser": "Safari",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "feed_index": 1,
+      "dwell_time_ms": 17104,
+      "cumulative_dwell_ms": 17104,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 3,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1784665606018
+    }
+  },
+  {
+    "eventId": "886057a0-2cdc-45ee-9fe1-8779cc10414e",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:03.976Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "dwell_before_expand_ms": 3976,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787689023976
+    }
+  },
+  {
+    "eventId": "d271a336-a1b3-4fb4-8558-f7656ecfc018",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:04.943Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "chicken-bone-in",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787689024943
+    }
+  },
+  {
+    "eventId": "776618a7-2e25-4781-a60b-fa8d12e3b836",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:05.557Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "bacon-lardon",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787689025557
+    }
+  },
+  {
+    "eventId": "0e76f681-8cfd-4797-be22-a457bd95ee31",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:05.983Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "pearl-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787689025983
+    }
+  },
+  {
+    "eventId": "b8e8cae7-929a-4f85-8702-5bed58aa47d3",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:07.065Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "cremini-mushroom",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787689027065
+    }
+  },
+  {
+    "eventId": "aaa7f03a-bde8-44ec-8a23-9ca11b981817",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:07.911Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "red-wine",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787689027911
+    }
+  },
+  {
+    "eventId": "dbf94808-8a45-42ef-8505-e0548578f99b",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:08.282Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "chicken-stock",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1787689028282
+    }
+  },
+  {
+    "eventId": "a2fcfdb0-515c-4a00-82dd-7fbbee89b1d4",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:09.267Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "garlic",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1787689029267
+    }
+  },
+  {
+    "eventId": "e1592409-1a84-493c-9a62-8063b59a4770",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:10.194Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "thyme",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1787689030194
+    }
+  },
+  {
+    "eventId": "2c6c2526-d12c-4ee3-a850-ec883afbf785",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:11.081Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "bay-leaf",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1787689031081
+    }
+  },
+  {
+    "eventId": "f0bd9dec-f506-439f-ae42-163929dc1665",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:12.133Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "ingredient_id": "butter",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 10
+      },
+      "timestamp_ms": 1787689032133
+    }
+  },
+  {
+    "eventId": "46e52972-bce9-4e8d-9cc5-878800a09423",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:23.629Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "is_liked": true,
+      "timestamp_ms": 1787689043629
+    }
+  },
+  {
+    "eventId": "007147aa-2cd1-4285-91d6-2ffc2fecd357",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:23.779Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "is_saved": true,
+      "timestamp_ms": 1787689043779
+    }
+  },
+  {
+    "eventId": "ee5d37cd-e12f-4e46-a0eb-c471cb4f8bbf",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:23.929Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "feed_index": 0,
+      "dwell_time_ms": 23929,
+      "cumulative_dwell_ms": 23929,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 4,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787689043929
+    }
+  },
+  {
+    "eventId": "3965cc8d-7ce5-4d19-a9aa-fd8c1e669cf9",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:37.976Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "dwell_before_expand_ms": 12281,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787689057976
+    }
+  },
+  {
+    "eventId": "cbb44554-0b98-4119-bfe6-7dfee9cef805",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:38.813Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "eggplant",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787689058813
+    }
+  },
+  {
+    "eventId": "6ce0fce6-4c37-4054-8b77-eb164c58539c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:39.363Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "zucchini",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787689059363
+    }
+  },
+  {
+    "eventId": "163edb92-4897-4794-b75c-328e1af59142",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:39.970Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "bell-pepper",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787689059970
+    }
+  },
+  {
+    "eventId": "c68b88d9-fcfa-4ad5-a44f-ec5d53e50548",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:40.474Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "tomato",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1787689060474
+    }
+  },
+  {
+    "eventId": "e1da8bce-25bd-4af1-8c05-b6c548c56ba4",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:41.516Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 5
+      },
+      "timestamp_ms": 1787689061516
+    }
+  },
+  {
+    "eventId": "392dfeec-4bd7-48d9-83ab-00b969aa3661",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:41.979Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "garlic",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 6
+      },
+      "timestamp_ms": 1787689061979
+    }
+  },
+  {
+    "eventId": "40108de9-2f42-46fe-9c2b-264798d7c8e0",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:42.546Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "olive-oil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 7
+      },
+      "timestamp_ms": 1787689062546
+    }
+  },
+  {
+    "eventId": "9409f943-ffe4-449c-93b3-3482e1bad9da",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:42.947Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "herbes-de-provence",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 8
+      },
+      "timestamp_ms": 1787689062947
+    }
+  },
+  {
+    "eventId": "d9980e7f-f2c3-4f66-b074-e924861bfd92",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:43.846Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "ingredient_id": "basil",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 9
+      },
+      "timestamp_ms": 1787689063846
+    }
+  },
+  {
+    "eventId": "dec47f1c-6311-4b1b-b636-0fdf1df95884",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:53.600Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "is_liked": true,
+      "timestamp_ms": 1787689073600
+    }
+  },
+  {
+    "eventId": "80e8c14f-127d-479e-a79d-9a5e189dfeb3",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:53.750Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "is_saved": true,
+      "timestamp_ms": 1787689073750
+    }
+  },
+  {
+    "eventId": "ff0d2c2c-c968-4d5f-bbc6-6aa865ff7ada",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "36528777-4d8f-4591-b698-816ca66b95fe",
+    "userId": "usr_fake_17_drifting_taste",
+    "clientTs": "2026-08-25T20:17:53.900Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "iOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0022-4e5f-8a9b-000000000022",
+      "feed_index": 1,
+      "dwell_time_ms": 28205,
+      "cumulative_dwell_ms": 28205,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 5,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787689073900
+    }
+  }
+]

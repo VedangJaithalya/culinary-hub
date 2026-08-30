@@ -2,6 +2,8 @@ import { useRef, useState, useEffect } from 'react'
 import FeedCard from './FeedCard'
 import RecipeModal from './RecipeModal'
 import SavedDrawer from './SavedDrawer'
+import CreatorProfileModal from './CreatorProfileModal'
+import ShoppingListDrawer from './ShoppingListDrawer'
 import useViewportTelemetry from '../hooks/useViewportTelemetry'
 import { useFeedRanking } from '../hooks/useFeedRanking.js'
 import { EVENT_TYPES } from '../data/dataContracts.js'
@@ -57,6 +59,12 @@ export default function FeedContainer() {
 
   /** @type {[boolean, function]} Controls SavedDrawer visibility. */
   const [isSavedDrawerOpen, setIsSavedDrawerOpen] = useState(false)
+
+  /** @type {[boolean, function]} Controls ShoppingListDrawer visibility. */
+  const [isShoppingListOpen, setIsShoppingListOpen] = useState(false)
+
+  /** @type {[string|null, function]} creator_id shown in CreatorProfileModal; null = closed. */
+  const [selectedCreatorId, setSelectedCreatorId] = useState(null)
 
   /**
    * Flat map of ingredient check state.
@@ -184,6 +192,25 @@ export default function FeedContainer() {
     handleOpenRecipe(recipe, 'saved_drawer')
   }
 
+  /**
+   * Opens CreatorProfileModal for the given creator. Called from RecipeModal's byline.
+   * @param {string} creatorId
+   */
+  function handleOpenCreator(creatorId) {
+    setSelectedCreatorId(creatorId)
+  }
+
+  /**
+   * Closes CreatorProfileModal and opens the RecipeModal for the selected recipe.
+   * Called when the user taps one of the creator's recipes.
+   *
+   * @param {object} recipe - The recipe to open in the modal.
+   */
+  function handleSelectFromCreator(recipe) {
+    setSelectedCreatorId(null)
+    handleOpenRecipe(recipe, 'creator_profile')
+  }
+
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
@@ -206,6 +233,17 @@ export default function FeedContainer() {
         >
           <path d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
         </svg>
+      </button>
+
+      {/* ── Floating Shopping List FAB ───────────────────────────────────── */}
+      <button
+        type="button"
+        id="open-shopping-list-btn"
+        aria-label="Open shopping list"
+        onClick={() => setIsShoppingListOpen(true)}
+        className="fixed top-[76px] right-4 z-40 w-11 h-11 flex items-center justify-center rounded-full bg-neutral-900/80 backdrop-blur-md border border-white/20 text-emerald-400 shadow-lg hover:bg-neutral-800/90 active:scale-90 transition-all duration-150"
+      >
+        <span className="text-lg" aria-hidden="true">🛒</span>
       </button>
 
       <div
@@ -253,16 +291,30 @@ export default function FeedContainer() {
         onClose={handleCloseModal}
         onIngredientToggle={handleIngredientToggle}
         checkedIngredientsMap={checkedIngredients}
+        onOpenCreator={handleOpenCreator}
       />
 
       {/*
-       * SavedDrawer is always mounted. pointer-events-none is applied
-       * internally when closed so it never blocks feed interaction.
+       * SavedDrawer, CreatorProfileModal, and ShoppingListDrawer are always
+       * mounted. pointer-events-none is applied internally when closed so
+       * none of them ever block feed interaction.
        */}
       <SavedDrawer
         isOpen={isSavedDrawerOpen}
         onClose={() => setIsSavedDrawerOpen(false)}
         onRecipeSelect={handleSelectFromDrawer}
+      />
+
+      <CreatorProfileModal
+        creatorId={selectedCreatorId}
+        isOpen={selectedCreatorId != null}
+        onClose={() => setSelectedCreatorId(null)}
+        onRecipeSelect={handleSelectFromCreator}
+      />
+
+      <ShoppingListDrawer
+        isOpen={isShoppingListOpen}
+        onClose={() => setIsShoppingListOpen(false)}
       />
     </>
   )

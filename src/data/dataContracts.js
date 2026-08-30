@@ -53,6 +53,27 @@ export const EVENT_TYPES = Object.freeze({
 
   /** Fires when the user saves (bookmarks) a recipe card from the feed action rail. */
   RECIPE_SAVE: 'RECIPE_SAVE',
+
+  /** Fires when the user completes the first-run cuisine/dietary onboarding survey. */
+  ONBOARDING_COMPLETE: 'ONBOARDING_COMPLETE',
+
+  /** Fires when the user submits or updates their own star rating for a recipe. */
+  RATING_SUBMIT: 'RATING_SUBMIT',
+
+  /** Fires when the user follows a recipe creator from a creator profile. */
+  CREATOR_FOLLOW: 'CREATOR_FOLLOW',
+
+  /** Fires when the user unfollows a recipe creator from a creator profile. */
+  CREATOR_UNFOLLOW: 'CREATOR_UNFOLLOW',
+
+  /** Fires when the user adds a recipe's ingredients to their shopping list. */
+  INGREDIENT_ADD_TO_LIST: 'INGREDIENT_ADD_TO_LIST',
+
+  /** Fires when the user enters step-by-step Cook Mode for a recipe. */
+  RECIPE_COOK_START: 'RECIPE_COOK_START',
+
+  /** Fires when the user completes the final step of Cook Mode for a recipe. */
+  RECIPE_COOK_COMPLETE: 'RECIPE_COOK_COMPLETE',
 });
 
 /**

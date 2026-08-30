@@ -34,6 +34,10 @@ export default function SavedDrawer({ isOpen, onClose, onRecipeSelect }) {
       const list = Array.isArray(ids)
         ? mockRecipes.filter((r) => ids.includes(r.recipe_id))
         : []
+      // Intentional: re-syncing from localStorage (an external system) each
+      // time the drawer opens, not reacting to a prop change — the
+      // documented valid case for setState-in-effect.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setSavedList(list)
     } catch {
       // Malformed JSON — show empty list gracefully

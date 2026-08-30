@@ -1,0 +1,403 @@
+[
+  {
+    "creator_id": "creator-uid-0001",
+    "display_name": "Priya Malhotra",
+    "avatar_emoji": "🍛",
+    "bio": "Former restaurant line cook now teaching North Indian cooking from a home kitchen.",
+    "cuisine_focus": "north_indian",
+    "recipe_ids": [
+      "a1b2c3d4-0001-4e5f-8a9b-000000000001"
+    ],
+    "follower_count": 10206,
+    "joined_at": "2024-11-02T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0002",
+    "display_name": "Rohan Kapoor",
+    "avatar_emoji": "🍛",
+    "bio": "Third-generation home cook sharing North Indian recipes passed down through family.",
+    "cuisine_focus": "north_indian",
+    "recipe_ids": [
+      "a1b2c3d4-0002-4e5f-8a9b-000000000002"
+    ],
+    "follower_count": 35439,
+    "joined_at": "2023-06-19T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0003",
+    "display_name": "Giulia Romano",
+    "avatar_emoji": "🍝",
+    "bio": "Third-generation home cook sharing Italian recipes passed down through family.",
+    "cuisine_focus": "italian",
+    "recipe_ids": [
+      "a1b2c3d4-0003-4e5f-8a9b-000000000003",
+      "a1b2c3d4-0004-4e5f-8a9b-000000000004"
+    ],
+    "follower_count": 33575,
+    "joined_at": "2023-01-03T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0004",
+    "display_name": "Diego Hernandez",
+    "avatar_emoji": "🌮",
+    "bio": "Food blogger documenting regional Mexican cuisine, one recipe at a time.",
+    "cuisine_focus": "mexican",
+    "recipe_ids": [
+      "a1b2c3d4-0005-4e5f-8a9b-000000000005",
+      "a1b2c3d4-0006-4e5f-8a9b-000000000006"
+    ],
+    "follower_count": 27725,
+    "joined_at": "2023-04-03T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0005",
+    "display_name": "Aiko Tanaka",
+    "avatar_emoji": "🍜",
+    "bio": "Grew up cooking Japanese food with grandparents — now sharing it here.",
+    "cuisine_focus": "japanese",
+    "recipe_ids": [
+      "a1b2c3d4-0007-4e5f-8a9b-000000000007",
+      "a1b2c3d4-0008-4e5f-8a9b-000000000008"
+    ],
+    "follower_count": 28141,
+    "joined_at": "2023-10-04T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0006",
+    "display_name": "Eleni Papadakis",
+    "avatar_emoji": "🥙",
+    "bio": "Self-taught cook obsessed with getting Mediterranean classics exactly right.",
+    "cuisine_focus": "mediterranean",
+    "recipe_ids": [
+      "a1b2c3d4-0009-4e5f-8a9b-000000000009",
+      "a1b2c3d4-0010-4e5f-8a9b-000000000010"
+    ],
+    "follower_count": 41648,
+    "joined_at": "2025-10-02T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0007",
+    "display_name": "Meena Subramaniam",
+    "avatar_emoji": "🥞",
+    "bio": "Grew up cooking South Indian food with grandparents — now sharing it here.",
+    "cuisine_focus": "south_indian",
+    "recipe_ids": [
+      "a1b2c3d4-0011-4e5f-8a9b-000000000011",
+      "a1b2c3d4-0012-4e5f-8a9b-000000000012"
+    ],
+    "follower_count": 38694,
+    "joined_at": "2024-01-08T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0008",
+    "display_name": "Siriporn Chaiyasit",
+    "avatar_emoji": "🍤",
+    "bio": "Third-generation home cook sharing Thai recipes passed down through family.",
+    "cuisine_focus": "thai",
+    "recipe_ids": [
+      "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "a1b2c3d4-0014-4e5f-8a9b-000000000014"
+    ],
+    "follower_count": 36801,
+    "joined_at": "2023-05-14T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0009",
+    "display_name": "Linh Nguyen",
+    "avatar_emoji": "🍲",
+    "bio": "Self-taught cook obsessed with getting Vietnamese classics exactly right.",
+    "cuisine_focus": "vietnamese",
+    "recipe_ids": [
+      "a1b2c3d4-0015-4e5f-8a9b-000000000015",
+      "a1b2c3d4-0016-4e5f-8a9b-000000000016"
+    ],
+    "follower_count": 35754,
+    "joined_at": "2023-10-10T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0010",
+    "display_name": "Ji-hoon Park",
+    "avatar_emoji": "🍚",
+    "bio": "Grew up cooking Korean food with grandparents — now sharing it here.",
+    "cuisine_focus": "korean",
+    "recipe_ids": [
+      "a1b2c3d4-0017-4e5f-8a9b-000000000017",
+      "a1b2c3d4-0018-4e5f-8a9b-000000000018"
+    ],
+    "follower_count": 45015,
+    "joined_at": "2023-02-19T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0011",
+    "display_name": "Wei Zhang",
+    "avatar_emoji": "🌶️",
+    "bio": "Grew up cooking Chinese Sichuan food with grandparents — now sharing it here.",
+    "cuisine_focus": "chinese_sichuan",
+    "recipe_ids": [
+      "a1b2c3d4-0019-4e5f-8a9b-000000000019",
+      "a1b2c3d4-0020-4e5f-8a9b-000000000020"
+    ],
+    "follower_count": 42191,
+    "joined_at": "2023-06-04T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0012",
+    "display_name": "Camille Dubois",
+    "avatar_emoji": "🥖",
+    "bio": "Grew up cooking French food with grandparents — now sharing it here.",
+    "cuisine_focus": "french",
+    "recipe_ids": [
+      "a1b2c3d4-0021-4e5f-8a9b-000000000021",
+      "a1b2c3d4-0022-4e5f-8a9b-000000000022"
+    ],
+    "follower_count": 46988,
+    "joined_at": "2023-10-02T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0013",
+    "display_name": "Marta Fernandez",
+    "avatar_emoji": "🥘",
+    "bio": "Grew up cooking Spanish food with grandparents — now sharing it here.",
+    "cuisine_focus": "spanish",
+    "recipe_ids": [
+      "a1b2c3d4-0023-4e5f-8a9b-000000000023",
+      "a1b2c3d4-0024-4e5f-8a9b-000000000024"
+    ],
+    "follower_count": 13817,
+    "joined_at": "2024-11-18T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0014",
+    "display_name": "Youssef El Amrani",
+    "avatar_emoji": "🍢",
+    "bio": "Food blogger documenting regional Moroccan cuisine, one recipe at a time.",
+    "cuisine_focus": "moroccan",
+    "recipe_ids": [
+      "a1b2c3d4-0025-4e5f-8a9b-000000000025",
+      "a1b2c3d4-0026-4e5f-8a9b-000000000026"
+    ],
+    "follower_count": 20907,
+    "joined_at": "2024-10-15T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0015",
+    "display_name": "Sara Bekele",
+    "avatar_emoji": "🍲",
+    "bio": "Former restaurant line cook now teaching Ethiopian cooking from a home kitchen.",
+    "cuisine_focus": "ethiopian",
+    "recipe_ids": [
+      "a1b2c3d4-0027-4e5f-8a9b-000000000027",
+      "a1b2c3d4-0028-4e5f-8a9b-000000000028"
+    ],
+    "follower_count": 19965,
+    "joined_at": "2023-03-23T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0016",
+    "display_name": "Rania Haddad",
+    "avatar_emoji": "🧆",
+    "bio": "Self-taught cook obsessed with getting Lebanese classics exactly right.",
+    "cuisine_focus": "lebanese",
+    "recipe_ids": [
+      "a1b2c3d4-0029-4e5f-8a9b-000000000029",
+      "a1b2c3d4-0030-4e5f-8a9b-000000000030"
+    ],
+    "follower_count": 5684,
+    "joined_at": "2025-05-17T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0017",
+    "display_name": "Emre Yildiz",
+    "avatar_emoji": "🥙",
+    "bio": "Food blogger documenting regional Turkish cuisine, one recipe at a time.",
+    "cuisine_focus": "turkish",
+    "recipe_ids": [
+      "a1b2c3d4-0031-4e5f-8a9b-000000000031",
+      "a1b2c3d4-0032-4e5f-8a9b-000000000032"
+    ],
+    "follower_count": 22830,
+    "joined_at": "2025-08-10T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0018",
+    "display_name": "Valentina Quispe",
+    "avatar_emoji": "🐟",
+    "bio": "Grew up cooking Peruvian food with grandparents — now sharing it here.",
+    "cuisine_focus": "peruvian",
+    "recipe_ids": [
+      "a1b2c3d4-0033-4e5f-8a9b-000000000033",
+      "a1b2c3d4-0034-4e5f-8a9b-000000000034"
+    ],
+    "follower_count": 5117,
+    "joined_at": "2023-09-14T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0019",
+    "display_name": "Thiago Souza",
+    "avatar_emoji": "🥩",
+    "bio": "Self-taught cook obsessed with getting Brazilian classics exactly right.",
+    "cuisine_focus": "brazilian",
+    "recipe_ids": [
+      "a1b2c3d4-0035-4e5f-8a9b-000000000035",
+      "a1b2c3d4-0036-4e5f-8a9b-000000000036"
+    ],
+    "follower_count": 22736,
+    "joined_at": "2023-08-14T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0020",
+    "display_name": "Marlon Campbell",
+    "avatar_emoji": "🍗",
+    "bio": "Third-generation home cook sharing Caribbean recipes passed down through family.",
+    "cuisine_focus": "caribbean",
+    "recipe_ids": [
+      "a1b2c3d4-0037-4e5f-8a9b-000000000037",
+      "a1b2c3d4-0038-4e5f-8a9b-000000000038"
+    ],
+    "follower_count": 44112,
+    "joined_at": "2023-09-19T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0021",
+    "display_name": "Dwayne Carter",
+    "avatar_emoji": "🍗",
+    "bio": "Former restaurant line cook now teaching American Southern cooking from a home kitchen.",
+    "cuisine_focus": "american_southern",
+    "recipe_ids": [
+      "a1b2c3d4-0039-4e5f-8a9b-000000000039",
+      "a1b2c3d4-0040-4e5f-8a9b-000000000040"
+    ],
+    "follower_count": 22610,
+    "joined_at": "2025-06-20T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0022",
+    "display_name": "Lukas Weber",
+    "avatar_emoji": "🥨",
+    "bio": "Food blogger documenting regional German cuisine, one recipe at a time.",
+    "cuisine_focus": "german",
+    "recipe_ids": [
+      "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "a1b2c3d4-0042-4e5f-8a9b-000000000042"
+    ],
+    "follower_count": 38324,
+    "joined_at": "2024-02-27T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0023",
+    "display_name": "Maria Santos",
+    "avatar_emoji": "🍚",
+    "bio": "Third-generation home cook sharing Filipino recipes passed down through family.",
+    "cuisine_focus": "filipino",
+    "recipe_ids": [
+      "a1b2c3d4-0043-4e5f-8a9b-000000000043",
+      "a1b2c3d4-0044-4e5f-8a9b-000000000044"
+    ],
+    "follower_count": 18010,
+    "joined_at": "2024-12-22T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0024",
+    "display_name": "Putu Wijaya",
+    "avatar_emoji": "🍛",
+    "bio": "Third-generation home cook sharing Indonesian recipes passed down through family.",
+    "cuisine_focus": "indonesian",
+    "recipe_ids": [
+      "a1b2c3d4-0045-4e5f-8a9b-000000000045",
+      "a1b2c3d4-0046-4e5f-8a9b-000000000046"
+    ],
+    "follower_count": 4296,
+    "joined_at": "2025-12-10T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0025",
+    "display_name": "Farah Rahman",
+    "avatar_emoji": "🍜",
+    "bio": "Grew up cooking Malaysian food with grandparents — now sharing it here.",
+    "cuisine_focus": "malaysian",
+    "recipe_ids": [
+      "a1b2c3d4-0047-4e5f-8a9b-000000000047",
+      "a1b2c3d4-0048-4e5f-8a9b-000000000048"
+    ],
+    "follower_count": 44965,
+    "joined_at": "2024-05-23T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0026",
+    "display_name": "Chioma Okafor",
+    "avatar_emoji": "🍲",
+    "bio": "Food blogger documenting regional Nigerian cuisine, one recipe at a time.",
+    "cuisine_focus": "nigerian",
+    "recipe_ids": [
+      "a1b2c3d4-0049-4e5f-8a9b-000000000049",
+      "a1b2c3d4-0050-4e5f-8a9b-000000000050"
+    ],
+    "follower_count": 44140,
+    "joined_at": "2024-01-15T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0027",
+    "display_name": "Sepideh Karimi",
+    "avatar_emoji": "🍚",
+    "bio": "Former restaurant line cook now teaching Persian cooking from a home kitchen.",
+    "cuisine_focus": "persian",
+    "recipe_ids": [
+      "a1b2c3d4-0051-4e5f-8a9b-000000000051",
+      "a1b2c3d4-0052-4e5f-8a9b-000000000052"
+    ],
+    "follower_count": 11333,
+    "joined_at": "2025-02-16T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0028",
+    "display_name": "Irina Volkova",
+    "avatar_emoji": "🍲",
+    "bio": "Third-generation home cook sharing Russian recipes passed down through family.",
+    "cuisine_focus": "russian",
+    "recipe_ids": [
+      "a1b2c3d4-0053-4e5f-8a9b-000000000053",
+      "a1b2c3d4-0054-4e5f-8a9b-000000000054"
+    ],
+    "follower_count": 14620,
+    "joined_at": "2024-03-24T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0029",
+    "display_name": "Oliver Bennett",
+    "avatar_emoji": "🐟",
+    "bio": "Self-taught cook obsessed with getting British classics exactly right.",
+    "cuisine_focus": "british",
+    "recipe_ids": [
+      "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "a1b2c3d4-0056-4e5f-8a9b-000000000056"
+    ],
+    "follower_count": 26396,
+    "joined_at": "2024-08-03T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0030",
+    "display_name": "Remy Boudreaux",
+    "avatar_emoji": "🦐",
+    "bio": "Self-taught cook obsessed with getting Cajun classics exactly right.",
+    "cuisine_focus": "cajun",
+    "recipe_ids": [
+      "a1b2c3d4-0057-4e5f-8a9b-000000000057",
+      "a1b2c3d4-0058-4e5f-8a9b-000000000058"
+    ],
+    "follower_count": 29757,
+    "joined_at": "2024-09-09T00:00:00.000Z"
+  },
+  {
+    "creator_id": "creator-uid-0031",
+    "display_name": "Lucia Fernandez",
+    "avatar_emoji": "🥩",
+    "bio": "Self-taught cook obsessed with getting Argentinian classics exactly right.",
+    "cuisine_focus": "argentinian",
+    "recipe_ids": [
+      "a1b2c3d4-0059-4e5f-8a9b-000000000059",
+      "a1b2c3d4-0060-4e5f-8a9b-000000000060"
+    ],
+    "follower_count": 28534,
+    "joined_at": "2025-05-23T00:00:00.000Z"
+  }
+]

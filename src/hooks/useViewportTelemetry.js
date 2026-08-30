@@ -90,15 +90,6 @@ export default function useViewportTelemetry(containerRef, recipes) {
     }
 
     /**
-     * Returns the recipe object for the given recipe_id, or null.
-     * @param {string} recipeId
-     * @returns {object|null}
-     */
-    function getRecipe(recipeId) {
-      return recipesRef.current.find((r) => r.recipe_id === recipeId) ?? null
-    }
-
-    /**
      * Stops the running heartbeat interval and resets the sequence counter.
      */
     function clearHeartbeat() {
@@ -238,7 +229,6 @@ export default function useViewportTelemetry(containerRef, recipes) {
       clearHeartbeat()
       observer.disconnect()
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [containerRef])
   // NOTE: intentionally omitting `recipes` from the dep array. The observer is
   // set up once per container mount. `recipesRef` provides live access to the

@@ -1,0 +1,2043 @@
+[
+  {
+    "eventId": "8dcda03e-3254-4e34-9a36-119d7951c037",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:07.995Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0041-4e5f-8a9b-000000000041",
+      "feed_index": 0,
+      "dwell_time_ms": 7995,
+      "cumulative_dwell_ms": 7995,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623607995
+    }
+  },
+  {
+    "eventId": "51f63acf-efeb-4cb8-8220-add12b389c59",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:12.951Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0057-4e5f-8a9b-000000000057",
+      "dwell_before_expand_ms": 3404,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786623612951
+    }
+  },
+  {
+    "eventId": "522c895e-e377-40a7-b04b-fc250b5fd2f0",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:13.829Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0057-4e5f-8a9b-000000000057",
+      "ingredient_id": "shrimp",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786623613829
+    }
+  },
+  {
+    "eventId": "ea29147e-9523-4f84-8b5c-224c18b6efb0",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:17.799Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0057-4e5f-8a9b-000000000057",
+      "is_liked": true,
+      "timestamp_ms": 1786623617799
+    }
+  },
+  {
+    "eventId": "62e468ce-192e-4c5d-ac50-7e7e21b75bcb",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:18.099Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0057-4e5f-8a9b-000000000057",
+      "feed_index": 1,
+      "dwell_time_ms": 8552,
+      "cumulative_dwell_ms": 8552,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623618099
+    }
+  },
+  {
+    "eventId": "293b4304-4f62-4ed5-9d27-d242450d3318",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:31.721Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0003-4e5f-8a9b-000000000003",
+      "is_liked": true,
+      "timestamp_ms": 1786623631721
+    }
+  },
+  {
+    "eventId": "bd0f4ed3-3242-4f72-8db5-77e2b6f1d7e1",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:32.021Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0003-4e5f-8a9b-000000000003",
+      "feed_index": 2,
+      "dwell_time_ms": 10139,
+      "cumulative_dwell_ms": 10139,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 2,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623632021
+    }
+  },
+  {
+    "eventId": "e7fe41a6-69dd-411e-ba4b-72455a69135f",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:34.686Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0049-4e5f-8a9b-000000000049",
+      "dwell_before_expand_ms": 1262,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786623634686
+    }
+  },
+  {
+    "eventId": "69bd5021-27bc-4f9b-94aa-9a8d4f248d20",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:35.909Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0049-4e5f-8a9b-000000000049",
+      "ingredient_id": "long-grain-rice",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 9,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786623635909
+    }
+  },
+  {
+    "eventId": "88aa91e7-94c4-41e2-8dc4-a7e9c46e6e2d",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:40.085Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0049-4e5f-8a9b-000000000049",
+      "is_saved": true,
+      "timestamp_ms": 1786623640085
+    }
+  },
+  {
+    "eventId": "2ef88157-dfec-410d-8a02-f45e6490a70f",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:40.235Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0049-4e5f-8a9b-000000000049",
+      "feed_index": 3,
+      "dwell_time_ms": 6811,
+      "cumulative_dwell_ms": 6811,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623640235
+    }
+  },
+  {
+    "eventId": "b88b33e1-3eee-4f5c-805f-d538c294dd59",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:46.674Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "dwell_before_expand_ms": 1897,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786623646674
+    }
+  },
+  {
+    "eventId": "42667357-92bc-4e04-a6b0-b2a257f3eacd",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:47.901Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "ingredient_id": "empanada-dough",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786623647901
+    }
+  },
+  {
+    "eventId": "4d8a71cb-057b-4003-9fe3-bf36d9033c83",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:48.312Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "ingredient_id": "ground-beef",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786623648312
+    }
+  },
+  {
+    "eventId": "0fd4c93f-452b-4275-98e3-fb4400035fed",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:49.295Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "ingredient_id": "yellow-onion",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1786623649295
+    }
+  },
+  {
+    "eventId": "e00564cd-0c2f-4b5a-89f1-1c4cb1f1ca36",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:49.855Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "ingredient_id": "hard-boiled-egg",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 4
+      },
+      "timestamp_ms": 1786623649855
+    }
+  },
+  {
+    "eventId": "b49890bb-7694-499f-9bed-b26b18b7fed6",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:55.213Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "is_saved": true,
+      "timestamp_ms": 1786623655213
+    }
+  },
+  {
+    "eventId": "e542e173-d893-4cb4-b60b-43ce73656307",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:20:55.363Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "feed_index": 4,
+      "dwell_time_ms": 10586,
+      "cumulative_dwell_ms": 10586,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 2,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623655363
+    }
+  },
+  {
+    "eventId": "7e0f75e9-411b-4048-acb8-6a2b988c9d9e",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:01.328Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0036-4e5f-8a9b-000000000036",
+      "dwell_before_expand_ms": 2732,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786623661328
+    }
+  },
+  {
+    "eventId": "526a87ca-7627-4d76-9eed-076693b7df82",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:02.162Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0036-4e5f-8a9b-000000000036",
+      "ingredient_id": "tapioca-starch",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 6,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786623662162
+    }
+  },
+  {
+    "eventId": "ab96b385-306a-4618-8f53-fb1962f1f62a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:03.227Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0036-4e5f-8a9b-000000000036",
+      "ingredient_id": "milk",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 6,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786623663227
+    }
+  },
+  {
+    "eventId": "60fd37c8-7838-440b-af41-6fd34eb9ea01",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:09.169Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0036-4e5f-8a9b-000000000036",
+      "feed_index": 5,
+      "dwell_time_ms": 10573,
+      "cumulative_dwell_ms": 10573,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 2,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623669169
+    }
+  },
+  {
+    "eventId": "fb948a13-9a66-42b0-bb21-8224ba734452",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:16.144Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0009-4e5f-8a9b-000000000009",
+      "dwell_before_expand_ms": 2581,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786623676144
+    }
+  },
+  {
+    "eventId": "1b5726b8-9c3d-4373-afb2-184d1b1a159e",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:17.417Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0009-4e5f-8a9b-000000000009",
+      "ingredient_id": "fresh-spinach",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 13,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786623677417
+    }
+  },
+  {
+    "eventId": "14765dd7-d540-4107-b20d-dc2b3753abd7",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:17.841Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0009-4e5f-8a9b-000000000009",
+      "ingredient_id": "feta-cheese",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 13,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786623677841
+    }
+  },
+  {
+    "eventId": "e17281bf-3c08-47c6-8cdd-e2d4ce89a578",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:20.562Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0009-4e5f-8a9b-000000000009",
+      "feed_index": 6,
+      "dwell_time_ms": 6999,
+      "cumulative_dwell_ms": 6999,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623680562
+    }
+  },
+  {
+    "eventId": "1c59ed8a-e625-4e9f-ab78-d8dfc5c81afe",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:23.732Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "dwell_before_expand_ms": 1487,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786623683732
+    }
+  },
+  {
+    "eventId": "d91f72d2-798d-4b21-bc66-ff0236c24608",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:24.953Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "ingredient_id": "ground-lamb",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786623684953
+    }
+  },
+  {
+    "eventId": "636bb45e-8c22-43e3-aa1c-4c1e47d21fdd",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:25.889Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "ingredient_id": "carrot",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786623685889
+    }
+  },
+  {
+    "eventId": "97bb8da8-f922-4f96-a0f7-9fe594bba184",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:31.438Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "feed_index": 7,
+      "dwell_time_ms": 9193,
+      "cumulative_dwell_ms": 9193,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623691438
+    }
+  },
+  {
+    "eventId": "2877f3d6-341b-460a-8cb7-89222dc43643",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:38.041Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0045-4e5f-8a9b-000000000045",
+      "dwell_before_expand_ms": 2171,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786623698041
+    }
+  },
+  {
+    "eventId": "66686eef-6100-4c91-8f30-7eba61724a07",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:38.967Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0045-4e5f-8a9b-000000000045",
+      "ingredient_id": "beef-chuck",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786623698967
+    }
+  },
+  {
+    "eventId": "4f1e0674-c733-4e52-88ae-11b15ae2308a",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:39.802Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0045-4e5f-8a9b-000000000045",
+      "ingredient_id": "coconut-milk",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786623699802
+    }
+  },
+  {
+    "eventId": "a68975f0-db8a-44db-89a1-e3aec0273a1f",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:43.440Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0045-4e5f-8a9b-000000000045",
+      "feed_index": 8,
+      "dwell_time_ms": 7570,
+      "cumulative_dwell_ms": 7570,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623703440
+    }
+  },
+  {
+    "eventId": "26520d71-e62d-4f85-a54b-63e4095b0377",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:51.635Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0006-4e5f-8a9b-000000000006",
+      "dwell_before_expand_ms": 4140,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1786623711635
+    }
+  },
+  {
+    "eventId": "d04b2f14-10f6-4ef0-a40c-86fd6badfa9d",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:53.018Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0006-4e5f-8a9b-000000000006",
+      "ingredient_id": "fresh-corn-cob",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1786623713018
+    }
+  },
+  {
+    "eventId": "0f0fe4dd-08a3-444c-953f-4d540f98c353",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:53.763Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0006-4e5f-8a9b-000000000006",
+      "ingredient_id": "mayonnaise",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1786623713763
+    }
+  },
+  {
+    "eventId": "a4a72dad-bc19-451f-9a24-63239dd49a81",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "c69a05bb-0320-4418-93ea-ac8724e36ec5",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-13T12:21:57.935Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0006-4e5f-8a9b-000000000006",
+      "feed_index": 9,
+      "dwell_time_ms": 10440,
+      "cumulative_dwell_ms": 10440,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 2,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1786623717935
+    }
+  },
+  {
+    "eventId": "cfd7a80f-e711-448f-a8af-033f6395f010",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:02.417Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "dwell_before_expand_ms": 2417,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787419322417
+    }
+  },
+  {
+    "eventId": "b70480c4-2198-4c2d-bbf3-fe7374737b98",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:03.149Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "ingredient_id": "empanada-dough",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787419323149
+    }
+  },
+  {
+    "eventId": "58580fcf-1318-4214-88fb-78922772a678",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:03.669Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "ingredient_id": "ground-beef",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787419323669
+    }
+  },
+  {
+    "eventId": "907112de-946c-4fc3-bf38-6ccc3c53b8dc",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:09.044Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "feed_index": 0,
+      "dwell_time_ms": 9044,
+      "cumulative_dwell_ms": 9044,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419329044
+    }
+  },
+  {
+    "eventId": "412606b2-debc-4b00-8dd1-b66e2de2fc73",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:14.018Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0023-4e5f-8a9b-000000000023",
+      "dwell_before_expand_ms": 1935,
+      "trigger_source": "details_button",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787419334018
+    }
+  },
+  {
+    "eventId": "a8f97385-3ed9-41cf-a9dc-111d28139dc9",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:15.035Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0023-4e5f-8a9b-000000000023",
+      "ingredient_id": "bomba-rice",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787419335035
+    }
+  },
+  {
+    "eventId": "2d78754a-ff6e-455d-92d8-191938f481bd",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:20.373Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0023-4e5f-8a9b-000000000023",
+      "feed_index": 1,
+      "dwell_time_ms": 8290,
+      "cumulative_dwell_ms": 8290,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419340373
+    }
+  },
+  {
+    "eventId": "6035e6f6-ce06-4fde-8381-6de44c421144",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:32.335Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0005-4e5f-8a9b-000000000005",
+      "is_saved": true,
+      "timestamp_ms": 1787419352335
+    }
+  },
+  {
+    "eventId": "42b91b80-a6f3-407e-abc1-2dc51b53f065",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:32.485Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0005-4e5f-8a9b-000000000005",
+      "feed_index": 2,
+      "dwell_time_ms": 8116,
+      "cumulative_dwell_ms": 8116,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419352485
+    }
+  },
+  {
+    "eventId": "94b67329-0ff7-4c71-85f0-cc5782b8e1b2",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:37.073Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "dwell_before_expand_ms": 2438,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787419357073
+    }
+  },
+  {
+    "eventId": "13288314-ce08-49d9-8726-8df9711d4cd6",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:38.152Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "ingredient_id": "ground-lamb",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787419358152
+    }
+  },
+  {
+    "eventId": "442025b4-e756-4c2f-92e0-bf53c488345f",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:39.049Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "ingredient_id": "carrot",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787419359049
+    }
+  },
+  {
+    "eventId": "45b499d4-8fae-4798-b262-2f666c921351",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:39.777Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "ingredient_id": "frozen-pea",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 10,
+        "total_checked_count": 3
+      },
+      "timestamp_ms": 1787419359777
+    }
+  },
+  {
+    "eventId": "46035c64-7fca-44a3-9195-4515a029b34f",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:44.879Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "is_saved": true,
+      "timestamp_ms": 1787419364879
+    }
+  },
+  {
+    "eventId": "b3dbcc2e-fbee-48fc-b723-a2e19c7abfa4",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:45.029Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "feed_index": 3,
+      "dwell_time_ms": 10394,
+      "cumulative_dwell_ms": 10394,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 2,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419365029
+    }
+  },
+  {
+    "eventId": "6bca8e7b-6a1c-4b5f-bce1-b5c75ddf0f86",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:51.957Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0027-4e5f-8a9b-000000000027",
+      "dwell_before_expand_ms": 3231,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787419371957
+    }
+  },
+  {
+    "eventId": "db4e7898-6c12-47bd-a879-ca2170a31ab2",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:53.074Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0027-4e5f-8a9b-000000000027",
+      "ingredient_id": "chicken-bone-in",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 8,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787419373074
+    }
+  },
+  {
+    "eventId": "15a68537-690c-489b-906f-c8283f690bef",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:22:58.365Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0027-4e5f-8a9b-000000000027",
+      "feed_index": 4,
+      "dwell_time_ms": 9639,
+      "cumulative_dwell_ms": 9639,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419378365
+    }
+  },
+  {
+    "eventId": "03f6c20d-93c2-406b-9a19-fec9878999a0",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:13.707Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0050-4e5f-8a9b-000000000050",
+      "feed_index": 5,
+      "dwell_time_ms": 10575,
+      "cumulative_dwell_ms": 10575,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 2,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419393707
+    }
+  },
+  {
+    "eventId": "df350cfb-6e98-4159-890c-ecd46f26087f",
+    "eventType": "RECIPE_LIKE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:23.975Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0054-4e5f-8a9b-000000000054",
+      "is_liked": true,
+      "timestamp_ms": 1787419403975
+    }
+  },
+  {
+    "eventId": "39923ba2-1113-47e5-9823-444eaccfd799",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:24.125Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0054-4e5f-8a9b-000000000054",
+      "is_saved": true,
+      "timestamp_ms": 1787419404125
+    }
+  },
+  {
+    "eventId": "7c74594b-dab4-486c-bf8d-759bed1f094b",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:24.275Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0054-4e5f-8a9b-000000000054",
+      "feed_index": 6,
+      "dwell_time_ms": 8944,
+      "cumulative_dwell_ms": 8944,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419404275
+    }
+  },
+  {
+    "eventId": "2c8ab46e-f09e-4dcb-8a81-84bb018de797",
+    "eventType": "RECIPE_EXPAND",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:29.085Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "dwell_before_expand_ms": 2755,
+      "trigger_source": "card_tap",
+      "default_tab_viewed": "ingredients",
+      "timestamp_ms": 1787419409085
+    }
+  },
+  {
+    "eventId": "eaab3cf1-ee44-4a56-94e5-2f4b2acd0b3c",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:30.107Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "ingredient_id": "rice-noodle-flat",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 1
+      },
+      "timestamp_ms": 1787419410107
+    }
+  },
+  {
+    "eventId": "fdfda0c5-01d1-4ea0-934d-4a32d1669a38",
+    "eventType": "INGREDIENT_INTERACTION",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:31.085Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "ingredient_id": "shrimp",
+      "action": "checked",
+      "session_progress": {
+        "total_ingredients_in_recipe": 12,
+        "total_checked_count": 2
+      },
+      "timestamp_ms": 1787419411085
+    }
+  },
+  {
+    "eventId": "ebc22de9-48e2-4f80-bab9-a163437cb46c",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:34.789Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "is_saved": true,
+      "timestamp_ms": 1787419414789
+    }
+  },
+  {
+    "eventId": "6ed8537a-8d3c-4a27-bb86-a1f380ed5849",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:34.939Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "feed_index": 7,
+      "dwell_time_ms": 8609,
+      "cumulative_dwell_ms": 8609,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419414939
+    }
+  },
+  {
+    "eventId": "d549e576-e154-4762-bb06-4b44c02a28b8",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:41.669Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0015-4e5f-8a9b-000000000015",
+      "is_saved": true,
+      "timestamp_ms": 1787419421669
+    }
+  },
+  {
+    "eventId": "afaa12cc-9df5-4502-8fdd-52ef803b2174",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:41.819Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0015-4e5f-8a9b-000000000015",
+      "feed_index": 8,
+      "dwell_time_ms": 5576,
+      "cumulative_dwell_ms": 5576,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419421819
+    }
+  },
+  {
+    "eventId": "3e17b646-360e-42ac-821d-e939c542e15a",
+    "eventType": "RECIPE_SAVE",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:51.747Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0052-4e5f-8a9b-000000000052",
+      "is_saved": true,
+      "timestamp_ms": 1787419431747
+    }
+  },
+  {
+    "eventId": "f11ba38f-aa61-4eb8-9034-25697118c5eb",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "3c96abbc-823a-49f3-a806-188537a9c46e",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-22T17:23:51.897Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "mobile",
+      "os": "Android",
+      "browser": "Firefox",
+      "networkType": "4g",
+      "viewportWidthPx": 390,
+      "viewportHeightPx": 844
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0052-4e5f-8a9b-000000000052",
+      "feed_index": 9,
+      "dwell_time_ms": 7845,
+      "cumulative_dwell_ms": 7845,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1787419431897
+    }
+  },
+  {
+    "eventId": "efd7d909-b0a3-4616-8c34-87702d955713",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "d7bd20c0-9c7e-4488-adcc-3d9a415f3341",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-29T13:29:03.603Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0009-4e5f-8a9b-000000000009",
+      "feed_index": 0,
+      "dwell_time_ms": 3603,
+      "cumulative_dwell_ms": 3603,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1788010143603
+    }
+  },
+  {
+    "eventId": "eda45929-89fc-4d40-beb5-4bdbac78d072",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "d7bd20c0-9c7e-4488-adcc-3d9a415f3341",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-29T13:29:10.498Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0024-4e5f-8a9b-000000000024",
+      "feed_index": 1,
+      "dwell_time_ms": 2861,
+      "cumulative_dwell_ms": 2861,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1788010150498
+    }
+  },
+  {
+    "eventId": "38032254-2912-41b5-b7a2-cc55107c24c0",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "d7bd20c0-9c7e-4488-adcc-3d9a415f3341",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-29T13:29:17.542Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0001-4e5f-8a9b-000000000001",
+      "feed_index": 2,
+      "dwell_time_ms": 3681,
+      "cumulative_dwell_ms": 3681,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1788010157542
+    }
+  },
+  {
+    "eventId": "53939ed9-ce59-450c-9d7c-20c987e0a762",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "d7bd20c0-9c7e-4488-adcc-3d9a415f3341",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-29T13:29:23.215Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0037-4e5f-8a9b-000000000037",
+      "feed_index": 3,
+      "dwell_time_ms": 4363,
+      "cumulative_dwell_ms": 4363,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1788010163215
+    }
+  },
+  {
+    "eventId": "eb144866-858d-4cda-9194-ad1a61036e58",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "d7bd20c0-9c7e-4488-adcc-3d9a415f3341",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-29T13:29:29.838Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "feed_index": 4,
+      "dwell_time_ms": 5051,
+      "cumulative_dwell_ms": 5051,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1788010169838
+    }
+  },
+  {
+    "eventId": "4096524e-6d1a-40a4-b018-e451648ca5d5",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "d7bd20c0-9c7e-4488-adcc-3d9a415f3341",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-29T13:29:35.378Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0005-4e5f-8a9b-000000000005",
+      "feed_index": 5,
+      "dwell_time_ms": 3656,
+      "cumulative_dwell_ms": 3656,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1788010175378
+    }
+  },
+  {
+    "eventId": "68f85773-643b-46c9-8eb0-06f6cbcb277b",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "d7bd20c0-9c7e-4488-adcc-3d9a415f3341",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-29T13:29:44.028Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0054-4e5f-8a9b-000000000054",
+      "feed_index": 6,
+      "dwell_time_ms": 4259,
+      "cumulative_dwell_ms": 4259,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1788010184028
+    }
+  },
+  {
+    "eventId": "061aa18d-909c-4901-b09a-5935c443a75e",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "d7bd20c0-9c7e-4488-adcc-3d9a415f3341",
+    "userId": "usr_fake_07_novelty_seeker",
+    "clientTs": "2026-08-29T13:29:51.550Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "tablet",
+      "os": "Android",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 834,
+      "viewportHeightPx": 1194
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0050-4e5f-8a9b-000000000050",
+      "feed_index": 7,
+      "dwell_time_ms": 2999,
+      "cumulative_dwell_ms": 2999,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1788010191550
+    }
+  }
+]

@@ -1,0 +1,408 @@
+[
+  {
+    "eventId": "ce111ce1-c47e-429c-873d-9cc1f8f8b898",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "cf6955c0-8d64-4600-8ccc-95013648256c",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-01T20:28:00.844Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0029-4e5f-8a9b-000000000029",
+      "feed_index": 0,
+      "dwell_time_ms": 844,
+      "cumulative_dwell_ms": 844,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1782937680844
+    }
+  },
+  {
+    "eventId": "d3c18d7a-66de-4138-88f2-200399f764c2",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "cf6955c0-8d64-4600-8ccc-95013648256c",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-01T20:28:04.948Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0056-4e5f-8a9b-000000000056",
+      "feed_index": 1,
+      "dwell_time_ms": 390,
+      "cumulative_dwell_ms": 390,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1782937684948
+    }
+  },
+  {
+    "eventId": "e0d19e91-c786-4f2b-9552-35a421ea5622",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "cf6955c0-8d64-4600-8ccc-95013648256c",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-01T20:28:07.190Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0036-4e5f-8a9b-000000000036",
+      "feed_index": 2,
+      "dwell_time_ms": 657,
+      "cumulative_dwell_ms": 657,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1782937687190
+    }
+  },
+  {
+    "eventId": "d27dc258-e6c7-4b1d-93e7-08ac0e8e4869",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "cf6955c0-8d64-4600-8ccc-95013648256c",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-01T20:28:09.977Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "feed_index": 3,
+      "dwell_time_ms": 345,
+      "cumulative_dwell_ms": 345,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1782937689977
+    }
+  },
+  {
+    "eventId": "0c998383-d470-4599-9b24-6835f0740382",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "cf6955c0-8d64-4600-8ccc-95013648256c",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-01T20:28:12.299Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0050-4e5f-8a9b-000000000050",
+      "feed_index": 4,
+      "dwell_time_ms": 751,
+      "cumulative_dwell_ms": 751,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1782937692299
+    }
+  },
+  {
+    "eventId": "3dbf7ba2-962a-401c-88a0-619c23dc1413",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "cf6955c0-8d64-4600-8ccc-95013648256c",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-01T20:28:17.664Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0030-4e5f-8a9b-000000000030",
+      "feed_index": 5,
+      "dwell_time_ms": 849,
+      "cumulative_dwell_ms": 849,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1782937697664
+    }
+  },
+  {
+    "eventId": "719c3eeb-4cfb-4c6a-a889-5f560850135e",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "cf6955c0-8d64-4600-8ccc-95013648256c",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-01T20:28:19.844Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0060-4e5f-8a9b-000000000060",
+      "feed_index": 6,
+      "dwell_time_ms": 809,
+      "cumulative_dwell_ms": 809,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1782937699844
+    }
+  },
+  {
+    "eventId": "05d8b33e-a880-4a55-9f1f-afb7bf96845b",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "cf6955c0-8d64-4600-8ccc-95013648256c",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-01T20:28:23.329Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "wifi",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0033-4e5f-8a9b-000000000033",
+      "feed_index": 7,
+      "dwell_time_ms": 663,
+      "cumulative_dwell_ms": 663,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1782937703329
+    }
+  },
+  {
+    "eventId": "76fac036-508f-4f99-b06c-2746d8549dd2",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e15ac49d-ee00-4874-be78-72963b073e8d",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-06T21:47:00.394Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0055-4e5f-8a9b-000000000055",
+      "feed_index": 0,
+      "dwell_time_ms": 394,
+      "cumulative_dwell_ms": 394,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": true,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1783374420394
+    }
+  },
+  {
+    "eventId": "77bb91ee-e6ff-43dc-b42a-45e02cc1b201",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e15ac49d-ee00-4874-be78-72963b073e8d",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-06T21:47:03.398Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0038-4e5f-8a9b-000000000038",
+      "feed_index": 1,
+      "dwell_time_ms": 814,
+      "cumulative_dwell_ms": 814,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1783374423398
+    }
+  },
+  {
+    "eventId": "98e5357a-49d1-471f-9031-489308462465",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e15ac49d-ee00-4874-be78-72963b073e8d",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-06T21:47:05.396Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0013-4e5f-8a9b-000000000013",
+      "feed_index": 2,
+      "dwell_time_ms": 675,
+      "cumulative_dwell_ms": 675,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1783374425396
+    }
+  },
+  {
+    "eventId": "48efd86a-15fc-4713-bd5c-ce3db6ea8a68",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e15ac49d-ee00-4874-be78-72963b073e8d",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-06T21:47:08.583Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0012-4e5f-8a9b-000000000012",
+      "feed_index": 3,
+      "dwell_time_ms": 651,
+      "cumulative_dwell_ms": 651,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1783374428583
+    }
+  },
+  {
+    "eventId": "de5d2f3a-ac1c-4fb1-85fb-e369e11f276c",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e15ac49d-ee00-4874-be78-72963b073e8d",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-06T21:47:12.603Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0052-4e5f-8a9b-000000000052",
+      "feed_index": 4,
+      "dwell_time_ms": 400,
+      "cumulative_dwell_ms": 400,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1783374432603
+    }
+  },
+  {
+    "eventId": "a971d5eb-9e3a-4934-bd26-4e8c07a4ed89",
+    "eventType": "IMPRESSION_HEARTBEAT",
+    "schemaVersion": "1.0.0",
+    "sessionId": "e15ac49d-ee00-4874-be78-72963b073e8d",
+    "userId": "usr_fake_11_churn_negative",
+    "clientTs": "2026-07-06T21:47:16.368Z",
+    "appVersion": "1.0.0",
+    "platform": {
+      "deviceType": "desktop",
+      "os": "macOS",
+      "browser": "Chrome",
+      "networkType": "4g",
+      "viewportWidthPx": 1440,
+      "viewportHeightPx": 900
+    },
+    "payload": {
+      "recipe_id": "a1b2c3d4-0033-4e5f-8a9b-000000000033",
+      "feed_index": 5,
+      "dwell_time_ms": 439,
+      "cumulative_dwell_ms": 439,
+      "viewport_visibility_ratio": 0,
+      "heartbeat_sequence": 1,
+      "card_format": "standard",
+      "is_above_fold": false,
+      "event_subtype": "dwell_finalise",
+      "timestamp_ms": 1783374436368
+    }
+  }
+]

@@ -33,6 +33,16 @@
  */
 const EXPLORATION_EPSILON = 0.15
 
+/**
+ * Flat additive bonus applied per matching dietary tag between the
+ * candidate recipe's `dietary_tags` and the user's onboarding
+ * `dietaryFlags`. Deliberately small relative to a real affinity weight
+ * (which can be up to ~0.7 under the onboarding-informed cold start) so it
+ * nudges compatible recipes upward without ever overriding genuine cuisine
+ * affinity signal.
+ */
+const DIETARY_MATCH_BONUS = 0.05
+
 // =============================================================================
 // MAIN EXPORT — generateRankedFeed
 // =============================================================================
@@ -47,13 +57,17 @@ const EXPLORATION_EPSILON = 0.15
  *                                     Weights should sum to ~1.0.
  * @param {string[]}  seenRecipeIds  - Array of `recipe_id` strings the user has
  *                                     already been shown (impression-based exclusion).
+ * @param {string[]}  [dietaryFlags] - Optional dietary restriction strings from the
+ *                                     user's onboarding profile (e.g. ['vegan']).
+ *                                     Candidates whose `dietary_tags` intersect this
+ *                                     list receive a small additive bonus.
  *
  * @returns {object[]} Ranked array of recipe objects each augmented with a
  *                     `predicted_score` property, sorted descending by score.
  *                     Returns an empty array if no unseen candidates exist or
  *                     if `catalog` is not a valid array.
  */
-export function generateRankedFeed(catalog, affinityVector, seenRecipeIds) {
+export function generateRankedFeed(catalog, affinityVector, seenRecipeIds, dietaryFlags) {
   // ── Defensive guards ───────────────────────────────────────────────────────
 
   if (!Array.isArray(catalog) || catalog.length === 0) {
@@ -64,6 +78,7 @@ export function generateRankedFeed(catalog, affinityVector, seenRecipeIds) {
     ? affinityVector
     : {}
   const safeSeenIds = Array.isArray(seenRecipeIds) ? seenRecipeIds : []
+  const safeDietaryFlags = Array.isArray(dietaryFlags) ? dietaryFlags : []
 
   // Pre-compute the cold-start base score once so we don't repeat the division
   // inside the map loop.
@@ -101,8 +116,16 @@ export function generateRankedFeed(catalog, affinityVector, seenRecipeIds) {
         ? safeAffinity[cuisineId]
         : coldStartBase
 
+    // Small additive bonus when the candidate matches at least one of the
+    // user's declared dietary preferences (e.g. vegan, gluten-free). This is
+    // independent of — and additive to — the cuisine-affinity base score.
+    const recipeDietaryTags = Array.isArray(recipe?.dietary_tags) ? recipe.dietary_tags : []
+    const matchesDietaryPreference =
+      safeDietaryFlags.length > 0 && recipeDietaryTags.some((tag) => safeDietaryFlags.includes(tag))
+    const dietaryBonus = matchesDietaryPreference ? DIETARY_MATCH_BONUS : 0
+
     // Additive epsilon variance — safe for baseScore === 0.
-    const predicted_score = baseScore + (Math.random() * EXPLORATION_EPSILON)
+    const predicted_score = baseScore + dietaryBonus + (Math.random() * EXPLORATION_EPSILON)
 
     // Return a shallow copy of the recipe augmented with predicted_score.
     // Spread avoids mutating the original catalogue objects.

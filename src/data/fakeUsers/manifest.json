@@ -1,0 +1,297 @@
+[
+  {
+    "user_id": "usr_fake_01_italian_loyalist",
+    "display_name": "Marco T.",
+    "description": "Keeps returning to the same two Italian recipes across sessions, barely glancing at anything else.",
+    "algorithm_design": "Weighted revisit loop: 80%+ of impressions are the italian recipes at \"love\" level, repeated across 3 sessions; everything else gets a fast \"skip\"/\"glance\".",
+    "events_file": "events/usr_fake_01_italian_loyalist.json",
+    "session_count": 3,
+    "event_count": 81,
+    "impression_count": 11,
+    "top_cuisines_by_impressions": [
+      "italian",
+      "mediterranean",
+      "peruvian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_02_asian_explorer",
+    "display_name": "Priya N.",
+    "description": "Browses widely across East and Southeast Asian cuisines, engaging positively with most of them.",
+    "algorithm_design": "Uniform-ish sampling across an 8-cuisine regional cluster at \"like\"/\"interested\" level; occasional out-of-cluster \"glance\".",
+    "events_file": "events/usr_fake_02_asian_explorer.json",
+    "session_count": 3,
+    "event_count": 114,
+    "impression_count": 14,
+    "top_cuisines_by_impressions": [
+      "japanese",
+      "korean",
+      "thai"
+    ]
+  },
+  {
+    "user_id": "usr_fake_03_vegan_health",
+    "display_name": "Dana K.",
+    "description": "Selects almost exclusively by dietary tag (vegan/vegetarian) rather than cuisine, and always finishes checking every ingredient.",
+    "algorithm_design": "Filters the whole catalogue by dietary_tags containing vegan/vegetarian first, then engages at \"complete_prep\" level regardless of cuisine.",
+    "events_file": "events/usr_fake_03_vegan_health.json",
+    "session_count": 3,
+    "event_count": 126,
+    "impression_count": 14,
+    "top_cuisines_by_impressions": [
+      "ethiopian",
+      "caribbean",
+      "spanish"
+    ]
+  },
+  {
+    "user_id": "usr_fake_04_spice_chaser",
+    "display_name": "Tomás R.",
+    "description": "Chases the \"spicy\" tag across every cuisine, ignoring mild dishes almost entirely.",
+    "algorithm_design": "Filters catalogue by tags containing \"spicy\"; those get \"love\"/\"like\", everything mild gets a fast \"skip\".",
+    "events_file": "events/usr_fake_04_spice_chaser.json",
+    "session_count": 2,
+    "event_count": 101,
+    "impression_count": 12,
+    "top_cuisines_by_impressions": [
+      "chinese_sichuan",
+      "thai",
+      "spanish"
+    ]
+  },
+  {
+    "user_id": "usr_fake_05_easy_weeknight",
+    "display_name": "Jamie L.",
+    "description": "Only ever engages with \"easy\" recipes — a busy weeknight cook who saves things to try later.",
+    "algorithm_design": "Filters catalogue to difficulty_tier == easy; high save rate, moderate like rate, full prep-checking.",
+    "events_file": "events/usr_fake_05_easy_weeknight.json",
+    "session_count": 3,
+    "event_count": 95,
+    "impression_count": 12,
+    "top_cuisines_by_impressions": [
+      "peruvian",
+      "filipino",
+      "ethiopian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_06_gourmet_expert",
+    "display_name": "Chef Andre B.",
+    "description": "Gravitates to advanced, technique-heavy recipes and engages deeply with every one.",
+    "algorithm_design": "Filters to difficulty_tier == advanced; consistently high dwell, full expand, full ingredient prep.",
+    "events_file": "events/usr_fake_06_gourmet_expert.json",
+    "session_count": 3,
+    "event_count": 178,
+    "impression_count": 13,
+    "top_cuisines_by_impressions": [
+      "persian",
+      "brazilian",
+      "ethiopian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_07_novelty_seeker",
+    "display_name": "Sam O.",
+    "description": "Never lands on a favourite — spreads attention near-uniformly across the entire cuisine catalogue and rarely repeats.",
+    "algorithm_design": "Draws one fresh recipe from every distinct cuisine_id each session (max-entropy sampling), all at \"interested\" level, low save rate.",
+    "events_file": "events/usr_fake_07_novelty_seeker.json",
+    "session_count": 3,
+    "event_count": 77,
+    "impression_count": 28,
+    "top_cuisines_by_impressions": [
+      "nigerian",
+      "british",
+      "mexican"
+    ]
+  },
+  {
+    "user_id": "usr_fake_08_power_superfan",
+    "display_name": "Renata V.",
+    "description": "A super-engaged daily user who likes and saves almost everything she opens, across nearly the whole catalogue.",
+    "algorithm_design": "Samples large batches (10-15) each session at \"love\"/\"like\" with high like+save probability — stress-tests the ranker with a dense, high-magnitude affinity vector.",
+    "events_file": "events/usr_fake_08_power_superfan.json",
+    "session_count": 4,
+    "event_count": 525,
+    "impression_count": 46,
+    "top_cuisines_by_impressions": [
+      "moroccan",
+      "vietnamese",
+      "thai"
+    ]
+  },
+  {
+    "user_id": "usr_fake_09_passive_scroller",
+    "display_name": "Alex Q.",
+    "description": "Scrolls fast and rarely stops — almost every card is skipped with sub-2-second dwell.",
+    "algorithm_design": "Samples broadly across the catalogue but assigns \"skip\"/\"glance\" to nearly everything, so almost no positive signal reaches the affinity model.",
+    "events_file": "events/usr_fake_09_passive_scroller.json",
+    "session_count": 2,
+    "event_count": 25,
+    "impression_count": 25,
+    "top_cuisines_by_impressions": [
+      "american_southern",
+      "lebanese",
+      "south_indian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_10_cold_start_new",
+    "display_name": "New User",
+    "description": "Just installed the app — no telemetry at all yet. Exercises the cold-start uniform-distribution path.",
+    "algorithm_design": "Empty event array by design — generateUserAffinityVector() must fall back to a uniform distribution over all cuisines.",
+    "events_file": "events/usr_fake_10_cold_start_new.json",
+    "session_count": 0,
+    "event_count": 0,
+    "impression_count": 0,
+    "top_cuisines_by_impressions": []
+  },
+  {
+    "user_id": "usr_fake_11_churn_negative",
+    "display_name": "Kayla F.",
+    "description": "Opened the app a few times, disliked nearly everything shown, and stopped coming back.",
+    "algorithm_design": "Every impression is a fast \"dislike_skip\" (sub-second dwell, no expand/like/save) — tests that floored-at-zero scores never go negative.",
+    "events_file": "events/usr_fake_11_churn_negative.json",
+    "session_count": 2,
+    "event_count": 14,
+    "impression_count": 14,
+    "top_cuisines_by_impressions": [
+      "british",
+      "lebanese",
+      "peruvian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_12_mediterranean_comfort",
+    "display_name": "Layla H.",
+    "description": "A meal-prep saver drawn to the Mediterranean / Middle Eastern comfort-food cluster.",
+    "algorithm_design": "Filters to a 5-cuisine Mediterranean/Levant/Maghreb cluster; high save rate reflecting meal-prep batching behaviour.",
+    "events_file": "events/usr_fake_12_mediterranean_comfort.json",
+    "session_count": 3,
+    "event_count": 91,
+    "impression_count": 11,
+    "top_cuisines_by_impressions": [
+      "lebanese",
+      "moroccan",
+      "mediterranean"
+    ]
+  },
+  {
+    "user_id": "usr_fake_13_latin_fiesta",
+    "display_name": "Camila S.",
+    "description": "Sticks to Latin American cuisines — Mexican, Peruvian, Brazilian, Argentinian, Caribbean.",
+    "algorithm_design": "Filters to a 5-cuisine Latin American / Caribbean cluster at \"like\"/\"love\"; small amount of unrelated \"glance\" noise.",
+    "events_file": "events/usr_fake_13_latin_fiesta.json",
+    "session_count": 3,
+    "event_count": 113,
+    "impression_count": 12,
+    "top_cuisines_by_impressions": [
+      "peruvian",
+      "mexican",
+      "brazilian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_14_random_noise",
+    "display_name": "Test Bot 01",
+    "description": "Purely random engagement across the whole catalogue — an adversarial baseline for testing ranking robustness.",
+    "algorithm_design": "Every field (dwell, expand, like, save, checked count) is drawn from a uniform random distribution, independent of cuisine, tag, or difficulty.",
+    "events_file": "events/usr_fake_14_random_noise.json",
+    "session_count": 3,
+    "event_count": 184,
+    "impression_count": 36,
+    "top_cuisines_by_impressions": [
+      "korean",
+      "japanese",
+      "nigerian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_15_breakfast_lover",
+    "display_name": "Nora P.",
+    "description": "Browses almost exclusively in the morning and gravitates to breakfast/brunch-tagged recipes.",
+    "algorithm_design": "Filters catalogue by tags containing breakfast/brunch; all sessions start at 07:00-08:00.",
+    "events_file": "events/usr_fake_15_breakfast_lover.json",
+    "session_count": 2,
+    "event_count": 83,
+    "impression_count": 9,
+    "top_cuisines_by_impressions": [
+      "mediterranean",
+      "japanese",
+      "south_indian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_16_binge_then_dropout",
+    "display_name": "Owen D.",
+    "description": "One massive North Indian binge session months ago, then never opened the app again.",
+    "algorithm_design": "A single very long, high-intensity session concentrated on one cuisine, dated far in the past, with no follow-up sessions at all.",
+    "events_file": "events/usr_fake_16_binge_then_dropout.json",
+    "session_count": 1,
+    "event_count": 68,
+    "impression_count": 5,
+    "top_cuisines_by_impressions": [
+      "north_indian",
+      "south_indian",
+      "mediterranean"
+    ]
+  },
+  {
+    "user_id": "usr_fake_17_drifting_taste",
+    "display_name": "Ines M.",
+    "description": "Taste visibly drifts over time: North Indian a few months back, Korean recently, French most recently.",
+    "algorithm_design": "Each session targets a different cuisine cluster in sequence (oldest to newest), simulating an evolving palate over multiple months.",
+    "events_file": "events/usr_fake_17_drifting_taste.json",
+    "session_count": 3,
+    "event_count": 88,
+    "impression_count": 6,
+    "top_cuisines_by_impressions": [
+      "north_indian",
+      "korean",
+      "french"
+    ]
+  },
+  {
+    "user_id": "usr_fake_18_save_hoarder",
+    "display_name": "Ben C.",
+    "description": "Saves recipes compulsively for \"someday\" but almost never expands or likes anything.",
+    "algorithm_design": "Every impression is \"save_only\": high save probability, low dwell, essentially no expand/like/ingredient signal.",
+    "events_file": "events/usr_fake_18_save_hoarder.json",
+    "session_count": 3,
+    "event_count": 62,
+    "impression_count": 28,
+    "top_cuisines_by_impressions": [
+      "south_indian",
+      "japanese",
+      "filipino"
+    ]
+  },
+  {
+    "user_id": "usr_fake_19_completionist_prepper",
+    "display_name": "Vikram S.",
+    "description": "A serious home cook who methodically checks off every single ingredient on every recipe he opens, focused on Indian home-cooking.",
+    "algorithm_design": "Filters to Indian-subcontinent cuisines; every impression is \"complete_prep\" (100% ingredients checked, long dwell).",
+    "events_file": "events/usr_fake_19_completionist_prepper.json",
+    "session_count": 2,
+    "event_count": 116,
+    "impression_count": 8,
+    "top_cuisines_by_impressions": [
+      "north_indian",
+      "south_indian"
+    ]
+  },
+  {
+    "user_id": "usr_fake_20_anti_fan_german",
+    "display_name": "Greta W.",
+    "description": "Loves broad home-style cooking but consistently skips German recipes the instant they appear.",
+    "algorithm_design": "German-cuisine impressions are always forced \"dislike_skip\" while a rotating set of other cuisines gets \"like\"/\"love\" — isolates the skip-penalty term for one category.",
+    "events_file": "events/usr_fake_20_anti_fan_german.json",
+    "session_count": 2,
+    "event_count": 74,
+    "impression_count": 11,
+    "top_cuisines_by_impressions": [
+      "german",
+      "russian",
+      "british"
+    ]
+  }
+]
