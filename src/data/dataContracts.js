@@ -81,6 +81,13 @@ export const EVENT_TYPES = Object.freeze({
    * `affinityModel.calculateImpressionScore`'s `dismissModifier`.
    */
   RECIPE_DISMISS: 'RECIPE_DISMISS',
+
+  /**
+   * Fires when the user shares a recipe (native share sheet or copy-link
+   * fallback). ACTION_TYPES.RECIPE_SHARE already existed for this but no
+   * matching EVENT_TYPES entry did, unlike every other tracked action.
+   */
+  RECIPE_SHARE: 'RECIPE_SHARE',
 });
 
 /**
@@ -192,12 +199,17 @@ export const INGREDIENT_CATEGORIES = Object.freeze({
  * Maps to dim_recipe.difficulty_tier CHECK constraint and is used for
  * skill-level matching during feed personalisation and recipe filtering.
  *
+ * NOTE: this previously listed 'medium'/'hard'/'expert', which never matched
+ * the actual difficulty_tier values used by mockRecipes.json or read anywhere
+ * in the app (easy/intermediate/advanced, e.g. FeedCard's tierColour map and
+ * SKILL_LEVEL_TO_DIFFICULTY in affinityModel.js). Corrected to match reality.
+ *
  * @readonly
  * @enum {string}
  *
  * @example
  * import { DIFFICULTY_TIERS } from './dataContracts.js';
- * const tier = DIFFICULTY_TIERS.MEDIUM; // 'medium'
+ * const tier = DIFFICULTY_TIERS.INTERMEDIATE; // 'intermediate'
  */
 export const DIFFICULTY_TIERS = Object.freeze({
   /**
@@ -210,19 +222,13 @@ export const DIFFICULTY_TIERS = Object.freeze({
    * Recipes requiring moderate skill — some knife work, heat management,
    * or multi-step processes. Targets 'beginner' to 'intermediate' users.
    */
-  MEDIUM: 'medium',
+  INTERMEDIATE: 'intermediate',
 
   /**
    * Advanced recipes with complex techniques, longer cook times, or specialised
-   * equipment. Targets 'intermediate' to 'advanced' users.
+   * equipment, targeting 'advanced'/'professional' users.
    */
-  HARD: 'hard',
-
-  /**
-   * Professional / chef-level recipes requiring specialised knowledge,
-   * restaurant-grade equipment, or rare ingredients.
-   */
-  EXPERT: 'expert',
+  ADVANCED: 'advanced',
 });
 
 /**

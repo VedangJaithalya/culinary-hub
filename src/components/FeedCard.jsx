@@ -3,6 +3,7 @@ import { BookmarkIcon, XCircleIcon } from './icons/ActionIcons'
 import { dispatchTelemetry } from '../services/telemetryService.js'
 import { EVENT_TYPES } from '../data/dataContracts.js'
 import { dismissRecipe } from '../services/dismissService.js'
+import { isLikedRecipe, setLikedRecipe } from '../services/likeService.js'
 
 /**
  * FeedCard
@@ -70,7 +71,12 @@ export default function FeedCard({ recipe, index, onExpandRecipe, onDismiss }) {
 
   // ── Micro-interaction state ───────────────────────────────────────────────
 
-  const [isLiked, setIsLiked] = useState(false)
+  /**
+   * Initialize isLiked by checking localStorage for this recipe_id — mirrors
+   * isSaved below so likes survive a reload instead of always starting
+   * unfilled (previously a plain useState(false) with no persistence).
+   */
+  const [isLiked, setIsLiked] = useState(() => isLikedRecipe(recipe_id))
 
   /**
    * Initialize isSaved by checking localStorage for this recipe_id.
@@ -99,6 +105,7 @@ export default function FeedCard({ recipe, index, onExpandRecipe, onDismiss }) {
     e.stopPropagation()
     const nextLiked = !isLiked
     setIsLiked(nextLiked)
+    setLikedRecipe(recipe_id, nextLiked)
     dispatchTelemetry(EVENT_TYPES.RECIPE_LIKE, {
       recipe_id,
       is_liked: nextLiked,

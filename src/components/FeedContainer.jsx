@@ -4,11 +4,14 @@ import RecipeModal from './RecipeModal'
 import SavedDrawer from './SavedDrawer'
 import CreatorProfileModal from './CreatorProfileModal'
 import ShoppingListDrawer from './ShoppingListDrawer'
+import SearchOverlay from './SearchOverlay'
+import MealPlannerModal from './MealPlannerModal'
 import useViewportTelemetry from '../hooks/useViewportTelemetry'
 import { useFeedRanking } from '../hooks/useFeedRanking.js'
 import { EVENT_TYPES } from '../data/dataContracts.js'
 import { dispatchTelemetry } from '../services/telemetryService.js'
 import { getDismissedRecipeIds } from '../services/dismissService.js'
+import mockRecipes from '../data/mockRecipes.json'
 
 /**
  * FeedContainer
@@ -84,6 +87,12 @@ export default function FeedContainer() {
   /** @type {[boolean, function]} Controls ShoppingListDrawer visibility. */
   const [isShoppingListOpen, setIsShoppingListOpen] = useState(false)
 
+  /** @type {[boolean, function]} Controls SearchOverlay visibility. */
+  const [isSearchOpen, setIsSearchOpen] = useState(false)
+
+  /** @type {[boolean, function]} Controls MealPlannerModal visibility. */
+  const [isMealPlannerOpen, setIsMealPlannerOpen] = useState(false)
+
   /** @type {[string|null, function]} creator_id shown in CreatorProfileModal; null = closed. */
   const [selectedCreatorId, setSelectedCreatorId] = useState(null)
 
@@ -116,6 +125,35 @@ export default function FeedContainer() {
     return () => container.removeEventListener('scroll', handleScroll)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [visibleFeedQueue, activeRecipeId])
+
+  // ── Deep-link: open a shared recipe from ?recipe=<recipe_id> ─────────────
+  // shareService.buildRecipeShareUrl() produces links in this shape (there's
+  // no backend/router, so the deep link is just a query param on the app's
+  // own URL). Runs once on mount; the param is stripped afterwards so
+  // closing and reopening the modal later doesn't reopen the same recipe.
+  useEffect(() => {
+    let sharedRecipeId
+    try {
+      sharedRecipeId = new URLSearchParams(window.location.search).get('recipe')
+    } catch {
+      sharedRecipeId = null
+    }
+    if (!sharedRecipeId) return
+
+    const sharedRecipe = mockRecipes.find((r) => r.recipe_id === sharedRecipeId)
+    if (sharedRecipe) {
+      handleOpenRecipe(sharedRecipe, 'share_link')
+    }
+
+    try {
+      const url = new URL(window.location.href)
+      url.searchParams.delete('recipe')
+      window.history.replaceState({}, '', url)
+    } catch {
+      // URL API unavailable — harmless no-op, param just stays in the bar.
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // ── Scroll lock side effect ───────────────────────────────────────────────
   // When the modal opens, swap the container's scroll/snap classes for
@@ -243,6 +281,28 @@ export default function FeedContainer() {
     handleOpenRecipe(recipe, 'similar_rail')
   }
 
+  /**
+   * Closes the search overlay and opens the RecipeModal for the tapped
+   * search result.
+   *
+   * @param {object} recipe - The recipe to open in the modal.
+   */
+  function handleSelectSearchResult(recipe) {
+    setIsSearchOpen(false)
+    handleOpenRecipe(recipe, 'search_results')
+  }
+
+  /**
+   * Closes the meal planner and opens the RecipeModal for the tapped
+   * planned recipe.
+   *
+   * @param {object} recipe - The recipe to open in the modal.
+   */
+  function handleSelectFromMealPlanner(recipe) {
+    setIsMealPlannerOpen(false)
+    handleOpenRecipe(recipe, 'meal_planner')
+  }
+
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
@@ -276,6 +336,28 @@ export default function FeedContainer() {
         className="fixed top-[76px] right-4 z-40 w-11 h-11 flex items-center justify-center rounded-full bg-neutral-900/80 backdrop-blur-md border border-white/20 text-emerald-400 shadow-lg hover:bg-neutral-800/90 active:scale-90 transition-all duration-150"
       >
         <span className="text-lg" aria-hidden="true">🛒</span>
+      </button>
+
+      {/* ── Floating Meal Planner FAB ────────────────────────────────────── */}
+      <button
+        type="button"
+        id="open-meal-planner-btn"
+        aria-label="Open meal planner"
+        onClick={() => setIsMealPlannerOpen(true)}
+        className="fixed top-[132px] right-4 z-40 w-11 h-11 flex items-center justify-center rounded-full bg-neutral-900/80 backdrop-blur-md border border-white/20 text-sky-400 shadow-lg hover:bg-neutral-800/90 active:scale-90 transition-all duration-150"
+      >
+        <span className="text-lg" aria-hidden="true">📅</span>
+      </button>
+
+      {/* ── Floating Search FAB ──────────────────────────────────────────── */}
+      <button
+        type="button"
+        id="open-search-btn"
+        aria-label="Search recipes"
+        onClick={() => setIsSearchOpen(true)}
+        className="fixed top-5 left-4 z-40 w-11 h-11 flex items-center justify-center rounded-full bg-neutral-900/80 backdrop-blur-md border border-white/20 text-white shadow-lg hover:bg-neutral-800/90 active:scale-90 transition-all duration-150"
+      >
+        <span className="text-lg" aria-hidden="true">🔍</span>
       </button>
 
       <div
@@ -349,6 +431,18 @@ export default function FeedContainer() {
       <ShoppingListDrawer
         isOpen={isShoppingListOpen}
         onClose={() => setIsShoppingListOpen(false)}
+      />
+
+      <SearchOverlay
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        onSelectRecipe={handleSelectSearchResult}
+      />
+
+      <MealPlannerModal
+        isOpen={isMealPlannerOpen}
+        onClose={() => setIsMealPlannerOpen(false)}
+        onRecipeSelect={handleSelectFromMealPlanner}
       />
     </>
   )

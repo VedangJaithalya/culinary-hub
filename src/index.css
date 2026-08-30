@@ -104,3 +104,24 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+/* ── Print-only recipe export (Share/Export feature) ───────────────────────
+ * PrintableRecipe.jsx renders a clean recipe sheet with `hidden print:block`
+ * so it's invisible on screen. This rule hides everything else on the page
+ * during a print job so window.print() (used as the "Export as PDF" path,
+ * since no PDF library is installed) produces just the recipe. */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printable-recipe,
+  #printable-recipe * {
+    visibility: visible;
+  }
+  #printable-recipe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}

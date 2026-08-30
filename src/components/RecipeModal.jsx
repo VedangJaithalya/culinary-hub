@@ -28,6 +28,9 @@ import { getRatingStats, submitRating } from '../services/ratingService.js'
 import { getDisplayCookCount, startCookMode, completeCookMode } from '../services/cookService.js'
 import { addRecipeToShoppingList } from '../services/shoppingListService.js'
 import { findSimilarRecipes } from '../engine/similarityEngine.js'
+import { shareRecipe } from '../services/shareService.js'
+import { ShareIcon } from './icons/ActionIcons'
+import PrintableRecipe from './PrintableRecipe'
 
 // ── Ingredient category display config ─────────────────────────────────────────
 const CATEGORY_META = {
@@ -87,6 +90,7 @@ export default function RecipeModal({
     recipe ? getDisplayCookCount(recipe) : 0
   )
   const [addedToShoppingList, setAddedToShoppingList] = useState(false)
+  const [shareStatus, setShareStatus] = useState(null) // null | 'native' | 'clipboard' | 'failed'
 
   // ── Reset per-recipe UI state when a new recipe is opened ────────────────
   // Deliberately done during render (React's documented "adjusting state
@@ -101,6 +105,7 @@ export default function RecipeModal({
     setRatingStats(getRatingStats(recipe))
     setDisplayCookCount(getDisplayCookCount(recipe))
     setAddedToShoppingList(false)
+    setShareStatus(null)
   }
 
   // ── Focus management: focus the close button when modal opens ──────────────
@@ -205,6 +210,27 @@ export default function RecipeModal({
     setAddedToShoppingList(true)
   }
 
+  /**
+   * Shares the recipe via the native share sheet, falling back to a
+   * clipboard-copied link. Surfaces the outcome briefly via `shareStatus`.
+   */
+  async function handleShare() {
+    const result = await shareRecipe(recipe)
+    setShareStatus(result.method)
+    if (result.method !== 'failed') {
+      setTimeout(() => setShareStatus(null), 2500)
+    }
+  }
+
+  /**
+   * Triggers the browser's print dialog against the hidden PrintableRecipe
+   * sheet mounted below — the "export as PDF" path (no PDF library
+   * available, so the user picks "Save as PDF" in the print dialog).
+   */
+  function handleExportPdf() {
+    window.print()
+  }
+
   return (
     <>
     {/*
@@ -251,20 +277,50 @@ export default function RecipeModal({
               {title}
             </h2>
 
-            {/* Close button */}
-            <button
-              ref={closeButtonRef}
-              type="button"
-              id="recipe-modal-close-btn"
-              aria-label="Close recipe details"
-              onClick={onClose}
-              className="shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-90 transition-all duration-150 text-white/70 hover:text-white"
-            >
-              <svg aria-hidden="true" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
+            {/* Share / Export / Close buttons */}
+            <div className="flex items-center gap-1.5 shrink-0">
+              <button
+                type="button"
+                id="recipe-modal-share-btn"
+                aria-label="Share recipe"
+                onClick={handleShare}
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-90 transition-all duration-150 text-white/70 hover:text-white"
+              >
+                <ShareIcon />
+              </button>
+              <button
+                type="button"
+                id="recipe-modal-export-pdf-btn"
+                aria-label="Export recipe as PDF"
+                onClick={handleExportPdf}
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-90 transition-all duration-150 text-white/70 hover:text-white"
+              >
+                <svg aria-hidden="true" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4M4 18v1a1 1 0 001 1h14a1 1 0 001-1v-1" />
+                </svg>
+              </button>
+              <button
+                ref={closeButtonRef}
+                type="button"
+                id="recipe-modal-close-btn"
+                aria-label="Close recipe details"
+                onClick={onClose}
+                className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 active:scale-90 transition-all duration-150 text-white/70 hover:text-white"
+              >
+                <svg aria-hidden="true" className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
           </div>
+
+          {/* Share status toast */}
+          {shareStatus === 'clipboard' && (
+            <p className="text-[11px] font-medium text-emerald-400 mt-2">Link copied to clipboard ✓</p>
+          )}
+          {shareStatus === 'failed' && (
+            <p className="text-[11px] font-medium text-rose-400 mt-2">Couldn&apos;t share — try copying the URL manually.</p>
+          )}
 
           {/* Badges row */}
           <div className="flex flex-wrap items-center gap-2 mt-2.5">
@@ -604,6 +660,8 @@ export default function RecipeModal({
       onClose={() => setIsCookModeOpen(false)}
       onFinish={handleFinishCooking}
     />
+
+    <PrintableRecipe recipe={recipe} />
     </>
   )
 }
