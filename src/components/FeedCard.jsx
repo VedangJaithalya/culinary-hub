@@ -1,7 +1,8 @@
 import { useState } from 'react'
-import { BookmarkIcon } from './icons/ActionIcons'
+import { BookmarkIcon, XCircleIcon } from './icons/ActionIcons'
 import { dispatchTelemetry } from '../services/telemetryService.js'
 import { EVENT_TYPES } from '../data/dataContracts.js'
+import { dismissRecipe } from '../services/dismissService.js'
 
 /**
  * FeedCard
@@ -15,14 +16,23 @@ import { EVENT_TYPES } from '../data/dataContracts.js'
  *  - onExpandRecipe {function} — Called with (recipe, triggerSource) when the user
  *                               opens recipe details. triggerSource is one of:
  *                               'details_button' | 'card_tap'
+ *  - onDismiss {function}      — Called with (recipe) when the user taps "not
+ *                               interested". Parent (FeedContainer) is
+ *                               responsible for actually removing the card
+ *                               from the visible queue; this component only
+ *                               persists the dismissal and fires telemetry.
  *
  * Phase 4, Pass 2:
  *  - Like (Heart) and Save (Bookmark) micro-interaction buttons with active states.
  *  - Dispatches RECIPE_LIKE / RECIPE_SAVE telemetry on each toggle.
  *  - Saves persist to `culinaryfeed_saved_recipes` in localStorage.
  *  - Share button removed.
+ *
+ * Smarter Ranking, Item 6:
+ *  - Explicit "not interested" (dismiss) button — strong negative signal,
+ *    distinct from the inferred skip. See `dismissService.js`.
  */
-export default function FeedCard({ recipe, index, onExpandRecipe }) {
+export default function FeedCard({ recipe, index, onExpandRecipe, onDismiss }) {
   const {
     recipe_id,
     cuisine_id,
@@ -122,6 +132,20 @@ export default function FeedCard({ recipe, index, onExpandRecipe }) {
       recipe_id,
       is_saved: nextSaved,
     })
+  }
+
+  /**
+   * Explicit "not interested" dismissal. Persists + dispatches telemetry via
+   * dismissService, then notifies the parent so the card can be removed from
+   * the visible feed immediately — a dismissal should never resurface, not
+   * just be down-ranked.
+   *
+   * @param {React.MouseEvent} e
+   */
+  function handleDismiss(e) {
+    e.stopPropagation()
+    dismissRecipe({ recipe_id, cuisine_id })
+    onDismiss?.(recipe)
   }
 
   return (
@@ -262,6 +286,19 @@ export default function FeedCard({ recipe, index, onExpandRecipe }) {
                 }`}
             >
               <BookmarkIcon filled={isSaved} />
+            </span>
+          </button>
+
+          {/* Dismiss ("not interested") button — explicit negative feedback */}
+          <button
+            type="button"
+            id={`dismiss-btn-${recipe_id}`}
+            aria-label="Not interested — remove from feed"
+            onClick={handleDismiss}
+            className="flex flex-col items-center gap-1 group"
+          >
+            <span className="w-11 h-11 flex items-center justify-center rounded-full backdrop-blur-md border border-white/20 bg-black/35 text-white group-hover:bg-white/25 transition-all duration-150 group-active:scale-90">
+              <XCircleIcon />
             </span>
           </button>
         </nav>

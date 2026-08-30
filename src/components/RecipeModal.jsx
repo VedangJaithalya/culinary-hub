@@ -15,6 +15,9 @@
  *  - onIngredientToggle  {function}     Called with (recipeId, ingredientId) on checkbox toggle.
  *  - checkedIngredientsMap {object}     Flat map of `${recipeId}_${ingredientId}` → boolean.
  *  - onOpenCreator        {function}    Called with (creatorId) when the byline is tapped.
+ *  - onSelectSimilarRecipe {function}   Called with (recipe) when a "More Like
+ *                                       This" mini-card is tapped — swaps the
+ *                                       modal to that recipe in place.
  */
 
 import { useState, useEffect, useRef } from 'react'
@@ -24,6 +27,7 @@ import CookModeView from './CookModeView'
 import { getRatingStats, submitRating } from '../services/ratingService.js'
 import { getDisplayCookCount, startCookMode, completeCookMode } from '../services/cookService.js'
 import { addRecipeToShoppingList } from '../services/shoppingListService.js'
+import { findSimilarRecipes } from '../engine/similarityEngine.js'
 
 // ── Ingredient category display config ─────────────────────────────────────────
 const CATEGORY_META = {
@@ -65,6 +69,7 @@ export default function RecipeModal({
   onIngredientToggle,
   checkedIngredientsMap,
   onOpenCreator,
+  onSelectSimilarRecipe,
 }) {
   const [activeTab, setActiveTab] = useState('ingredients')
   const closeButtonRef = useRef(null)
@@ -165,6 +170,13 @@ export default function RecipeModal({
 
   // ── Sorted steps ──────────────────────────────────────────────────────────
   const sortedSteps = [...steps].sort((a, b) => a.step_number - b.step_number)
+
+  // ── Content-based "More Like This" (Smarter Ranking, Item 4) ──────────────
+  // Purely structural (ingredient + category Jaccard similarity) — not
+  // personalized, so it surfaces cross-cuisine matches the affinity-driven
+  // feed ranking alone wouldn't connect (e.g. two vegan recipes from
+  // different cuisines). See similarityEngine.js.
+  const similarRecipes = findSimilarRecipes(recipe_id, { topN: 6 })
 
   // ── Handlers: rating, cook mode, shopping list ─────────────────────────────
 
@@ -548,6 +560,38 @@ export default function RecipeModal({
                 </ol>
                 </>
               )}
+            </div>
+          )}
+
+          {/* ── MORE LIKE THIS (Smarter Ranking, Item 4) ────────────────────── */}
+          {similarRecipes.length > 0 && (
+            <div className="px-5 pt-2 pb-8 border-t border-neutral-800/60">
+              <h3 className="text-[11px] font-bold text-white/40 uppercase tracking-widest mb-3">
+                More Like This
+              </h3>
+              <div className="flex gap-3 overflow-x-auto pb-1 -mx-1 px-1 scrollbar-none">
+                {similarRecipes.map((similar) => (
+                  <button
+                    key={similar.recipe_id}
+                    type="button"
+                    id={`similar-recipe-btn-${similar.recipe_id}`}
+                    onClick={() => onSelectSimilarRecipe?.(similar)}
+                    className="shrink-0 w-32 text-left group"
+                  >
+                    <div className="w-32 h-24 rounded-xl overflow-hidden bg-neutral-800 mb-1.5">
+                      <img
+                        src={similar.media_url}
+                        alt={similar.title}
+                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-200"
+                        loading="lazy"
+                      />
+                    </div>
+                    <p className="text-xs font-semibold text-white/85 leading-snug line-clamp-2">
+                      {similar.title}
+                    </p>
+                  </button>
+                ))}
+              </div>
             </div>
           )}
         </div>

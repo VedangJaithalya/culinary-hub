@@ -74,6 +74,13 @@ export const EVENT_TYPES = Object.freeze({
 
   /** Fires when the user completes the final step of Cook Mode for a recipe. */
   RECIPE_COOK_COMPLETE: 'RECIPE_COOK_COMPLETE',
+
+  /**
+   * Fires when the user explicitly dismisses a recipe from the feed
+   * ("not interested"). Strong negative signal — see
+   * `affinityModel.calculateImpressionScore`'s `dismissModifier`.
+   */
+  RECIPE_DISMISS: 'RECIPE_DISMISS',
 });
 
 /**
@@ -133,6 +140,10 @@ export const ACTION_TYPES = Object.freeze({
 
   /** User unfollowed a recipe creator. */
   CREATOR_UNFOLLOW: 'creator_unfollow',
+
+  // ── Explicit negative feedback ─────────────────────────────────────────────
+  /** User explicitly marked a recipe as "not interested" from the feed. */
+  RECIPE_DISMISS: 'recipe_dismiss',
 });
 
 /**

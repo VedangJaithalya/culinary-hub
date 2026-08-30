@@ -8,6 +8,7 @@ import useViewportTelemetry from '../hooks/useViewportTelemetry'
 import { useFeedRanking } from '../hooks/useFeedRanking.js'
 import { EVENT_TYPES } from '../data/dataContracts.js'
 import { dispatchTelemetry } from '../services/telemetryService.js'
+import { getDismissedRecipeIds } from '../services/dismissService.js'
 
 /**
  * FeedContainer
@@ -33,6 +34,26 @@ export default function FeedContainer() {
   // ── Dynamic feed ranking ─────────────────────────────────────────────────
 
   const { feedQueue } = useFeedRanking()
+
+  // ── Dismissed recipes (explicit "not interested") ─────────────────────────
+  // useFeedRanking already excludes previously-dismissed recipes from *new*
+  // ranking passes, but the queue for the *current* session was ranked once
+  // on mount — so a card dismissed just now still needs to be pulled out of
+  // the already-computed queue immediately, not just excluded next time.
+  const [dismissedIds, setDismissedIds] = useState(() => new Set(getDismissedRecipeIds()))
+  const visibleFeedQueue = feedQueue.filter((r) => !dismissedIds.has(r.recipe_id))
+
+  /**
+   * Removes a recipe from the visible feed the instant it's dismissed.
+   * Persistence + telemetry already happened inside FeedCard/dismissService;
+   * this just updates local render state so the card disappears now.
+   *
+   * @param {object} recipe
+   */
+  function handleDismissRecipe(recipe) {
+    setDismissedIds((prev) => new Set(prev).add(recipe.recipe_id))
+  }
+
   // ── Refs ──────────────────────────────────────────────────────────────────
 
   /**
@@ -47,7 +68,7 @@ export default function FeedContainer() {
   // the moment the user taps "expand", giving us dwell_before_expand_ms.
   // `activeRecipeId` is used to keep `currentIndex` in sync with the
   // IntersectionObserver so the ranking engine always knows the viewed prefix.
-  const { activeRecipeId, entryTimestamp } = useViewportTelemetry(containerRef, feedQueue)
+  const { activeRecipeId, entryTimestamp } = useViewportTelemetry(containerRef, visibleFeedQueue)
 
   // ── Modal / ingredient state ──────────────────────────────────────────────
 
@@ -85,7 +106,7 @@ export default function FeedContainer() {
     function handleScroll() {
       const id = activeRecipeId.current
       if (!id) return
-      const idx = feedQueue.findIndex((r) => r.recipe_id === id)
+      const idx = visibleFeedQueue.findIndex((r) => r.recipe_id === id)
       if (idx !== -1 && idx !== currentIndex) {
         setCurrentIndex(idx)
       }
@@ -94,7 +115,7 @@ export default function FeedContainer() {
     container.addEventListener('scroll', handleScroll, { passive: true })
     return () => container.removeEventListener('scroll', handleScroll)
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [feedQueue, activeRecipeId])
+  }, [visibleFeedQueue, activeRecipeId])
 
   // ── Scroll lock side effect ───────────────────────────────────────────────
   // When the modal opens, swap the container's scroll/snap classes for
@@ -211,6 +232,17 @@ export default function FeedContainer() {
     handleOpenRecipe(recipe, 'creator_profile')
   }
 
+  /**
+   * Swaps the RecipeModal to a "More Like This" recommendation. The modal
+   * stays open — RecipeModal's render-time prevRecipeId reset already
+   * handles switching tabs/rating/cook-count state for the new recipe.
+   *
+   * @param {object} recipe - The similar recipe to open.
+   */
+  function handleSelectSimilarRecipe(recipe) {
+    handleOpenRecipe(recipe, 'similar_rail')
+  }
+
   // ── Render ────────────────────────────────────────────────────────────────
 
   return (
@@ -251,7 +283,7 @@ export default function FeedContainer() {
         id="culinary-feed"
         className="h-screen w-full max-w-md mx-auto overflow-y-scroll snap-y snap-mandatory scrollbar-none relative bg-black shadow-2xl"
       >
-        {feedQueue.map((recipe, index) => (
+        {visibleFeedQueue.map((recipe, index) => (
           /*
            * The `feed-card` class + `data-recipe-id` are both required by the
            * IntersectionObserver in `useViewportTelemetry`.
@@ -265,12 +297,13 @@ export default function FeedContainer() {
               recipe={recipe}
               index={index}
               onExpandRecipe={handleOpenRecipe}
+              onDismiss={handleDismissRecipe}
             />
           </div>
         ))}
 
         {/* Empty-state guard: shown when the ranked queue is temporarily empty */}
-        {feedQueue.length === 0 && (
+        {visibleFeedQueue.length === 0 && (
           <div className="h-screen flex flex-col items-center justify-center gap-3 text-neutral-400 px-8 text-center">
             <span className="text-4xl" aria-hidden="true">🍳</span>
             <p className="text-sm font-medium">No recipes available yet.</p>
@@ -292,6 +325,7 @@ export default function FeedContainer() {
         onIngredientToggle={handleIngredientToggle}
         checkedIngredientsMap={checkedIngredients}
         onOpenCreator={handleOpenCreator}
+        onSelectSimilarRecipe={handleSelectSimilarRecipe}
       />
 
       {/*

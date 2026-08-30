@@ -146,6 +146,8 @@ export function transformRawEvents(eventsArray) {
           dwell_before_expand_ms: null,
           is_liked:               false,
           is_saved:               false,
+          is_dismissed:           false,
+          last_event_ts_ms:       null,
         })
       }
       if (!ingredientState.has(recipeId)) {
@@ -153,6 +155,13 @@ export function transformRawEvents(eventsArray) {
       }
 
       const metrics = recipeMetrics.get(recipeId)
+
+      // Track the most recent timestamp seen for this recipe within the
+      // session, regardless of event type — feeds affinityModel's recency
+      // time-decay so older signal fades relative to more recent signal.
+      if (typeof ts === 'number' && (metrics.last_event_ts_ms == null || ts > metrics.last_event_ts_ms)) {
+        metrics.last_event_ts_ms = ts
+      }
 
       // ── Handle each event type ──────────────────────────────────────────────
 
@@ -192,6 +201,10 @@ export function transformRawEvents(eventsArray) {
       } else if (eventType === EVENT_TYPES.RECIPE_SAVE) {
         // Toggle: each RECIPE_SAVE event represents the current saved state.
         metrics.is_saved = payload.is_saved ?? !metrics.is_saved
+
+      } else if (eventType === EVENT_TYPES.RECIPE_DISMISS) {
+        // One-directional: once dismissed within a session, stays dismissed.
+        metrics.is_dismissed = true
       }
     }
 
@@ -224,6 +237,8 @@ export function transformRawEvents(eventsArray) {
         is_completed_prep:         isCompletedPrep,
         is_liked:                  metrics.is_liked,
         is_saved:                  metrics.is_saved,
+        is_dismissed:              metrics.is_dismissed,
+        last_event_ts_ms:          metrics.last_event_ts_ms,
       })
     }
 

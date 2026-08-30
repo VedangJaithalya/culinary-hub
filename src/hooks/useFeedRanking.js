@@ -24,7 +24,7 @@ import mockRecipes from '../data/mockRecipes.json'
 import { generateUserAffinityVector } from '../analytics/affinityModel.js'
 import { getLatestAnalyticsData } from '../analytics/sessionTransformer.js'
 import { generateRankedFeed } from '../engine/rankingEngine.js'
-import { getUserProfile } from '../services/userProfileService.js'
+import { getDismissedRecipeIds } from '../services/dismissService.js'
 
 // =============================================================================
 // PRIVATE HELPERS
@@ -75,18 +75,24 @@ export function useFeedRanking() {
     // Fetch historical analytics from previous sessions (localStorage)
     const { impressions } = getLatestAnalyticsData()
 
-    // Derive the set of recipe_ids seen across all prior sessions
-    const seenRecipeIds = extractSeenRecipeIds(impressions)
+    // Derive the set of recipe_ids seen across all prior sessions, plus any
+    // explicitly dismissed ("not interested") recipes — dismissals are a
+    // permanent exclusion from candidate generation, not just a down-rank,
+    // so they're unioned into the same exclusion set rather than merely
+    // scored lower. See dismissService.js / Smarter Ranking item 6.
+    const seenRecipeIds = [
+      ...new Set([...extractSeenRecipeIds(impressions), ...getDismissedRecipeIds()]),
+    ]
 
-    // Build a cuisine affinity vector from engagement signals
-    const affinityVector = generateUserAffinityVector()
+    // Build the multi-dimensional affinity profile (cuisine, difficulty,
+    // dietary, tags + UCB1 impression-count metadata) from engagement
+    // signals — see affinityModel.js's Smarter Ranking rewrite.
+    const affinityProfile = generateUserAffinityVector()
 
-    // Onboarding-declared dietary preferences (if any) nudge ranking toward
-    // matching recipes — see rankingEngine.js's DIETARY_MATCH_BONUS.
-    const dietaryFlags = getUserProfile()?.dietaryFlags ?? []
-
-    // Generate a ranked list of unseen (and seen) candidates
-    const rankedCandidates = generateRankedFeed(mockRecipes, affinityVector, seenRecipeIds, dietaryFlags)
+    // Generate a ranked, diversity-constrained list of unseen candidates.
+    // Dietary preference now flows entirely through affinityProfile.dietary
+    // rather than a separate flat bonus parameter.
+    const rankedCandidates = generateRankedFeed(mockRecipes, affinityProfile, seenRecipeIds)
 
     // Update the queue; fall back to the full catalogue if everything was seen.
     // Intentional one-time sync on mount (empty dep array, see below) rather

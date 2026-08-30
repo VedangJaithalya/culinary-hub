@@ -1,23 +1,32 @@
 /**
  * @fileoverview CulinaryFeed Ranking Engine — Phase 4, Pass 1
+ * (Smarter Ranking pass: multi-dimensional scoring, UCB1 exploration,
+ * diversity constraint)
  *
  * Candidate Generation, Heuristic Scoring, and Feed Ranking.
  *
- * Takes the full recipe catalogue, the current user affinity vector, and the
- * set of recipe IDs already seen by the user, then returns a ranked list of
- * unseen candidates ordered by predicted engagement.
+ * Takes the full recipe catalogue, the current user's multi-dimensional
+ * affinity profile (see `affinityModel.generateUserAffinityVector`), and the
+ * set of recipe IDs already seen (or explicitly dismissed) by the user, then
+ * returns a ranked, diversity-constrained list of unseen candidates.
  *
  * Algorithm overview:
- *  1. Candidate Generation  — filter out already-seen recipes.
- *  2. Heuristic Scoring     — assign a `predicted_score` to each candidate
- *                             using the affinity vector plus epsilon-greedy noise.
- *  3. Sorting               — return candidates sorted descending by score.
+ *  1. Candidate Generation  — filter out already-seen/dismissed recipes.
+ *  2. Heuristic Scoring     — assign a `predicted_score` to each candidate as
+ *                             a weighted combination of cuisine, difficulty,
+ *                             dietary, and content-tag affinity, plus a UCB1
+ *                             exploration bonus.
+ *  3. Sorting               — order candidates descending by score.
+ *  4. Diversity Constraint  — re-sequence so no cuisine dominates any
+ *                             sliding window of the final feed.
  *
  * Design principles:
  *  - Pure ES6+ JavaScript — zero TypeScript, zero external runtime deps.
  *  - Fully defensive: null / empty inputs are handled gracefully.
- *  - Deterministic structure, non-deterministic scores (by design — exploration
- *    noise ensures different orderings each call to prevent echo chambers).
+ *  - Deterministic structure, near-deterministic scores — UCB1 makes
+ *    exploration shrink as a cuisine becomes well-observed instead of
+ *    staying uniformly noisy forever; a tiny residual jitter remains only as
+ *    a tie-breaker.
  *
  * @module rankingEngine
  */
@@ -27,62 +36,186 @@
 // =============================================================================
 
 /**
- * Maximum additive epsilon noise added to every candidate's base score.
- * Using additive variance ensures unengaged candidates (baseScore === 0)
- * still receive a small positive score, preventing category starvation.
+ * Relative weight of each affinity dimension in the combined base score.
+ * Cuisine stays dominant — it's still the strongest, most reliable signal —
+ * while difficulty/dietary/tag affinity meaningfully nudge the ranking
+ * without ever being able to override it on their own (each dimension's
+ * weights individually sum to ~1.0, same scale as cuisine's).
  */
-const EXPLORATION_EPSILON = 0.15
+const CUISINE_AFFINITY_WEIGHT = 1.0
+const DIFFICULTY_AFFINITY_WEIGHT = 0.3
+const DIETARY_AFFINITY_WEIGHT = 0.3
+const TAG_AFFINITY_WEIGHT = 0.3
 
 /**
- * Flat additive bonus applied per matching dietary tag between the
- * candidate recipe's `dietary_tags` and the user's onboarding
- * `dietaryFlags`. Deliberately small relative to a real affinity weight
- * (which can be up to ~0.7 under the onboarding-informed cold start) so it
- * nudges compatible recipes upward without ever overriding genuine cuisine
- * affinity signal.
+ * UCB1 exploration coefficient ("C"). Replaces the old flat epsilon-greedy
+ * noise: the bonus for a cuisine shrinks as `impressionCountByCuisine` for
+ * it grows, so a well-understood user's feed gets calmer over time while a
+ * barely-observed cuisine still gets a strong nudge — including cuisines
+ * with zero impressions, which get the maximum possible bonus (this is what
+ * replaces the old "category starvation" guard).
  */
-const DIETARY_MATCH_BONUS = 0.05
+const UCB_EXPLORATION_COEFFICIENT = 0.3
+
+/**
+ * Tiny residual random jitter kept purely as a tie-breaker so identical UCB1
+ * scores don't freeze the feed into the exact same order every render.
+ * Deliberately far smaller than the old flat epsilon (0.15) — UCB1 is doing
+ * the real exploration work now.
+ */
+const RESIDUAL_JITTER = 0.01
+
+/**
+ * Diversity constraint: at most this many recipes from the same cuisine may
+ * appear within any `DIVERSITY_WINDOW_SIZE`-sized run of the final feed.
+ * Prevents an echo-chamber feed (e.g. five Italian recipes in a row for a
+ * loyalist-type user) without discarding any candidate — everything still
+ * appears, just re-sequenced.
+ */
+const DIVERSITY_WINDOW_SIZE = 5
+const MAX_PER_CUISINE_PER_WINDOW = 2
+
+// =============================================================================
+// DIVERSITY CONSTRAINT — applyDiversityConstraint
+// =============================================================================
+
+/**
+ * Re-sequences an already score-sorted candidate list so no cuisine appears
+ * more than `MAX_PER_CUISINE_PER_WINDOW` times within any
+ * `DIVERSITY_WINDOW_SIZE`-sized window of the output — without dropping any
+ * candidate. Candidates are bucketed by cuisine (each bucket keeping its
+ * relative score order), then greedily interleaved: at each output slot, the
+ * highest-scoring remaining candidate whose cuisine isn't already capped out
+ * in the recent window is chosen.
+ *
+ * Escape hatch: if every remaining cuisine is currently capped out (possible
+ * near the tail of the list, or when very few distinct cuisines remain), the
+ * constraint relaxes for that one slot and the global next-highest remaining
+ * candidate is placed instead — this is deliberate, so the pass can never
+ * drop items or loop forever.
+ *
+ * @param {object[]} sortedCandidates - Candidates already sorted descending
+ *   by `predicted_score`, each with a `cuisine_id` (may be null/undefined).
+ * @returns {object[]} The same candidates, re-sequenced.
+ */
+function applyDiversityConstraint(sortedCandidates) {
+  if (sortedCandidates.length <= DIVERSITY_WINDOW_SIZE) {
+    return sortedCandidates
+  }
+
+  // ── Bucket by cuisine, preserving each bucket's relative score order ───────
+  /** @type {Map<string, object[]>} */
+  const buckets = new Map()
+  for (const candidate of sortedCandidates) {
+    const cuisineId = candidate?.cuisine_id ?? '__unknown__'
+    if (!buckets.has(cuisineId)) buckets.set(cuisineId, [])
+    buckets.get(cuisineId).push(candidate)
+  }
+
+  /** @type {Map<string, number>} Per-cuisine read pointer into its bucket. */
+  const pointers = new Map([...buckets.keys()].map((id) => [id, 0]))
+
+  /** Cuisine IDs of the last (DIVERSITY_WINDOW_SIZE - 1) placed items. */
+  const recentWindow = []
+
+  function countInWindow(cuisineId) {
+    return recentWindow.filter((id) => id === cuisineId).length
+  }
+
+  function remainingCount() {
+    let total = 0
+    for (const [id, arr] of buckets) total += arr.length - pointers.get(id)
+    return total
+  }
+
+  const output = []
+
+  while (remainingCount() > 0) {
+    // Cuisines with candidates left, ranked by their next candidate's score.
+    const eligible = [...buckets.entries()]
+      .filter(([id, arr]) => pointers.get(id) < arr.length)
+      .sort((a, b) => {
+        const scoreA = a[1][pointers.get(a[0])].predicted_score
+        const scoreB = b[1][pointers.get(b[0])].predicted_score
+        return scoreB - scoreA
+      })
+
+    let chosenCuisineId = null
+    for (const [id] of eligible) {
+      if (countInWindow(id) < MAX_PER_CUISINE_PER_WINDOW) {
+        chosenCuisineId = id
+        break
+      }
+    }
+
+    // Escape hatch — see docstring above.
+    if (chosenCuisineId === null) {
+      chosenCuisineId = eligible[0][0]
+    }
+
+    const bucket = buckets.get(chosenCuisineId)
+    const idx = pointers.get(chosenCuisineId)
+    output.push(bucket[idx])
+    pointers.set(chosenCuisineId, idx + 1)
+
+    recentWindow.push(chosenCuisineId)
+    if (recentWindow.length > DIVERSITY_WINDOW_SIZE - 1) {
+      recentWindow.shift()
+    }
+  }
+
+  return output
+}
 
 // =============================================================================
 // MAIN EXPORT — generateRankedFeed
 // =============================================================================
 
 /**
- * Generates a ranked feed of unseen recipe candidates for the current user.
+ * Generates a ranked, diversity-constrained feed of unseen recipe candidates
+ * for the current user.
  *
- * @param {object[]} catalog         - Full recipe catalogue (array of recipe objects).
- *                                     Each recipe must have `recipe_id` and `cuisine_id`.
- * @param {Record<string, number>}   affinityVector - Normalized cuisine-to-weight map
- *                                     produced by `generateUserAffinityVector`.
- *                                     Weights should sum to ~1.0.
- * @param {string[]}  seenRecipeIds  - Array of `recipe_id` strings the user has
- *                                     already been shown (impression-based exclusion).
- * @param {string[]}  [dietaryFlags] - Optional dietary restriction strings from the
- *                                     user's onboarding profile (e.g. ['vegan']).
- *                                     Candidates whose `dietary_tags` intersect this
- *                                     list receive a small additive bonus.
+ * @param {object[]} catalog          - Full recipe catalogue (array of recipe
+ *                                      objects). Each recipe must have
+ *                                      `recipe_id` and `cuisine_id`.
+ * @param {{
+ *   cuisine: Record<string, number>,
+ *   difficulty: Record<string, number>,
+ *   dietary: Record<string, number>,
+ *   tags: Record<string, number>,
+ *   meta?: { impressionCountByCuisine?: Record<string, number>, totalImpressions?: number },
+ * }} affinityProfile - The multi-dimensional profile produced by
+ *   `affinityModel.generateUserAffinityVector`. Each dimension is a
+ *   normalized weight map; `meta` feeds the UCB1 exploration term.
+ * @param {string[]} seenRecipeIds    - Array of `recipe_id` strings to
+ *                                      exclude from candidate generation —
+ *                                      already-seen recipes, and (per the
+ *                                      caller, see `useFeedRanking.js`)
+ *                                      explicitly dismissed ones, which
+ *                                      should never resurface.
  *
  * @returns {object[]} Ranked array of recipe objects each augmented with a
- *                     `predicted_score` property, sorted descending by score.
- *                     Returns an empty array if no unseen candidates exist or
- *                     if `catalog` is not a valid array.
+ *                     `predicted_score` property. Returns an empty array if
+ *                     no unseen candidates exist or `catalog` is invalid.
  */
-export function generateRankedFeed(catalog, affinityVector, seenRecipeIds, dietaryFlags) {
-  // ── Defensive guards ───────────────────────────────────────────────────────
+export function generateRankedFeed(catalog, affinityProfile, seenRecipeIds) {
+  // ── Defensive guards ──────────────────────────────────────────
 
   if (!Array.isArray(catalog) || catalog.length === 0) {
     return []
   }
 
-  const safeAffinity = (affinityVector != null && typeof affinityVector === 'object')
-    ? affinityVector
+  const safeProfile = (affinityProfile != null && typeof affinityProfile === 'object')
+    ? affinityProfile
     : {}
-  const safeSeenIds = Array.isArray(seenRecipeIds) ? seenRecipeIds : []
-  const safeDietaryFlags = Array.isArray(dietaryFlags) ? dietaryFlags : []
+  const cuisineWeights     = safeProfile.cuisine ?? {}
+  const difficultyWeights  = safeProfile.difficulty ?? {}
+  const dietaryWeights     = safeProfile.dietary ?? {}
+  const tagWeights         = safeProfile.tags ?? {}
+  const impressionCountByCuisine = safeProfile.meta?.impressionCountByCuisine ?? {}
+  const totalImpressions   = safeProfile.meta?.totalImpressions ?? 0
 
-  // Pre-compute the cold-start base score once so we don't repeat the division
-  // inside the map loop.
-  const coldStartBase = 1.0 / catalog.length
+  const safeSeenIds = Array.isArray(seenRecipeIds) ? seenRecipeIds : []
 
   // ── Step 1: Candidate Generation ──────────────────────────────────────────
   // Build a Set for O(1) lookups rather than O(n) .includes() per candidate.
@@ -100,32 +233,46 @@ export function generateRankedFeed(catalog, affinityVector, seenRecipeIds, dieta
 
   // ── Step 2: Heuristic Scoring ──────────────────────────────────────────────
   //
-  // Base Score     : affinity weight for the recipe's cuisine, or the cold-
-  //                  start uniform score if the cuisine is not yet ranked.
-  // Additive Epsilon: uniform noise in [0, EXPLORATION_EPSILON) added to the
-  //                  base score — prevents echo-chamber collapse AND ensures
-  //                  unengaged categories (baseScore === 0) always receive a
-  //                  small positive signal, eliminating category starvation.
+  // Base Score : a weighted sum across four affinity dimensions — cuisine
+  //              (dominant), difficulty tier, dietary tags, and content
+  //              tags. Dietary/tag scores sum across every matching tag the
+  //              recipe carries (a recipe matching two liked tags scores
+  //              higher than one matching only one).
+  // UCB1 Bonus : shrinks as the recipe's cuisine becomes better-observed;
+  //              a never-seen cuisine gets the maximum possible bonus.
+  // Jitter     : negligible random tie-breaker only.
 
   const scored = candidates.map((recipe) => {
-    const cuisineId = recipe?.cuisine_id
+    const cuisineId = recipe?.cuisine_id ?? null
+    const cuisineScore = cuisineId != null ? (cuisineWeights[cuisineId] ?? 0) : 0
 
-    // Look up the cuisine weight; fall back to cold-start base score.
-    const baseScore =
-      cuisineId != null && cuisineId in safeAffinity
-        ? safeAffinity[cuisineId]
-        : coldStartBase
+    const difficultyTier = recipe?.difficulty_tier ?? null
+    const difficultyScore = difficultyTier != null ? (difficultyWeights[difficultyTier] ?? 0) : 0
 
-    // Small additive bonus when the candidate matches at least one of the
-    // user's declared dietary preferences (e.g. vegan, gluten-free). This is
-    // independent of — and additive to — the cuisine-affinity base score.
     const recipeDietaryTags = Array.isArray(recipe?.dietary_tags) ? recipe.dietary_tags : []
-    const matchesDietaryPreference =
-      safeDietaryFlags.length > 0 && recipeDietaryTags.some((tag) => safeDietaryFlags.includes(tag))
-    const dietaryBonus = matchesDietaryPreference ? DIETARY_MATCH_BONUS : 0
+    const dietaryScore = recipeDietaryTags.reduce(
+      (sum, tag) => sum + (dietaryWeights[tag] ?? 0),
+      0
+    )
 
-    // Additive epsilon variance — safe for baseScore === 0.
-    const predicted_score = baseScore + dietaryBonus + (Math.random() * EXPLORATION_EPSILON)
+    const recipeTags = Array.isArray(recipe?.tags) ? recipe.tags : []
+    const tagScore = recipeTags.reduce((sum, tag) => sum + (tagWeights[tag] ?? 0), 0)
+
+    const baseScore =
+      cuisineScore * CUISINE_AFFINITY_WEIGHT +
+      difficultyScore * DIFFICULTY_AFFINITY_WEIGHT +
+      dietaryScore * DIETARY_AFFINITY_WEIGHT +
+      tagScore * TAG_AFFINITY_WEIGHT
+
+    // UCB1: C * sqrt(ln(totalImpressions + 1) / (impressionsForThisCuisine + 1))
+    const cuisineImpressions = cuisineId != null ? (impressionCountByCuisine[cuisineId] ?? 0) : 0
+    const explorationBonus =
+      UCB_EXPLORATION_COEFFICIENT *
+      Math.sqrt(Math.log(totalImpressions + 1) / (cuisineImpressions + 1))
+
+    const residualJitter = Math.random() * RESIDUAL_JITTER
+
+    const predicted_score = baseScore + explorationBonus + residualJitter
 
     // Return a shallow copy of the recipe augmented with predicted_score.
     // Spread avoids mutating the original catalogue objects.
@@ -136,5 +283,7 @@ export function generateRankedFeed(catalog, affinityVector, seenRecipeIds, dieta
 
   scored.sort((a, b) => b.predicted_score - a.predicted_score)
 
-  return scored
+  // ── Step 4: Diversity Constraint ────────────────────────────────────────────
+
+  return applyDiversityConstraint(scored)
 }
