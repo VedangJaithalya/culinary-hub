@@ -93,7 +93,7 @@ export default function OnboardingModal({ onComplete }) {
     <div className="h-screen w-full max-w-md mx-auto overflow-y-auto scrollbar-none bg-neutral-950 text-white flex flex-col">
       <div className="px-6 pt-12 pb-6">
         <span className="text-4xl" aria-hidden="true">👋</span>
-        <h1 className="text-2xl font-bold mt-3">Welcome to CulinaryFeed</h1>
+        <h1 className="text-2xl font-bold mt-3">Welcome to CulinaryHub</h1>
         <p className="text-sm text-white/50 mt-2 leading-relaxed">
           Answer a few quick questions so your very first feed already feels like you —
           you can always change these later.

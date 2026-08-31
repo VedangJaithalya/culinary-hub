@@ -72,7 +72,7 @@ export default function PrintableRecipe({ recipe }) {
         ))}
       </ol>
 
-      <p className="mt-8 text-[10px] text-neutral-400">Printed from CulinaryFeed</p>
+      <p className="mt-8 text-[10px] text-neutral-400">Printed from CulinaryHub</p>
     </div>
   )
 }

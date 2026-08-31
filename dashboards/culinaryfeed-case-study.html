@@ -1,4 +1,4 @@
-<title>CulinaryFeed Case Study</title>
+<title>CulinaryHub Case Study</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Newsreader:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -32,6 +32,8 @@
 
   * { box-sizing: border-box; }
 
+  html { scroll-behavior: smooth; }
+
   body {
     margin: 0;
     background: var(--bg);
@@ -59,6 +61,7 @@
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
     * { animation: none !important; }
+    html { scroll-behavior: auto; }
   }
 
   /* ── Hero ────────────────────────────────────────────────────────── */
@@ -304,7 +307,7 @@
     <div class="kicker">Engineering + product case study</div>
     <h1 class="reveal">A feed that learns your<br>taste from <em>twenty</em> people<br>who don't exist.</h1>
     <p class="hero-dek reveal">
-      CulinaryFeed is a TikTok-style recipe discovery app with a full
+      CulinaryHub is a TikTok-style recipe discovery app with a full
       recommendation engine — multi-dimensional affinity, a bandit for
       exploration, diversity-constrained ranking — running entirely in the
       browser, with no backend and no real users yet. Here's how it's built,
@@ -592,34 +595,6 @@
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════════════════════════════
-       07 — WHAT'S NEXT
-  ═══════════════════════════════════════════════════════════════ -->
-  <section class="chapter">
-    <div class="wrap">
-      <div class="chapter-num reveal">07 / What's still open</div>
-      <h2 class="reveal">This isn't finished — on purpose.</h2>
-      <div class="next-list">
-        <div class="next-row reveal">
-          <span class="n">01</span>
-          <p><b>Explainability</b> — a "because you liked Thai food" chip on each card. Last piece of the product-polish pass.</p>
-        </div>
-        <div class="next-row reveal">
-          <span class="n">02</span>
-          <p><b>Live re-ranking</b> — right now a session's feed is ranked once on mount; it should react mid-session.</p>
-        </div>
-        <div class="next-row reveal">
-          <span class="n">03</span>
-          <p><b>An A/B harness</b> — to run two ranking strategies side by side against the same synthetic personas.</p>
-        </div>
-        <div class="next-row reveal">
-          <span class="n">04</span>
-          <p><b>Real automated tests</b> — the verification above was direct execution + hand-written assertions; it deserves a real suite.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section class="final-cta">
     <div class="wrap">
       <div class="chapter-num reveal">Get into it</div>
@@ -633,7 +608,7 @@
 
   <footer class="colophon">
     <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
-      <span>CulinaryFeed — case study by Vedang Jaithalya</span>
+      <span>CulinaryHub — case study by Vedang Jaithalya</span>
       <span>Recommendation engine, verified against 20 synthetic personas</span>
     </div>
   </footer>
@@ -667,5 +642,17 @@
   } else {
     els.forEach(function (el) { el.classList.add('in'); });
   }
+
+  // Smooth in-page anchor scrolling (e.g. "Read the methodology")
+  var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var id = link.getAttribute('href').slice(1);
+      var target = id && document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
 })();
 </script>
