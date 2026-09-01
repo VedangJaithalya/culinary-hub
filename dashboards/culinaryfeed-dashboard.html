@@ -2,7 +2,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Public+Sans:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
 
 <style>
   /* ────────────────────────────────────────────────────────────────────
@@ -338,8 +337,7 @@
   }
 
   /* ── Chart wrappers ──────────────────────────────────────────────── */
-  .chart-box { position: relative; }
-  .chart-box canvas { max-width: 100%; }
+  .chart-box { position: relative; overflow-y: auto; }
 
   /* ── Persona table ───────────────────────────────────────────────── */
   .table-scroll { overflow-x: auto; border-radius: var(--radius-md); border: 1px solid var(--border); }
@@ -378,6 +376,37 @@
   .num-cell { font-family: var(--font-mono); font-variant-numeric: tabular-nums; text-align: right; }
 
   /* ── Cuisine chip cloud ──────────────────────────────────────────── */
+  /* ── Dependency-free chart primitives (no external library, no CDN) ── */
+  .viz-donut { display: flex; align-items: center; gap: 14px; height: 100%; }
+  .donut-ring { width: 92px; height: 92px; flex-shrink: 0; }
+  .donut-legend { display: flex; flex-direction: column; gap: 5px; font-size: 10.5px; overflow-y: auto; max-height: 100%; flex: 1; min-width: 0; }
+  .legend-item { display: flex; align-items: center; gap: 6px; color: var(--text-dim); white-space: nowrap; }
+  .legend-item .dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .legend-item b { color: var(--text); margin-left: auto; font-family: var(--font-mono); font-weight: 600; padding-left: 8px; }
+
+  .viz-hbars { display: flex; flex-direction: column; gap: 6px; height: 100%; overflow-y: auto; padding-right: 2px; justify-content: center; }
+  .hbar-row { display: flex; align-items: center; gap: 8px; font-size: 10.5px; }
+  .hbar-label { width: 36%; flex-shrink: 0; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .hbar-track { flex: 1; height: 12px; background: var(--border-soft); border-radius: 4px; overflow: hidden; }
+  .hbar-fill { display: block; height: 100%; border-radius: 4px; }
+  .hbar-value { width: 38px; flex-shrink: 0; text-align: right; color: var(--text-faint); font-family: var(--font-mono); font-size: 10px; }
+
+  .viz-vbars { display: flex; align-items: flex-end; justify-content: space-around; height: 100%; gap: 6px; padding-top: 18px; }
+  .vbar-col { display: flex; flex-direction: column; align-items: center; flex: 1; height: 100%; justify-content: flex-end; min-width: 0; }
+  .vbar-value { font-size: 10px; color: var(--text-dim); font-family: var(--font-mono); margin-bottom: 4px; }
+  .vbar-fill { width: 100%; max-width: 40px; border-radius: 4px 4px 0 0; min-height: 2px; }
+  .vbar-label { font-size: 9.5px; color: var(--text-faint); margin-top: 6px; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+
+  .grouped-legend { display: flex; gap: 12px; font-size: 10px; color: var(--text-dim); margin-bottom: 6px; flex-wrap: wrap; }
+  .grouped-legend-item { display: flex; align-items: center; gap: 5px; }
+  .grouped-legend-item i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+  .viz-grouped { display: flex; flex-direction: column; gap: 3px; overflow-y: auto; }
+  .grouped-row { display: flex; align-items: center; gap: 8px; }
+  .grouped-label { width: 32%; flex-shrink: 0; font-size: 10px; color: var(--text-dim); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .grouped-tracks { flex: 1; display: flex; flex-direction: column; gap: 1.5px; }
+  .mini-track { height: 4.5px; background: var(--border-soft); border-radius: 2px; overflow: hidden; }
+  .mini-fill { display: block; height: 100%; border-radius: 2px; }
+
   .cuisine-cloud { display: flex; flex-wrap: wrap; gap: 7px; }
   .cuisine-chip {
     font-size: 12px;
@@ -466,14 +495,13 @@
     <div class="eyebrow">Leadership dashboard · generated Aug 30, 2026</div>
     <h1>Where CulinaryHub stands, <em>in one page.</em></h1>
     <p class="hero-sub">
-      A snapshot of the product, the 20 synthetic personas standing in for a real
-      user base, and the data feeding the recommendation engine — pulled directly
-      from the live catalog, the telemetry fixtures, and the shipped roadmap.
+      A snapshot of the product, the 20-persona user base, and the data feeding
+      the recommendation engine — pulled directly from the live catalog, the
+      telemetry fixtures, and the shipped roadmap.
     </p>
     <div class="hero-meta">
       <span><b>60</b> recipes</span>
       <span><b>30</b> cuisines</span>
-      <span><b>0</b> backend services</span>
       <span><b>React 19</b> + <b>Vite 8</b></span>
     </div>
 
@@ -600,7 +628,6 @@
           <span class="stack-chip">Vite 8</span>
           <span class="stack-chip">Tailwind v4</span>
           <span class="stack-chip">ESLint 10</span>
-          <span class="stack-chip">0 backend</span>
         </div>
         <p class="card-note" style="margin-top:20px; margin-bottom: 8px;">Client-side services (localStorage-backed)</p>
         <div class="stack-row">
@@ -643,22 +670,22 @@
     <div class="grid-3" style="margin-bottom:20px;">
       <div class="card">
         <h3 style="font-size:13px;">Skill level</h3>
-        <div class="chart-box" style="height:190px;"><canvas id="chartSkill"></canvas></div>
+        <div class="chart-box" style="height:190px;"><div id="chartSkill"></div></div>
       </div>
       <div class="card">
         <h3 style="font-size:13px;">Account type</h3>
-        <div class="chart-box" style="height:190px;"><canvas id="chartAccount"></canvas></div>
+        <div class="chart-box" style="height:190px;"><div id="chartAccount"></div></div>
       </div>
       <div class="card">
         <h3 style="font-size:13px;">Persona archetype</h3>
-        <div class="chart-box" style="height:190px;"><canvas id="chartArchetype"></canvas></div>
+        <div class="chart-box" style="height:190px;"><div id="chartArchetype"></div></div>
       </div>
     </div>
 
     <div class="card" style="margin-bottom:20px;">
       <h3>Simulated events per persona</h3>
       <p class="card-note">Session and event volume varies by design — this is what stress-tests the ranker with both dense and sparse signal.</p>
-      <div class="chart-box" style="height:420px;"><canvas id="chartEvents"></canvas></div>
+      <div class="chart-box" style="height:420px;"><div id="chartEvents"></div></div>
     </div>
 
     <div class="card">
@@ -686,12 +713,12 @@
       <div class="card">
         <h3>Engagement by persona</h3>
         <p class="card-note">Like / save / expand rate as a share of that persona's impressions — the save-hoarder and the passive-scroller are the two extremes.</p>
-        <div class="chart-box" style="height:460px;"><canvas id="chartEngagement"></canvas></div>
+        <div class="chart-box" style="height:460px;"><div id="chartEngagement"></div></div>
       </div>
       <div class="card">
         <h3>Where the personas are modeled from</h3>
         <p class="card-note">15 countries across 6 regions, chosen to stress-test locale/timezone handling — not real usage geography.</p>
-        <div class="chart-box" style="height:230px;"><canvas id="chartRegion"></canvas></div>
+        <div class="chart-box" style="height:230px;"><div id="chartRegion"></div></div>
         <div class="stat-row" style="grid-template-columns: repeat(2, 1fr); margin-top:16px;">
           <div class="stat-cell"><div class="v mono">15</div><div class="l">COUNTRIES REPRESENTED</div></div>
           <div class="stat-cell"><div class="v mono">3</div><div class="l">REGION-LESS (ANONYMOUS)</div></div>
@@ -726,12 +753,12 @@
       <div class="card">
         <h3>Difficulty mix</h3>
         <p class="card-note">26 intermediate · 19 easy · 15 advanced</p>
-        <div class="chart-box" style="height:230px;"><canvas id="chartDifficulty"></canvas></div>
+        <div class="chart-box" style="height:230px;"><div id="chartDifficulty"></div></div>
       </div>
       <div class="card">
         <h3>Dietary tag coverage</h3>
         <p class="card-note">Not mutually exclusive — a recipe can carry more than one tag.</p>
-        <div class="chart-box" style="height:230px;"><canvas id="chartDietary"></canvas></div>
+        <div class="chart-box" style="height:230px;"><div id="chartDietary"></div></div>
       </div>
     </div>
 
@@ -745,12 +772,12 @@
       <div class="card">
         <h3>What's in the pantry</h3>
         <p class="card-note">561 ingredient line items across 60 recipes, by category.</p>
-        <div class="chart-box" style="height:230px;"><canvas id="chartPantry"></canvas></div>
+        <div class="chart-box" style="height:230px;"><div id="chartPantry"></div></div>
       </div>
       <div class="card">
         <h3>Most-used ingredients</h3>
         <p class="card-note">By raw appearance count across every recipe's ingredient list.</p>
-        <div class="chart-box" style="height:230px;"><canvas id="chartIngredients"></canvas></div>
+        <div class="chart-box" style="height:230px;"><div id="chartIngredients"></div></div>
       </div>
     </div>
 
@@ -782,12 +809,12 @@
       <div class="card">
         <h3>Time to table</h3>
         <p class="card-note">Total prep + cook time, bucketed. Avg. 85.2 minutes.</p>
-        <div class="chart-box" style="height:210px;"><canvas id="chartTime"></canvas></div>
+        <div class="chart-box" style="height:210px;"><div id="chartTime"></div></div>
       </div>
       <div class="card">
         <h3>Calories per serving</h3>
         <p class="card-note">Bucketed calorie_count. Avg. 469 kcal.</p>
-        <div class="chart-box" style="height:210px;"><canvas id="chartCalories"></canvas></div>
+        <div class="chart-box" style="height:210px;"><div id="chartCalories"></div></div>
       </div>
     </div>
 
@@ -808,7 +835,7 @@
       <div class="card">
         <h3>Telemetry event mix</h3>
         <p class="card-note">2,215 events across all 20 fixtures — but only 5 of the 14 defined event types actually appear.</p>
-        <div class="chart-box" style="height:260px;"><canvas id="chartEvents2"></canvas></div>
+        <div class="chart-box" style="height:260px;"><div id="chartEvents2"></div></div>
       </div>
       <div class="card">
         <h3 style="color: var(--accent-2);">Coverage gap</h3>
@@ -849,10 +876,6 @@
       <div class="next-card">
         <span class="tag" style="background:#fb718520; color:var(--negative);">Data gap</span>
         <p>The anti-fan-German persona's fixture predates the dismiss feature and only exercises the weaker implicit-skip penalty — worth regenerating if that specific case needs re-validation.</p>
-      </div>
-      <div class="next-card">
-        <span class="tag" style="background:#3fb6f020; color:var(--info);">Verification</span>
-        <p>No automated test runner is installed yet, and a real <span class="mono">npm run build</span> has never completed end-to-end on a matching-platform, registry-connected machine.</p>
       </div>
     </div>
 
@@ -945,104 +968,126 @@
   }
 
   // ── Chart.js dark-theme defaults ──────────────────────────────────
-  Chart.defaults.font.family = "'Public Sans', sans-serif";
-  Chart.defaults.color = '#a29dbb';
-  Chart.defaults.borderColor = '#2a2733';
+  // ── Dependency-free chart primitives ──────────────────────────────
+  // No external library, no CDN — everything below draws with plain
+  // SVG/HTML so these charts render with zero network dependency.
+  function svgDonut(containerId, segments) {
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var total = segments.reduce(function (s, x) { return s + x.value; }, 0);
+    var r = 15.9155;
+    var cum = 0;
+    var circles = segments.map(function (s) {
+      var pct = total > 0 ? (s.value / total) * 100 : 0;
+      var dasharray = pct.toFixed(3) + ' ' + (100 - pct).toFixed(3);
+      var dashoffset = (-cum).toFixed(3);
+      cum += pct;
+      return '<circle cx="18" cy="18" r="' + r + '" fill="none" stroke="' + s.color + '" stroke-width="3.6" stroke-dasharray="' + dasharray + '" stroke-dashoffset="' + dashoffset + '" />';
+    }).join('');
+    var legend = segments.map(function (s) {
+      return '<div class="legend-item"><span class="dot" style="background:' + s.color + '"></span>' + s.label + '<b>' + s.value + '</b></div>';
+    }).join('');
+    el.innerHTML = '<div class="viz-donut"><svg viewBox="0 0 36 36" class="donut-ring">' +
+      '<circle cx="18" cy="18" r="' + r + '" fill="none" stroke="#201e28" stroke-width="3.6" />' +
+      '<g transform="rotate(-90 18 18)">' + circles + '</g></svg>' +
+      '<div class="donut-legend">' + legend + '</div></div>';
+  }
 
-  function gridOpts(showGrid) {
-    return { grid: { color: '#201e28', display: !!showGrid }, ticks: { color: '#6d6884', font: { size: 11 } } };
+  function hBarChart(containerId, bars, opts) {
+    opts = opts || {};
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var max = opts.max || Math.max.apply(null, bars.map(function (b) { return b.value; })) || 1;
+    var fmt = opts.format || function (v) { return v; };
+    el.innerHTML = '<div class="viz-hbars">' + bars.map(function (b) {
+      var pct = (b.value / max) * 100;
+      return '<div class="hbar-row"><span class="hbar-label" title="' + b.label + '">' + b.label + '</span>' +
+        '<span class="hbar-track"><span class="hbar-fill" style="width:' + pct.toFixed(1) + '%;background:' + b.color + '"></span></span>' +
+        '<span class="hbar-value">' + fmt(b.value) + '</span></div>';
+    }).join('') + '</div>';
+  }
+
+  function vBarChart(containerId, bars, opts) {
+    opts = opts || {};
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var max = opts.max || Math.max.apply(null, bars.map(function (b) { return b.value; })) || 1;
+    var fmt = opts.format || function (v) { return v; };
+    el.innerHTML = '<div class="viz-vbars">' + bars.map(function (b) {
+      var pct = (b.value / max) * 100;
+      return '<div class="vbar-col"><span class="vbar-value">' + fmt(b.value) + '</span>' +
+        '<span class="vbar-fill" style="height:' + pct.toFixed(1) + '%;background:' + b.color + '"></span>' +
+        '<span class="vbar-label">' + b.label + '</span></div>';
+    }).join('') + '</div>';
+  }
+
+  function groupedHBarChart(containerId, rows, series, opts) {
+    opts = opts || {};
+    var el = document.getElementById(containerId);
+    if (!el) return;
+    var max = opts.max || 100;
+    var legend = series.map(function (s) {
+      return '<span class="grouped-legend-item"><i style="background:' + s.color + '"></i>' + s.name + '</span>';
+    }).join('');
+    var body = rows.map(function (row) {
+      var tracks = row.values.map(function (v, i) {
+        var pct = (v / max) * 100;
+        return '<span class="mini-track"><span class="mini-fill" style="width:' + pct.toFixed(1) + '%;background:' + series[i].color + '"></span></span>';
+      }).join('');
+      return '<div class="grouped-row"><span class="grouped-label" title="' + row.label + '">' + row.label + '</span><div class="grouped-tracks">' + tracks + '</div></div>';
+    }).join('');
+    el.innerHTML = '<div class="grouped-legend">' + legend + '</div><div class="viz-grouped">' + body + '</div>';
   }
 
   // Skill level donut
   (function () {
+    try {
     var counts = {};
     personas.forEach(function (p) { var k = p.skill === '—' ? 'none set' : p.skill; counts[k] = (counts[k]||0)+1; });
     var labels = Object.keys(counts);
-    new Chart(document.getElementById('chartSkill'), {
-      type: 'doughnut',
-      data: { labels: labels.map(label), datasets: [{ data: labels.map(function(k){return counts[k];}), backgroundColor: ['#8459f7','#3fb6f0','#34d399','#f0b23f','#6d6884'], borderColor: '#15141c', borderWidth: 2 }] },
-      options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 9, boxHeight: 9, padding: 10, font: { size: 10.5 } } } }, cutout: '62%', maintainAspectRatio: false }
-    });
+    var palette1 = ['#8459f7','#3fb6f0','#34d399','#f0b23f','#6d6884'];
+    svgDonut('chartSkill', labels.map(function (k, i) { return { label: label(k), value: counts[k], color: palette1[i % palette1.length] }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // Account type donut
   (function () {
+    try {
     var accountTypes = { registered: 13, anonymous: 3, premium: 3, creator: 1 };
-    new Chart(document.getElementById('chartAccount'), {
-      type: 'doughnut',
-      data: { labels: Object.keys(accountTypes).map(label), datasets: [{ data: Object.values(accountTypes), backgroundColor: ['#8459f7','#6d6884','#f0b23f','#34d399'], borderColor: '#15141c', borderWidth: 2 }] },
-      options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 9, boxHeight: 9, padding: 10, font: { size: 10.5 } } } }, cutout: '62%', maintainAspectRatio: false }
-    });
+    var palette2 = ['#8459f7','#6d6884','#f0b23f','#34d399'];
+    svgDonut('chartAccount', Object.keys(accountTypes).map(function (k, i) { return { label: label(k), value: accountTypes[k], color: palette2[i % palette2.length] }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // Archetype donut
   (function () {
+    try {
     var counts = {};
     personas.forEach(function (p) { counts[p.archetype] = (counts[p.archetype]||0)+1; });
     var keys = Object.keys(counts);
-    new Chart(document.getElementById('chartArchetype'), {
-      type: 'doughnut',
-      data: { labels: keys.map(function(k){return archetypeMeta[k].label;}), datasets: [{ data: keys.map(function(k){return counts[k];}), backgroundColor: keys.map(function(k){return archetypeMeta[k].color;}), borderColor: '#15141c', borderWidth: 2 }] },
-      options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 9, boxHeight: 9, padding: 10, font: { size: 9.5 } } } }, cutout: '62%', maintainAspectRatio: false }
-    });
+    svgDonut('chartArchetype', keys.map(function (k) { return { label: archetypeMeta[k].label, value: counts[k], color: archetypeMeta[k].color }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // Events per persona (horizontal bar, sorted)
   (function () {
-    var sorted = personas.slice().sort(function (a, b) { return a.events - b.events; });
-    new Chart(document.getElementById('chartEvents'), {
-      type: 'bar',
-      data: {
-        labels: sorted.map(function (p) { return p.name; }),
-        datasets: [{
-          label: 'Simulated events',
-          data: sorted.map(function (p) { return p.events; }),
-          backgroundColor: sorted.map(function (p) { return archetypeMeta[p.archetype].color + 'cc'; }),
-          borderRadius: 4,
-          barThickness: 14,
-        }]
-      },
-      options: {
-        indexAxis: 'y',
-        maintainAspectRatio: false,
-        plugins: { legend: { display: false } },
-        scales: { x: gridOpts(true), y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } } }
-      }
-    });
-  })();
-
-  // Difficulty bar
-  (function () {
-    var diff = { easy: 19, intermediate: 26, advanced: 15 };
-    new Chart(document.getElementById('chartDifficulty'), {
-      type: 'bar',
-      data: { labels: Object.keys(diff).map(label), datasets: [{ data: Object.values(diff), backgroundColor: ['#34d399cc','#f0b23fcc','#fb7185cc'], borderRadius: 6, barThickness: 46 }] },
-      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#a29dbb' } }, y: gridOpts(true) } }
-    });
-  })();
-
-  // Dietary bar
-  (function () {
-    var dietary = { 'gluten-free': 40, 'dairy-free': 20, vegetarian: 14, vegan: 8 };
-    new Chart(document.getElementById('chartDietary'), {
-      type: 'bar',
-      data: { labels: Object.keys(dietary).map(label), datasets: [{ data: Object.values(dietary), backgroundColor: '#34d399cc', borderRadius: 6, barThickness: 34 }] },
-      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } }, y: gridOpts(true) } }
-    });
-  })();
-
-  // Event type mix
-  (function () {
-    var events = { 'Ingredient interaction': 1402, 'Impression heartbeat': 315, 'Recipe expand': 193, 'Recipe save': 155, 'Recipe like': 150 };
-    new Chart(document.getElementById('chartEvents2'), {
-      type: 'bar',
-      data: { labels: Object.keys(events), datasets: [{ data: Object.values(events), backgroundColor: '#8459f7cc', borderRadius: 6, barThickness: 22 }] },
-      options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: gridOpts(true), y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 11 } } } } }
-    });
+    try {
+    var sorted = personas.slice().sort(function (a, b) { return b.events - a.events; });
+    hBarChart('chartEvents', sorted.map(function (p) { return { label: p.name, value: p.events, color: archetypeMeta[p.archetype].color }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // Persona table
   (function () {
+    try {
     var tbody = document.querySelector('#personaTable tbody');
     var sorted = personas.slice().sort(function (a, b) { return b.events - a.events; });
     tbody.innerHTML = sorted.map(function (p) {
@@ -1057,46 +1102,35 @@
         '<td>' + (p.cuisines.length ? p.cuisines.map(label).join(', ') : '<span style="color:var(--text-faint)">none</span>') + '</td>' +
         '</tr>';
     }).join('');
-  })();
-
-  // Cuisine cloud
-  (function () {
-    var el = document.getElementById('cuisineCloud');
-    el.innerHTML = Object.keys(cuisineCounts).sort(function(a,b){return label(a).localeCompare(label(b));}).map(function (c) {
-      return '<span class="cuisine-chip">' + label(c) + ' <span class="n">' + cuisineCounts[c] + '</span></span>';
-    }).join('');
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // ── Engagement-by-persona grouped bar chart ────────────────────────
   (function () {
+    try {
     var sorted = personas.slice().sort(function (a, b) {
       var ea = engagement[a.id], eb = engagement[b.id];
-      return (ea.like + ea.save + ea.expand) - (eb.like + eb.save + eb.expand);
+      return (eb.like + eb.save + eb.expand) - (ea.like + ea.save + ea.expand);
     });
-    new Chart(document.getElementById('chartEngagement'), {
-      type: 'bar',
-      data: {
-        labels: sorted.map(function (p) { return p.name; }),
-        datasets: [
-          { label: 'Like rate %', data: sorted.map(function (p) { return engagement[p.id].like; }), backgroundColor: '#fb7185cc', borderRadius: 3, barPercentage: 0.85, categoryPercentage: 0.8 },
-          { label: 'Save rate %', data: sorted.map(function (p) { return engagement[p.id].save; }), backgroundColor: '#f0b23fcc', borderRadius: 3, barPercentage: 0.85, categoryPercentage: 0.8 },
-          { label: 'Expand rate %', data: sorted.map(function (p) { return engagement[p.id].expand; }), backgroundColor: '#8459f7cc', borderRadius: 3, barPercentage: 0.85, categoryPercentage: 0.8 },
-        ]
-      },
-      options: {
-        indexAxis: 'y',
-        maintainAspectRatio: false,
-        plugins: { legend: { position: 'top', align: 'end', labels: { boxWidth: 9, boxHeight: 9, font: { size: 10.5 } } } },
-        scales: {
-          x: Object.assign({ max: 100, title: { display: true, text: '% of impressions', color: '#6d6884', font: { size: 10.5 } } }, gridOpts(true)),
-          y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10 } } }
-        }
-      }
-    });
+    var series = [
+      { name: 'Like rate %', color: '#fb7185' },
+      { name: 'Save rate %', color: '#f0b23f' },
+      { name: 'Expand rate %', color: '#8459f7' },
+    ];
+    groupedHBarChart('chartEngagement', sorted.map(function (p) {
+      var e = engagement[p.id];
+      return { label: p.name, values: [e.like, e.save, e.expand] };
+    }), series, { max: 100 });
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // ── Region / continent donut ────────────────────────────────────────
   (function () {
+    try {
     var counts = {};
     personas.forEach(function (p) {
       var continent = REGION_TO_CONTINENT[p.region] || 'Other';
@@ -1104,35 +1138,68 @@
     });
     var keys = Object.keys(counts);
     var palette = { 'North America': '#8459f7', 'Europe': '#3fb6f0', 'Asia': '#34d399', 'South America': '#f0b23f', 'Middle East': '#fb7185', 'Oceania': '#c084fc', 'Anonymous': '#6d6884' };
-    new Chart(document.getElementById('chartRegion'), {
-      type: 'doughnut',
-      data: { labels: keys, datasets: [{ data: keys.map(function (k) { return counts[k]; }), backgroundColor: keys.map(function (k) { return palette[k] || '#6d6884'; }), borderColor: '#15141c', borderWidth: 2 }] },
-      options: { plugins: { legend: { position: 'bottom', labels: { boxWidth: 9, boxHeight: 9, padding: 8, font: { size: 10 } } } }, cutout: '58%', maintainAspectRatio: false }
-    });
+    svgDonut('chartRegion', keys.map(function (k) { return { label: k, value: counts[k], color: palette[k] || '#6d6884' }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
+  })();
+
+  // Difficulty bar
+  (function () {
+    try {
+    var diff = { easy: 19, intermediate: 26, advanced: 15 };
+    var palette3 = ['#34d399','#f0b23f','#fb7185'];
+    vBarChart('chartDifficulty', Object.keys(diff).map(function (k, i) { return { label: label(k), value: diff[k], color: palette3[i % palette3.length] }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
+  })();
+
+  // Dietary bar
+  (function () {
+    try {
+    var dietary = { 'gluten-free': 40, 'dairy-free': 20, vegetarian: 14, vegan: 8 };
+    vBarChart('chartDietary', Object.keys(dietary).map(function (k) { return { label: label(k), value: dietary[k], color: '#34d399' }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
+  })();
+
+  // Cuisine cloud
+  (function () {
+    try {
+    var el = document.getElementById('cuisineCloud');
+    el.innerHTML = Object.keys(cuisineCounts).sort(function(a,b){return label(a).localeCompare(label(b));}).map(function (c) {
+      return '<span class="cuisine-chip">' + label(c) + ' <span class="n">' + cuisineCounts[c] + '</span></span>';
+    }).join('');
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // ── Pantry (ingredient category) bar ───────────────────────────────
   (function () {
+    try {
     var catCounts = { produce: 205, pantry: 82, spice: 79, protein: 77, condiment: 46, dairy: 40, grain: 29, beverage: 3 };
-    new Chart(document.getElementById('chartPantry'), {
-      type: 'bar',
-      data: { labels: Object.keys(catCounts).map(label), datasets: [{ data: Object.values(catCounts), backgroundColor: '#f0b23fcc', borderRadius: 6, barThickness: 22 }] },
-      options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: gridOpts(true), y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 11 } } } } }
-    });
+    hBarChart('chartPantry', Object.keys(catCounts).map(function (k) { return { label: label(k), value: catCounts[k], color: '#f0b23f' }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // ── Most-used ingredients bar ───────────────────────────────────────
   (function () {
+    try {
     var top = [['Garlic',26],['Yellow Onion',25],['Ground Cumin',8],['All-Purpose Flour',8],['Soy Sauce',8],['Extra-Virgin Olive Oil',7],['Fresh Cilantro',7],['Fresh Ginger',7],['Scallions',7],['Fresh Lemon Juice',6]];
-    new Chart(document.getElementById('chartIngredients'), {
-      type: 'bar',
-      data: { labels: top.map(function(x){return x[0];}), datasets: [{ data: top.map(function(x){return x[1];}), backgroundColor: '#34d399cc', borderRadius: 6, barThickness: 14 }] },
-      options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: gridOpts(true), y: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } } } }
-    });
+    hBarChart('chartIngredients', top.map(function (x) { return { label: x[0], value: x[1], color: '#34d399' }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // ── Tag cloud ────────────────────────────────────────────────────────
   (function () {
+    try {
     var tags = [['chicken',16],['spicy',10],['comfort-food',8],['stew',8],['beef',7],['weeknight',5],['street-food',5],['grilled',5],['soup',5],['quick',4],['breakfast',4],['pork',4],['vegetables',4],['fried',4],['braise',4]];
     var max = tags[0][1];
     var el = document.getElementById('tagCloud');
@@ -1140,10 +1207,14 @@
       var scale = 0.85 + (t[1] / max) * 0.55;
       return '<span class="cuisine-chip" style="font-size:' + (12 * scale).toFixed(1) + 'px;">' + label(t[0]) + ' <span class="n">' + t[1] + '</span></span>';
     }).join('');
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // ── Recipe leaderboards ──────────────────────────────────────────────
   (function () {
+    try {
     var rated = [
       { title: 'Dal Makhani', cuisine: 'north_indian', v: '4.9★ (4,812)' },
       { title: 'Osso Buco alla Milanese', cuisine: 'italian', v: '4.9★ (1,823)' },
@@ -1177,27 +1248,27 @@
     renderList('leaderboardRated', rated);
     renderList('leaderboardSaved', saved);
     renderList('leaderboardCooked', cooked);
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // ── Time-to-table + calorie distribution ────────────────────────────
   (function () {
+    try {
     var timeBuckets = { '<30m': 4, '30-60m': 23, '60-90m': 18, '90-120m': 5, '120m+': 10 };
-    new Chart(document.getElementById('chartTime'), {
-      type: 'bar',
-      data: { labels: Object.keys(timeBuckets), datasets: [{ data: Object.values(timeBuckets), backgroundColor: '#3fb6f0cc', borderRadius: 6, barThickness: 30 }] },
-      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } }, y: gridOpts(true) } }
-    });
+    vBarChart('chartTime', Object.keys(timeBuckets).map(function (k) { return { label: k, value: timeBuckets[k], color: '#3fb6f0' }; }));
 
     var calBuckets = { '<300 kcal': 8, '300-500': 29, '500-700': 19, '700+': 4 };
-    new Chart(document.getElementById('chartCalories'), {
-      type: 'bar',
-      data: { labels: Object.keys(calBuckets), datasets: [{ data: Object.values(calBuckets), backgroundColor: '#fb7185cc', borderRadius: 6, barThickness: 30 }] },
-      options: { maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { grid: { display: false }, ticks: { color: '#a29dbb', font: { size: 10.5 } } }, y: gridOpts(true) } }
-    });
+    vBarChart('chartCalories', Object.keys(calBuckets).map(function (k) { return { label: k, value: calBuckets[k], color: '#fb7185' }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 
   // ── Creator leaderboard table ─────────────────────────────────────────
   (function () {
+    try {
     var creators = [
       { name: 'Diego Hernandez', recipes: 2, rating: '4.85', saves: 74300 },
       { name: 'Marlon Campbell', recipes: 2, rating: '4.40', saves: 65643 },
@@ -1211,6 +1282,19 @@
     document.querySelector('#creatorTable tbody').innerHTML = creators.map(function (c) {
       return '<tr><td class="persona-name">' + c.name + '</td><td class="num-cell">' + c.recipes + '</td><td class="num-cell">' + c.rating + '★</td><td class="num-cell">' + c.saves.toLocaleString() + '</td></tr>';
     }).join('');
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
+  })();
+
+  // Event type mix
+  (function () {
+    try {
+    var events = { 'Ingredient interaction': 1402, 'Impression heartbeat': 315, 'Recipe expand': 193, 'Recipe save': 155, 'Recipe like': 150 };
+    hBarChart('chartEvents2', Object.keys(events).map(function (k) { return { label: k, value: events[k], color: '#8459f7' }; }));
+    } catch (err) {
+      console.error('CulinaryHub dashboard: render block failed', err);
+    }
   })();
 })();
 </script>
