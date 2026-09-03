@@ -5,7 +5,7 @@
 
 <style>
   /* ────────────────────────────────────────────────────────────────────
-   * TOKENS — deliberately single-theme (dark). CulinaryFeed itself has no
+   * TOKENS: deliberately single-theme (dark). CulinaryFeed itself has no
    * light mode (App.jsx is a hard-coded bg-neutral-950 shell), so this
    * report commits to the same dark, appetite-driven world rather than
    * inventing a second visual language the product doesn't have. Every
@@ -25,12 +25,12 @@
     --text-dim: #a29dbb;
     --text-faint: #6d6884;
 
-    --accent: #8459f7;       /* violet — ranking / algorithm / primary */
+    --accent: #8459f7;       /* violet: ranking / algorithm / primary */
     --accent-soft: #8459f733;
-    --accent-2: #f0b23f;     /* amber — ratings / quality */
-    --positive: #34d399;     /* emerald — dietary / positive engagement */
-    --negative: #fb7185;     /* rose — churn / negative signal / advanced */
-    --info: #3fb6f0;         /* sky — planning feature */
+    --accent-2: #f0b23f;     /* amber: ratings / quality */
+    --positive: #34d399;     /* emerald: dietary / positive engagement */
+    --negative: #fb7185;     /* rose: churn / negative signal / advanced */
+    --info: #3fb6f0;         /* sky: planning feature */
 
     --font-display: 'Fraunces', Georgia, 'Times New Roman', serif;
     --font-body: 'Public Sans', -apple-system, 'Segoe UI', sans-serif;
@@ -496,7 +496,7 @@
     <h1>Where CulinaryHub stands, <em>in one page.</em></h1>
     <p class="hero-sub">
       A snapshot of the product, the 20-persona user base, and the data feeding
-      the recommendation engine — pulled directly from the live catalog, the
+      the recommendation engine, pulled directly from the live catalog, the
       telemetry fixtures, and the shipped roadmap.
     </p>
     <div class="hero-meta">
@@ -519,15 +519,15 @@
 <main class="wrap">
 
   <!-- ══════════════════════════════════════════════════════════════
-       SECTION A — PRODUCT / APP OVERVIEW
+       SECTION A: PRODUCT / APP OVERVIEW
   ══════════════════════════════════════════════════════════════ -->
   <section class="block section-a" id="app">
     <div class="section-head">
-      <div class="eyebrow">01 — Product</div>
+      <div class="eyebrow">01: Product</div>
       <h2>What CulinaryHub is, and how it's built</h2>
       <p>
-        A vertical, swipe-through recipe discovery feed — the TikTok-for-recipes
-        format — with a fully client-side recommendation engine. There is no
+        A vertical, swipe-through recipe discovery feed (the TikTok-for-recipes
+        format) with a fully client-side recommendation engine. There is no
         server: every preference, rating, save, and event lives in the browser's
         own storage, and a ranking pass reruns from that history alone.
       </p>
@@ -535,7 +535,7 @@
 
     <div class="card" style="margin-bottom: 20px;">
       <h3>How a recommendation actually gets made</h3>
-      <p class="card-note">Five stages, entirely client-side — no request ever leaves the browser.</p>
+      <p class="card-note">Five stages, entirely client-side: no request ever leaves the browser.</p>
       <div class="flow">
         <div class="flow-step">
           <span class="num">01</span>
@@ -576,7 +576,7 @@
 
         <div class="bucket">
           <div class="bucket-head">
-            <span class="bucket-name">Smarter ranking — the algorithm layer</span>
+            <span class="bucket-name">Smarter ranking: the algorithm layer</span>
             <span class="status-chip status-shipped">SHIPPED · 6/6</span>
           </div>
           <div class="meter"><span style="width:100%; background:var(--positive);"></span></div>
@@ -622,7 +622,7 @@
 
       <div class="card">
         <h3>Stack &amp; footprint</h3>
-        <p class="card-note">Deliberately backend-free — every service below is a localStorage read/write module.</p>
+        <p class="card-note">Deliberately backend-free: every service below is a localStorage read/write module.</p>
         <div class="stack-row">
           <span class="stack-chip">React 19</span>
           <span class="stack-chip">Vite 8</span>
@@ -652,15 +652,15 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════════
-       SECTION B — USER OVERVIEW (20 SYNTHETIC PERSONAS)
+       SECTION B: USER OVERVIEW (20 SYNTHETIC PERSONAS)
   ══════════════════════════════════════════════════════════════ -->
   <section class="block section-b" id="users">
     <div class="section-head">
-      <div class="eyebrow">02 — Users</div>
+      <div class="eyebrow">02: Users</div>
       <h2>The user base is 20 synthetic personas</h2>
       <p>
         There's no production traffic yet. What stands in for a user base is a
-        deliberately hand-built cast of 20 personas — one dataset per behavioral
+        deliberately hand-built cast of 20 personas, one dataset per behavioral
         edge case the ranking engine needs to survive, from a single-cuisine
         loyalist to pure adversarial noise. Every affinity and diversity claim on
         this dashboard is tested against them.
@@ -684,7 +684,7 @@
 
     <div class="card" style="margin-bottom:20px;">
       <h3>Simulated events per persona</h3>
-      <p class="card-note">Session and event volume varies by design — this is what stress-tests the ranker with both dense and sparse signal.</p>
+      <p class="card-note">Session and event volume varies by design: this is what stress-tests the ranker with both dense and sparse signal.</p>
       <div class="chart-box" style="height:420px;"><div id="chartEvents"></div></div>
     </div>
 
@@ -712,12 +712,12 @@
     <div class="grid-2" style="margin-top:20px;">
       <div class="card">
         <h3>Engagement by persona</h3>
-        <p class="card-note">Like / save / expand rate as a share of that persona's impressions — the save-hoarder and the passive-scroller are the two extremes.</p>
+        <p class="card-note">Like / save / expand rate as a share of that persona's impressions. The save-hoarder and the passive-scroller are the two extremes.</p>
         <div class="chart-box" style="height:460px;"><div id="chartEngagement"></div></div>
       </div>
       <div class="card">
         <h3>Where the personas are modeled from</h3>
-        <p class="card-note">15 countries across 6 regions, chosen to stress-test locale/timezone handling — not real usage geography.</p>
+        <p class="card-note">15 countries across 6 regions, chosen to stress-test locale/timezone handling, not real usage geography.</p>
         <div class="chart-box" style="height:230px;"><div id="chartRegion"></div></div>
         <div class="stat-row" style="grid-template-columns: repeat(2, 1fr); margin-top:16px;">
           <div class="stat-cell"><div class="v mono">15</div><div class="l">COUNTRIES REPRESENTED</div></div>
@@ -728,14 +728,14 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════════
-       SECTION C — DATA OVERVIEW
+       SECTION C: DATA OVERVIEW
   ══════════════════════════════════════════════════════════════ -->
   <section class="block section-c" id="data">
     <div class="section-head">
-      <div class="eyebrow">03 — Data</div>
+      <div class="eyebrow">03: Data</div>
       <h2>What's in the catalog, and what the telemetry actually says</h2>
       <p>
-        60 recipes, evenly spread so no cuisine dominates by sample size alone —
+        60 recipes, evenly spread so no cuisine dominates by sample size alone,
         useful for isolating whether a ranking change is really about affinity,
         not catalog skew.
       </p>
@@ -757,14 +757,14 @@
       </div>
       <div class="card">
         <h3>Dietary tag coverage</h3>
-        <p class="card-note">Not mutually exclusive — a recipe can carry more than one tag.</p>
+        <p class="card-note">Not mutually exclusive: a recipe can carry more than one tag.</p>
         <div class="chart-box" style="height:230px;"><div id="chartDietary"></div></div>
       </div>
     </div>
 
     <div class="card" style="margin-bottom:20px;">
       <h3>All 30 cuisines</h3>
-      <p class="card-note">2 recipes each, by design — the catalog was built even, not organically grown.</p>
+      <p class="card-note">2 recipes each, by design: the catalog was built even, not organically grown.</p>
       <div class="cuisine-cloud" id="cuisineCloud"><!-- rendered by script --></div>
     </div>
 
@@ -834,7 +834,7 @@
     <div class="grid-2">
       <div class="card">
         <h3>Telemetry event mix</h3>
-        <p class="card-note">2,215 events across all 20 fixtures — but only 5 of the 14 defined event types actually appear.</p>
+        <p class="card-note">2,215 events across all 20 fixtures, but only 5 of the 14 defined event types actually appear.</p>
         <div class="chart-box" style="height:260px;"><div id="chartEvents2"></div></div>
       </div>
       <div class="card">
@@ -842,7 +842,7 @@
         <div class="callout" style="margin-top:6px;">
           <span class="glyph">◆</span>
           <div>
-            <b>9 of the 14 defined event types have zero synthetic coverage</b> —
+            <b>9 of the 14 defined event types have zero synthetic coverage</b>:
             ratings, follows, dismissals, cook-mode starts/completions, onboarding
             completion, ingredient-list adds, and shares. All were added to the
             schema and shipped in the app after these 20 fixtures were generated.
@@ -861,21 +861,21 @@
   </section>
 
   <!-- ══════════════════════════════════════════════════════════════
-       FOOTER — NEXT STEPS
+       FOOTER: NEXT STEPS
   ══════════════════════════════════════════════════════════════ -->
   <footer id="next">
     <div class="section-head">
-      <div class="eyebrow" style="color:var(--info);">04 — Next up</div>
+      <div class="eyebrow" style="color:var(--info);">04: Next up</div>
       <h2>What's still open</h2>
     </div>
     <div class="next-steps">
       <div class="next-card">
         <span class="tag" style="background:#f0b23f20; color:var(--accent-2);">Product/UX</span>
-        <p>The last item in the Product/UX bucket — a "why this was recommended" chip on each card (e.g. "Because you liked Thai food") — is the one remaining piece for that area to reach 100%.</p>
+        <p>The last item in the Product/UX bucket, a "why this was recommended" chip on each card (e.g. "Because you liked Thai food"), is the one remaining piece for that area to reach 100%.</p>
       </div>
       <div class="next-card">
         <span class="tag" style="background:#fb718520; color:var(--negative);">Data gap</span>
-        <p>The anti-fan-German persona's fixture predates the dismiss feature and only exercises the weaker implicit-skip penalty — worth regenerating if that specific case needs re-validation.</p>
+        <p>The anti-fan-German persona's fixture predates the dismiss feature and only exercises the weaker implicit-skip penalty; worth regenerating if that specific case needs re-validation.</p>
       </div>
     </div>
 
@@ -890,26 +890,26 @@
 <script>
 (function () {
   var personas = [
-    { id: 'usr_fake_08_power_superfan', name: 'Renata V.', archetype: 'edge-case', behavior: 'High-intensity, broad coverage — likes/saves almost everything.', skill: 'advanced', region: 'BR', sessions: 4, events: 525, cuisines: ['moroccan','vietnamese','thai'] },
-    { id: 'usr_fake_14_random_noise', name: 'Test Bot 01', archetype: 'edge-case', behavior: 'Pure random engagement — adversarial baseline.', skill: '—', region: '—', sessions: 3, events: 184, cuisines: ['korean','japanese','nigerian'] },
+    { id: 'usr_fake_08_power_superfan', name: 'Renata V.', archetype: 'edge-case', behavior: 'High-intensity, broad coverage: likes/saves almost everything.', skill: 'advanced', region: 'BR', sessions: 4, events: 525, cuisines: ['moroccan','vietnamese','thai'] },
+    { id: 'usr_fake_14_random_noise', name: 'Test Bot 01', archetype: 'edge-case', behavior: 'Pure random engagement, used as the adversarial baseline.', skill: 'unset', region: 'unset', sessions: 3, events: 184, cuisines: ['korean','japanese','nigerian'] },
     { id: 'usr_fake_06_gourmet_expert', name: 'Chef Andre B.', archetype: 'attribute', behavior: 'Advanced, technique-heavy recipes only, deep engagement.', skill: 'professional', region: 'FR', sessions: 3, events: 178, cuisines: ['persian','brazilian','ethiopian'] },
     { id: 'usr_fake_02_asian_explorer', name: 'Priya N.', archetype: 'regional', behavior: 'Browses widely across an 8-cuisine East/SE-Asian cluster.', skill: 'advanced', region: 'SG', sessions: 3, events: 114, cuisines: ['japanese','korean','thai'] },
     { id: 'usr_fake_13_latin_fiesta', name: 'Camila S.', archetype: 'regional', behavior: 'Sticks to a 5-cuisine Latin American / Caribbean cluster.', skill: 'intermediate', region: 'AR', sessions: 3, events: 113, cuisines: ['peruvian','mexican','brazilian'] },
     { id: 'usr_fake_19_completionist_prepper', name: 'Vikram S.', archetype: 'attribute', behavior: 'Checks off every ingredient on every Indian-subcontinent recipe.', skill: 'advanced', region: 'IN', sessions: 2, events: 116, cuisines: ['north_indian','south_indian'] },
     { id: 'usr_fake_03_vegan_health', name: 'Dana K.', archetype: 'attribute', behavior: 'Selects almost exclusively by dietary tag, not cuisine.', skill: 'intermediate', region: 'US', sessions: 3, events: 126, cuisines: ['ethiopian','caribbean','spanish'] },
     { id: 'usr_fake_04_spice_chaser', name: 'Tomás R.', archetype: 'attribute', behavior: 'Chases the "spicy" tag across every cuisine.', skill: 'advanced', region: 'MX', sessions: 2, events: 101, cuisines: ['chinese_sichuan','thai','spanish'] },
-    { id: 'usr_fake_05_easy_weeknight', name: 'Jamie L.', archetype: 'attribute', behavior: 'Only engages with "easy" recipes — busy weeknight cook.', skill: 'beginner', region: 'GB', sessions: 3, events: 95, cuisines: ['peruvian','filipino','ethiopian'] },
+    { id: 'usr_fake_05_easy_weeknight', name: 'Jamie L.', archetype: 'attribute', behavior: 'Only engages with "easy" recipes, a busy weeknight cook.', skill: 'beginner', region: 'GB', sessions: 3, events: 95, cuisines: ['peruvian','filipino','ethiopian'] },
     { id: 'usr_fake_12_mediterranean_comfort', name: 'Layla H.', archetype: 'regional', behavior: 'Meal-prep saver in the Mediterranean / Levant / Maghreb cluster.', skill: 'intermediate', region: 'AE', sessions: 3, events: 91, cuisines: ['lebanese','moroccan','mediterranean'] },
     { id: 'usr_fake_15_breakfast_lover', name: 'Nora P.', archetype: 'attribute', behavior: 'Morning sessions, breakfast/brunch tags only.', skill: 'beginner', region: 'US', sessions: 2, events: 83, cuisines: ['mediterranean','japanese','south_indian'] },
-    { id: 'usr_fake_17_drifting_taste', name: 'Ines M.', archetype: 'evolving', behavior: 'Taste drifts session to session — North Indian → Korean → French.', skill: 'intermediate', region: 'ES', sessions: 3, events: 88, cuisines: ['north_indian','korean','french'] },
+    { id: 'usr_fake_17_drifting_taste', name: 'Ines M.', archetype: 'evolving', behavior: 'Taste drifts session to session: North Indian → Korean → French.', skill: 'intermediate', region: 'ES', sessions: 3, events: 88, cuisines: ['north_indian','korean','french'] },
     { id: 'usr_fake_01_italian_loyalist', name: 'Marco T.', archetype: 'loyalist', behavior: 'Repeatedly revisits 2 Italian recipes; skips almost everything else.', skill: 'intermediate', region: 'IT', sessions: 3, events: 81, cuisines: ['italian','mediterranean','peruvian'] },
     { id: 'usr_fake_20_anti_fan_german', name: 'Greta W.', archetype: 'edge-case', behavior: 'Likes broad home cooking but always skips German instantly.', skill: 'intermediate', region: 'CA', sessions: 2, events: 74, cuisines: ['german','russian','british'] },
-    { id: 'usr_fake_07_novelty_seeker', name: 'Sam O.', archetype: 'evolving', behavior: 'Max-entropy — one fresh cuisine every time, never repeats.', skill: 'intermediate', region: 'CA', sessions: 3, events: 77, cuisines: ['nigerian','british','mexican'] },
+    { id: 'usr_fake_07_novelty_seeker', name: 'Sam O.', archetype: 'evolving', behavior: 'Max-entropy: one fresh cuisine every time, never repeats.', skill: 'intermediate', region: 'CA', sessions: 3, events: 77, cuisines: ['nigerian','british','mexican'] },
     { id: 'usr_fake_16_binge_then_dropout', name: 'Owen D.', archetype: 'edge-case', behavior: 'One huge North Indian binge session, then never returned.', skill: 'intermediate', region: 'IN', sessions: 1, events: 68, cuisines: ['north_indian','south_indian','mediterranean'] },
     { id: 'usr_fake_18_save_hoarder', name: 'Ben C.', archetype: 'edge-case', behavior: 'Saves compulsively, almost never expands or likes.', skill: 'beginner', region: 'US', sessions: 3, events: 62, cuisines: ['south_indian','japanese','filipino'] },
-    { id: 'usr_fake_09_passive_scroller', name: 'Alex Q.', archetype: 'edge-case', behavior: 'Scrolls fast — nearly every card skipped in under 2 seconds.', skill: '—', region: '—', sessions: 2, events: 25, cuisines: ['american_southern','lebanese','south_indian'] },
+    { id: 'usr_fake_09_passive_scroller', name: 'Alex Q.', archetype: 'edge-case', behavior: 'Scrolls fast, nearly every card skipped in under 2 seconds.', skill: 'unset', region: 'unset', sessions: 2, events: 25, cuisines: ['american_southern','lebanese','south_indian'] },
     { id: 'usr_fake_11_churn_negative', name: 'Kayla F.', archetype: 'edge-case', behavior: 'Disliked nearly everything shown, then churned.', skill: 'beginner', region: 'AU', sessions: 2, events: 14, cuisines: ['british','lebanese','peruvian'] },
-    { id: 'usr_fake_10_cold_start_new', name: 'New User', archetype: 'edge-case', behavior: 'Zero telemetry — exercises the true cold-start path.', skill: '—', region: '—', sessions: 0, events: 0, cuisines: [] },
+    { id: 'usr_fake_10_cold_start_new', name: 'New User', archetype: 'edge-case', behavior: 'Zero telemetry, exercises the true cold-start path.', skill: 'unset', region: 'unset', sessions: 0, events: 0, cuisines: [] },
   ];
 
   var archetypeMeta = {
@@ -952,7 +952,7 @@
     IT: 'Europe', GB: 'Europe', FR: 'Europe', ES: 'Europe',
     SG: 'Asia', IN: 'Asia', AE: 'Middle East',
     AU: 'Oceania',
-    '—': 'Anonymous',
+    'unset': 'Anonymous',
   };
 
   var cuisineCounts = {
@@ -969,7 +969,7 @@
 
   // ── Chart.js dark-theme defaults ──────────────────────────────────
   // ── Dependency-free chart primitives ──────────────────────────────
-  // No external library, no CDN — everything below draws with plain
+  // No external library, no CDN. Everything below draws with plain
   // SVG/HTML so these charts render with zero network dependency.
   function svgDonut(containerId, segments) {
     var el = document.getElementById(containerId);
@@ -1043,7 +1043,7 @@
   (function () {
     try {
     var counts = {};
-    personas.forEach(function (p) { var k = p.skill === '—' ? 'none set' : p.skill; counts[k] = (counts[k]||0)+1; });
+    personas.forEach(function (p) { var k = p.skill === 'unset' ? 'none set' : p.skill; counts[k] = (counts[k]||0)+1; });
     var labels = Object.keys(counts);
     var palette1 = ['#8459f7','#3fb6f0','#34d399','#f0b23f','#6d6884'];
     svgDonut('chartSkill', labels.map(function (k, i) { return { label: label(k), value: counts[k], color: palette1[i % palette1.length] }; }));
@@ -1095,8 +1095,8 @@
       return '<tr>' +
         '<td class="persona-name">' + p.name + '</td>' +
         '<td class="persona-desc">' + p.behavior + '<br><span class="archetype-tag" style="background:' + meta.color + '22; color:' + meta.color + ';">' + meta.label + '</span></td>' +
-        '<td>' + (p.skill === '—' ? '<span style="color:var(--text-faint)">—</span>' : label(p.skill)) + '</td>' +
-        '<td>' + (p.region === '—' ? '<span style="color:var(--text-faint)">—</span>' : p.region) + '</td>' +
+        '<td>' + (p.skill === 'unset' ? '<span style="color:var(--text-faint)">N/A</span>' : label(p.skill)) + '</td>' +
+        '<td>' + (p.region === 'unset' ? '<span style="color:var(--text-faint)">N/A</span>' : p.region) + '</td>' +
         '<td class="num-cell">' + p.sessions + '</td>' +
         '<td class="num-cell">' + p.events.toLocaleString() + '</td>' +
         '<td>' + (p.cuisines.length ? p.cuisines.map(label).join(', ') : '<span style="color:var(--text-faint)">none</span>') + '</td>' +

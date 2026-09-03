@@ -323,8 +323,8 @@
     <h1 class="reveal">A feed that learns<br>your taste.</h1>
     <p class="hero-dek reveal">
       CulinaryHub is a TikTok-style recipe discovery app with a full
-      recommendation engine — multi-dimensional affinity, a bandit for
-      exploration, diversity-constrained ranking — running entirely in the
+      recommendation engine (multi-dimensional affinity, a bandit for
+      exploration, diversity-constrained ranking) running entirely in the
       browser. Here's how it's built, and how I proved it works.
     </p>
     <div class="byline reveal">
@@ -348,7 +348,7 @@
 <main>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       01 — THE PROBLEM
+       01: THE PROBLEM
   ═══════════════════════════════════════════════════════════════ -->
   <section class="chapter">
     <div class="wrap">
@@ -356,22 +356,22 @@
       <h2 class="reveal">No production traffic yet. Just a claim to prove.</h2>
       <p class="chapter-lede reveal">
         The brief I gave myself: build the recommendation layer a real
-        food-discovery product would need — the part that decides what you
-        see next — and prove it actually personalizes, before a single real
+        food-discovery product would need (the part that decides what you
+        see next) and prove it actually personalizes, before a single real
         person opens the app.
       </p>
       <p class="prose reveal">
         Everything lives in the browser. Every swipe, save, rating, and
         dismissal becomes a telemetry event, buffered to <b>localStorage</b>
         and reduced into session facts on the client. There's no server to
-        hide behind — if the ranking looks wrong, it's because the logic is
+        hide behind. If the ranking looks wrong, it's because the logic is
         wrong, not because a query timed out somewhere.
       </p>
       <p class="prose reveal">
-        Running entirely client-side wasn't a fallback — it's the design.
+        Running entirely client-side wasn't a fallback. It's the design.
         Every re-rank is a local computation instead of a network round
         trip (<b>~0.3ms median</b> against the full catalog, measured
-        directly — see Section 05), and every signal that trains the model
+        directly, see Section 05), and every signal that trains the model
         is generated and consumed on the same device it's never sent off
         of. Zero-latency personalization and privacy-first telemetry,
         by construction.
@@ -381,7 +381,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       02 — ARCHITECTURE
+       02: ARCHITECTURE
   ═══════════════════════════════════════════════════════════════ -->
   <section class="chapter alt">
     <div class="wrap">
@@ -406,7 +406,7 @@
           <div class="rail-num">03</div>
           <div class="rail-body">
             <h3>Session transform</h3>
-            <p>Raw events reduce into per-recipe impression facts — dwell time, expand rate, ingredient completion.</p>
+            <p>Raw events reduce into per-recipe impression facts: dwell time, expand rate, ingredient completion.</p>
           </div>
         </div>
         <div class="rail-step reveal">
@@ -428,7 +428,7 @@
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       03 — THE ALGORITHM
+       03: THE ALGORITHM
   ═══════════════════════════════════════════════════════════════ -->
   <section class="chapter">
     <div class="wrap-wide">
@@ -442,7 +442,7 @@
         <div class="ticket spec-card reveal">
           <span class="spec-tag">Signal shape</span>
           <h3>Multi-dimensional affinity</h3>
-          <p>Weighs cuisine, difficulty, diet, and content tags as four parallel vectors instead of one — a vegan user gets credit for being vegan, not just for whichever cuisine they happened to click.</p>
+          <p>Weighs cuisine, difficulty, diet, and content tags as four parallel vectors instead of one, so a vegan user gets credit for being vegan, not just for whichever cuisine they happened to click.</p>
         </div>
         <div class="ticket spec-card reveal">
           <span class="spec-tag">Time</span>
@@ -452,12 +452,12 @@
         <div class="ticket spec-card reveal">
           <span class="spec-tag">Variety</span>
           <h3>Diversity constraint</h3>
-          <p>Caps any one cuisine at 2 appearances per 5-card window — even for a user whose affinity vector is 91% one cuisine.</p>
+          <p>Caps any one cuisine at 2 appearances per 5-card window, even for a user whose affinity vector is 91% one cuisine.</p>
         </div>
         <div class="ticket spec-card reveal">
           <span class="spec-tag">Discovery</span>
           <h3>Content-based similarity</h3>
-          <p>Weighted Jaccard similarity over ingredients and tags powers "More Like This" — connections cuisine-only affinity can't make.</p>
+          <p>Weighted Jaccard similarity over ingredients and tags powers "More Like This": connections cuisine-only affinity can't make.</p>
         </div>
         <div class="ticket spec-card reveal">
           <span class="spec-tag">Exploration</span>
@@ -467,7 +467,7 @@
         <div class="ticket spec-card reveal">
           <span class="spec-tag">Feedback</span>
           <h3>Explicit negative signal</h3>
-          <p>A real "not interested" action carries a −6.0 penalty — the single largest-magnitude term in the whole scoring function.</p>
+          <p>A real "not interested" action carries a −6.0 penalty, the single largest-magnitude term in the whole scoring function.</p>
         </div>
       </div>
 
@@ -482,10 +482,10 @@
 
 ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &radic;( ln(total_impressions <span class="op">+</span> 1) / (cuisine_impressions <span class="op">+</span> 1) )</div>
         <div class="formula-key">
-          <div class="formula-key-row"><span class="sym">cuisine_affinity</span><span class="desc">Normalized 0–1 weight from the user's affinity vector — the dominant signal, left unscaled at &times;1.0.</span></div>
+          <div class="formula-key-row"><span class="sym">cuisine_affinity</span><span class="desc">Normalized 0–1 weight from the user's affinity vector, the dominant signal, left unscaled at &times;1.0.</span></div>
           <div class="formula-key-row"><span class="sym">difficulty / dietary / tag</span><span class="desc">Same normalized shape, each capped at &times;0.3 so no secondary dimension can outvote cuisine on its own.</span></div>
-          <div class="formula-key-row"><span class="sym">ucb1_bonus</span><span class="desc">Exploration term — shrinks as a cuisine accumulates impressions; a never-shown cuisine gets the maximum bonus.</span></div>
-          <div class="formula-key-row"><span class="sym">jitter</span><span class="desc">&le;0.01 random nudge, a tie-breaker only — UCB1 does the real exploration work.</span></div>
+          <div class="formula-key-row"><span class="sym">ucb1_bonus</span><span class="desc">Exploration term: shrinks as a cuisine accumulates impressions; a never-shown cuisine gets the maximum bonus.</span></div>
+          <div class="formula-key-row"><span class="sym">jitter</span><span class="desc">&le;0.01 random nudge, a tie-breaker only; UCB1 does the real exploration work.</span></div>
           <div class="formula-key-row"><span class="sym">diversity pass</span><span class="desc">Runs after sorting, not part of the score itself: re-sequences output so no cuisine exceeds 2 picks in any 5-card window.</span></div>
         </div>
       </div>
@@ -493,7 +493,7 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       04 — THE 20-PERSONA METHOD
+       04: THE 20-PERSONA METHOD
   ═══════════════════════════════════════════════════════════════ -->
   <section class="chapter alt" id="method">
     <div class="wrap-wide">
@@ -501,7 +501,7 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
       <h2 class="reveal">Since there was no user base, I built one.</h2>
       <p class="chapter-lede reveal">
         Twenty synthetic personas, each a deliberately different behavioral
-        edge case — a full telemetry history of sessions, dwell times, likes,
+        edge case, with a full telemetry history of sessions, dwell times, likes,
         and saves, generated to match the exact shape real usage would
         produce. If the ranking engine survives all twenty, it's not by luck.
       </p>
@@ -528,7 +528,7 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
         <div class="ticket persona-card reveal">
           <span class="p-name">usr_fake_09</span>
           <h3>The passive scroller</h3>
-          <p>Sub-2-second dwell on nearly every card — almost zero usable signal.</p>
+          <p>Sub-2-second dwell on nearly every card, almost zero usable signal.</p>
           <div class="persona-bars">
             <div class="p-bar-row"><span class="p-bar-label">LIKE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:0%; background:var(--chili);"></div></div></div>
             <div class="p-bar-row"><span class="p-bar-label">SAVE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:0%; background:var(--saffron);"></div></div></div>
@@ -537,7 +537,7 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
         <div class="ticket persona-card reveal">
           <span class="p-name">usr_fake_14</span>
           <h3>The adversary</h3>
-          <p>Every field — dwell, likes, saves — is pure random noise. A stress test, not a person.</p>
+          <p>Every field (dwell, likes, saves) is pure random noise. A stress test, not a person.</p>
           <div class="persona-bars">
             <div class="p-bar-row"><span class="p-bar-label">LIKE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:58.3%; background:var(--chili);"></div></div></div>
             <div class="p-bar-row"><span class="p-bar-label">SAVE</span><div class="p-bar-track"><div class="p-bar-fill" style="width:52.8%; background:var(--saffron);"></div></div></div>
@@ -563,7 +563,7 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       05 — RESULTS / PROOF POINTS
+       05: RESULTS / PROOF POINTS
   ═══════════════════════════════════════════════════════════════ -->
   <section class="chapter">
     <div class="wrap">
@@ -572,26 +572,26 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
       <p class="chapter-lede reveal">
         Verified with a scripted assertion harness: the real ranking and
         affinity modules, executed directly under Node against synthetic
-        persona telemetry, asserting on exact numeric output — not a design
+        persona telemetry, asserting on exact numeric output, not a design
         doc, not a mock.
       </p>
 
       <div class="proof-list">
         <div class="proof reveal">
           <span class="check">✓</span>
-          <p>A user whose taste visibly drifted — North Indian, then Korean, then French, across three sessions — ended up with a <b>french: 0.844</b> affinity weight. Recency decay works: the most recent session dominates instead of averaging out.</p>
+          <p>A user whose taste visibly drifted (North Indian, then Korean, then French, across three sessions) ended up with a <b>french: 0.844</b> affinity weight. Recency decay works: the most recent session dominates instead of averaging out.</p>
         </div>
         <div class="proof reveal">
           <span class="check">✓</span>
-          <p>A user with a <b>italian: 0.91</b> affinity skew — about as extreme as it gets — still never saw more than <b>2 of 5</b> consecutive cards from the same cuisine. The diversity constraint holds even at the edge.</p>
+          <p>A user with a <b>italian: 0.91</b> affinity skew (about as extreme as it gets) still never saw more than <b>2 of 5</b> consecutive cards from the same cuisine. The diversity constraint holds even at the edge.</p>
         </div>
         <div class="proof reveal">
           <span class="check">✓</span>
-          <p>A brand-new onboarding profile (Thai + Mexican preference, beginner, vegan) produced an exact <b>70/30</b> preference-weighted split across cuisine, difficulty, <em style="color:inherit; font-style:normal;">and</em> dietary dimensions simultaneously — cold start isn't a coin flip.</p>
+          <p>A brand-new onboarding profile (Thai + Mexican preference, beginner, vegan) produced an exact <b>70/30</b> preference-weighted split across cuisine, difficulty, <em style="color:inherit; font-style:normal;">and</em> dietary dimensions simultaneously: cold start isn't a coin flip.</p>
         </div>
         <div class="proof reveal">
           <span class="check">✓</span>
-          <p>Dismissing a recipe removes it from the ranked output <b>permanently</b> — verified by re-running the ranking engine with the dismissal applied and confirming the recipe never resurfaces.</p>
+          <p>Dismissing a recipe removes it from the ranked output <b>permanently</b>, verified by re-running the ranking engine with the dismissal applied and confirming the recipe never resurfaces.</p>
         </div>
       </div>
 
@@ -626,19 +626,19 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
   </section>
 
   <!-- ═══════════════════════════════════════════════════════════════
-       06 — STACK
+       06: STACK
   ═══════════════════════════════════════════════════════════════ -->
   <section class="chapter alt">
     <div class="wrap">
       <div class="chapter-num reveal">06 / How it's built</div>
       <h2 class="reveal">Pure Function Engine.</h2>
       <p class="prose reveal">
-        Every piece of state — saved recipes, ratings, dismissals, follows,
-        the meal planner, the shopping list — is a small, dependency-free
+        Every piece of state (saved recipes, ratings, dismissals, follows,
+        the meal planner, the shopping list) is a small, dependency-free
         localStorage-backed service, each one owning exactly one concern.
         The ranking and affinity modules underneath them are <b>pure
         functions</b>: same catalog and telemetry in, same ranked feed out,
-        every time — no hidden state, no side effects, nothing that only
+        every time: no hidden state, no side effects, nothing that only
         works inside a live browser tab. That's what makes the engine easy
         to reason about, and just as easy to verify directly (Section 05).
       </p>
@@ -658,7 +658,7 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
     <div class="wrap">
       <div class="chapter-num reveal">Get into it</div>
       <h2 class="reveal">The full source is on GitHub.</h2>
-      <p class="prose reveal">Ranking engine, affinity model, the 20 persona fixtures, and every service behind them — all of it is there to read.</p>
+      <p class="prose reveal">Ranking engine, affinity model, the 20 persona fixtures, and every service behind them: all of it is there to read.</p>
       <div class="cta-row reveal">
         <a class="btn btn-primary" href="https://github.com/VedangJaithalya/culinary-hub" target="_blank" rel="noopener">→ github.com/VedangJaithalya/culinary-hub</a>
       </div>
@@ -667,7 +667,7 @@ ucb1_bonus = <span class="const">0.3</span> <span class="op">&times;</span> &rad
 
   <footer class="colophon">
     <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:10px;">
-      <span>CulinaryHub — case study by Vedang Jaithalya</span>
+      <span>CulinaryHub, case study by Vedang Jaithalya</span>
       <span>Recommendation engine, verified against 20 synthetic personas</span>
     </div>
   </footer>
